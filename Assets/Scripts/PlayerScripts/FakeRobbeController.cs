@@ -16,6 +16,8 @@ public class FakeRobbeController : MonoBehaviour {
 	public Transform groundCheck2;
 	public LayerMask whatIsGround;
 
+	public bool canMove = true;
+
 	void Start(){}
 
 	void FixedUpdate()
@@ -25,42 +27,45 @@ public class FakeRobbeController : MonoBehaviour {
 
 	void Update()
 	{
-		float moveHorizontal = Input.GetAxis("Horizontal");
-
-		Vector2 movement = new Vector2(moveHorizontal, 0.0f);
-
-		if(Mathf.Abs(rigidbody2D.velocity.x) < maxSpeed)
+		if(canMove)
 		{
-			if(grounded)
-			{
-				rigidbody2D.AddRelativeForce (movement * speed);
-				rigidbody2D.drag = groundDrag;
-			}
-			else
-			{
-				rigidbody2D.AddRelativeForce (movement * airSpeed);
-				rigidbody2D.drag = airDrag;
-			}
-		}
+			float moveHorizontal = Input.GetAxis("Horizontal");
 
-		if(Input.GetKeyDown(KeyCode.Space))
-		{
-			if(grounded == true)
+			Vector2 movement = new Vector2(moveHorizontal, 0.0f);
+
+			if(Mathf.Abs(rigidbody2D.velocity.x) < maxSpeed)
 			{
-				Vector2 jumping = new Vector2(0.0f, jumpForce);
-				rigidbody2D.AddRelativeForce(movement + jumping);
-				doubleJump = true;
-			}
-			else if(doubleJump == true)
-			{
-				doubleJump = false;
-				float zeroV = 0.0f;
-				float currentXV = rigidbody2D.velocity.x;
-				rigidbody2D.velocity = new Vector2(currentXV, zeroV);
-				Vector2 jumping = new Vector2(0.0f, jumpForce);
-				rigidbody2D.AddRelativeForce(movement + jumping);
+				if(grounded)
+				{
+					rigidbody2D.AddRelativeForce (movement * speed);
+					rigidbody2D.drag = groundDrag;
+				}
+				else
+				{
+					rigidbody2D.AddRelativeForce (movement * airSpeed);
+					rigidbody2D.drag = airDrag;
+				}
 			}
 
+			if(Input.GetKeyDown(KeyCode.Space))
+			{
+				if(grounded == true)
+				{
+					Vector2 jumping = new Vector2(0.0f, jumpForce);
+					rigidbody2D.AddRelativeForce(movement + jumping);
+					doubleJump = true;
+				}
+				else if(doubleJump == true)
+				{
+					doubleJump = false;
+					float zeroV = 0.0f;
+					float currentXV = rigidbody2D.velocity.x;
+					rigidbody2D.velocity = new Vector2(currentXV, zeroV);
+					Vector2 jumping = new Vector2(0.0f, jumpForce);
+					rigidbody2D.AddRelativeForce(movement + jumping);
+				}
+
+			}
 		}
 	}
 }    

@@ -8,10 +8,22 @@ public class MapGenerator : MonoBehaviour {
 	private int lastColumn = 0;
 	private int pathNum = 1;
 	public GameObject completeMessage;
-	private bool tutorialDone = true;
+	private bool tutorialDone = false;
 	
 	private void Start() 
 	{
+
+		string _tutorialDone = PlayerPrefs.GetString("tutorialDone");
+		if(_tutorialDone == "true")
+		{
+			tutorialDone = true;
+		}
+		else
+		{
+			tutorialDone = false;
+		}
+
+
 		if(tutorialDone == true)
 		{
 			NewDungeon();

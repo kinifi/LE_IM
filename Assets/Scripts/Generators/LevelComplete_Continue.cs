@@ -12,7 +12,7 @@ public class LevelComplete_Continue : MonoBehaviour {
 
 		if(Player.gameObject.tag == "Player")
 		{
-			Transform currentTransform = GameObject.Find("FakeRobbe").GetComponent<Transform>();
+			Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
 			if(robbeContinues == null)
 			{
 				robbeContinues = Instantiate(completeMessage, currentTransform.position, Quaternion.identity) as GameObject;
