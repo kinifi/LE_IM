@@ -7,6 +7,7 @@ public class MapGenerator : MonoBehaviour {
 	private int lastRow = 0;
 	private int lastColumn = 0;
 	private int pathNum = 1;
+	public GameObject controlsMessage;
 	public GameObject completeMessage;
 	private bool tutorialDone = false;
 	
@@ -26,11 +27,13 @@ public class MapGenerator : MonoBehaviour {
 
 		if(tutorialDone == true)
 		{
+			LoadControlsMessage();
 			NewDungeon();
 			Debug.Log ("No Tutorial Random Dungeon loaded!!");
 		}
 		else if(Application.loadedLevelName == "Tutorial_Dungeon")
 		{
+			LoadControlsMessage();
 			GenerateTutorialMatrix();
 			FillInTheMap();
 			Debug.Log ("Tutorial Dungeon Loaded!");
@@ -112,21 +115,29 @@ public class MapGenerator : MonoBehaviour {
 
 	public void NewDungeon()
 	{
-		LoadSceneMessage();
+		//LoadSceneMessage();
 		GenerateMatrix();
 		StartRoomIsOne();
 		ThePath(pathNum, lastRow, lastColumn);
 		FillInTheMap();
 	}
+
+	private void LoadControlsMessage()
+	{
+		Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
+		GameObject controlsSplash = Instantiate(controlsMessage, currentTransform.position, Quaternion.identity) as GameObject;
+		controlsSplash.transform.parent = currentTransform;
+		Destroy(controlsSplash, 2.5f);
+	}
 	
-	private void LoadSceneMessage()
+	/*private void LoadSceneMessage()
 	{
 		Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
 		GameObject robbeDreams = Instantiate(completeMessage, currentTransform.position, Quaternion.identity) as GameObject;
 		robbeDreams.transform.parent = currentTransform;
 		Debug.Log ("You started the next level!!");
-		Destroy(robbeDreams, 0.5f);
-	}
+		Destroy(robbeDreams, 2.5f);
+	}*/
 
 	private void GenerateMatrix ()
 	{
