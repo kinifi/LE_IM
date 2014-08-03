@@ -9,9 +9,9 @@ public class RoomTypeTwo : MonoBehaviour {
 	public Vector3 startingPosition2;
 	private Vector3 roomTilePosition;
 	private List<int> lineBreaks = new List<int>(new int[] {10,20,30,40,50,60,70});
-
+	
 	public int[] typeTwoArray;
-
+	
 	private int telaportNumeric = 0;
 	private string telaInStringName;
 	private string telaOutStringName;
@@ -35,7 +35,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		CheckForObstacleBlocks();
 		ResetTheRoom();
 	}
-
+	
 	private void ResetTheRoom()
 	{
 		telaportNumeric +=1;
@@ -92,7 +92,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		case 2:
 			typeTwoArray = new int[]
 			{
-				6,0,0,0,0,6,0,0,0,0,
+				0,0,0,0,0,6,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
 				5,0,0,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
@@ -106,7 +106,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		case 3:
 			typeTwoArray = new int[]
 			{
-				6,0,0,0,0,6,0,0,0,0,
+				0,0,0,0,0,6,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
 				0,10,0,7,0,0,0,0,0,0,
@@ -116,7 +116,7 @@ public class RoomTypeTwo : MonoBehaviour {
 				1,141,0,21,11,11,0,0,1,1
 			};
 			//Debug.Log("Room Type Two Three was chosen.");
-		break;
+			break;
 		case 4:
 			typeTwoArray = new int[]
 			{
@@ -132,19 +132,19 @@ public class RoomTypeTwo : MonoBehaviour {
 			//Debug.Log("Room Type Two Four was chosen.");
 			break;
 		case 5:
-		    typeTwoArray = new int[]
-		    {
-		        0,0,0,0,0,2,1,142,11,0,
-		        0,0,0,0,0,0,0,0,0,0,
-		        0,0,1,0,0,0,21,0,0,0,
-		        0,0,2,0,0,0,0,0,0,0,
-		        0,3,11,141,2,1,0,0,0,0,
-		        11,11,20,0,0,0,0,0,0,0,
-		        1,1,1,2,0,0,0,0,7,0,
-		        0,0,0,0,0,0,0,11,1,1
+			typeTwoArray = new int[]
+			{
+				0,0,0,0,0,2,1,142,11,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,1,0,0,0,21,0,0,0,
+				0,0,2,0,0,0,0,0,0,0,
+				0,3,11,141,2,1,0,0,0,0,
+				11,11,20,0,0,0,0,0,0,0,
+				1,1,1,2,0,0,0,0,7,0,
+				0,0,0,0,0,0,0,11,1,1
 			};
-		    //Debug.Log("Room Type Two Five was chosen.");
-		    break;
+			//Debug.Log("Room Type Two Five was chosen.");
+			break;
 		case 6:
 			typeTwoArray = new int[]
 			{
@@ -162,7 +162,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		case 7:
 			typeTwoArray = new int[]
 			{
-				1,11,2,2,2,2,2,1,1,16,
+				0,11,2,2,2,2,2,1,1,16,
 				0,0,1,0,20,0,11,0,0,0,
 				1,0,0,1,0,11,0,0,0,661,
 				0,0,0,0,1,1,0,0,0,0,
@@ -176,7 +176,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		case 8:
 			typeTwoArray = new int[]
 			{
-				1,1,1,11,141,11,142,11,1,1,
+				0,1,1,11,141,11,142,11,1,1,
 				0,0,0,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
 				0,0,667,0,21,668,0,0,0,0,
@@ -190,7 +190,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		case 9:
 			typeTwoArray = new int[]
 			{
-				1,11,11,1,1,1,1,11,1,11,
+				0,11,11,1,1,1,1,11,1,11,
 				0,0,0,0,13,0,0,20,0,0,
 				0,0,0,0,0,0,0,0,21,0,
 				0,0,0,0,0,0,0,0,0,0,
@@ -204,7 +204,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		case 10:
 			typeTwoArray = new int[]
 			{
-				1,11,11,1,1,0,21,1,1,11,
+				0,11,11,1,1,0,21,1,1,11,
 				0,0,0,21,0,21,1,13,0,0,
 				1,0,141,1,0,21,1,13,0,0,
 				141,0,11,1,1,1,0,0,0,0,
@@ -218,7 +218,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		case 11:
 			typeTwoArray = new int[]
 			{
-				1,11,11,1,1,6,0,0,0,0,
+				0,11,11,1,1,6,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
 				1,0,0,111,2,0,0,4,0,0,
@@ -232,7 +232,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		case 12:
 			typeTwoArray = new int[]
 			{
-				11,11,1,11,11,1,1,1,11,11,
+				0,11,1,11,11,1,1,1,11,11,
 				0,0,0,0,0,0,0,66,0,0,
 				1,1,1,0,0,0,1,1,0,0,
 				1,0,0,1,1,1,0,66,0,0,
@@ -259,7 +259,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		transform.position = roomTilePosition;  
 		//Debug.Log("Room Type Two initalized");
 	}
-
+	
 	//determines which row the tile is in and sets its position accordingly
 	private void CheckYPosition (int y)
 	{
@@ -782,7 +782,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		case 1:
 			tileBlockArray = new int[]
 			{
-				2,0,0,14,0,
+				2,0,0,4,0,
 				1,1,1,1,1,
 			};
 			//Debug.Log("Room Type Two Ground One was chosen.");
@@ -806,16 +806,16 @@ public class RoomTypeTwo : MonoBehaviour {
 		case 4:
 			tileBlockArray = new int[]
 			{
-				14,2,1,0,0,
-				2,1,0,1,1,
+				4,2,1,0,0,
+				1,1,0,1,1,
 			};
 			//Debug.Log("Room Type Two Ground Four was chosen.");
 			break;
 		case 5:
 			tileBlockArray = new int[]
 			{
-				0,1,11,1,2,
-				0,8,0,0,0,
+				0,665,11,1,2,
+				0,1,0,0,0,
 			};
 			//Debug.Log("Room Type Two Ground Five was chosen.");
 			break;
@@ -855,7 +855,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		case 1:
 			tileBlockArray = new int[]
 			{
-				0,14,0,0,2,
+				0,4,0,0,2,
 				0,1,1,1,1,
 			};
 			//Debug.Log("Room Type Two Left Air One was chosen.");
@@ -863,8 +863,8 @@ public class RoomTypeTwo : MonoBehaviour {
 		case 2:
 			tileBlockArray = new int[]
 			{
-				0,1,1,0,0,
-				1,4,4,1,2,
+				0,1,96,0,0,
+				1,2,1,1,2,
 			};
 			//Debug.Log("Room Type Two Left Air Two was chosen.");
 			break;
@@ -872,14 +872,14 @@ public class RoomTypeTwo : MonoBehaviour {
 			tileBlockArray = new int[]
 			{
 				0,1,2,1,2,
-				0,8,1,8,0,
+				0,8,0,8,0,
 			};
 			//Debug.Log("Room Type Two Left Air Three was chosen.");
 			break;
 		case 4:
 			tileBlockArray = new int[]
 			{
-				0,1,1,14,0,
+				0,1,1,4,0,
 				2,8,8,1,2,
 			};
 			//Debug.Log("Room Type Two Left Air Four was chosen.");
@@ -920,16 +920,16 @@ public class RoomTypeTwo : MonoBehaviour {
 		case 1:
 			tileBlockArray = new int[]
 			{
-				111,14,0,2,7,
-				0,1,4,1,1
+				111,4,0,2,7,
+				0,1,115,1,1
 			};
 			//Debug.Log("Room Type Two Right Air One was chosen.");
 			break;
 		case 2:
 			tileBlockArray = new int[]
 			{
-				8,0,0,0,1,
-				0,2,1,1,2,
+				1,0,0,0,1,
+				665,2,1,1,668,
 			};
 			//Debug.Log("Room Type Two Right Air Two was chosen.");
 			break;

@@ -9,8 +9,13 @@ public class BadGuyController : MonoBehaviour {
 
 	public float moveSpeed = 5.0f;
 	public float maxSpeed = 5.0f;
-	bool faceRight = true;
-	bool faceUp = true;
+
+	private bool faceRight = true;
+	private bool ignoreCollisionFlip = false;
+	private bool faceUp = true;
+	private bool ignoreCollisionFlipUp = false;
+
+
 	public GameObject killMe;
 	public GameObject deathSplash;
 	public GameObject bowGolden;
@@ -67,11 +72,13 @@ public class BadGuyController : MonoBehaviour {
 		{
 			if(this.gameObject.tag == "BadGuy")
 			{
+				ignoreCollisionFlip = true;
 				Flip();
 				//Debug.Log ("Flip was called");
 			}
 			else if(this.gameObject.tag == "BadGuyVert")
 			{
+				ignoreCollisionFlipUp = true;
 				FlipUp();
 				//Debug.Log ("FlipUp was called");
 			}
@@ -85,6 +92,7 @@ public class BadGuyController : MonoBehaviour {
 		theScale.x *= -1;
 		moveForward *= -1;
 		transform.localScale = theScale;
+		ignoreCollisionFlip = false;
 		//Debug.Log ("Flip ran and moveForward is now: " + moveForward);
 	}
 
@@ -92,6 +100,7 @@ public class BadGuyController : MonoBehaviour {
 	{
 		faceUp = !faceUp;
 		moveUp *= -1;
+		ignoreCollisionFlipUp = false;
 		//Debug.Log ("FlipUp ran and moveUp is now: " + moveUp);
 	}
 }

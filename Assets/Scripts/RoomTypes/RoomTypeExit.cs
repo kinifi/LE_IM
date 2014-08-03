@@ -9,9 +9,9 @@ public class RoomTypeExit : MonoBehaviour {
 	public Vector3 startingPositionE;
 	private Vector3 roomTilePosition;
 	private List<int> lineBreaks = new List<int>(new int[] {10,20,30,40,50,60,70});
-
+	
 	public int[] typeExitArray;
-
+	
 	private int telaportNumeric = 0;
 	private string telaInStringName;
 	private string telaOutStringName;
@@ -42,7 +42,7 @@ public class RoomTypeExit : MonoBehaviour {
 			CheckYPosition(i);
 		}
 	}
-
+	
 	private void ResetTheRoom()
 	{
 		telaportNumeric +=1;
@@ -65,11 +65,11 @@ public class RoomTypeExit : MonoBehaviour {
 			{
 				0,8,0,0,0,0,0,0,0,0,
 				0,0,0,0,0,6,0,0,0,0,
-				0,7,0,0,0,0,0,0,0,0,
-				0,8,0,0,0,0,0,7,0,0,
+				0,12,0,0,0,0,0,0,0,0,
+				0,13,0,0,0,0,0,7,0,0,
 				0,0,0,0,0,1,1,1,0,0,
-				0,7,0,0,0,1,11,1,0,0,
-				3,1,0,3,0,1,1,1,0,33,
+				0,0,0,0,0,1,11,1,0,0,
+				3,1,0,3,0,11,1,1,0,33,
 				1,1,1,1,0,1,1,1,1,1
 			};
 			//Debug.Log("Room Type Exit Zero was chosen.");
@@ -77,14 +77,14 @@ public class RoomTypeExit : MonoBehaviour {
 		case 1:
 			typeExitArray = new int[]
 			{
-				0,0,0,0,0,0,0,0,0,0,
+				0,0,1,0,0,0,0,0,0,0,
 				6,0,0,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
-				0,0,0,0,0,4,1,7,0,0,
-				0,0,0,0,0,8,8,8,0,0,
+				0,0,0,0,0,1,1,12,0,0,
+				0,0,0,0,0,13,13,13,0,0,
 				7,0,0,0,0,0,0,0,0,0,
-				1,0,0,0,0,0,0,7,0,33,
-				11,0,0,0,0,2,1,1,1,1
+				1,0,661,0,0,1,0,0,0,33,
+				11,1,1,1,1,1,1,1,1,1
 			};
 			//Debug.Log("Room Type Exit One was chosen.");
 			break;
@@ -96,7 +96,7 @@ public class RoomTypeExit : MonoBehaviour {
 				0,0,11,0,0,0,0,0,0,0,
 				0,0,0,0,0,6,0,0,0,0,
 				0,0,1,0,0,0,0,0,0,0,
-				0,0,1,3,0,0,0,0,0,0,
+				0,0,1,3,0,0,0,0,96,0,
 				0,33,1,1,0,1,1,11,1,2,
 				0,11,1,0,0,2,1,1,2,0
 			};
@@ -105,13 +105,13 @@ public class RoomTypeExit : MonoBehaviour {
 		case 3:
 			typeExitArray = new int[]
 			{
+				1,1,0,0,0,0,0,0,0,0,
+				1,0,0,0,0,6,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
-				0,0,0,0,0,6,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
+				0,661,5,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
-				0,0,5,0,0,0,0,0,0,0,
-				0,0,0,0,0,0,0,0,0,0,
-				0,0,0,0,0,0,0,0,0,33,
+				1,0,0,0,0,0,0,0,0,33,
 				1,1,1,1,1,1,1,1,1,1
 			};
 			//Debug.Log("Room Type Exit Three was chosen.");
@@ -124,8 +124,8 @@ public class RoomTypeExit : MonoBehaviour {
 				0,33,0,0,0,0,0,0,0,0,
 				0,1,1,11,0,0,0,0,0,0,
 				0,0,8,0,0,0,0,0,0,0,
-				0,7,0,0,0,0,0,0,0,0,
-				7,1,7,7,0,0,3,0,0,0,
+				0,12,0,0,0,0,0,0,0,0,
+				7,1,12,12,0,0,3,0,0,0,
 				1,2,1,1,1,1,1,1,1,1
 			};
 			//Debug.Log("Room Type Exit Four was chosen.");
@@ -133,13 +133,13 @@ public class RoomTypeExit : MonoBehaviour {
 		case 5:
 			typeExitArray = new int[] 
 			{
-				8,8,8,8,6,0,0,0,0,0,
-				0,10,0,0,0,0,0,0,0,0,
+				1,1,1,1,6,0,0,0,0,0,
+				8,10,0,0,0,0,0,0,0,0,
 				0,0,0,0,0,9,0,0,0,33,
-				0,0,0,1,1,1,1,2,11,1,
-				0,0,0,1,8,0,0,0,0,8,
-				3,0,0,9,0,0,2,1,0,0,
-				1,1,1,1,3,0,0,0,0,10,
+				0,0,0,1,1,1,11,1,11,1,
+				0,0,0,1,13,0,0,0,0,13,
+				3,0,0,9,0,0,2,1,0,1,
+				1,1,1,1,3,0,0,0,10,11,
 				0,0,0,1,1,7,7,7,1,1
 			};
 			//Debug.Log("Room Type Exit Five was chosen.");
@@ -665,7 +665,7 @@ public class RoomTypeExit : MonoBehaviour {
 			tileBlockArray = new int[] 
 			{
 				1,0,0,4,0,
-				2,2,1,1,7,
+				2,2,1,1,16,
 				1,11,2,0,0
 			};
 			//Debug.Log("Room Type Exit Ground Zero was chosen.");
@@ -673,18 +673,18 @@ public class RoomTypeExit : MonoBehaviour {
 		case 1:
 			tileBlockArray = new int[]
 			{
-				1,11,7,0,0,
-				1,1,1,7,0,
-				1,1,2,1,3
+				1,11,16,0,0,
+				1,1,1,0,3,
+				1,1,2,1,1
 			};
 			//Debug.Log("Room Type Exit Ground One was chosen.");
 			break;
 		case 2:
 			tileBlockArray = new int[]
 			{
-				14,0,14,0,0,
+				4,0,4,0,0,
 				1,2,1,7,4,
-				1,7,11,1,1
+				1,1,11,1,1
 			};
 			//Debug.Log("Room Type Exit Ground Two was chosen.");
 			break;
@@ -745,7 +745,7 @@ public class RoomTypeExit : MonoBehaviour {
 		case 2:
 			tileBlockArray = new int[]
 			{
-				0,1,7,7,2,
+				0,1,664,7,2,
 				0,2,11,1,0
 			};
 			//Debug.Log("Room Type Exit Air Two was chosen.");
@@ -753,7 +753,7 @@ public class RoomTypeExit : MonoBehaviour {
 		case 3:
 			tileBlockArray = new int[]
 			{
-				14,2,11,0,7,
+				4,2,11,0,664,
 				1,2,2,2,1
 			};
 			//Debug.Log("Room Type Exit Air Three was chosen.");

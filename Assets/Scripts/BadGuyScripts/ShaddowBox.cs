@@ -3,8 +3,8 @@ using System.Collections;
 
 public class ShaddowBox : MonoBehaviour {
 
-	private Vector3 moveForward = new Vector3(-3.0f, 10.0f, 0.0f);
-	private Vector3 shaddowJump = new Vector3(0.0f, 10.0f, 0f);
+	private Vector3 moveForward = new Vector3(-5.0f, 10.0f, 0.0f);
+	private Vector3 shaddowJump = new Vector3(0.0f, 15.0f, 0f);
 	
 	public float moveSpeed = 3.0f;
 	public float maxSpeed = 3.0f;

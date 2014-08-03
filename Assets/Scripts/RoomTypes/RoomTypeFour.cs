@@ -9,9 +9,9 @@ public class RoomTypeFour : MonoBehaviour {
 	public Vector3 startingPosition4;
 	private Vector3 roomTilePosition;
 	private List<int> lineBreaks = new List<int>(new int[] {10,20,30,40,50,60,70});
-
+	
 	public int[] typeFourArray;
-
+	
 	private int telaportNumeric = 0;
 	private string telaInStringName;
 	private string telaOutStringName;
@@ -44,7 +44,7 @@ public class RoomTypeFour : MonoBehaviour {
 			CheckYPosition(i);
 		}
 	}
-
+	
 	private void ResetTheRoom()
 	{
 		telaportNumeric +=1;
@@ -58,29 +58,29 @@ public class RoomTypeFour : MonoBehaviour {
 	{
 		RoomTypeFourPositionInitalize();
 		//picks a random number correlated to a Type 4 template
-		int temp = Random.Range(0, 5);
+		int temp = Random.Range(0, 11);
 		
 		switch (temp)
 		{
 		case 0:
 			typeFourArray = new int[] 
 			{
-				11,141,1,1,11,1,1,1,141,11,
-				0,0,8,2,4,0,0,4,14,0,
-				0,0,0,2,0,0,0,0,0,0,
-				0,0,0,0,0,0,0,0,0,0,
-				0,0,20,0,0,0,4,2,1,0,
+				0,141,1,1,11,1,1,1,141,11,
+				0,0,8,2,0,21,0,2,1,0,
+				1,0,0,2,0,0,0,0,0,0,
+				1,0,0,0,0,0,0,0,0,0,
+				665,20,0,0,0,4,2,1,0,
 				0,0,5,0,0,0,0,0,8,0,
 				0,0,0,0,0,0,0,0,0,0,
-				0,0,0,0,0,0,0,0,0,0
+				1,1,0,0,0,0,0,1,1,1
 			};
 			//Debug.Log("Room Type Four Zero was chosen.");
 			break;
 		case 1:
 			typeFourArray = new int[]
 			{
-				0,0,0,0,0,0,0,0,0,1,
-				0,0,0,0,0,0,0,14,0,1,
+				0,0,1,1,1,0,0,0,0,1,
+				0,0,1,0,0,0,0,4,0,1,
 				0,0,0,0,1,11,1,1,1,1,
 				0,0,0,1,0,0,0,0,0,0,
 				0,1,0,0,0,0,0,0,0,0,
@@ -93,7 +93,7 @@ public class RoomTypeFour : MonoBehaviour {
 		case 2:
 			typeFourArray = new int[]
 			{
-				11,1,1,1,142,11,141,1,1,11,
+				0,1,1,1,142,11,141,1,1,11,
 				0,1,2,10,0,0,0,0,0,0,
 				0,8,1,2,0,0,0,0,4,0,
 				0,0,8,1,2,0,0,1,1,1,
@@ -107,8 +107,8 @@ public class RoomTypeFour : MonoBehaviour {
 		case 3:
 			typeFourArray = new int[]
 			{
-				0,0,0,0,0,0,1,1,1,1,
-				6,0,0,0,0,0,8,8,0,1,
+				0,0,0,1,0,0,1,1,1,1,
+				0,6,0,0,0,0,8,8,0,1,
 				0,0,0,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
 				5,0,0,0,0,0,0,0,0,0,
@@ -121,9 +121,9 @@ public class RoomTypeFour : MonoBehaviour {
 		case 4:
 			typeFourArray = new int[] 
 			{
-				1,1,1,1,0,14,0,0,0,0,
-				1,10,0,0,0,0,0,3,0,0,
-				1,1,2,0,0,0,0,1,1,1,
+				0,1,1,1,0,1,1,1,1,1,
+				0,10,0,0,0,0,0,3,0,0,
+				0,1,2,0,0,0,0,1,1,1,
 				0,0,0,0,0,0,0,0,8,1,
 				0,0,2,4,0,0,0,0,2,1,
 				1,1,1,0,0,0,0,1,1,1,
@@ -131,6 +131,90 @@ public class RoomTypeFour : MonoBehaviour {
 				11,11,142,1,1,1,1,1,11,1,
 			};
 			//Debug.Log("Room Type Four Four was chosen.");
+			break;
+		case 5:
+			typeFourArray = new int[] 
+			{
+				0,0,0,0,0,0,0,0,0,0,
+				0,1,0,0,0,0,100,0,1,0,
+				0,0,1,1,1,1,1,1,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,1,1,1,0,21,1,1,1,0,
+				0,15,1,0,21,1,1,16,0,0,
+				1,1,0,21,1,1,1,0,0,1
+			};
+			//Debug.Log("Room Type Four Five was chosen.");
+			break;
+		case 6:
+			typeFourArray = new int[] 
+			{
+				0,1,1,1,1,0,0,0,0,0,
+				0,13,13,13,13,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,20,0,0,1,0,21,
+				1,0,21,0,0,0,0,0,0,0,
+				1,141,11,0,0,0,0,0,0,0,
+				1,2,11,0,0,0,0,0,1,1,
+				1,2,11,0,0,21,0,0,11,142
+			};
+			//Debug.Log("Room Type Four Six was chosen.");
+			break;
+		case 7:
+			typeFourArray = new int[]
+			{
+				0,0,0,0,0,0,1,1,1,11,
+				0,0,10,0,0,0,9,0,99,11,
+				0,0,0,0,21,0,1,1,1,1,
+				3,0,0,0,0,0,0,0,0,0,
+				1,1,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,66,0,1,
+				1,11,2,1,0,0,0,0,0,0,
+				1,11,1,1,12,12,12,1,1,11
+			};
+			//Debug.Log("Room Type Four Seven was chosen.");
+			break;
+		case 8:
+			typeFourArray = new int[]
+			{
+				0,0,1,0,0,0,0,111,0,0,
+				0,0,0,0,0,0,1,1,1,1,
+				0,0,0,0,0,0,0,8,8,0,
+				0,0,661,0,0,0,0,0,0,0,
+				0,0,0,0,0,1,1,668,0,0,
+				0,0,0,0,0,1,1,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				12,12,12,12,12,1,1,1,1,11
+			};
+			//Debug.Log("Room Type Four Eight was chosen.");
+			break;
+		case 9:
+			typeFourArray = new int[]
+			{
+				0,1,1,0,99,0,0,0,1,0,
+				0,0,0,0,1,0,0,0,665,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,15,1,0,0,0,0,1,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,1,0,21,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,1,12,12,12,12,1,0,0
+			};
+			//Debug.Log("Room Type Four Nine was chosen.");
+			break;
+		case 10:
+			typeFourArray = new int[]
+			{
+				0,6,0,0,0,0,0,0,1,1,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,1,1,1,0,21,
+				0,0,0,0,0,1,0,0,0,0,
+				0,0,0,3,0,1,0,0,0,0,
+				0,0,0,1,0,1,0,0,0,0,
+				0,97,0,0,0,11,0,66,0,1,
+				1,1,11,11,1,1,1,1,1,1
+			};
+			//Debug.Log("Room Type Four Ten was chosen.");
 			break;
 		}
 		//calls the function to loop through the created array
@@ -665,8 +749,8 @@ public class RoomTypeFour : MonoBehaviour {
 			tileBlockArray = new int[] 
 			{
 				1,1,1,1,1,
-				0,0,0,0,0,
-				0,0,0,0,0
+				0,0,11,0,0,
+				1,1,1,0,1
 			};
 			//Debug.Log("Room Type Four Ground Zero was chosen.");
 			break;
@@ -683,8 +767,8 @@ public class RoomTypeFour : MonoBehaviour {
 			tileBlockArray = new int[]
 			{
 				0,0,0,0,0,
-				0,2,2,4,2,
-				0,0,2,2,11
+				0,12,2,4,2,
+				0,1,2,2,11
 			};
 			//Debug.Log("Room Type Four Ground Two was chosen.");
 			break;
@@ -692,8 +776,8 @@ public class RoomTypeFour : MonoBehaviour {
 			tileBlockArray = new int[]
 			{
 				1,11,11,11,1,
-				0,8,8,8,0,
-				0,0,0,0,0
+				0,0,10,0,0,
+				1,1,0,21,1
 			};
 			//Debug.Log("Room Type Four Ground Three was chosen.");
 			break;
@@ -710,8 +794,8 @@ public class RoomTypeFour : MonoBehaviour {
 			tileBlockArray = new int[]
 			{
 				0,1,1,1,2,
-				0,2,0,0,0,
-				3,2,0,0,14
+				3,2,0,0,4,
+				1,1,0,1,1
 			};
 			//Debug.Log("Room Type Four Ground Five was chosen.");
 			break;
@@ -756,24 +840,24 @@ public class RoomTypeFour : MonoBehaviour {
 		case 0:
 			tileBlockArray = new int[] 
 			{
-				2,2,2,2,2,
-				0,0,0,0,0
+				2,1,2,1,2,
+				0,1,0,1,0
 			};
 			//Debug.Log("Room Type Four Air Zero was chosen.");
 			break;
 		case 1:
 			tileBlockArray = new int[]
 			{
-				0,1,4,2,0,
-				0,2,1,14,0
+				0,1,10,2,0,
+				0,2,1,1,0
 			};
 			//Debug.Log("Room Type Four Air One was chosen.");
 			break;
 		case 2:
 			tileBlockArray = new int[]
 			{
-				0,0,0,7,7,
-				0,1,1,1,1
+				0,0,0,664,0,
+				0,1,1,1,668
 			};
 			//Debug.Log("Room Type Four Air Two was chosen.");
 			break;
@@ -784,6 +868,14 @@ public class RoomTypeFour : MonoBehaviour {
 				1,1,11,11,2
 			};
 			//Debug.Log("Room Type Four Air Three was chosen.");
+			break;
+		case 4:
+			tileBlockArray = new int[]
+			{
+				0,111,0,11,3,
+				1,1,11,11,1
+			};
+			//Debug.Log("Room Type Four Air Four was chosen.");
 			break;
 		}
 		//calls the function to loop through the created array

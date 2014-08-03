@@ -9,9 +9,9 @@ public class RoomTypeFive : MonoBehaviour {
 	public Vector3 startingPosition5;
 	private Vector3 roomTilePosition;
 	private List<int> lineBreaks = new List<int>(new int[] {10,20,30,40,50,60,70});
-		
+	
 	public int[] typeFiveArray;
-
+	
 	private int telaportNumeric = 0;
 	private string telaInStringName;
 	private string telaOutStringName;
@@ -42,7 +42,7 @@ public class RoomTypeFive : MonoBehaviour {
 			CheckYPosition(i);
 		}
 	}
-
+	
 	private void ResetTheRoom()
 	{
 		telaportNumeric +=1;
@@ -63,13 +63,13 @@ public class RoomTypeFive : MonoBehaviour {
 		case 0:
 			typeFiveArray = new int[] 
 			{
-				0,0,1,1,0,0,1,1,0,0,
-				0,2,1,2,0,0,1,8,0,0,
-				0,1,1,1,0,0,8,1,1,1,
-				0,0,1,1,0,0,0,8,1,8,
-				0,0,0,8,0,0,0,0,8,0,
+				0,0,1,1,0,0,1,1,1,1,
+				0,2,1,2,0,0,1,668,0,1,
+				0,1,1,1,0,0,665,0,0,1,
+				0,0,1,1,0,0,0,8,0,8,
+				0,0,0,0,0,0,0,0,0,0,
 				0,2,0,0,0,0,0,0,0,0,
-				3,1,1,0,3,7,0,7,0,0,
+				3,1,1,0,3,7,0,0,0,0,
 				1,7,7,1,1,1,7,1,1,1
 			};
 			//Debug.Log("Room Type Five Zero was chosen.");
@@ -135,15 +135,150 @@ public class RoomTypeFive : MonoBehaviour {
 			{
 				0,0,0,0,0,0,0,0,0,0,
 				1,4,2,1,0,0,2,1,11,1,
-				8,0,0,8,0,0,0,8,8,8,
+				8,0,0,8,0,0,0,665,8,8,
 				0,0,0,0,0,0,0,0,0,0,
-				6,0,0,0,0,6,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
-				6,0,0,0,0,6,0,0,0,0,
-				0,0,0,0,0,0,0,0,0,0
-
+				0,0,0,1,0,0,0,0,0,0,
+				1,0,0,1,1,0,96,0,0,1,
+				1,1,1,1,1,0,21,1,11,11
+				
 			};
 			//Debug.Log("Room Type Five Five was chosen.");
+			break;
+		case 6:
+			typeFiveArray = new int[] 
+			{
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,96,0,0,
+				1,1,1,0,0,0,1,1,1,1,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,66,0,0,3,0,0,0,0,0,
+				11,1,1,1,1,1,1,1,1,11
+				
+			};
+			//Debug.Log("Room Type Five Six was chosen.");
+			break;
+		case 7:
+			typeFiveArray = new int[] 
+			{
+				0,0,0,0,0,0,1,0,0,0,
+				0,0,10,0,0,0,1,0,0,0,
+				0,0,0,0,0,0,1,0,10,0,
+				0,0,0,0,0,0,1,0,21,0,
+				1,0,0,0,0,0,0,0,0,0,
+				1,0,0,0,0,0,0,0,0,0,
+				1,0,0,664,0,0,0,0,0,0,
+				1,1,1,1,1,1,1,1,1,1
+				
+			};
+			//Debug.Log("Room Type Five Seven was chosen.");
+			break;
+		case 8:
+			typeFiveArray = new int[] 
+			{
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,1,1,1,1,1,0,0,
+				0,0,0,0,0,0,0,1,0,0,
+				0,0,0,0,1,0,111,1,0,0,
+				0,0,0,1,1,1,1,1,0,0,
+				0,0,0,0,0,1,1,1,0,0,
+				7,0,0,1,0,11,11,0,3,1,
+				1,1,1,1,1,1,1,1,1,1
+				
+			};
+			//Debug.Log("Room Type Five Eight was chosen.");
+			break;
+		case 9:
+			typeFiveArray = new int[] 
+			{
+				0,0,0,0,0,0,0,1,1,1,
+				0,0,0,0,0,0,0,0,1,1,
+				1,1,1,0,0,1,1,1,0,1,
+				0,0,1,1,1,1,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				11,1,1,111,12,0,1,1,1,1,
+				0,0,1,1,1,1,1,0,0,0,
+				0,0,1,1,1,1,1,0,0,0
+				
+			};
+			//Debug.Log("Room Type Five Nine was chosen.");
+			break;
+		case 10:
+			typeFiveArray = new int[] 
+			{
+				0,0,0,0,0,100,0,0,0,0,
+				0,0,1,1,9,1,1,1,0,0,
+				0,1,100,0,0,0,0,100,1,0,
+				0,9,0,0,0,0,0,0,1,0,
+				0,1,0,0,661,0,0,0,1,0,
+				0,1,0,0,0,0,0,0,1,0,
+				0,9,0,3,0,0,0,0,9,3,
+				0,21,1,1,1,1,1,1,1,1
+				
+			};
+			//Debug.Log("Room Type Five Ten was chosen.");
+			break;
+		case 11:
+			typeFiveArray = new int[] 
+			{
+				0,6,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				1,97,0,97,0,97,0,97,0,1,
+				1,1,1,1,1,11,1,1,1,1
+				
+			};
+			//Debug.Log("Room Type Five Eleven was chosen.");
+			break;
+		case 12:
+			typeFiveArray = new int[] 
+			{
+				0,0,0,0,0,0,0,0,0,0,
+				0,1,0,0,99,0,0,0,0,0,
+				0,1,0,0,0,0,0,0,0,0,
+				0,1,3,0,0,0,0,0,0,0,
+				3,1,1,0,0,0,0,0,661,0,
+				1,0,66,0,0,0,0,0,0,0,
+				1,1,1,1,1,1,1,1,0,1,
+				0,0,0,0,0,0,0,0,1,0
+				
+			};
+			//Debug.Log("Room Type Five Twelve was chosen.");
+			break;
+		case 13:
+			typeFiveArray = new int[] 
+			{
+				0,0,0,0,0,0,0,0,1,1,
+				0,0,0,0,0,41,0,0,0,1,
+				1,1,1,1,1,11,1,1,0,1,
+				1,0,0,0,0,0,0,4,0,1,
+				1,1,1,1,1,0,1,1,1,1,
+				0,0,0,0,17,0,0,0,0,0,
+				12,12,12,12,1,1,12,12,18,0,
+				1,1,1,1,1,1,1,1,1,11
+				
+			};
+			//Debug.Log("Room Type Five Thirteen was chosen.");
+			break;
+		case 14:
+			typeFiveArray = new int[] 
+			{
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				1,0,0,0,2,0,0,0,1,0,
+				0,1,0,0,0,0,0,1,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0
+				
+			};
+			//Debug.Log("Room Type Five Fourteen was chosen.");
 			break;
 		}
 		//calls the function to loop through the created array
@@ -668,16 +803,16 @@ public class RoomTypeFive : MonoBehaviour {
 			{
 				2,2,2,2,7,
 				0,0,0,0,1,
-				0,7,1,1,2
+				0,1,1,1,2
 			};
 			//Debug.Log("Room Type Five Ground Zero was chosen.");
 			break;
 		case 1:
 			tileBlockArray = new int[]
 			{
-				0,0,14,0,0,
-				0,4,2,7,0,
-				0,1,2,1,0
+				0,0,0,0,0,
+				4,0,2,7,0,
+				1,1,2,1,0
 			};
 			//Debug.Log("Room Type Five Ground One was chosen.");
 			break;
@@ -686,16 +821,16 @@ public class RoomTypeFive : MonoBehaviour {
 			{
 				0,0,0,0,0,
 				0,2,2,4,2,
-				7,7,2,2,11
+				0,21,2,1,11
 			};
 			//Debug.Log("Room Type Five Ground Two was chosen.");
 			break;
 		case 3:
 			tileBlockArray = new int[]
 			{
-				1,1,1,11,1,
-				0,8,8,7,0,
-				0,0,0,1,0
+				1,1,1,0,1,
+				0,15,1,7,0,
+				1,1,1,1,1
 			};
 			//Debug.Log("Room Type Five Ground Three was chosen.");
 			break;
@@ -703,17 +838,17 @@ public class RoomTypeFive : MonoBehaviour {
 			tileBlockArray = new int[]
 			{
 				11,0,0,11,0,
-				0,1,1,2,0,
-				0,7,7,1,4
+				0,1,1,0,21,
+				0,1,1,1,1
 			};
 			//Debug.Log("Room Type Five Ground Four was chosen.");
 			break;
 		case 5:
 			tileBlockArray = new int[]
 			{
-				0,14,14,14,2,
-				4,2,2,2,0,
-				1,2,4,1,14
+				0,4,4,4,2,
+				4,1,0,21,0,
+				1,2,4,1,1
 			};
 			//Debug.Log("Room Type Five Ground Five was chosen.");
 			break;
@@ -759,7 +894,7 @@ public class RoomTypeFive : MonoBehaviour {
 			tileBlockArray = new int[] 
 			{
 				142,1,7,1,0,
-				0,2,1,2,0
+				0,0,1,1,0
 			};
 			//Debug.Log("Room Type Five Air Zero was chosen.");
 			break;

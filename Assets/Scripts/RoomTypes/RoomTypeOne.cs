@@ -3,20 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class RoomTypeOne : MonoBehaviour {
-
+	
 	//set up room 
 	public GameObject[] tileOfRoom;
 	public Vector3 startingPosition1;
 	private Vector3 roomTilePosition;
 	private List<int> lineBreaks = new List<int>(new int[] {10,20,30,40,50,60,70});
-
-
+	
+	
 	public int[] typeOneArray;
-
+	
 	private int telaportNumeric = 0;
 	private string telaInStringName;
 	private string telaOutStringName;
-
+	
 	//set up obstacle blocks
 	private Vector3 tilePosition;
 	private float startObstacleXposition;
@@ -26,8 +26,8 @@ public class RoomTypeOne : MonoBehaviour {
 	private Vector3 groundBlock2 = Vector3.zero;
 	private Vector3 airBlock1 = Vector3.zero;
 	private Vector3 airBlock2 = Vector3.zero;
-
-
+	
+	
 	// Use this for initialization
 	public void BeginRoom1() 
 	{
@@ -36,7 +36,7 @@ public class RoomTypeOne : MonoBehaviour {
 		CheckForObstacleBlocks();
 		ResetTheRoom();
 	}
-
+	
 	private void LoopThroughTypeOneArray ()
 	{
 		for (int i = 0; i < typeOneArray.Length; i++)
@@ -44,7 +44,7 @@ public class RoomTypeOne : MonoBehaviour {
 			CheckYPosition(i);
 		}
 	}
-
+	
 	private void ResetTheRoom()
 	{
 		telaportNumeric +=1;
@@ -65,9 +65,9 @@ public class RoomTypeOne : MonoBehaviour {
 		case 0:
 			typeOneArray = new int[] 
 			{
-				6,0,0,0,0,6,0,0,0,0,
-				0,0,0,0,0,0,0,0,0,0,
-				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,6,0,0,0,0,
+				0,1,1,1,0,0,0,0,0,0,
+				0,0,1,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
 				0,0,5,0,0,0,0,0,0,2,
 				0,0,0,0,0,0,0,0,21,0,
@@ -79,10 +79,10 @@ public class RoomTypeOne : MonoBehaviour {
 		case 1:
 			typeOneArray = new int[]
 			{
-				6,0,0,0,0,0,8,8,8,0,
+				0,0,1,1,1,0,1,1,1,0,
+				0,0,0,0,0,0,8,8,8,0,
 				0,0,0,0,0,0,0,0,0,0,
-				0,0,0,0,0,0,0,0,0,0,
-				0,0,0,0,14,0,0,0,0,0,
+				0,0,0,0,2,0,0,0,0,0,
 				5,0,0,0,0,0,0,0,0,111,
 				0,0,0,0,0,0,0,0,0,141,
 				0,0,0,0,0,3,0,142,11,0,
@@ -93,13 +93,13 @@ public class RoomTypeOne : MonoBehaviour {
 		case 2:
 			typeOneArray = new int[]
 			{
-				0,0,0,0,0,0,8,8,8,0,
-				0,0,0,0,10,0,0,0,0,0,
+				0,0,1,1,1,0,1,1,1,0,
+				0,0,8,8,10,0,0,0,0,0,
 				5,0,0,0,0,0,0,0,0,0,
-				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,21,0,0,
 				0,111,0,0,0,0,0,0,0,0,
-				1,1,1,8,0,0,0,0,0,0,
-				0,0,9,0,14,0,0,0,3,0,
+				1,1,1,1,0,0,0,0,0,0,
+				11,99,9,0,4,0,0,0,3,0,
 				1,1,21,0,1,1,1,1,1,1
 			};
 			//Debug.Log("Room Type One Two was chosen.");
@@ -113,7 +113,7 @@ public class RoomTypeOne : MonoBehaviour {
 				0,0,0,0,0,0,0,0,0,0,
 				0,0,0,0,0,7,0,0,0,0,
 				0,0,0,21,1,1,11,0,0,0,
-				0,1,21,10,111,111,10,11,0,0,
+				0,0,21,10,111,111,10,11,0,0,
 				11,1,1,11,1,1,1,1,141,1
 			};
 			//Debug.Log("Room Type One Three was chosen.");
@@ -121,7 +121,7 @@ public class RoomTypeOne : MonoBehaviour {
 		case 4:
 			typeOneArray = new int[]
 			{
-				0,0,0,0,0,0,0,0,0,0,
+				0,0,1,1,1,0,0,1,0,21,
 				0,7,0,0,0,6,0,0,0,0,
 				0,1,2,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
@@ -135,26 +135,26 @@ public class RoomTypeOne : MonoBehaviour {
 		case 5:
 			typeOneArray = new int[]
 			{
-				1,1,1,1,1,1,1,1,1,1,
+				0,1,1,1,1,1,1,1,1,1,
 				0,1,1,8,0,0,0,0,1,0,
 				0,0,1,0,0,0,0,0,13,0,
 				0,0,0,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
 				0,0,5,0,0,0,0,0,0,0,
 				1,1,0,0,0,0,0,1,0,21,
-				0,21,0,0,0,0,1,1,1
+				0,21,0,0,0,0,0,1,1,1
 			};
 			//Debug.Log("Room Type One Five was chosen.");
 			break;
 		case 6:
 			typeOneArray = new int[]
 			{
-				0,1,0,0,0,0,0,0,0,1,
-				0,0,0,0,0,0,0,0,0,0,
-				0,0,0,6,0,0,0,0,0,0,
+				0,1,1,0,0,1,0,0,1,1,
+				0,0,0,0,0,11,0,0,0,0,
+				1,0,0,6,0,0,0,0,0,1,
 				0,0,0,0,0,0,0,0,661,0,
-				0,0,0,0,0,0,0,0,0,0,
-				0,66,0,0,0,0,0,0,0,0,
+				1,0,0,0,0,0,0,0,0,1,
+				1,66,0,0,0,0,0,0,0,1,
 				0,0,0,0,0,0,0,0,0,0,
 				1,1,12,0,1,1,111,0,1,1
 			};
@@ -163,8 +163,8 @@ public class RoomTypeOne : MonoBehaviour {
 		case 7:
 			typeOneArray = new int[]
 			{
-				0,1,1,1,6,0,0,0,1,1,
-				0,0,0,0,0,0,0,0,0,21,
+				0,1,1,1,6,0,0,0,0,1,
+				0,0,0,0,0,0,0,0,0,11,
 				0,0,0,0,0,0,1,1,0,8,
 				0,111,0,0,12,0,11,11,0,0,
 				0,0,0,0,1,1,0,0,0,0,
@@ -220,7 +220,7 @@ public class RoomTypeOne : MonoBehaviour {
 		//calls the function to loop through the created array
 		LoopThroughTypeOneArray ();
 	}
-
+	
 	private void RoomTypeOnePositionInitalize()
 	{
 		//sets the starting x position of the room
@@ -232,8 +232,8 @@ public class RoomTypeOne : MonoBehaviour {
 		transform.position = roomTilePosition;
 		//Debug.Log("Room Type One initalized");
 	}
-
-
+	
+	
 	//determines which row the tile is in and sets its position accordingly
 	private void CheckYPosition (int y)
 	{
@@ -704,7 +704,7 @@ public class RoomTypeOne : MonoBehaviour {
 			transform.position = roomTilePosition;
 		}
 	}
-
+	
 	private void CheckForObstacleBlocks()
 	{
 		if(groundBlock1 != Vector3.zero)
@@ -728,7 +728,7 @@ public class RoomTypeOne : MonoBehaviour {
 			ChooseRightAirTemplate();
 		}
 	}
-
+	
 	private void LoopThroughArray ()
 	{
 		for (int i = 0; i < tileBlockArray.Length; i++)
@@ -736,10 +736,10 @@ public class RoomTypeOne : MonoBehaviour {
 			CheckObstacleYPosition(i);
 		}
 	}
-
+	
 	private void ChooseGroundTemplate ()
 	{
-
+		
 		//picks a random number correlated to a tileBlockArray
 		int temp = Random.Range(0, 21);
 		
@@ -749,8 +749,8 @@ public class RoomTypeOne : MonoBehaviour {
 			tileBlockArray = new int[] 
 			{
 				0,0,0,0,0,
-				0,0,14,0,2,
-				7,1,4,1,0
+				0,0,41,0,2,
+				15,1,0,21,0
 			};
 			//Debug.Log("Room Type One Ground Zero was chosen.");
 			break;
@@ -758,17 +758,17 @@ public class RoomTypeOne : MonoBehaviour {
 			tileBlockArray = new int[]
 			{
 				0,0,0,0,0,
-				0,2,0,2,0,
-				3,1,7,1,0
+				3,2,0,2,0,
+				1,1,1,1,0
 			};
 			//Debug.Log("Room Type One Ground One was chosen.");
 			break;
 		case 2:
 			tileBlockArray = new int[]
 			{
-				0,0,21,0,0,
-				0,2,0,0,2,
-				1,7,7,1,8
+				0,0,111,0,0,
+				0,7,0,7,2,
+				1,1,0,21,8
 			};
 			//Debug.Log("Room Type One Ground Two was chosen.");
 			break;
@@ -777,7 +777,7 @@ public class RoomTypeOne : MonoBehaviour {
 			{
 				0,0,0,0,1,
 				0,7,0,1,2,
-				21,0,1,1,0
+				0,21,1,1,0
 			};
 			//Debug.Log("Room Type One Ground Three was chosen.");
 			break;
@@ -794,44 +794,44 @@ public class RoomTypeOne : MonoBehaviour {
 			tileBlockArray = new int[]
 			{
 				0,1,1,1,2,
-				0,8,0,0,0,
-				3,0,0,0,14
+				3,1,10,0,4,
+				1,1,11,1,1
 			};
 			//Debug.Log("Room Type One Ground Five was chosen.");
 			break;
 		case 6:
-		    tileBlockArray = new int[]
-		    {
-		        0,0,4,0,0,
-		        0,21,0,2,2,
-		        11,141,21,0,1
-		    };
-		    //Debug.Log("Room Type One Ground Six was chosen.");
-		    break;
+			tileBlockArray = new int[]
+			{
+				0,0,4,0,0,
+				0,141,0,2,2,
+				11,0,21,0,1
+			};
+			//Debug.Log("Room Type One Ground Six was chosen.");
+			break;
 		case 7:
 			tileBlockArray = new int[] 
 			{
-				8,0,0,0,8,
-				0,0,14,0,0,
-				0,0,1,1,1
+				7,0,0,0,7,
+				1,0,4,0,1,
+				0,1,1,1,0
 			};
 			//Debug.Log("Room Type One Ground Seven was chosen.");
 			break;
 		case 8:
 			tileBlockArray = new int[]
 			{
-				0,0,8,0,0,
-				0,14,0,2,7,
-				0,1,21,0,1
+				0,0,0,0,0,
+				0,4,0,2,7,
+				1,0,21,1,1
 			};
 			//Debug.Log("Room Type One Ground Eight was chosen.");
 			break;
 		case 9:
 			tileBlockArray = new int[]
 			{
-				8,0,0,0,1,
-				0,2,1,1,2,
-				0,0,0,0,0
+				0,1,0,0,1,
+				15,1,1,664,1,
+				0,1,0,1,0
 			};
 			//Debug.Log("Room Type One Ground Nine was chosen.");
 			break;
@@ -839,24 +839,24 @@ public class RoomTypeOne : MonoBehaviour {
 			tileBlockArray = new int[]
 			{
 				2,1,1,1,1,
-				0,8,8,8,2,
-				0,0,0,0,0
+				0,0,11,0,2,
+				1,1,1,1,1
 			};
 			//Debug.Log("Room Type One Ground Ten was chosen.");
 			break;
 		case 11:
 			tileBlockArray = new int[]
 			{
-				8,1,1,2,1,
-				0,8,8,0,0,
-				0,0,0,0,0
+				0,0,1,1,1,
+				1,0,0,0,0,
+				0,21,1,1,1
 			};
 			//Debug.Log("Room Type One Ground Eleven was chosen.");
 			break;
 		case 12:
 			tileBlockArray = new int[]
 			{
-				1,2,11,0,0,
+				1,1,11,0,0,
 				111,0,0,0,0,
 				2,142,11,141,11
 			};
@@ -892,9 +892,9 @@ public class RoomTypeOne : MonoBehaviour {
 		case 16:
 			tileBlockArray = new int[]
 			{
-				1,0,1,8,8,
+				1,0,1,16,0,
 				0,0,41,0,0,
-				1,141,11,0,0
+				1,141,11,1,1
 			};
 			//Debug.Log("Room Type One Ground Sixteen was chosen.");
 			break;
@@ -929,8 +929,8 @@ public class RoomTypeOne : MonoBehaviour {
 			tileBlockArray = new int[]
 			{
 				0,1,1,0,0,
-				0,1,1,0,0,
-				3,0,0,1,1
+				3,1,1,0,0,
+				1,0,0,1,1
 			};
 			//Debug.Log("Room Type One Ground Twenty was chosen.");
 			break;
@@ -951,7 +951,7 @@ public class RoomTypeOne : MonoBehaviour {
 		startObstacleYposition = groundblockstart.y;
 		//Debug.Log("Room Type One Ground tileBlock initalized");
 	}
-
+	
 	//picks a left air template at random
 	public void ChooseLeftAirTemplate ()
 	{
@@ -962,15 +962,15 @@ public class RoomTypeOne : MonoBehaviour {
 		case 0:
 			tileBlockArray = new int[] 
 			{
-				21,0,2,2,8,
-				1,8,0,0,0,
+				0,21,2,1,16,
+				1,1,0,0,0,
 			};
 			//Debug.Log("Room Type One Left Air Zero was chosen.");
 			break;
 		case 1:
 			tileBlockArray = new int[]
 			{
-				0,2,7,2,7,
+				0,2,0,2,0,
 				0,1,142,11,1
 			};
 			//Debug.Log("Room Type One Left Air One was chosen.");
@@ -978,15 +978,15 @@ public class RoomTypeOne : MonoBehaviour {
 		case 2:
 			tileBlockArray = new int[]
 			{
-				2,0,0,0,4,
-				2,0,1,1,2,
+				2,1,0,0,4,
+				667,1,1,1,2,
 			};
 			//Debug.Log("Room Type One Left Air Two was chosen.");
 			break;
 		case 3:
 			tileBlockArray = new int[]
 			{
-				2,4,1,21,0,
+				2,1,1,0,21,
 				0,8,8,8,0,
 			};
 			//Debug.Log("Room Type One Left Air Three was chosen.");
@@ -994,17 +994,17 @@ public class RoomTypeOne : MonoBehaviour {
 		case 4:
 			tileBlockArray = new int[]
 			{
-				1,21,0,111,0,
-				1,8,8,21,0,
+				0,21,1,111,0,
+				1,8,8,0,21,
 			};
 			//Debug.Log("Room Type One Left Air Four was chosen.");
 			break;
-		
+			
 		case 5:
 			tileBlockArray = new int[]
 			{
 				0,0,10,1,0,
-				0,21,0,0,2,
+				0,21,1,0,2,
 			};
 			//Debug.Log("Room Type One Left Air Five was chosen.");
 			break;
@@ -1019,7 +1019,7 @@ public class RoomTypeOne : MonoBehaviour {
 		case 7:
 			tileBlockArray = new int[]
 			{
-				66,0,0,0,0,
+				66,0,0,0,10,
 				1,0,21,1,1,
 			};
 			//Debug.Log("Room Type One Left Air Seven was chosen.");
@@ -1029,7 +1029,6 @@ public class RoomTypeOne : MonoBehaviour {
 			{
 				1,0,0,41,0,
 				1,1,0,1,0,
-				0,0,0,0,0
 			};
 			//Debug.Log("Room Type One Left Air Eight was chosen.");
 			break;
@@ -1050,7 +1049,7 @@ public class RoomTypeOne : MonoBehaviour {
 			//Debug.Log("Room Type One Left Air Ten was chosen.");
 			break;
 		}
-
+		
 		//calls the function to loop through the created array
 		LoopThroughArray ();
 	}
@@ -1078,7 +1077,7 @@ public class RoomTypeOne : MonoBehaviour {
 		case 0:
 			tileBlockArray = new int[] 
 			{
-				0,0,14,0,0,
+				0,0,41,0,0,
 				0,0,1,1,1
 			};
 			//Debug.Log("Room Type One Right Air Zero was chosen.");
@@ -1086,16 +1085,16 @@ public class RoomTypeOne : MonoBehaviour {
 		case 1:
 			tileBlockArray = new int[]
 			{
-				0,14,0,2,7,
-				0,1,21,0,1
+				0,4,0,2,7,
+				0,0,21,1,1
 			};
 			//Debug.Log("Room Type One Right Air One was chosen.");
 			break;
 		case 2:
 			tileBlockArray = new int[]
 			{
-				8,0,0,0,1,
-				0,2,1,1,2,
+				1,0,0,0,1,
+				8,2,1,1,2,
 			};
 			//Debug.Log("Room Type One Right Air Two was chosen.");
 			break;
@@ -1110,8 +1109,8 @@ public class RoomTypeOne : MonoBehaviour {
 		case 4:
 			tileBlockArray = new int[]
 			{
-				8,1,1,2,1,
-				0,8,8,0,0,
+				1,1,1,2,1,
+				0,665,665,0,0,
 			};
 			//Debug.Log("Room Type One Right Air Four was chosen.");
 			break;
@@ -1167,7 +1166,7 @@ public class RoomTypeOne : MonoBehaviour {
 		//calls the function to loop through the created array
 		LoopThroughArray ();
 	}
-
+	
 	//determines which row the tile is in and sets its position accordingly
 	private void CheckObstacleYPosition (int y)
 	{
@@ -1182,7 +1181,7 @@ public class RoomTypeOne : MonoBehaviour {
 			CheckObstacleXPosition(y);
 		}
 	}
-
+	
 	//determines which column the tile is in and sets its postion accordingly
 	private void CheckObstacleXPosition (int x)
 	{
@@ -1198,7 +1197,7 @@ public class RoomTypeOne : MonoBehaviour {
 			ObstacleTileInstantiate(x);
 		}
 	}
-
+	
 	//istantiates tile at appropriate position and moves the postion ahead
 	private void ObstacleTileInstantiate(int iLoop)
 	{
