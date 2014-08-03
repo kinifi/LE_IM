@@ -47,8 +47,8 @@ public class Inventory : MonoBehaviour {
 		if(showInventory)
 		{
 			GUILayout.BeginHorizontal();
-			GUILayout.Label("Keys: " + Keys);
-			GUILayout.Label("Arrows: " + Arrows);
+			//GUILayout.Label("Keys: " + Keys);
+			//GUILayout.Label("Arrows: " + Arrows);
 			GUILayout.EndHorizontal();
 		}
 		GUILayout.EndArea();

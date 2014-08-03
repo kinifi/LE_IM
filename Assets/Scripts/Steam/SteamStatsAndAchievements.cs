@@ -47,11 +47,11 @@ class SteamStatsAndAchievements : MonoBehaviour {
 	private bool m_bStoreStats;
 
 	// Persisted Stat details
-	private int m_nTotalGamesPlayed;
-	private int m_nTotalNumJumps;
-	private int m_nTotalNumTrampJumps;
-	private int m_nTotalNumDeathBySpikes;
-	private int m_nTotalNumDeathByFalling;
+	public int m_nTotalGamesPlayed;
+	public int m_nTotalNumJumps;
+	public int m_nTotalNumTrampJumps;
+	public int m_nTotalNumDeathBySpikes;
+	public int m_nTotalNumDeathByFalling;
 
 	protected Callback<UserStatsReceived_t> m_UserStatsReceived;
 	protected Callback<UserStatsStored_t> m_UserStatsStored;
@@ -213,6 +213,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		if ((ulong)m_GameID == pCallback.m_nGameID) {
 			if (EResult.k_EResultOK == pCallback.m_eResult) {
 				Debug.Log("Received stats and achievements from Steam\n");
+				getStats();
 
 				m_bStatsValid = true;
 
@@ -229,16 +230,30 @@ class SteamStatsAndAchievements : MonoBehaviour {
 				}
 
 				// load stats
-				SteamUserStats.GetStat("NumGames", out m_nTotalGamesPlayed);
-				SteamUserStats.GetStat("NumJumps", out m_nTotalNumJumps);
-				SteamUserStats.GetStat("NumTrampJumps", out m_nTotalNumTrampJumps);
-				SteamUserStats.GetStat("NumDeathsBySpikes", out m_nTotalNumDeathBySpikes);
-				SteamUserStats.GetStat("NumDeathsByFalling", out m_nTotalNumDeathByFalling);
+				getStats();
 			}
 			else {
 				Debug.Log("RequestStats - failed, " + pCallback.m_eResult);
 			}
 		}
+	}
+
+	/// <summary>
+	/// Gets the stats from the server
+	/// </summary>
+	public void getStats() {
+
+		// load stats
+		SteamUserStats.GetStat("NumGames", out m_nTotalGamesPlayed);
+		SteamUserStats.GetStat("NumJumps", out m_nTotalNumJumps);
+		SteamUserStats.GetStat("NumTrampJumps", out m_nTotalNumTrampJumps);
+		SteamUserStats.GetStat("NumDeathsBySpikes", out m_nTotalNumDeathBySpikes);
+		SteamUserStats.GetStat("NumDeathsByFalling", out m_nTotalNumDeathByFalling);
+		Debug.Log("NumGames: " + m_nTotalGamesPlayed);
+		Debug.Log("NumJumps: " + m_nTotalNumJumps);
+		Debug.Log("NumTrampJumps: " + m_nTotalNumTrampJumps);
+		Debug.Log("NumDeathsBySpikes: " + m_nTotalNumDeathBySpikes);
+		Debug.Log("NumDeathsByFalling: " + m_nTotalNumDeathByFalling);
 	}
 
 	//-----------------------------------------------------------------------------
@@ -322,7 +337,40 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		//TODO: Ask if I need to request User stats after resetting them
 		//SteamUserStats.RequestUserStats(SteamUser.GetSteamID());
 	}
-	
+
+	//------------------------------------------------------------------
+	// Use this as a safe way to access the variables need to update stats
+	//-----------------------------------------------------------------
+	public void incrementNumOfGames() {
+		m_nTotalGamesPlayed++;
+		SteamUserStats.SetStat("NumGames", m_nTotalGamesPlayed);
+		Debug.Log("Incremented Num Game Stat");
+		bool bSuccess = SteamUserStats.StoreStats();
+		if(bSuccess)
+		{
+			Debug.Log("Success Updating Num Games");
+			Debug.Log("Games Played" + m_nTotalGamesPlayed);
+		}
+	}
+
+	public void incrementNumOfJumps() {
+		m_nTotalNumJumps++;
+	}
+
+	public void incrementNumOfTrampJumps() {
+		m_nTotalNumTrampJumps++;
+	}
+
+	public void incrementNumOfDeathsBySpikes() {
+		m_nTotalNumDeathByFalling++;
+	}
+
+	public void incrementNumOfDeathsByFalling() {
+		m_nTotalNumDeathByFalling++;
+	}
+
+	//-----------------------------------------------------------------
+
 	private class Achievement_t {
 		public Achievement m_eAchievementID;
 		public string m_strName;

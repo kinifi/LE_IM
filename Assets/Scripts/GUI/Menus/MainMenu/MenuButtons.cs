@@ -14,7 +14,7 @@ public class MenuButtons : MonoBehaviour {
 
 	public void openCommunity()
 	{
-		SteamBasic.openSteamOverlayToCommunity();
+		SteamBasic.openSteamOverlayToURL("steamcommunity.com/app/265670/");
 	}
 
 	public void goToChallengeLevels() {
@@ -30,6 +30,11 @@ public class MenuButtons : MonoBehaviour {
 	public void goToLevelEditor() {
 		Application.LoadLevel("Start_Screen");
 		Debug.Log("Loading Level Editor");
+	}
+
+	public void goToStats()
+	{
+		Application.LoadLevel("Stats");
 	}
 
 	public void quitGame() {

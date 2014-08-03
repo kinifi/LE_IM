@@ -8,7 +8,7 @@ public class PlayerInfo : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		playerName.text = "Welcome: " + SteamBasic.getPersonaName();
+		playerName.text = "" + SteamBasic.getPersonaName();
 
 	}
 }
