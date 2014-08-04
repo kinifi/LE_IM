@@ -6,8 +6,11 @@ public class Quiver : MonoBehaviour {
 	public int bow = 0;
 	public GameObject[] blockbreaker;
 	public Transform getTransform;
-
 	private float RSX, RSY;
+	public GameObject[] arrows = new GameObject[10];
+	public float firerate = 1.0f;
+	private float nextfire = 0;
+
 
 	void Update ()
 	{
@@ -19,62 +22,38 @@ public class Quiver : MonoBehaviour {
 			Transform shootTransform = getTransform;
 
 			GameObject projectile;
-			if(Input.GetKeyDown(KeyCode.W) || RSY > 0.8)
+			if((Time.time>nextfire && Input.GetKeyDown(KeyCode.W)) || (Time.time>nextfire && RSY > -0.8))
 			{
-				RSY = 0.0f;
+				nextfire = Time.time + firerate;
 				projectile = Instantiate(blockbreaker[0], shootTransform.position, Quaternion.identity) as GameObject;
 				projectile.GetComponent<ArrowMover>().ShootUp();
 				bow -= 1;
-				deductArrows(1);
-				//Debug.Log (bow);
+				Debug.Log ("Bow: " + bow);
 			}
-			if(Input.GetKeyDown(KeyCode.S) || RSY < -0.8)
+			if((Time.time>nextfire && Input.GetKeyDown(KeyCode.S)) || (Time.time>nextfire && RSY < 0.8))
 			{
-				RSY = 0.0f;
+				nextfire = Time.time + firerate;
 				projectile = Instantiate(blockbreaker[1], shootTransform.position, Quaternion.identity) as GameObject;
 				projectile.GetComponent<ArrowMover>().ShootDown();
 				bow -= 1;
-				deductArrows(1);
-				//Debug.Log (bow);
+				Debug.Log ("Bow: " + bow);
 			}
-			if(Input.GetKeyDown(KeyCode.D) || RSX > 0.8)
+			if((Time.time>nextfire && Input.GetKeyDown(KeyCode.D)) || (Time.time>nextfire && RSX > 0.8))
 			{
-				RSX = 0.0f;
+				nextfire = Time.time + firerate;
 				projectile = Instantiate(blockbreaker[2], shootTransform.position, Quaternion.identity) as GameObject;
 				projectile.GetComponent<ArrowMover>().ShootRight();
 				bow -= 1;
-				deductArrows(1);
-				//Debug.Log (bow);
+				Debug.Log ("Bow: " + bow);
   			}
-			if(Input.GetKeyDown(KeyCode.A) || RSX < -0.8)
+			if((Time.time>nextfire && Input.GetKeyDown(KeyCode.A)) || (Time.time>nextfire && RSX < -0.8))
 			{
-				RSX = 0.0f;
+				nextfire = Time.time + firerate;
 				projectile = Instantiate(blockbreaker[3], shootTransform.position, Quaternion.identity) as GameObject;
 				projectile.GetComponent<ArrowMover>().ShootLeft();
 				bow -= 1;
-				deductArrows(1);
-				//Debug.Log (bow);
+				Debug.Log ("Bow: " + bow);
 			}
 		}
 	}
-
-	public void deductArrows(int value)
-	{
-		Inventory _inventory = GameObject.Find("Player").GetComponent<Inventory>();
-		//bow -= value;
-		_inventory.Arrows -= value;
-		Debug.Log(_inventory.Arrows);
-		_inventory.startCollectTimer = true;
-	}
-
-	public void addArrows(int value)
-	{
-		Inventory _inventory = GameObject.Find("Player").GetComponent<Inventory>();
-		//bow += value;
-		_inventory.Arrows += value;
-		Debug.Log(_inventory.Arrows);
-		_inventory.startCollectTimer = true;
-	}
-
-
 }

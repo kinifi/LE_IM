@@ -12,7 +12,7 @@ public class CollectGoldenBow : MonoBehaviour {
 			//Debug.Log("You grabbed a golden bow!");
 			Quiver bowCount = GameObject.Find("Player").GetComponent<Quiver>();
 			bowCount.bow += 5;
-			bowCount.addArrows(5);
+			//bowCount.addArrows(5);
 			bowCounter +=5;
 			//Debug.Log (bowCount.bow + bowCounter);
 		}

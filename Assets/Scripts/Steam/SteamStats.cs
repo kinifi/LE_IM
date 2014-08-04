@@ -25,15 +25,16 @@ public class SteamStats : MonoBehaviour {
 
 	}
 
+	public void backToMain() {
+
+		Application.LoadLevel("Main_Menu");
+		Debug.Log("Go back");
+
+	}
 
 	// Update is called once per frame
 	void Update () {
 
-		//back button detection goes here
-		if(Input.GetButtonDown("Fire2"))
-	    {
-			Application.LoadLevel("Main_Menu");
-			Debug.Log("Go back");
-		}
+
 	}
 }

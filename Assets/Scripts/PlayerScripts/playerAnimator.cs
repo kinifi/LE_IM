@@ -25,8 +25,6 @@ public class playerAnimator : MonoBehaviour {
 		//Without the Animator we can't Animate or use Mecanim Varables
 		anim = GetComponent<Animator>();
 
-		//Add the commands to the command console for calling later
-		consoleCommands();
 	}
 	
 	// Update is called once per frame
@@ -67,14 +65,7 @@ public class playerAnimator : MonoBehaviour {
 		standing = !standing;
 		anim.SetBool(animationNames[4], standing);
 	}
-
-	/// <summary>
-	/// Sets the Commands to the Console
-	/// </summary>
-	private void consoleCommands() {
-		Console.AddCommand(new ConsoleCommand("ToggleDeath", "Revives Or Kills Robbe", CmdParameterType.None, this.gameObject, "toggleDeathPlayer"));
-		Console.AddCommand(new ConsoleCommand("Celebrate", "Turn On Celebration Robbe", CmdParameterType.None, this.gameObject, "toggleCelebratePlayer"));
-	}
+	
 
 	/// <summary>
 	/// Raises the collision enter2 d event.

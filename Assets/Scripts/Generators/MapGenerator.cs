@@ -13,7 +13,25 @@ public class MapGenerator : MonoBehaviour {
 	
 	private void Start() 
 	{
+		//check to see if the tutorial has been complete
+		isTutorialComplete();
 
+		if(tutorialDone == true)
+		{
+			LoadControlsMessage();
+			NewDungeon();
+			Debug.Log ("No Tutorial Random Dungeon loaded!!");
+		}
+		else if(tutorialDone == false)
+		{
+			GenerateTutorialMatrix();
+			FillInTheMap();
+			Debug.Log ("Tutorial Dungeon Loaded!");
+		}
+	}
+
+	private void isTutorialComplete () 
+	{
 		string _tutorialDone = PlayerPrefs.GetString("tutorialDone");
 		if(_tutorialDone == "true")
 		{
@@ -24,26 +42,6 @@ public class MapGenerator : MonoBehaviour {
 			tutorialDone = false;
 		}
 
-
-		if(tutorialDone == true)
-		{
-			LoadControlsMessage();
-			NewDungeon();
-			Debug.Log ("No Tutorial Random Dungeon loaded!!");
-		}
-		else if(Application.loadedLevelName == "Tutorial_Dungeon")
-		{
-			LoadControlsMessage();
-			GenerateTutorialMatrix();
-			FillInTheMap();
-			Debug.Log ("Tutorial Dungeon Loaded!");
-		}
-		else
-		{
-			tutorialDone = true;
-			NewDungeon();
-			Debug.Log ("Next Random Dungeon loaded!!");
-		}
 	}
 
 	private void GenerateTutorialMatrix ()
@@ -127,7 +125,7 @@ public class MapGenerator : MonoBehaviour {
 		Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
 		GameObject controlsSplash = Instantiate(controlsMessage, currentTransform.position, Quaternion.identity) as GameObject;
 		controlsSplash.transform.parent = currentTransform;
-		Destroy(controlsSplash, 2.5f);
+		Destroy(controlsSplash, 3.5f);
 	}
 	
 	/*private void LoadSceneMessage()

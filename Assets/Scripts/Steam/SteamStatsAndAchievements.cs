@@ -213,7 +213,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		if ((ulong)m_GameID == pCallback.m_nGameID) {
 			if (EResult.k_EResultOK == pCallback.m_eResult) {
 				Debug.Log("Received stats and achievements from Steam\n");
-				getStats();
+
 
 				m_bStatsValid = true;
 
@@ -235,6 +235,24 @@ class SteamStatsAndAchievements : MonoBehaviour {
 			else {
 				Debug.Log("RequestStats - failed, " + pCallback.m_eResult);
 			}
+		}
+	}
+
+	/// <summary>
+	/// Sets the stats
+	/// </summary>
+	public void setStats() {
+		SteamUserStats.SetStat("NumGames", m_nTotalGamesPlayed);
+		SteamUserStats.SetStat("NumJumps", m_nTotalNumJumps);
+		SteamUserStats.SetStat("NumTrampJumps", m_nTotalNumTrampJumps);
+		SteamUserStats.SetStat("NumDeathsBySpikes", m_nTotalNumDeathBySpikes);
+		SteamUserStats.SetStat("NumDeathsByFalling", m_nTotalNumDeathByFalling);
+
+		bool bSuccess = SteamUserStats.StoreStats();
+		if(bSuccess)
+		{
+			Debug.Log("Success Updating User Stats");
+			Debug.Log("Spike Stat: " + m_nTotalNumDeathBySpikes);
 		}
 	}
 
@@ -355,18 +373,22 @@ class SteamStatsAndAchievements : MonoBehaviour {
 
 	public void incrementNumOfJumps() {
 		m_nTotalNumJumps++;
+		setStats();
 	}
 
 	public void incrementNumOfTrampJumps() {
 		m_nTotalNumTrampJumps++;
+		setStats();
 	}
 
 	public void incrementNumOfDeathsBySpikes() {
-		m_nTotalNumDeathByFalling++;
+		m_nTotalNumDeathBySpikes++;
+		setStats();
 	}
 
 	public void incrementNumOfDeathsByFalling() {
 		m_nTotalNumDeathByFalling++;
+		setStats();
 	}
 
 	//-----------------------------------------------------------------

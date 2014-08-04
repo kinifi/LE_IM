@@ -13,7 +13,7 @@ public class CollectBow : MonoBehaviour {
 			//Debug.Log("You grabbed a bow!");
 			Quiver bowCount = GameObject.Find(objectToFind).GetComponent<Quiver>();
 			bowCount.bow += 1;
-			bowCount.addArrows(1);
+			//bowCount.addArrows(1);
 
 			bowCounter +=1;
 			//Debug.Log (bowCount.bow + bowCounter);

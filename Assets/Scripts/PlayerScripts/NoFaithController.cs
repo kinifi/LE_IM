@@ -8,6 +8,7 @@ public class NoFaithController : MonoBehaviour {
 	private Smooth_Follow _smoothFollow;
 	public float lookDistance = 12.0f;
 	public bool canMove = true;
+	private float downAxis;
 
 	void Start() {
 		_smoothFollow = GetComponent<Smooth_Follow>();
@@ -15,9 +16,11 @@ public class NoFaithController : MonoBehaviour {
 
 	void Update () 
 	{
+
 		if(canMove)
 		{
-			if(Input.GetKey(KeyCode.DownArrow))
+
+			if(Input.GetButton("Fire3"))
 			{
 				/*
 				Vector3 cameraPosition = new Vector3(0f,-22.0f, 0f);
@@ -33,7 +36,7 @@ public class NoFaithController : MonoBehaviour {
 					_smoothFollow.movingCamera = true;
 				}
 			}
-			if(Input.GetKey(KeyCode.DownArrow)== false)
+			if(Input.GetButton("Fire3") == false)
 			{
 				/*
 				gameObject.camera.transform.position = transform.parent.position;

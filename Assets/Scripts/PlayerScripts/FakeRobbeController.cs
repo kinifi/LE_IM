@@ -17,16 +17,26 @@ public class FakeRobbeController : MonoBehaviour {
 	public LayerMask whatIsGround;
 
 	public bool canMove = true;
+	private Animator anim;
 
-	void Start(){}
+
+	void Start(){
+
+		anim = GetComponent<Animator>();
+	}
 
 	void FixedUpdate()
 	{
 		grounded = Physics2D.OverlapArea(groundCheck.position, groundCheck2.position, whatIsGround);
+		anim.SetBool("Grounded", grounded);
+		//Debug.Log("grounded: " + grounded);
 	}
 
 	void Update()
 	{
+
+
+
 		if(canMove)
 		{
 			float moveHorizontal = Input.GetAxis("Horizontal");
@@ -47,13 +57,15 @@ public class FakeRobbeController : MonoBehaviour {
 				}
 			}
 
-			if(Input.GetKeyDown(KeyCode.Space))
+			if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
 			{
 				if(grounded == true)
 				{
 					Vector2 jumping = new Vector2(0.0f, jumpForce);
 					rigidbody2D.AddRelativeForce(movement + jumping);
 					doubleJump = true;
+					SteamManager.StatsAndAchievements.incrementNumOfJumps();
+					audio.Play();
 				}
 				else if(doubleJump == true)
 				{
@@ -63,6 +75,8 @@ public class FakeRobbeController : MonoBehaviour {
 					rigidbody2D.velocity = new Vector2(currentXV, zeroV);
 					Vector2 jumping = new Vector2(0.0f, jumpForce);
 					rigidbody2D.AddRelativeForce(movement + jumping);
+					SteamManager.StatsAndAchievements.incrementNumOfJumps();
+					audio.Play();
 				}
 
 			}
