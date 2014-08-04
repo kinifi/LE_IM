@@ -638,9 +638,19 @@ public class RoomTypeExit : MonoBehaviour {
 			GroundBlockPositionInitalize(groundBlock1);
 			ChooseGroundTemplate ();
 		}
+		if(groundBlock2 != Vector3.zero)
+		{
+			GroundBlockPositionInitalize2(groundBlock2);
+			ChooseGroundTemplate ();
+		}
 		if(airBlock1 != Vector3.zero)
 		{
 			AirBlockPositionInitalize(airBlock1);
+			ChooseAirTemplate();
+		}
+		if(airBlock2 != Vector3.zero)
+		{
+			AirBlockPositionInitalize2(airBlock2);
 			ChooseAirTemplate();
 		}
 	}
@@ -705,7 +715,16 @@ public class RoomTypeExit : MonoBehaviour {
 		startObstacleYposition = groundblockstart.y;
 		//Debug.Log("Room Type Exit Ground tileBlock initalized");
 	}
-	
+	private void GroundBlockPositionInitalize2(Vector3 groundblockstart)
+	{
+		tilePosition = groundblockstart;
+		transform.position = tilePosition;
+		//sets the starting x position of the obstacle block
+		startObstacleXposition = groundblockstart.x;
+		//sets the starting y position of the obstacle block
+		startObstacleYposition = groundblockstart.y;
+		//Debug.Log("Room Type Exit Ground tileBlock initalized");
+	}
 	//sets the postion of the air obstacle block
 	private void AirBlockPositionInitalize(Vector3 airblockstart)
 	{
@@ -717,7 +736,16 @@ public class RoomTypeExit : MonoBehaviour {
 		startObstacleYposition = airblockstart.y;
 		//Debug.Log("Room Type Exit Air tileBlock initalized");
 	}
-	
+	private void AirBlockPositionInitalize2(Vector3 airblockstart)
+	{
+		tilePosition = airblockstart;
+		transform.position = tilePosition;
+		//sets the starting x position of the obstacle block
+		startObstacleXposition = airblockstart.x;
+		//sets the starting y position of the obstacle block
+		startObstacleYposition = airblockstart.y;
+		//Debug.Log("Room Type Exit Air tileBlock initalized");
+	}
 	//picks an air template at random
 	public void ChooseAirTemplate ()
 	{

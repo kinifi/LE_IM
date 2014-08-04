@@ -22,36 +22,40 @@ public class Quiver : MonoBehaviour {
 			Transform shootTransform = getTransform;
 
 			GameObject projectile;
-			if((Time.time>nextfire && Input.GetKeyDown(KeyCode.W)) || (Time.time>nextfire && RSY > -0.8))
+			if((Time.time>nextfire && Input.GetKeyDown(KeyCode.W)) || (Time.time>nextfire && RSY > -0.98))
 			{
 				nextfire = Time.time + firerate;
 				projectile = Instantiate(blockbreaker[0], shootTransform.position, Quaternion.identity) as GameObject;
 				projectile.GetComponent<ArrowMover>().ShootUp();
 				bow -= 1;
+				Input.ResetInputAxes();
 				Debug.Log ("Bow: " + bow);
 			}
-			if((Time.time>nextfire && Input.GetKeyDown(KeyCode.S)) || (Time.time>nextfire && RSY < 0.8))
+			if((Time.time>nextfire && Input.GetKeyDown(KeyCode.S)) || (Time.time>nextfire && RSY < 0.98))
 			{
 				nextfire = Time.time + firerate;
 				projectile = Instantiate(blockbreaker[1], shootTransform.position, Quaternion.identity) as GameObject;
 				projectile.GetComponent<ArrowMover>().ShootDown();
 				bow -= 1;
+				Input.ResetInputAxes();
 				Debug.Log ("Bow: " + bow);
 			}
-			if((Time.time>nextfire && Input.GetKeyDown(KeyCode.D)) || (Time.time>nextfire && RSX > 0.8))
+			if((Time.time>nextfire && Input.GetKeyDown(KeyCode.D)) || (Time.time>nextfire && RSX > 0.98))
 			{
 				nextfire = Time.time + firerate;
 				projectile = Instantiate(blockbreaker[2], shootTransform.position, Quaternion.identity) as GameObject;
 				projectile.GetComponent<ArrowMover>().ShootRight();
 				bow -= 1;
+				Input.ResetInputAxes();
 				Debug.Log ("Bow: " + bow);
   			}
-			if((Time.time>nextfire && Input.GetKeyDown(KeyCode.A)) || (Time.time>nextfire && RSX < -0.8))
+			if((Time.time>nextfire && Input.GetKeyDown(KeyCode.A)) || (Time.time>nextfire && RSX < -0.98))
 			{
 				nextfire = Time.time + firerate;
 				projectile = Instantiate(blockbreaker[3], shootTransform.position, Quaternion.identity) as GameObject;
 				projectile.GetComponent<ArrowMover>().ShootLeft();
 				bow -= 1;
+				Input.ResetInputAxes();
 				Debug.Log ("Bow: " + bow);
 			}
 		}

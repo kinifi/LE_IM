@@ -122,11 +122,11 @@ public class RoomTypeFour : MonoBehaviour {
 			typeFourArray = new int[] 
 			{
 				0,1,1,1,0,1,1,1,1,1,
-				0,10,0,0,0,0,0,3,0,0,
+				0,10,0,0,0,0,0,11,0,0,
 				0,1,2,0,0,0,0,1,1,1,
 				0,0,0,0,0,0,0,0,8,1,
 				0,0,2,4,0,0,0,0,2,1,
-				1,1,1,0,0,0,0,1,1,1,
+				1,1,1,0,0,20,0,1,1,1,
 				0,99,9,0,0,3,0,0,0,11,
 				11,11,142,1,1,1,1,1,11,1,
 			};
@@ -711,9 +711,19 @@ public class RoomTypeFour : MonoBehaviour {
 			GroundBlockPositionInitalize(groundBlock1);
 			ChooseGroundTemplate ();
 		}
+		if(groundBlock2 != Vector3.zero)
+		{
+			GroundBlockPositionInitalize2(groundBlock2);
+			ChooseGroundTemplate ();
+		}
 		if(airBlock1 != Vector3.zero)
 		{
 			AirBlockPositionInitalize(airBlock1);
+			ChooseAirTemplate();
+		}
+		if(airBlock2 != Vector3.zero)
+		{
+			AirBlockPositionInitalize2(airBlock2);
 			ChooseAirTemplate();
 		}
 	}
@@ -816,7 +826,16 @@ public class RoomTypeFour : MonoBehaviour {
 		startGroundObstacleYposition = groundblockstart.y;
 		//Debug.Log("Room Type Four Ground tileBlock initalized");
 	}
-	
+	private void GroundBlockPositionInitalize2(Vector3 groundblockstart)
+	{
+		tilePosition = groundblockstart;
+		transform.position = tilePosition;
+		//sets the starting x position of the obstacle block
+		startGroundObstacleXposition = groundblockstart.x;
+		//sets the starting y position of the obstacle block
+		startGroundObstacleYposition = groundblockstart.y;
+		//Debug.Log("Room Type Four Ground tileBlock initalized");
+	}
 	//sets the postion of the air obstacle block
 	private void AirBlockPositionInitalize(Vector3 airblockstart)
 	{
@@ -828,7 +847,16 @@ public class RoomTypeFour : MonoBehaviour {
 		startAirObstacleYposition = airblockstart.y;
 		//Debug.Log("Room Type Four Air tileBlock initalized");
 	}
-	
+	private void AirBlockPositionInitalize2(Vector3 airblockstart)
+	{
+		tilePosition = airblockstart;
+		transform.position = tilePosition;
+		//sets the starting x position of the obstacle block
+		startAirObstacleXposition = airblockstart.x;
+		//sets the starting y position of the obstacle block
+		startAirObstacleYposition = airblockstart.y;
+		//Debug.Log("Room Type Four Air tileBlock initalized");
+	}
 	//picks an air template at random
 	public void ChooseAirTemplate ()
 	{

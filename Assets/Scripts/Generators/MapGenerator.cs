@@ -16,17 +16,22 @@ public class MapGenerator : MonoBehaviour {
 		//check to see if the tutorial has been complete
 		isTutorialComplete();
 
-		if(tutorialDone == true)
-		{
-			LoadControlsMessage();
-			NewDungeon();
-			Debug.Log ("No Tutorial Random Dungeon loaded!!");
-		}
-		else if(tutorialDone == false)
+		if(tutorialDone == false)
 		{
 			GenerateTutorialMatrix();
 			FillInTheMap();
 			Debug.Log ("Tutorial Dungeon Loaded!");
+		}
+		else if(tutorialDone == true && Application.loadedLevelName == "Map_Level_Gen")
+		{
+			NewDungeon();
+			Debug.Log ("Continue Loaded");
+		}
+		else if(tutorialDone == true)
+		{
+			LoadControlsMessage();
+			NewDungeon();
+			Debug.Log ("No Tutorial Random Dungeon loaded!!");
 		}
 	}
 

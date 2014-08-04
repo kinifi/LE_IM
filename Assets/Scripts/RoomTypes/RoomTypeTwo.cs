@@ -740,7 +740,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		}
 		if(groundBlock2 != Vector3.zero)
 		{
-			GroundBlockPositionInitalize(groundBlock2);
+			GroundBlockPositionInitalize2(groundBlock2);
 			ChooseGroundTemplate ();
 		}
 		if(airBlock1 != Vector3.zero)
@@ -750,7 +750,7 @@ public class RoomTypeTwo : MonoBehaviour {
 		}
 		if(airBlock2 != Vector3.zero)
 		{
-			AirBlockPositionInitalize(airBlock2);
+			AirBlockPositionInitalize2(airBlock2);
 			ChooseRightAirTemplate();
 		}
 	}
@@ -836,6 +836,16 @@ public class RoomTypeTwo : MonoBehaviour {
 		startObstacleYposition = groundblockstart.y;
 		//Debug.Log("Room Type Two Ground tileBlock initalized");
 	}
+	private void GroundBlockPositionInitalize2(Vector3 groundblockstart)
+	{
+		tilePosition = groundblockstart;
+		transform.position = tilePosition;
+		//sets the starting x position of the obstacle block
+		startObstacleXposition = groundblockstart.x;
+		//sets the starting y position of the obstacle block
+		startObstacleYposition = groundblockstart.y;
+		//Debug.Log("Room Type Two Ground tileBlock initalized");
+	}
 	
 	//picks a left air template at random
 	public void ChooseLeftAirTemplate ()
@@ -891,6 +901,16 @@ public class RoomTypeTwo : MonoBehaviour {
 	
 	//sets the postion of the left air obstacle block
 	private void AirBlockPositionInitalize(Vector3 airblockstart)
+	{
+		tilePosition = airblockstart;
+		transform.position = tilePosition;
+		//sets the starting x position of the obstacle block
+		startObstacleXposition = airblockstart.x;
+		//sets the starting y position of the obstacle block
+		startObstacleYposition = airblockstart.y;
+		//Debug.Log("Room Type Two Air tileBlock initalized at: " +airblockstart);
+	}
+	private void AirBlockPositionInitalize2(Vector3 airblockstart)
 	{
 		tilePosition = airblockstart;
 		transform.position = tilePosition;
