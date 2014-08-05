@@ -36,14 +36,17 @@ public class DeathBySpikes : MonoBehaviour {
 					Invoke("InvokeReset", 0.2f);
 
 					kill = Instantiate(deathMessage, correctDeathView, Quaternion.identity) as GameObject;
-					kill.transform.parent = currentTransform;
+					//kill.transform.parent = currentTransform;
+
+
 					//Debug.Log ("You were killed by spikes!!");
 					GameObject resetRobbe = GameObject.Find ("Player");
 					Vector2 resetTransform = new Vector2(-3.95f, -1.0f);
 					resetRobbe.transform.position = resetTransform;
+
+					kill.transform.OverlayPosition(resetRobbe.transform);
+
 					Destroy(kill, 2.5f);
-
-
 				}
 
 			}

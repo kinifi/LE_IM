@@ -41,15 +41,18 @@ public class ShaddowBox : MonoBehaviour {
 	{
 		if(player.gameObject.tag == "Player")
 		{
-			Transform currentTransform = GameObject.Find("FakeRobbe").GetComponent<Transform>();
+			Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
 			if(killMe == null)
 			{
 				killMe = Instantiate(deathSplash, currentTransform.position, Quaternion.identity) as GameObject;
-				killMe.transform.parent = currentTransform;
+				//killMe.transform.parent = currentTransform;
 				//Debug.Log ("You were killed by a bad guy!!");
-				GameObject resetRobbe = GameObject.Find ("FakeRobbe");
+				GameObject resetRobbe = GameObject.Find ("Player");
 				Vector2 resetTransform = new Vector2(-3.95f, -1.0f);
 				resetRobbe.transform.position = resetTransform;
+
+				killMe.transform.OverlayPosition(resetRobbe.transform);
+
 				Destroy(killMe, 2.5f);
 			}
 		}

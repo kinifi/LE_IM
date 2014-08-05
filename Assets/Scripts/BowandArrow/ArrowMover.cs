@@ -24,7 +24,7 @@ public class ArrowMover : MonoBehaviour {
 	}
 	void OnCollisionEnter2D (Collision2D other) 
 	{
-		if(other.gameObject.tag != "Player" && other.gameObject.tag != "BreakableBlock")
+		if(other.gameObject.tag != "Player" && other.gameObject.tag != "BreakableBlock" && other.gameObject.layer != 17)
 		{
 			//Debug.Log("This object is causing problems: " + other.gameObject);
 			Destroy(this.gameObject);
