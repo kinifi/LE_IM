@@ -104,7 +104,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 
 			switch (achievement.m_eAchievementID) {
 				case Achievement.Keep_Trying:
-					if (m_nTotalNumDeathByFalling != 10) {
+					if (m_nTotalNumDeathByFalling >= 50) {
 						UnlockAchievement(achievement);
 					}
 					break;
@@ -119,7 +119,24 @@ class SteamStatsAndAchievements : MonoBehaviour {
 					}
 					break;
 			}
+
 		}
+
+		foreach (Achievement_t achievement in m_Achievements) {
+			if (achievement.m_bAchieved)
+				continue;
+			
+			switch (achievement.m_eAchievementID) {
+			case Achievement.Trampolines_Forever:
+				if (m_nTotalNumTrampJumps >= 100) {
+					UnlockAchievement(achievement);
+				}
+				break;
+			}
+			
+		}
+
+
 
 		//Store stats in the Steam database if necessary
 		if (m_bStoreStats) {
@@ -200,7 +217,31 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		// Store stats end of frame
 		m_bStoreStats = true;
 	}
-	
+
+	/// <summary>
+	/// Unlock_s the gen_ dungeon_ achievement.
+	/// </summary>
+	public void Unlock_Gen_Dungeon_Achievement () {
+		
+		//set the achievement we want to unlock
+		SteamUserStats.SetAchievement("Gen_Dungeon");
+		
+		//store the stats on the next frame
+		m_bStoreStats = true;
+	}
+
+	/// <summary>
+	/// Unlock_s the pick_ lock_ pro_ achievement.
+	/// </summary>
+	public void Unlock_Pick_Lock_Pro_Achievement () {
+
+		//set the achievement we want to unlock
+		SteamUserStats.SetAchievement("Pick_Lock_Pro");
+
+		//store the stats on the next frame
+		m_bStoreStats = true;
+	}
+
 	//-----------------------------------------------------------------------------
 	// Purpose: We have stats data from Steam. It is authoritative, so update
 	//			our data with those results now.
