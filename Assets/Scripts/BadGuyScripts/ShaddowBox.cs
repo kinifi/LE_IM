@@ -54,6 +54,7 @@ public class ShaddowBox : MonoBehaviour {
 
 				FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
 				_robbe.canMove = false;
+				_robbe.rigidbody2D.isKinematic = true;
 
 				killMe.transform.OverlayPosition(resetRobbe.transform);
 
@@ -66,6 +67,7 @@ public class ShaddowBox : MonoBehaviour {
 	private void AllowRobbesMovement() {
 		FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
 		_robbe.canMove = true;
+		_robbe.rigidbody2D.isKinematic = false;
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
