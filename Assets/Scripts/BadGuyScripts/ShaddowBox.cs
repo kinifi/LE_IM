@@ -48,16 +48,26 @@ public class ShaddowBox : MonoBehaviour {
 				//killMe.transform.parent = currentTransform;
 				//Debug.Log ("You were killed by a bad guy!!");
 				GameObject resetRobbe = GameObject.Find ("Player");
+
 				Vector2 resetTransform = new Vector2(-3.95f, -1.0f);
 				resetRobbe.transform.position = resetTransform;
+
+				FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
+				_robbe.canMove = false;
 
 				killMe.transform.OverlayPosition(resetRobbe.transform);
 
 				Destroy(killMe, 2.5f);
+				Invoke("AllowRobbesMovement", 2.5f);
 			}
 		}
 	}
-	
+
+	private void AllowRobbesMovement() {
+		FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
+		_robbe.canMove = true;
+	}
+
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if(other.gameObject.tag == "Arrow")
