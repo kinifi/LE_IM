@@ -50,6 +50,8 @@ public class RoomTypeFive : MonoBehaviour {
 		groundBlock2 = Vector3.zero;
 		airBlock1 = Vector3.zero;
 		airBlock2 = Vector3.zero;
+		startObstacleXposition = 0.0f;
+		startObstacleYposition = 0.0f;
 	}
 	
 	private void ChooseRoomTypeFiveTemplate ()
@@ -72,7 +74,7 @@ public class RoomTypeFive : MonoBehaviour {
 				3,1,1,0,3,7,0,0,0,0,
 				1,7,7,1,1,1,7,1,1,1
 			};
-			//Debug.Log("Room Type Five Zero was chosen.");
+			Debug.Log("Room Type Five Zero was chosen.");
 			break;
 		case 1:
 			typeFiveArray = new int[]
@@ -86,7 +88,7 @@ public class RoomTypeFive : MonoBehaviour {
 				0,0,0,0,0,0,0,11,0,0,
 				1,1,1,1,1,1,1,141,11,1
 			};
-			//Debug.Log("Room Type Five One was chosen.");
+			Debug.Log("Room Type Five One was chosen.");
 			break;
 		case 2:
 			typeFiveArray = new int[]
@@ -100,7 +102,7 @@ public class RoomTypeFive : MonoBehaviour {
 				0,0,2,1,11,1,1,3,1,0,
 				11,0,4,1,1,11,1,1,1,1
 			};
-			//Debug.Log("Room Type Five Two was chosen.");
+			Debug.Log("Room Type Five Two was chosen.");
 			break;
 		case 3:
 			typeFiveArray = new int[]
@@ -114,7 +116,7 @@ public class RoomTypeFive : MonoBehaviour {
 				7,1,1,7,7,1,1,1,7,1,
 				1,1,1,1,1,1,11,1,1,1
 			};
-			//Debug.Log("Room Type Five Three was chosen.");
+			Debug.Log("Room Type Five Three was chosen.");
 			break;
 		case 4:
 			typeFiveArray = new int[] 
@@ -128,7 +130,7 @@ public class RoomTypeFive : MonoBehaviour {
 				10,1,1,0,0,0,1,11,1,3,
 				1,1,1,1,1,1,1,1,1,1
 			};
-			//Debug.Log("Room Type Five Four was chosen.");
+			Debug.Log("Room Type Five Four was chosen.");
 			break;
 		case 5:
 			typeFiveArray = new int[] 
@@ -143,7 +145,7 @@ public class RoomTypeFive : MonoBehaviour {
 				1,1,1,1,1,0,21,1,11,11
 				
 			};
-			//Debug.Log("Room Type Five Five was chosen.");
+			Debug.Log("Room Type Five Five was chosen.");
 			break;
 		case 6:
 			typeFiveArray = new int[] 
@@ -158,7 +160,7 @@ public class RoomTypeFive : MonoBehaviour {
 				11,1,1,1,1,1,1,1,1,11
 				
 			};
-			//Debug.Log("Room Type Five Six was chosen.");
+			Debug.Log("Room Type Five Six was chosen.");
 			break;
 		case 7:
 			typeFiveArray = new int[] 
@@ -173,7 +175,7 @@ public class RoomTypeFive : MonoBehaviour {
 				1,1,1,1,1,1,1,1,1,1
 				
 			};
-			//Debug.Log("Room Type Five Seven was chosen.");
+			Debug.Log("Room Type Five Seven was chosen.");
 			break;
 		case 8:
 			typeFiveArray = new int[] 
@@ -188,7 +190,7 @@ public class RoomTypeFive : MonoBehaviour {
 				1,1,1,1,1,1,1,1,1,1
 				
 			};
-			//Debug.Log("Room Type Five Eight was chosen.");
+			Debug.Log("Room Type Five Eight was chosen.");
 			break;
 		case 9:
 			typeFiveArray = new int[] 
@@ -203,7 +205,7 @@ public class RoomTypeFive : MonoBehaviour {
 				0,0,1,1,1,1,1,0,0,0
 				
 			};
-			//Debug.Log("Room Type Five Nine was chosen.");
+			Debug.Log("Room Type Five Nine was chosen.");
 			break;
 		case 10:
 			typeFiveArray = new int[] 
@@ -233,7 +235,7 @@ public class RoomTypeFive : MonoBehaviour {
 				1,1,1,1,1,11,1,1,1,1
 				
 			};
-			//Debug.Log("Room Type Five Eleven was chosen.");
+			Debug.Log("Room Type Five Eleven was chosen.");
 			break;
 		case 12:
 			typeFiveArray = new int[] 
@@ -248,7 +250,7 @@ public class RoomTypeFive : MonoBehaviour {
 				0,0,0,0,0,0,0,0,1,0
 				
 			};
-			//Debug.Log("Room Type Five Twelve was chosen.");
+			Debug.Log("Room Type Five Twelve was chosen.");
 			break;
 		case 13:
 			typeFiveArray = new int[] 
@@ -278,7 +280,7 @@ public class RoomTypeFive : MonoBehaviour {
 				0,0,0,0,0,0,0,0,0,0
 				
 			};
-			//Debug.Log("Room Type Five Fourteen was chosen.");
+			Debug.Log("Room Type Five Fourteen was chosen.");
 			break;
 		}
 		//calls the function to loop through the created array
@@ -396,12 +398,12 @@ public class RoomTypeFive : MonoBehaviour {
 			if(groundBlock1 == Vector3.zero)
 			{
 				groundBlock1 = roomTilePosition;
-				//Debug.Log("Room Type Two Ground Block 1 initialized at: "+groundBlock1);
+				Debug.Log("Room Type Two Ground Block 1 initialized at: "+groundBlock1);
 			}
 			else
 			{
 				groundBlock2 = roomTilePosition;
-				//Debug.Log("Room Type Two Ground Block 2 initialized at: "+groundBlock2);
+				Debug.Log("Room Type Two Ground Block 2 initialized at: "+groundBlock2);
 			}
 			
 			Instantiate(tileOfRoom[12], roomTilePosition, Quaternion.identity);
@@ -413,12 +415,12 @@ public class RoomTypeFive : MonoBehaviour {
 			if(airBlock1 == Vector3.zero)
 			{
 				airBlock1 = roomTilePosition;
-				//Debug.Log("Room Type Two Air Block 1 initialized at: "+airBlock1);
+				Debug.Log("Room Type Two Air Block 1 initialized at: "+airBlock1);
 			}
 			else
 			{
 				airBlock2 = roomTilePosition;
-				//Debug.Log("Room Type Two Air Block 2 initialized at: "+airBlock2);
+				Debug.Log("Room Type Two Air Block 2 initialized at: "+airBlock2);
 			}
 			
 			Instantiate(tileOfRoom[12], roomTilePosition, Quaternion.identity);

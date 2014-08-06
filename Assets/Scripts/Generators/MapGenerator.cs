@@ -24,6 +24,7 @@ public class MapGenerator : MonoBehaviour {
 		}
 		else if(tutorialDone == true && Application.loadedLevelName == "Map_Level_Gen")
 		{
+			LoadCompleteMessage();
 			NewDungeon();
 			Debug.Log ("Continue Loaded");
 		}
@@ -139,8 +140,17 @@ public class MapGenerator : MonoBehaviour {
 	{
 		Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
 		GameObject controlsSplash = Instantiate(controlsMessage, currentTransform.position, Quaternion.identity) as GameObject;
-		controlsSplash.transform.parent = currentTransform;
+		controlsSplash.transform.OverlayPosition(currentTransform);
 		Destroy(controlsSplash, 3.5f);
+	}
+
+	private void LoadCompleteMessage()
+	{
+		Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
+		GameObject completeSplash = Instantiate(completeMessage, currentTransform.position, Quaternion.identity) as GameObject;
+		completeSplash.transform.OverlayPosition(currentTransform);
+
+		Destroy(completeSplash, 1.5f);
 	}
 	
 	/*private void LoadSceneMessage()

@@ -26,11 +26,11 @@ public class LevelComplete_Continue : MonoBehaviour {
 			{
 				robbeContinues = Instantiate(completeMessage, correctContinueView, Quaternion.identity) as GameObject;
 				//robbeContinues.transform.parent = currentTransform;
-				robbeContinues.transform.OverlayPosition(currentTransform);
-				DontDestroyOnLoad(robbeContinues);
 
 				Vector2 resetTransform = new Vector2(-3.95f, -1.0f);
 				currentTransform.position = resetTransform;
+
+				robbeContinues.transform.OverlayPosition(currentTransform);
 
 				Destroy(robbeContinues, 2.0f);
 				Debug.Log ("You completed the level!!");
