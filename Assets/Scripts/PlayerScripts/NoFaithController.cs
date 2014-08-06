@@ -30,7 +30,7 @@ public class NoFaithController : MonoBehaviour {
 
 				if(moving == false)
 				{
-					Debug.Log("get key true");
+					//Debug.Log("get key true");
 					iTween.MoveAdd(this.gameObject, new Vector3(0f, -lookDistance, 0f), 0.2f);
 					moving = true;
 					_smoothFollow.movingCamera = true;
@@ -44,7 +44,7 @@ public class NoFaithController : MonoBehaviour {
 
 				if(moving == true)
 				{
-					Debug.Log("get key false");
+					//Debug.Log("get key false");
 					//iTween.MoveAdd(this.gameObject, target.transform.position, 0.2f);
 					iTween.MoveTo(this.gameObject, iTween.Hash("position", new Vector3(target.transform.position.x, target.transform.position.y, -10), "time", 0.2, "oncompletetarget", this.gameObject, "oncomplete", "smoothFollowFalse"));
 					moving = false;

@@ -293,7 +293,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		if(bSuccess)
 		{
 			Debug.Log("Success Updating User Stats");
-			Debug.Log("Spike Stat: " + m_nTotalNumDeathBySpikes);
+			//Debug.Log("Spike Stat: " + m_nTotalNumDeathBySpikes);
 		}
 	}
 

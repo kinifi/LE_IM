@@ -37,16 +37,26 @@ public class MapGenerator : MonoBehaviour {
 
 	private void isTutorialComplete () 
 	{
+		//increment the stats for steam
+		incrementGamesPlayed();
+
 		string _tutorialDone = PlayerPrefs.GetString("tutorialDone");
 		if(_tutorialDone == "true")
 		{
 			tutorialDone = true;
+
 		}
 		else
 		{
 			tutorialDone = false;
+
 		}
 
+	}
+
+	private void incrementGamesPlayed()
+	{
+		SteamManager.StatsAndAchievements.incrementNumOfGames();
 	}
 
 	private void GenerateTutorialMatrix ()
