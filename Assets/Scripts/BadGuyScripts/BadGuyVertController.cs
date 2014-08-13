@@ -7,7 +7,7 @@ public class BadGuyVertController : MonoBehaviour {
 	public float vertMoveSpeed = 5.0f;
 	public float vertMaxSpeed = 5.0f;
 	bool faceUp = true;
-	public GameObject vertKilledMe;
+	public GameObject kill;
 	public GameObject deathSplash;
 	public GameObject bowGolden;
 	
@@ -30,17 +30,49 @@ public class BadGuyVertController : MonoBehaviour {
 		if(player.gameObject.tag == "Player")
 		{
 			Transform currentTransform = GameObject.Find("FakeRobbe").GetComponent<Transform>();
-			if(vertKilledMe == null)
+			if(kill == null)
 			{
-				vertKilledMe = Instantiate(deathSplash, currentTransform.position, Quaternion.identity) as GameObject;
-				vertKilledMe.transform.parent = currentTransform;
 				//Debug.Log ("You were killed by a bad guy!!");
-				GameObject resetRobbe = GameObject.Find ("FakeRobbe");
-				Vector2 resetTransform = new Vector2(-3.95f, -1.0f);
+
+				//Find Robbe's gameobject and set his transform to the entrance.
+				GameObject resetRobbe = GameObject.Find ("Player");
+				Vector2 resetTransform = new Vector2(-3.5f, -0.9f);
+				Vector3 resetScale = new Vector3(1.0f, 1.0f, 1.0f);
 				resetRobbe.transform.position = resetTransform;
-				Destroy(vertKilledMe, 2.0f);
+
+				//Set his scale to facing forward.
+				resetRobbe.transform.localScale = resetScale;
+				
+				//Set Robbe to Kinematic to zero out any velocity
+				resetRobbe.rigidbody2D.isKinematic = true;
+				
+				//Find Robbe's controller and prevent his movement.
+				FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
+				_robbe.canMove = false;
+				
+				//Find the LookDown camera and prevent its movement.
+				NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
+				_lookdown.canMove = false;
+				
+				//Instantiate the death splash and overlay Robbe.  Destroy it and call the movement function.
+				kill = Instantiate(deathSplash, resetRobbe.transform.position, Quaternion.identity) as GameObject;
+				kill.transform.OverlayPosition(resetRobbe.transform);
+				Destroy(kill, 2.5f);
+				Invoke("AllowRobbesMovement", 2.5f);
 			}
 		}
+	}
+
+	private void AllowRobbesMovement() 
+	{
+		//Find Robbe and allow his movement again.  Turn kinematic to false.
+		FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
+		_robbe.canMove = true;
+		_robbe.rigidbody2D.isKinematic = false;
+		
+		//Find the LookDown camera and allow its movement.
+		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
+		_lookdown.canMove = true;
 	}
 	
 	void OnTriggerEnter2D (Collider2D other)

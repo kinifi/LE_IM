@@ -51,6 +51,8 @@ public class RoomTypeZero : MonoBehaviour {
 		groundBlock2 = Vector3.zero;
 		airBlock1 = Vector3.zero;
 		airBlock2 = Vector3.zero;
+		startObstacleXposition = 0.0f;
+		startObstacleYposition = 0.0f;
 	}
 
 	//Gets the starting position and ranomly selects a room array

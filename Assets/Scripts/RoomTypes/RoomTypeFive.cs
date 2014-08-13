@@ -214,9 +214,9 @@ public class RoomTypeFive : MonoBehaviour {
 				0,0,1,1,9,1,1,1,0,0,
 				0,1,100,0,0,0,0,100,1,0,
 				0,9,0,0,0,0,0,0,1,0,
-				0,1,0,0,661,0,0,0,1,0,
+				0,1,0,0,0,0,661,0,1,0,
 				0,1,0,0,0,0,0,0,1,0,
-				0,9,0,3,0,0,0,0,9,3,
+				0,9,0,3,0,0,0,0,9,0,
 				0,21,1,1,1,1,1,1,1,1
 				
 			};
@@ -398,12 +398,12 @@ public class RoomTypeFive : MonoBehaviour {
 			if(groundBlock1 == Vector3.zero)
 			{
 				groundBlock1 = roomTilePosition;
-				Debug.Log("Room Type Two Ground Block 1 initialized at: "+groundBlock1);
+				Debug.Log("Room Type Five Ground Block 1 initialized at: "+groundBlock1);
 			}
 			else
 			{
 				groundBlock2 = roomTilePosition;
-				Debug.Log("Room Type Two Ground Block 2 initialized at: "+groundBlock2);
+				Debug.Log("Room Type Five Ground Block 2 initialized at: "+groundBlock2);
 			}
 			
 			Instantiate(tileOfRoom[12], roomTilePosition, Quaternion.identity);
@@ -415,12 +415,12 @@ public class RoomTypeFive : MonoBehaviour {
 			if(airBlock1 == Vector3.zero)
 			{
 				airBlock1 = roomTilePosition;
-				Debug.Log("Room Type Two Air Block 1 initialized at: "+airBlock1);
+				Debug.Log("Room Type Five Air Block 1 initialized at: "+airBlock1);
 			}
 			else
 			{
 				airBlock2 = roomTilePosition;
-				Debug.Log("Room Type Two Air Block 2 initialized at: "+airBlock2);
+				Debug.Log("Room Type Two Five Block 2 initialized at: "+airBlock2);
 			}
 			
 			Instantiate(tileOfRoom[12], roomTilePosition, Quaternion.identity);

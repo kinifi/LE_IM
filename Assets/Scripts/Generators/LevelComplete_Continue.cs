@@ -13,29 +13,53 @@ public class LevelComplete_Continue : MonoBehaviour {
 
 		if(Player.gameObject.tag == "Player")
 		{
-			Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
-			if(currentTransform.position.x == -1)
-			{
-				correctContinueView = currentTransform.position * -1;
-			}
-			else
-			{
-				correctContinueView = currentTransform.position;
-			}			
 			if(robbeContinues == null)
 			{
-				robbeContinues = Instantiate(completeMessage, correctContinueView, Quaternion.identity) as GameObject;
-				//robbeContinues.transform.parent = currentTransform;
+				
+				//Find Robbe's gameobject and set his transform to the entrance.
+				GameObject resetRobbe = GameObject.Find ("Player");
+				Vector2 resetTransform = new Vector2(-3.5f, -0.9f);
+				Vector3 resetScale = new Vector3(1.0f, 1.0f, 1.0f);
+				resetRobbe.transform.position = resetTransform;
 
-				Vector2 resetTransform = new Vector2(-3.95f, -1.0f);
-				currentTransform.position = resetTransform;
-
-				robbeContinues.transform.OverlayPosition(currentTransform);
-
+				//Set his scale to facing forward.
+				resetRobbe.transform.localScale = resetScale;
+				
+				//Set Robbe to Kinematic to zero out any velocity
+				resetRobbe.rigidbody2D.isKinematic = true;
+				
+				//Find Robbe's controller and prevent his movement.
+				FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
+				_robbe.canMove = false;
+				
+				//Find the LookDown camera and prevent its movement.
+				NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
+				_lookdown.canMove = false;
+				
+				//Instantiate the continue splash and overlay Robbe.
+				robbeContinues = Instantiate(completeMessage, resetRobbe.transform.position, Quaternion.identity) as GameObject;
+				robbeContinues.transform.OverlayPosition(resetRobbe.transform);
 				Destroy(robbeContinues, 2.0f);
+
+				//Let me know you comopleted the level!
 				Debug.Log ("You completed the level!!");
+
+				//Load the next level and Call the movement function.
 				Application.LoadLevel("Map_Level_Gen");
+				Invoke("AllowRobbesMovement", 2.5f);
 			}
 		}
+	}
+
+	private void AllowRobbesMovement() 
+	{
+		//Find Robbe and allow his movement again.  Turn kinematic to false.
+		FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
+		_robbe.canMove = true;
+		_robbe.rigidbody2D.isKinematic = false;
+		
+		//Find the LookDown camera and allow its movement.
+		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
+		_lookdown.canMove = true;
 	}
 }

@@ -18,6 +18,7 @@ public class MapGenerator : MonoBehaviour {
 
 		if(tutorialDone == false)
 		{
+			LoadControlsMessage();
 			GenerateTutorialMatrix();
 			FillInTheMap();
 			Debug.Log ("Tutorial Dungeon Loaded!");
@@ -129,7 +130,6 @@ public class MapGenerator : MonoBehaviour {
 
 	public void NewDungeon()
 	{
-		//LoadSceneMessage();
 		GenerateMatrix();
 		StartRoomIsOne();
 		ThePath(pathNum, lastRow, lastColumn);
@@ -138,29 +138,58 @@ public class MapGenerator : MonoBehaviour {
 
 	private void LoadControlsMessage()
 	{
-		Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
-		GameObject controlsSplash = Instantiate(controlsMessage, currentTransform.position, Quaternion.identity) as GameObject;
-		controlsSplash.transform.OverlayPosition(currentTransform);
-		Destroy(controlsSplash, 3.5f);
+		//Find Robbe's gameobject and set to Kinematic to zero out any velocity.
+		GameObject startRobbe = GameObject.Find ("Player");
+		startRobbe.rigidbody2D.isKinematic = true;
+		
+		//Find Robbe's controller and prevent his movement.
+		FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
+		_robbe.canMove = false;
+		
+		//Find the LookDown camera and prevent its movement.
+		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
+		_lookdown.canMove = false;
+
+		//Instantiate the controls splash and overlay Robbe.  Destroy it and call the movement function.
+		GameObject controlsSplash = Instantiate(controlsMessage, startRobbe.transform.position, Quaternion.identity) as GameObject;
+		controlsSplash.transform.OverlayPosition(startRobbe.transform);
+		Destroy(controlsSplash, 2.5f);
+		Invoke("AllowRobbesMovement", 2.5f);
+
 	}
 
 	private void LoadCompleteMessage()
 	{
-		Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
-		GameObject completeSplash = Instantiate(completeMessage, currentTransform.position, Quaternion.identity) as GameObject;
-		completeSplash.transform.OverlayPosition(currentTransform);
+		//Find Robbe's gameobject and set to Kinematic to zero out any velocity.
+		GameObject startRobbe = GameObject.Find ("Player");
+		startRobbe.rigidbody2D.isKinematic = true;
+		
+		//Find Robbe's controller and prevent his movement.
+		FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
+		_robbe.canMove = false;
+		
+		//Find the LookDown camera and prevent its movement.
+		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
+		_lookdown.canMove = false;
 
+		//Instantiate the complete splash and overlay Robbe.  Destroy it and call the movement function.
+		GameObject completeSplash = Instantiate(completeMessage, startRobbe.transform.position, Quaternion.identity) as GameObject;
+		completeSplash.transform.OverlayPosition(startRobbe.transform);
 		Destroy(completeSplash, 1.5f);
+		Invoke("AllowRobbesMovement", 2.5f);
 	}
-	
-	/*private void LoadSceneMessage()
+
+	private void AllowRobbesMovement() 
 	{
-		Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
-		GameObject robbeDreams = Instantiate(completeMessage, currentTransform.position, Quaternion.identity) as GameObject;
-		robbeDreams.transform.parent = currentTransform;
-		Debug.Log ("You started the next level!!");
-		Destroy(robbeDreams, 2.5f);
-	}*/
+		//Find Robbe and allow his movement again.  Turn kinematic to false.
+		FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
+		_robbe.canMove = true;
+		_robbe.rigidbody2D.isKinematic = false;
+		
+		//Find the LookDown camera and allow its movement.
+		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
+		_lookdown.canMove = true;
+	}
 
 	private void GenerateMatrix ()
 	{

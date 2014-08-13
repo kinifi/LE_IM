@@ -52,6 +52,8 @@ public class RoomTypeOne : MonoBehaviour {
 		groundBlock2 = Vector3.zero;
 		airBlock1 = Vector3.zero;
 		airBlock2 = Vector3.zero;
+		startObstacleXposition = 0.0f;
+		startObstacleYposition = 0.0f;
 	}
 	
 	private void ChooseRoomTypeOneTemplate ()
