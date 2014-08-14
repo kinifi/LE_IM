@@ -37,12 +37,8 @@ public class BadGuyVertController : MonoBehaviour {
 				//Find Robbe's gameobject and set his transform to the entrance.
 				GameObject resetRobbe = GameObject.Find ("Player");
 				Vector2 resetTransform = new Vector2(-3.5f, -0.9f);
-				Vector3 resetScale = new Vector3(1.0f, 1.0f, 1.0f);
 				resetRobbe.transform.position = resetTransform;
 
-				//Set his scale to facing forward.
-				resetRobbe.transform.localScale = resetScale;
-				
 				//Set Robbe to Kinematic to zero out any velocity
 				resetRobbe.rigidbody2D.isKinematic = true;
 				
@@ -57,6 +53,8 @@ public class BadGuyVertController : MonoBehaviour {
 				//Instantiate the death splash and overlay Robbe.  Destroy it and call the movement function.
 				kill = Instantiate(deathSplash, resetRobbe.transform.position, Quaternion.identity) as GameObject;
 				kill.transform.OverlayPosition(resetRobbe.transform);
+				kill.transform.localScale = new Vector3(50.0f,50.0f,1.0f);
+
 				Destroy(kill, 2.5f);
 				Invoke("AllowRobbesMovement", 2.5f);
 			}
@@ -89,7 +87,7 @@ public class BadGuyVertController : MonoBehaviour {
 				Instantiate(bowGolden, pos, Quaternion.identity);
 			}
 		}
-		
+
 		if(other.gameObject.layer != 12 && other.gameObject.layer != 15)
 		{
 			FlipUp();

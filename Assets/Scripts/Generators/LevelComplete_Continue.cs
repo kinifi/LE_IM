@@ -5,8 +5,7 @@ public class LevelComplete_Continue : MonoBehaviour {
 
 	public GameObject completeMessage;
 	public GameObject robbeContinues;
-	private Vector3 correctContinueView;
-	
+
 	
 	void OnCollisionEnter2D (Collision2D Player) 
 	{
@@ -19,12 +18,8 @@ public class LevelComplete_Continue : MonoBehaviour {
 				//Find Robbe's gameobject and set his transform to the entrance.
 				GameObject resetRobbe = GameObject.Find ("Player");
 				Vector2 resetTransform = new Vector2(-3.5f, -0.9f);
-				Vector3 resetScale = new Vector3(1.0f, 1.0f, 1.0f);
 				resetRobbe.transform.position = resetTransform;
 
-				//Set his scale to facing forward.
-				resetRobbe.transform.localScale = resetScale;
-				
 				//Set Robbe to Kinematic to zero out any velocity
 				resetRobbe.rigidbody2D.isKinematic = true;
 				
@@ -39,7 +34,9 @@ public class LevelComplete_Continue : MonoBehaviour {
 				//Instantiate the continue splash and overlay Robbe.
 				robbeContinues = Instantiate(completeMessage, resetRobbe.transform.position, Quaternion.identity) as GameObject;
 				robbeContinues.transform.OverlayPosition(resetRobbe.transform);
-				Destroy(robbeContinues, 2.0f);
+				robbeContinues.transform.localScale = new Vector3(15.0f,15.0f,1.0f);
+
+				Destroy(robbeContinues, 2.5f);
 
 				//Let me know you comopleted the level!
 				Debug.Log ("You completed the level!!");
