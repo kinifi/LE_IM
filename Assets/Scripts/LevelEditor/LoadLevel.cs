@@ -6,6 +6,8 @@ public class LoadLevel : MonoBehaviour {
 	public int levelX = 18, levelY = 12;
 	public string levelName;
 	public string authorName;
+    public GameObject[] Blocks;
+
 
 	private bool hideGUI = false;
 	private Vector2 scrollPosition;
@@ -45,23 +47,39 @@ public class LoadLevel : MonoBehaviour {
 
 				if(ES2.Exists(Application.dataPath + "/UserLevels/" + levelName + "/" + levelName + ".txt?tag=" + "" + x + y))
 				{
-					Debug.Log("I Exist!");
-					/*
-					GameObject empty;
-					empty = Instantiate(emptyTile, new Vector2(x, y), Quaternion.identity) as GameObject;
-					empty.name = "" + x + y;
-					empty.transform.parent = this.gameObject.transform;
-					*/
+					//Debug.Log("I Exist!");
+                    //load the value
+                    string s_Name = ES2.Load<string>(Application.dataPath + "/UserLevels/" + levelName + "/" + levelName + ".txt?tag=" + "" + x + y);
+
+                    //pass the values and pass it to the block creator
+                    instantiateBlock(s_Name, x, y);
+
 				}
 				else
 				{
-					Debug.Log("I Dont Exist: " + "" + x + y);
+					///Debug.Log("I Dont Exist: " + "" + x + y);
 				}
 			}
 			
 		}
 
 	}
+
+    private void instantiateBlock(string spriteName, int x, int y)
+    {
+
+        //if they match instantiate that block
+        for (int s = 0; s < Blocks.Length; s++)
+        {
+            if(Blocks[s].GetComponent<SpriteRenderer>().sprite.name == spriteName)
+            {
+                GameObject newBlock;
+                newBlock = Instantiate(Blocks[s], new Vector2(x, y), Quaternion.identity) as GameObject;
+                newBlock.name = "" + x + y;
+            }
+        }
+
+    }
 
 	private void getUserGeneratedLevels () {
 
