@@ -47,7 +47,7 @@ public class LoadLevel : MonoBehaviour {
 
 				if(ES2.Exists(Application.dataPath + "/UserLevels/" + levelName + "/" + levelName + ".txt?tag=" + "" + x + y))
 				{
-					//Debug.Log("I Exist!");
+					//Debug.Log("I Exist: " + "" + x + y);
                     //load the value
                     string s_Name = ES2.Load<string>(Application.dataPath + "/UserLevels/" + levelName + "/" + levelName + ".txt?tag=" + "" + x + y);
 
@@ -57,7 +57,7 @@ public class LoadLevel : MonoBehaviour {
 				}
 				else
 				{
-					///Debug.Log("I Dont Exist: " + "" + x + y);
+					Debug.Log("I Dont Exist: " + "" + x + y);
 				}
 			}
 			
