@@ -8,6 +8,10 @@ public class MenuButtons : MonoBehaviour {
 	
 	}
 
+	public void goToOptions() {
+		Application.LoadLevel("Options");
+	}
+
 	public void openAchievements() {
 		SteamBasic.openSteamOverlayToAchievement();
 	}
