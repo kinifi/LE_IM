@@ -33,22 +33,6 @@ public class BadGuyController : MonoBehaviour {
 		}
 	}
 
-	private void AllowRobbesMovement() 
-	{
-		//Allow movement of the bad guy again
-		this.gameObject.rigidbody2D.isKinematic = false;
-
-
-		//Find Robbe and allow his movement again.  Turn kinematic to false.
-		FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
-		_robbe.canMove = true;
-		_robbe.rigidbody2D.isKinematic = false;
-		
-		//Find the LookDown camera and allow its movement.
-		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-		_lookdown.canMove = true;
-	}
-
 	private void OnTriggerEnter2D (Collider2D other)
 	{
 		if(other.gameObject.tag == "Player")
@@ -97,8 +81,7 @@ public class BadGuyController : MonoBehaviour {
 			{
 				Instantiate(bowGolden, pos, Quaternion.identity);
 			}
-
-			Destroy(this.gameObject);
+			Destroy(gameObject);
 		}
 
 		if(other.gameObject.layer != 12 && other.gameObject.layer != 15 && other.gameObject.layer != 18)
@@ -115,7 +98,23 @@ public class BadGuyController : MonoBehaviour {
 			}
 		}
 	}
-	
+
+	private void AllowRobbesMovement() 
+	{
+		//Allow movement of the bad guy again
+		this.gameObject.rigidbody2D.isKinematic = false;
+		
+		
+		//Find Robbe and allow his movement again.  Turn kinematic to false.
+		FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
+		_robbe.canMove = true;
+		_robbe.rigidbody2D.isKinematic = false;
+		
+		//Find the LookDown camera and allow its movement.
+		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
+		_lookdown.canMove = true;
+	}
+
 	private void Flip()
 	{
 		faceRight = !faceRight;

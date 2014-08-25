@@ -82,7 +82,7 @@ public class BadGuyVertController : MonoBehaviour {
 			{
 				Instantiate(bowGolden, pos, Quaternion.identity);
 			}
-			Destroy(this.gameObject);
+			Destroy(gameObject);
 		}
 
 		if(other.gameObject.layer != 12 && other.gameObject.layer != 15 && other.gameObject.layer != 18)

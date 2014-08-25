@@ -176,7 +176,7 @@ public class MapGenerator : MonoBehaviour {
 		GameObject completeSplash = Instantiate(completeMessage, startRobbe.transform.position, Quaternion.identity) as GameObject;
 		completeSplash.transform.OverlayPosition(startRobbe.transform);
 		Destroy(completeSplash, 1.5f);
-		Invoke("AllowRobbesMovement", 2.5f);
+		Invoke("AllowRobbesMovement", 1.5f);
 	}
 
 	private void AllowRobbesMovement() 

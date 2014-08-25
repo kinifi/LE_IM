@@ -43,7 +43,7 @@ public class LevelComplete_Continue : MonoBehaviour {
 
 				//Load the next level and Call the movement function.
 				Application.LoadLevel("Map_Level_Gen");
-				Invoke("AllowRobbesMovement", 2.5f);
+				Invoke("AllowRobbesMovement", 1.5f);
 			}
 		}
 	}
