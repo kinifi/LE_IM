@@ -11,9 +11,7 @@ public class BadGuyController : MonoBehaviour {
 	public float maxSpeed = 5.0f;
 
 	private bool faceRight = true;
-	private bool ignoreCollisionFlip = false;
 	private bool faceUp = true;
-	private bool ignoreCollisionFlipUp = false;
 
 
 	public GameObject kill;
@@ -39,16 +37,18 @@ public class BadGuyController : MonoBehaviour {
 	{
 		if(player.gameObject.tag == "Player")
 		{
+			//Stop all movement of the bad guy!!
+			this.gameObject.rigidbody2D.isKinematic = true;
 
 			Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
 			if(kill == null)
 			{
 				//Debug.Log ("You were killed by a bad guy!!");
 
-				//Find Robbe's gameobject and set his transform to the entrance.
+				//Find Robbe's gameobject and set his transform to the Spawn Location.
 				GameObject resetRobbe = GameObject.Find ("Player");
-				Vector2 resetTransform = new Vector2(-3.5f, -0.9f);
-				resetRobbe.transform.position = resetTransform;
+				GameObject respawn = GameObject.Find("Spawn_Location");
+				resetRobbe.transform.position = respawn.transform.position;
 
 				//Set Robbe to Kinematic to zero out any velocity
 				resetRobbe.rigidbody2D.isKinematic = true;
@@ -74,6 +74,10 @@ public class BadGuyController : MonoBehaviour {
 
 	private void AllowRobbesMovement() 
 	{
+		//Allow movement of the bad guy again
+		this.gameObject.rigidbody2D.isKinematic = false;
+
+
 		//Find Robbe and allow his movement again.  Turn kinematic to false.
 		FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
 		_robbe.canMove = true;
@@ -84,7 +88,7 @@ public class BadGuyController : MonoBehaviour {
 		_lookdown.canMove = true;
 	}
 
-	void OnTriggerEnter2D (Collider2D other)
+	private void OnTriggerEnter2D (Collider2D other)
 	{
 		if(other.gameObject.tag == "Arrow")
 		{
@@ -99,39 +103,35 @@ public class BadGuyController : MonoBehaviour {
 			}
 		}
 
-		if(other.gameObject.layer != 12 && other.gameObject.layer != 15)
+		if(other.gameObject.layer != 12 && other.gameObject.layer != 15 && other.gameObject.layer != 18)
 		{
 			if(this.gameObject.tag == "BadGuy")
 			{
-				ignoreCollisionFlip = true;
 				Flip();
 				//Debug.Log ("Flip was called");
 			}
 			else if(this.gameObject.tag == "BadGuyVert")
 			{
-				ignoreCollisionFlipUp = true;
 				FlipUp();
 				//Debug.Log ("FlipUp was called");
 			}
 		}
 	}
 	
-	void Flip()
+	private void Flip()
 	{
 		faceRight = !faceRight;
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		moveForward *= -1;
 		transform.localScale = theScale;
-		ignoreCollisionFlip = false;
 		//Debug.Log ("Flip ran and moveForward is now: " + moveForward);
 	}
 
-	void FlipUp()
+	private void FlipUp()
 	{
 		faceUp = !faceUp;
 		moveUp *= -1;
-		ignoreCollisionFlipUp = false;
 		//Debug.Log ("FlipUp ran and moveUp is now: " + moveUp);
 	}
 }

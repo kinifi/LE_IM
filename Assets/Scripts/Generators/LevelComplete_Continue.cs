@@ -15,10 +15,10 @@ public class LevelComplete_Continue : MonoBehaviour {
 			if(robbeContinues == null)
 			{
 				
-				//Find Robbe's gameobject and set his transform to the entrance.
+				//Find Robbe's gameobject and set his transform to the Spawn Location.
 				GameObject resetRobbe = GameObject.Find ("Player");
-				Vector2 resetTransform = new Vector2(-3.5f, -0.9f);
-				resetRobbe.transform.position = resetTransform;
+				GameObject respawn = GameObject.Find("Spawn_Location");
+				resetRobbe.transform.position = respawn.transform.position;
 
 				//Set Robbe to Kinematic to zero out any velocity
 				resetRobbe.rigidbody2D.isKinematic = true;
