@@ -79,13 +79,13 @@ public class BadGuyVertController : MonoBehaviour {
 		{
 			Vector3 pos = transform.position;
 			Destroy(other.gameObject);
-			Destroy(this.gameObject);
-			
+
 			int drop = Random.Range(1,6);
 			if(drop == 5)
 			{
 				Instantiate(bowGolden, pos, Quaternion.identity);
 			}
+			Destroy(this.gameObject);
 		}
 
 		if(other.gameObject.layer != 12 && other.gameObject.layer != 15 && other.gameObject.layer != 18)
