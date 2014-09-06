@@ -22,6 +22,7 @@ public class MenuButtons : MonoBehaviour {
 	}
 
 	public void goToChallengeLevels() {
+		Application.LoadLevel("Challenge");
 		Debug.Log("Loading Challenge Levels");
 	}
 

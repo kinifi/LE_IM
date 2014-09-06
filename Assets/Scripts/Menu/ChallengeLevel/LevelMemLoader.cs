@@ -23,9 +23,13 @@ public class LevelMemLoader : MonoBehaviour {
 		if(PlayerPrefs.HasKey("levelUnlock"))
 		{
 			levelUnlocked = PlayerPrefs.GetInt("levelUnlock");
+			if(levelUnlocked >= Levels.Length)
+			{
+				levelUnlocked = Levels.Length;
+			}
 			unlockLevels();
-			Debug.Log("Exists");
-			Levels[levelUnlocked].GetComponent<UIKeyNavigation>().startsSelected = true;
+			Debug.Log("Exists:" + levelUnlocked);
+
 		}
 		else
 		{
