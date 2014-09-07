@@ -6,6 +6,7 @@ public class PauseScreen : MonoBehaviour {
 	public GameObject Panel;
 	public GameObject cam;
 	public GameObject Player;
+	public bool isChallengeLevels = false;
 
 	// Use this for initialization
 	void Start () {
@@ -30,8 +31,11 @@ public class PauseScreen : MonoBehaviour {
 	public void Resume()
 	{
 		togglePlayerMovement();
-		toggleCameraMovement();
-		changeVectorOffSet(0);
+		if(isChallengeLevels == false)
+		{
+			toggleCameraMovement();
+			changeVectorOffSet(0);
+		}
 		Panel.SetActive(false);
 	}
 
@@ -58,15 +62,23 @@ public class PauseScreen : MonoBehaviour {
 		if(Panel.activeSelf == false)
 		{
 			togglePlayerMovement();
-			toggleCameraMovement();
+			if(isChallengeLevels == false)
+			{
+				toggleCameraMovement();
+				changeVectorOffSet(-50);
+			}
 			Panel.SetActive(true);
-			changeVectorOffSet(-50);
+
 		}
 		else
 		{
 			togglePlayerMovement();
-			toggleCameraMovement();
-			changeVectorOffSet(0);
+			if(isChallengeLevels == false)
+			{
+				toggleCameraMovement();
+				changeVectorOffSet(0);
+			}
+
 			Panel.SetActive(false);
 		}
 	}
