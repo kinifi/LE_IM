@@ -1,39 +1,49 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerFail : MonoBehaviour {
+public class spikeBullet : MonoBehaviour {
 
-	public GameObject FadeObj;
+	private GameObject FadeObj;
 	public bool isSpike = false;
 	public bool isFalling = false;
 	public string playerName = "Player";
-
+	
 	private bool hasIncrementedStat = false;
 	private GameObject player;
 
 	// Use this for initialization
 	void Start () {
+		FadeObj = GameObject.Find("ShaddowSpikeCannon");
 
-		this.collider2D.isTrigger = true;
+		if(FadeObj == null)
+		{
+			Debug.Log("cant find a shadowspikeCannon");
+		}
+
 	}
 	
-	public void startDeath() {
-		FadeObj.SetActive(true);
-		if(hasIncrementedStat == false)
-		{
-			hasIncrementedStat = true;
-			incrementStats();
-			Invoke("loadFailLevel", 0.2f);
-		}
-		Invoke("disablePlayer", 0.1f);
-		Debug.Log("Player Fell");
+	// Update is called once per frame
+	void Update () {
+	
 	}
 
-	void OnTriggerEnter2D(Collider2D coll)
+	void OnCollisionEnter2D (Collision2D coll)
 	{
 		if(coll.transform.name == playerName)
 		{
-			startDeath();
+			FadeObj.GetComponent<PlayerFail>().startDeath();
+			if(hasIncrementedStat == false)
+			{
+				hasIncrementedStat = true;
+				incrementStats();
+				Invoke("loadFailLevel", 0.2f);
+			}
+			Invoke("disablePlayer", 0.1f);
+			Debug.Log("Player Fell");
+		}
+		else
+		{
+			Destroy(this.gameObject);
 		}
 	}
 
@@ -43,7 +53,7 @@ public class PlayerFail : MonoBehaviour {
 		player.GetComponent<FakeRobbeController>().canMove = false;
 		player.GetComponent<Rigidbody2D>().isKinematic = true;
 	}
-
+	
 	private void incrementStats()
 	{
 		if(isFalling == true)
@@ -55,10 +65,9 @@ public class PlayerFail : MonoBehaviour {
 			SteamManager.StatsAndAchievements.incrementNumOfDeathsBySpikes();
 		}
 	}
-
+	
 	private void loadFailLevel()
 	{
 		Application.LoadLevel("FailedLevel");
 	}
-
 }
