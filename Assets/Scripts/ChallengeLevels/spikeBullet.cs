@@ -32,13 +32,14 @@ public class spikeBullet : MonoBehaviour {
 		if(coll.transform.name == playerName)
 		{
 			FadeObj.GetComponent<PlayerFail>().startDeath();
+			disablePlayer();
 			if(hasIncrementedStat == false)
 			{
 				hasIncrementedStat = true;
 				incrementStats();
-				Invoke("loadFailLevel", 0.2f);
+				Destroy(this.gameObject);
 			}
-			Invoke("disablePlayer", 0.1f);
+
 			Debug.Log("Player Fell");
 		}
 		else
@@ -65,9 +66,5 @@ public class spikeBullet : MonoBehaviour {
 			SteamManager.StatsAndAchievements.incrementNumOfDeathsBySpikes();
 		}
 	}
-	
-	private void loadFailLevel()
-	{
-		Application.LoadLevel("FailedLevel");
-	}
+
 }

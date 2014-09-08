@@ -49,6 +49,7 @@ public class PlayerFail : MonoBehaviour {
 		if(isFalling == true)
 		{
 			SteamManager.StatsAndAchievements.incrementNumOfDeathsByFalling();
+			SteamManager.StatsAndAchievements.Unlock_Falling_Is_Fun_Achievement();
 		}
 		else if(isSpike == true)
 		{

@@ -26,6 +26,7 @@ public class LevelMemLoader : MonoBehaviour {
 			if(levelUnlocked >= Levels.Length)
 			{
 				levelUnlocked = Levels.Length;
+
 			}
 			unlockLevels();
 			Debug.Log("Exists:" + levelUnlocked);
