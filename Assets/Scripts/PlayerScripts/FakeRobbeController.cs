@@ -57,7 +57,7 @@ public class FakeRobbeController : MonoBehaviour {
 				}
 			}
 
-			if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
+			if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("JoystickButton0"))
 			{
 				if(grounded == true)
 				{
