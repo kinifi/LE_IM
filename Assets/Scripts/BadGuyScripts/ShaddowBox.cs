@@ -40,9 +40,9 @@ public class ShaddowBox : MonoBehaviour {
 	private void AllowRobbesMovement() 
 	{
 		//Find Robbe and allow his movement again.  Turn kinematic to false.
-		FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
+		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
 		_robbe.canMove = true;
-		_robbe.rigidbody2D.isKinematic = false;
+		//_robbe.rigidbody2D.isKinematic = false;
 		
 		//Find the LookDown camera and allow its movement.
 		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
@@ -80,7 +80,7 @@ public class ShaddowBox : MonoBehaviour {
 				resetRobbe.rigidbody2D.isKinematic = true;
 				
 				//Find Robbe's controller and prevent his movement.
-				FakeRobbeController _robbe = GameObject.Find("Player").GetComponent<FakeRobbeController>();
+				RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
 				_robbe.canMove = false;
 				
 				//Find the LookDown camera and prevent its movement.

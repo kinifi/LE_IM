@@ -51,7 +51,7 @@ public class spikeBullet : MonoBehaviour {
 	private void disablePlayer()
 	{
 		player = GameObject.Find("Player");
-		player.GetComponent<FakeRobbeController>().canMove = false;
+		player.GetComponent<RobbeController>().canMove = false;
 		player.GetComponent<Rigidbody2D>().isKinematic = true;
 	}
 	
