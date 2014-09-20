@@ -6,17 +6,22 @@ public class RobbeController : MonoBehaviour {
 	//Movement Configs
 	public float gravity = -25.0f;
 	public float runSpeed = 5.0f;
-	//public float groundDamping = 20f; // how fast do we change direction? higher means faster
-	//public float inAirDamping = 5f;
+	public float groundDamping = 20f; // how fast do we change direction? higher means faster
+	public float inAirDamping = 5f;
 	public float targetJumpHeight = 3f;
 	public bool doubleJump = false;
 	public bool canMove;
+
+	//Object movement configs
+	private Vector2 moveColR = new Vector2(45.0f, 0.0f);
+	private Vector2 moveColL = new Vector2(-45.0f, 0.0f);
+	private bool _right;
 
 	//Animator States
 	private int idleState = Animator.StringToHash( "Idle" );
 	private int runState = Animator.StringToHash( "RunRight" );
 	private int jumpState = Animator.StringToHash( "JumpRight" );
-	
+
 	//scripts to get
 	private CharacterController2D _controller;
 	private Animator _animator;
@@ -27,6 +32,9 @@ public class RobbeController : MonoBehaviour {
 		//grab script components
 		_controller = GetComponent<CharacterController2D>();
 		_animator = GetComponent<Animator>();
+
+		//events :) may not need this line
+		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 	}
 	
 	void Update()
@@ -47,6 +55,7 @@ public class RobbeController : MonoBehaviour {
 		{
 			velocity.x = runSpeed;
 			goRight();
+			_right = true;
 			
 			/*//running animation state
 			if( _controller.isGrounded)
@@ -60,6 +69,7 @@ public class RobbeController : MonoBehaviour {
 		{
 			velocity.x = -runSpeed;
 			goLeft();
+			_right = false;
 			
 			/*//running animation state
 			if( _controller.isGrounded)
@@ -113,7 +123,23 @@ public class RobbeController : MonoBehaviour {
 		
 		//move based on velocity
 		_controller.move( velocity * Time.deltaTime );
-		
+
+	}
+
+	//Object movement via Physics
+	void onTriggerEnterEvent( Collider2D col )
+	{
+		if(col.transform.name == "PushBlock50(Clone)")
+		{
+			if(_right)
+			{
+				col.gameObject.rigidbody2D.AddForce(moveColR);
+			}
+			else if(!_right)
+			{
+				col.gameObject.rigidbody2D.AddForce(moveColL);
+			}
+		}
 	}
 
 	private void goLeft()

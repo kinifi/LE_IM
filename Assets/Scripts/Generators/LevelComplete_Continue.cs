@@ -7,7 +7,7 @@ public class LevelComplete_Continue : MonoBehaviour {
 	public GameObject robbeContinues;
 
 	
-	void OnCollisionEnter2D (Collision2D Player) 
+	void OnTriggerEnter2D (Collider2D Player) 
 	{
 
 		if(Player.gameObject.tag == "Player")
