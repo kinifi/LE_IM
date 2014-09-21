@@ -40,6 +40,19 @@ public class ShaddowSpikeShotting : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 	}
+
+	void OnCollisionEnter2D (Collision2D other)
+	{
+		if(other.gameObject.tag != "Player")
+		{
+			Destroy(this.gameObject);
+
+		}
+		else if(other.gameObject.tag == "Player")
+		{
+			Destroy(this.gameObject, 1.0f);
+		}
+	}
 	
 	private void DeathbySpikes()
 	{
@@ -63,16 +76,13 @@ public class ShaddowSpikeShotting : MonoBehaviour {
 				GameObject respawn = GameObject.Find("Spawn_Location");
 				resetRobbe.transform.position = respawn.transform.position;
 				
-				//Set Robbe to Kinematic to zero out any velocity
-				resetRobbe.rigidbody2D.isKinematic = true;
-				
 				//Find Robbe's controller and prevent his movement.
 				RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-				_robbe.canMove = false;
+				_robbe.enabled = false;
 				
 				//Find the LookDown camera and prevent its movement.
 				NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-				_lookdown.canMove = false;
+				_lookdown.enabled = false;
 				
 				//Instantiate the death splash and overlay Robbe.  Destroy it and call the movement function.
 				kill = Instantiate(deathMessage, resetRobbe.transform.position, Quaternion.identity) as GameObject;
@@ -89,12 +99,11 @@ public class ShaddowSpikeShotting : MonoBehaviour {
 	{
 		//Find Robbe and allow his movement again.  Turn kinematic to false.
 		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-		_robbe.canMove = true;
-		_robbe.rigidbody2D.isKinematic = false;
+		_robbe.enabled = true;
 
 		//Find the LookDown camera and allow its movement.
 		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-		_lookdown.canMove = true;
+		_lookdown.enabled = true;
 
 		//Destory the spike :)
 		Destroy(this.gameObject);

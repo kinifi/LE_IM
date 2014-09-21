@@ -18,20 +18,20 @@ public class RobbeController : MonoBehaviour {
 	private bool _right;
 
 	//Animator States
-	private int idleState = Animator.StringToHash( "Idle" );
+	/*private int idleState = Animator.StringToHash( "Idle" );
 	private int runState = Animator.StringToHash( "RunRight" );
-	private int jumpState = Animator.StringToHash( "JumpRight" );
+	private int jumpState = Animator.StringToHash( "JumpRight" );*/
 
 	//scripts to get
 	private CharacterController2D _controller;
-	private Animator _animator;
+//	private Animator _animator;
 	
 	void Awake()
 	{
 		
 		//grab script components
 		_controller = GetComponent<CharacterController2D>();
-		_animator = GetComponent<Animator>();
+//		_animator = GetComponent<Animator>();
 
 		//events :) may not need this line
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;

@@ -4,31 +4,80 @@ using System.Collections.Generic;
 
 public class BadGuyController : MonoBehaviour {
 	
-	private Vector3 moveForward = new Vector3(-1.0f, 0.0f, 0.0f);
-	private Vector3 moveUp = new Vector3(0.0f, -1.0f, 0f);
 
-	public float moveSpeed = 5.0f;
-	public float maxSpeed = 5.0f;
-
-	private bool faceRight = true;
+	private float moveSpeed = 3.0f;
+	private bool faceRight = false;
 	private bool faceUp = true;
-
 
 	public GameObject kill;
 	public GameObject deathSplash;
 	public GameObject bowGolden;
 
+	//Components to get
+	private BoxCollider2D _col;
+
+	void Start()
+	{
+		if(this.gameObject.tag == "BadGuy")
+		{
+			BoxCollider2D[] _col = GetComponents<BoxCollider2D>();
+			for(int i = 0; i < _col.Length; i++)
+			{
+				if(_col[i].center.y == 0.35f)
+				{
+					Debug.Log ("Destroying "+_col[i].center.y);
+					Destroy(_col[i]);
+				}
+				if(_col[i].center.y == -0.35f)
+				{
+					Debug.Log ("Destroying "+_col[i].center.y);
+					Destroy(_col[i]);
+				}
+			}
+
+		}
+		else if(this.gameObject.tag == "BadGuyVert")
+		{
+			BoxCollider2D[] _col = GetComponents<BoxCollider2D>();
+			for(int i = 0; i < _col.Length; i++)
+			{
+				if(_col[i].center.x == 0.3f)
+				{
+					Debug.Log ("Destroying "+_col[i].center.x);
+					Destroy(_col[i]);
+				}
+				if(_col[i].center.x == -0.32f)
+				{
+					Debug.Log ("Destroying "+_col[i].center.x);
+					Destroy(_col[i]);
+				}
+			}
+		}
+	}
+
 	void Update()
 	{
-		if(Mathf.Abs(rigidbody2D.velocity.x) < Mathf.Abs(maxSpeed))
+		if(this.gameObject.tag == "BadGuy")
 		{
-			if(this.gameObject.tag == "BadGuy")
+			if(faceRight)
 			{
-				rigidbody2D.AddForce(moveForward * moveSpeed);
+				transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
 			}
-			else if(this.gameObject.tag == "BadGuyVert")
+			else
 			{
-				rigidbody2D.AddForce(moveUp * moveSpeed);
+				transform.Translate(-Vector3.right * Time.deltaTime * moveSpeed);
+			}
+
+		}
+		else if(this.gameObject.tag == "BadGuyVert")
+		{
+			if(faceUp)
+			{
+				transform.Translate(Vector3.up * Time.deltaTime * moveSpeed);
+			}
+			else
+			{
+				transform.Translate(-Vector3.up * Time.deltaTime * moveSpeed);
 			}
 		}
 	}
@@ -40,7 +89,7 @@ public class BadGuyController : MonoBehaviour {
 			//Stop all movement of the bad guy!!
 			this.gameObject.rigidbody2D.isKinematic = true;
 			
-			Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
+//			Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
 			if(kill == null)
 			{
 				//Debug.Log ("You were killed by a bad guy!!");
@@ -50,16 +99,13 @@ public class BadGuyController : MonoBehaviour {
 				GameObject respawn = GameObject.Find("Spawn_Location");
 				resetRobbe.transform.position = respawn.transform.position;
 				
-				//Set Robbe to Kinematic to zero out any velocity
-				resetRobbe.rigidbody2D.isKinematic = true;
-				
 				//Find Robbe's controller and prevent his movement.
 				RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-				_robbe.canMove = false;
+				_robbe.enabled = false;
 				
 				//Find the LookDown camera and prevent its movement.
 				NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-				_lookdown.canMove = false;
+				_lookdown.enabled = false;
 				
 				//Instantiate the death splash and overlay Robbe.  Destroy it and call the movement function.
 				kill = Instantiate(deathSplash, resetRobbe.transform.position, Quaternion.identity) as GameObject;
@@ -104,15 +150,13 @@ public class BadGuyController : MonoBehaviour {
 		//Allow movement of the bad guy again
 		this.gameObject.rigidbody2D.isKinematic = false;
 		
-		
 		//Find Robbe and allow his movement again.  Turn kinematic to false.
 		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-		_robbe.canMove = true;
-		//_robbe.rigidbody2D.isKinematic = false;
-		
+		_robbe.enabled = true;
+
 		//Find the LookDown camera and allow its movement.
 		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-		_lookdown.canMove = true;
+		_lookdown.enabled = true;
 	}
 
 	private void Flip()
@@ -120,7 +164,6 @@ public class BadGuyController : MonoBehaviour {
 		faceRight = !faceRight;
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
-		moveForward *= -1;
 		transform.localScale = theScale;
 		//Debug.Log ("Flip ran and moveForward is now: " + moveForward);
 	}
@@ -128,7 +171,6 @@ public class BadGuyController : MonoBehaviour {
 	private void FlipUp()
 	{
 		faceUp = !faceUp;
-		moveUp *= -1;
 		//Debug.Log ("FlipUp ran and moveUp is now: " + moveUp);
 	}
 }

@@ -3,10 +3,16 @@ using System.Collections;
 
 public class MapGenerator : MonoBehaviour {
 	
-	public Matrix4x4 mapMatrix = new Matrix4x4();
-	private int lastRow = 0;
-	private int lastColumn = 0;
-	private int pathNum = 1;
+	//Configs
+	public Matrix4x4 mapMatrix;
+	private Vector2 thisPos;
+	private Vector2 nextPos;
+	private int posNum;
+	private string posNumString;
+	private int basicRoomNum;
+	private int downRoomNum;
+
+
 	public GameObject controlsMessage;
 	public GameObject completeMessage;
 	private bool tutorialDone = false;
@@ -73,7 +79,7 @@ public class MapGenerator : MonoBehaviour {
 	
 	private void FillInTheMap()
 	{
-		Debug.Log (mapMatrix);
+		//Debug.Log (mapMatrix);
 		RoomCall00 sendValue00 = GameObject.Find ("Matrix00").GetComponent<RoomCall00>();
 		sendValue00.GetMatrix00Value();
 		
@@ -130,9 +136,13 @@ public class MapGenerator : MonoBehaviour {
 
 	public void NewDungeon()
 	{
+		//Genertes a blank (0.0f) matrix
 		GenerateMatrix();
-		StartRoomIsOne();
-		ThePath(pathNum, lastRow, lastColumn);
+		//Sets the first room type to 1.
+		mapMatrix[0,0] = 1.0f;
+		//Calls the method to begin the path generation
+		MoveCursor();
+		Debug.Log(mapMatrix);
 		FillInTheMap();
 	}
 
@@ -160,21 +170,17 @@ public class MapGenerator : MonoBehaviour {
 
 	private void LoadCompleteMessage()
 	{
-		//Find Robbe's gameobject and set to Kinematic to zero out any velocity.
-		GameObject startRobbe = GameObject.Find ("Player");
-		startRobbe.rigidbody2D.isKinematic = true;
-		
 		//Find Robbe's controller and prevent his movement.
 		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-		_robbe.canMove = false;
+		_robbe.enabled = false;
 		
 		//Find the LookDown camera and prevent its movement.
 		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-		_lookdown.canMove = false;
+		_lookdown.enabled = false;
 
 		//Instantiate the complete splash and overlay Robbe.  Destroy it and call the movement function.
-		GameObject completeSplash = Instantiate(completeMessage, startRobbe.transform.position, Quaternion.identity) as GameObject;
-		completeSplash.transform.OverlayPosition(startRobbe.transform);
+		GameObject completeSplash = Instantiate(completeMessage, _robbe.transform.position, Quaternion.identity) as GameObject;
+		completeSplash.transform.OverlayPosition(_robbe.transform);
 		Destroy(completeSplash, 1.5f);
 		Invoke("AllowRobbesMovement", 1.5f);
 	}
@@ -183,12 +189,11 @@ public class MapGenerator : MonoBehaviour {
 	{
 		//Find Robbe and allow his movement again.  Turn kinematic to false.
 		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-		_robbe.canMove = true;
-		//_robbe.rigidbody2D.isKinematic = false;
-		
+		_robbe.enabled = true;
+
 		//Find the LookDown camera and allow its movement.
 		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-		_lookdown.canMove = true;
+		_lookdown.enabled = true;
 	}
 
 	private void GenerateMatrix ()
@@ -200,161 +205,117 @@ public class MapGenerator : MonoBehaviour {
 		mapMatrix.SetColumn(3, Vector4.zero);
 	}
 
-	private void PathNumGenerator()
+	//Calls the position generator method and the moves the cursor. Then calls the method to assign the room type value.
+	void MoveCursor()
 	{
-		//generates a number between 1 and upto but not including 6 for room path.
-		pathNum = Random.Range(1, 6);
-	}
-	
-	private void StartRoomIsOne()
-	{
-		pathNum = 1;
-		ThePath(pathNum, lastRow, lastColumn);
-	}
-	
-	private void ThePath(int num, int row, int column)
-	{
-		switch (num)
+		//Generate the position number
+		PosNumGenerator();
+		
+		//Move the cursor right, left, or down (x = row, y = column)
+		switch(posNumString)
 		{
-		case 5:
-			if(lastRow+1<4)
+		case "1":
+			//Go right if you can if not go down.
+			if(thisPos.y + 1.0f < 4.0f)
 			{
-				mapMatrix[lastRow, lastColumn] = num;
-				if(lastRow-1>=0)
-				{				
-					mapMatrix[lastRow-1, lastColumn] = 2;
-					lastRow+=1;
-					PathNumGenerator();
-					ThePath(pathNum, lastRow, lastColumn);
-				}
-				else if(lastColumn+1<4)
+				nextPos = new Vector2 ((thisPos.y+1.0f), thisPos.x);
+				thisPos = nextPos;
+				//Calls the method to assign the room type value
+				AssignValue(thisPos, "fromLeft");
+			}
+			//Go down if you can or call the exit.
+			else
+			{
+				if(thisPos.x +1.0f < 4.0f)
 				{
-					lastRow+=1;
-					int right = Random.Range(3,5);
-					GoRight(right);
+					//Go down
+					nextPos = new Vector2 (thisPos.y,(thisPos.x+1.0f));
+					thisPos = nextPos;
+					//Calls the method to assign the room type value
+					AssignValue(thisPos, "fromTop");
 				}
-				else if(lastColumn-1>=0)
+				else
 				{
-					lastRow+=1;
-					int left = Random.Range (1,3);
-					GoLeft (left);
+					//Calls the method to assign the room type value
+					AssignValue(thisPos, "Exit");
 				}
 			}
-			else
-			{
-				mapMatrix[lastRow, lastColumn] = 0.333f;
-				OnComplete();
-			}
 			break;
-		case 4:
-			if(lastColumn+1<4)
+		case "2":
+			//Go left if you can if not go down.
+			if(thisPos.y - 1.0f >= 0.0f)
 			{
-				GoRight(num);
-			}
-			else
-			{
-				SpecialCaseGoesLeft();
-			}
-			break;
-		case 3:
-			if(lastColumn+1<4)
-			{
-				GoRight(num);
+				nextPos = new Vector2 ((thisPos.y-1.0f), thisPos.x);
+				thisPos = nextPos;
+				//Calls the method to assign the room type value
+				AssignValue(thisPos, "fromRight");
 			}
 			else
 			{
-				SpecialCaseGoesLeft();
-			}
-			break;
-		case 2:
-			if(lastColumn -1 >= 0)
-			{
-				mapMatrix[lastRow, lastColumn] = num;
-				if(lastRow+1<4)
+				if(thisPos.x +1.0f < 4.0f)
 				{
-					mapMatrix[lastRow+1, lastColumn] = 3;
+					//Go down if you can or call the exit.
+					nextPos = new Vector2 (thisPos.y,(thisPos.x+1.0f));
+					thisPos = nextPos;
+					//Calls the method to assign the room type value
+					AssignValue(thisPos, "fromTop");
 				}
-				lastColumn = lastColumn-1;
-				//Debug.Log ("The lastColumn is now: " + lastColumn);
-				PathNumGenerator();
-				ThePath(pathNum, lastRow, lastColumn);
-			}
-			else
-			{
-				SpecialCaseGoesRight();
-			}
-			break;
-		case 1:
-			if(lastColumn-1>= 0)
-			{
-				GoLeft(num);
-			}
-			else
-			{
-				SpecialCaseGoesRight();
+				else
+				{
+					//Calls the method to assign the room type value
+					AssignValue(thisPos, "Exit");
+				}
 			}
 			break;
 		default:
-			Debug.Log("Something went wrong in this matrix: "+mapMatrix);
+			Debug.Log("Something has gone terribly wrong when moving the cursor.");
+			Debug.Log(mapMatrix);
 			break;
 		}
+		
+		
 	}
 	
-	private void GoLeft(int ruleNum)
+	//Picks which direction the cursor should move
+	void PosNumGenerator()
 	{
-		mapMatrix[lastRow, lastColumn] = ruleNum;
-		lastColumn = lastColumn-1;
-		//Debug.Log ("The lastColumn is now: " + lastColumn);
-		PathNumGenerator();
-		ThePath(pathNum, lastRow, lastColumn);
+		posNum = Random.Range (1,3);
+		//Debug.Log (posNum);
+		posNumString = posNum.ToString();
+		//Debug.Log (posNumString);
 	}
 	
-	private void GoRight(int ruleNum)
+	//This method assigns the room type value to the matrix location.
+	void AssignValue(Vector2 position, string fromDirection)
 	{
-		mapMatrix[lastRow, lastColumn] = ruleNum;
-		lastColumn = lastColumn+1;
-		//Debug.Log ("The lastColumn is now: " + lastColumn);
-		PathNumGenerator();
-		ThePath(pathNum, lastRow, lastColumn);
-	}
-	
-	private void SpecialCaseGoesLeft()
-	{
-		if(lastRow+1<4)
+		switch(fromDirection)
 		{
-			mapMatrix[lastRow, lastColumn] = 2;
-			mapMatrix[lastRow+1, lastColumn] = 5;
-			if(lastColumn-1>=0)
-			{
-				lastColumn = lastColumn-1;
-			}
-			PathNumGenerator();
-			ThePath(pathNum, lastRow, lastColumn);
-		}
-		else
-		{
-			mapMatrix[lastRow, lastColumn] = 0.333f;
-			OnComplete();
-		}
-	}
-	
-	private void SpecialCaseGoesRight()
-	{
-		if(lastRow+1<4)
-		{
-			mapMatrix[lastRow, lastColumn] = 2;
-			mapMatrix[lastRow+1, lastColumn] = 5;
-			if(lastColumn+1<4)
-			{
-				lastColumn = lastColumn+1;
-			}
-			PathNumGenerator();
-			ThePath(pathNum, lastRow, lastColumn);
-		}
-		else
-		{
-			mapMatrix[lastRow, lastColumn] = 0.333f;
-			OnComplete();
+		case "fromLeft":
+			//Picks a room type with openings to the left and right
+			basicRoomNum = Random.Range(1,4);
+			mapMatrix[Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y)] = basicRoomNum;
+			MoveCursor();
+			break;
+		case "fromRight":
+			//Picks a room type with openings to the left and right
+			basicRoomNum = Random.Range(1,4);
+			mapMatrix[Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y)] = basicRoomNum;
+			MoveCursor();
+			break;
+		case "fromTop":
+			//Picks a room type with openings to the top
+			downRoomNum = Random.Range(4,6);
+			mapMatrix[Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y)] = downRoomNum;
+			MoveCursor();
+			break;
+		case "Exit":
+			//Sets the exit room
+			mapMatrix[Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y)] = 0.333f;
+			break;
+		default:
+			Debug.Log("Something went wrong Assigning a value.");
+			Debug.Log(mapMatrix);
+			break;
 		}
 	}
 }
