@@ -8,6 +8,8 @@ public class Quiver : MonoBehaviour {
 	public Transform getTransform;
 	public GameObject[] arrows = new GameObject[10];
 
+	private bool canFire = true;
+
 
 	void Update ()
 	{
@@ -17,34 +19,59 @@ public class Quiver : MonoBehaviour {
 			Transform shootTransform = getTransform;
 			GameObject projectile;
 
-			if(Input.GetKeyDown(KeyCode.W) || Input.GetButtonDown("Shooting Up"))
+			if(Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetAxis("Fire Up/Down") < -0.9f)
 			{
-				projectile = Instantiate(blockbreaker[0], shootTransform.position, Quaternion.identity) as GameObject;
-				projectile.GetComponent<ArrowMover>().ShootUp();
-				bow -= 1;
-				Debug.Log ("Bow: " + bow);
+				if(canFire == true)
+				{
+					canFire = false;
+					projectile = Instantiate(blockbreaker[0], shootTransform.position, Quaternion.identity) as GameObject;
+					projectile.GetComponent<ArrowMover>().ShootUp();
+					bow -= 1;
+					Debug.Log (bow);
+					Invoke("AllowFire", 0.5f);
+				}
 			}
-			if(Input.GetKeyDown(KeyCode.S) || Input.GetButtonDown("Shooting Down"))
+			if(Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetAxis("Fire Up/Down") > 0.9f)
 			{
-				projectile = Instantiate(blockbreaker[1], shootTransform.position, Quaternion.identity) as GameObject;
-				projectile.GetComponent<ArrowMover>().ShootDown();
-				bow -= 1;
-				Debug.Log ("Bow: " + bow);
+				if(canFire == true)
+				{
+					canFire = false;
+					projectile = Instantiate(blockbreaker[1], shootTransform.position, Quaternion.identity) as GameObject;
+					projectile.GetComponent<ArrowMover>().ShootDown();
+					bow -= 1;
+					Debug.Log (bow);
+					Invoke("AllowFire", 0.5f);
+				}
 			}
-			if(Input.GetKeyDown(KeyCode.D) || Input.GetButtonDown("Shooting Right"))
+			if(Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetAxis("Fire Left/Right") > 0.9f)
 			{
-				projectile = Instantiate(blockbreaker[2], shootTransform.position, Quaternion.identity) as GameObject;
-				projectile.GetComponent<ArrowMover>().ShootRight();
-				bow -= 1;
-				Debug.Log ("Bow: " + bow);
-  			}
-			if( Input.GetKeyDown(KeyCode.A) || Input.GetButtonDown("Shooting Left"))
+				if(canFire == true)
+				{
+					canFire = false;
+					projectile = Instantiate(blockbreaker[2], shootTransform.position, Quaternion.identity) as GameObject;
+					projectile.GetComponent<ArrowMover>().ShootRight();
+					bow -= 1;
+					Debug.Log (bow);
+					Invoke("AllowFire", 0.5f);
+				}
+			}
+			if(Input.GetKeyDown(KeyCode.LeftArrow)|| Input.GetAxis("Fire Left/Right") < -0.9f)
 			{
-				projectile = Instantiate(blockbreaker[3], shootTransform.position, Quaternion.identity) as GameObject;
-				projectile.GetComponent<ArrowMover>().ShootLeft();
-				bow -= 1;
-				Debug.Log ("Bow: " + bow);
+				if(canFire == true)
+				{
+					canFire = false;
+					projectile = Instantiate(blockbreaker[3], shootTransform.position, Quaternion.identity) as GameObject;
+					projectile.GetComponent<ArrowMover>().ShootLeft();
+					bow -= 1;
+					Debug.Log (bow);
+					Invoke("AllowFire", 0.5f);
+				}
 			}
 		}
+	}
+	
+	void AllowFire()
+	{
+		canFire = true;
 	}
 }

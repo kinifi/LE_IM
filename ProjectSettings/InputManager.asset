@@ -8,8 +8,8 @@ InputManager:
     m_Name: Horizontal
     descriptiveName: Keyboard Horizontal Movement
     descriptiveNegativeName: 
-    negativeButton: left
-    positiveButton: right
+    negativeButton: a
+    positiveButton: d
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -73,9 +73,9 @@ InputManager:
     descriptiveName: Camera LookDown
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick button 4
+    positiveButton: s
     altNegativeButton: 
-    altPositiveButton: down
+    altPositiveButton: joystick button 4
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
@@ -86,12 +86,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: Jump
-    descriptiveName: 
+    descriptiveName: Jump
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: space
     altNegativeButton: 
-    altPositiveButton: joystick button 5
+    altPositiveButton: joystick button 0
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
@@ -157,7 +157,7 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: .189999998
+    dead: .0500000007
     sensitivity: 1
     snap: 0
     invert: 0
@@ -173,7 +173,7 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: .189999998
+    dead: .0500000007
     sensitivity: 1
     snap: 0
     invert: 1
@@ -197,65 +197,49 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Shooting Up
-    descriptiveName: 
+    m_Name: Fire Left/Right
+    descriptiveName: Shoot Arrows Left/Right
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick button 3
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
-    dead: .00100000005
-    sensitivity: 1000
-    snap: 0
+    dead: .5
+    sensitivity: 1
+    snap: 1
     invert: 0
-    type: 0
-    axis: 0
+    type: 2
+    axis: 3
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Shooting Down
-    descriptiveName: 
+    m_Name: Fire Up/Down
+    descriptiveName: Shoot Arrows Up/Down
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: .5
+    sensitivity: 1
+    snap: 1
+    invert: 0
+    type: 2
+    axis: 4
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: JoystickButton0
+    descriptiveName: Jump
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 0
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
-    dead: .00100000005
-    sensitivity: 1000
-    snap: 0
-    invert: 0
-    type: 0
-    axis: 0
-    joyNum: 1
-  - serializedVersion: 3
-    m_Name: Shooting Left
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: joystick button 2
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: .00100000005
-    sensitivity: 1000
-    snap: 0
-    invert: 0
-    type: 0
-    axis: 0
-    joyNum: 1
-  - serializedVersion: 3
-    m_Name: Shooting Right
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: joystick button 1
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: .00100000005
-    sensitivity: 1000
-    snap: 0
+    dead: .0500000007
+    sensitivity: 1
+    snap: 1
     invert: 0
     type: 0
     axis: 0
