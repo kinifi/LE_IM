@@ -154,11 +154,11 @@ public class MapGenerator : MonoBehaviour {
 		
 		//Find Robbe's controller and prevent his movement.
 		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-		_robbe.canMove = false;
-		
+		_robbe.enabled = false;
+
 		//Find the LookDown camera and prevent its movement.
 		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-		_lookdown.canMove = false;
+		_lookdown.enabled = false;
 
 		//Instantiate the controls splash and overlay Robbe.  Destroy it and call the movement function.
 		GameObject controlsSplash = Instantiate(controlsMessage, startRobbe.transform.position, Quaternion.identity) as GameObject;

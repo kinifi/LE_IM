@@ -25,12 +25,12 @@ public class BadGuyController : MonoBehaviour {
 			{
 				if(_col[i].center.y == 0.35f)
 				{
-					Debug.Log ("Destroying "+_col[i].center.y);
+					//Debug.Log ("Destroying "+_col[i].center.y);
 					Destroy(_col[i]);
 				}
 				if(_col[i].center.y == -0.35f)
 				{
-					Debug.Log ("Destroying "+_col[i].center.y);
+					//Debug.Log ("Destroying "+_col[i].center.y);
 					Destroy(_col[i]);
 				}
 			}
@@ -43,12 +43,12 @@ public class BadGuyController : MonoBehaviour {
 			{
 				if(_col[i].center.x == 0.3f)
 				{
-					Debug.Log ("Destroying "+_col[i].center.x);
+					//Debug.Log ("Destroying "+_col[i].center.x);
 					Destroy(_col[i]);
 				}
 				if(_col[i].center.x == -0.32f)
 				{
-					Debug.Log ("Destroying "+_col[i].center.x);
+					//Debug.Log ("Destroying "+_col[i].center.x);
 					Destroy(_col[i]);
 				}
 			}

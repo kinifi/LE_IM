@@ -39,7 +39,7 @@ public class SpringJump : MonoBehaviour {
 			
 			//move based on velocity
 			_player.move( velocity * Time.deltaTime );
-			Debug.Log ("The player has landed!!! but should be springing!");
+			//Debug.Log ("The player has landed!!! but should be springing!");
 
 			if(!hasCollided)
 			{

@@ -60,7 +60,7 @@ public class RoomTypeOne : MonoBehaviour {
 	{
 		RoomTypeOnePositionInitalize();
 		//picks a random number correlated to a Type 1 template
-		int temp = Random.Range(0, 11);
+		int temp = Random.Range(0, 12);
 		
 		switch (temp)
 		{
@@ -96,7 +96,7 @@ public class RoomTypeOne : MonoBehaviour {
 			typeOneArray = new int[]
 			{
 				0,0,1,1,1,0,1,1,1,0,
-				0,0,8,8,10,0,0,0,0,0,
+				0,0,0,0,10,0,0,0,0,0,
 				5,0,0,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,21,0,0,
 				0,111,0,0,0,0,0,0,0,0,
@@ -124,13 +124,13 @@ public class RoomTypeOne : MonoBehaviour {
 			typeOneArray = new int[]
 			{
 				0,0,1,1,1,0,0,1,0,21,
-				0,7,0,0,0,6,0,0,0,0,
+				0,0,0,0,0,6,0,0,0,0,
 				0,1,2,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
 				5,0,0,0,0,0,0,0,0,0,
-				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,99,
 				0,0,0,0,0,0,3,141,0,0,
-				1,1,1,1,11,11,11,1,1,1
+				1,1,1,11,11,11,11,1,1,1
 			};
 			//Debug.Log("Room Type One Four was chosen.");
 			break;
@@ -138,10 +138,10 @@ public class RoomTypeOne : MonoBehaviour {
 			typeOneArray = new int[]
 			{
 				0,1,1,1,1,1,1,1,1,1,
-				0,1,1,8,0,0,0,0,1,0,
+				0,0,1,8,0,0,0,0,1,0,
 				0,0,1,0,0,0,0,0,13,0,
 				0,0,0,0,0,0,0,0,0,0,
-				0,0,0,0,0,0,0,0,0,0,
+				1,1,0,0,0,0,0,0,0,0,
 				0,0,5,0,0,0,0,0,0,0,
 				1,1,0,0,0,0,0,1,0,21,
 				0,21,0,0,0,0,0,1,1,1
@@ -181,9 +181,9 @@ public class RoomTypeOne : MonoBehaviour {
 			{
 				0,1,0,0,21,0,1,0,0,15,
 				0,1,0,0,0,0,0,0,0,0,
-				0,1,0,1,0,21,1,2,0,0,
-				0,76,0,0,0,0,0,0,0,0,
-				0,0,0,12,0,0,21,141,11,142,
+				0,1,0,0,0,21,1,2,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,664,0,0,0,21,11,142,
 				0,0,3,1,0,0,0,0,0,0,
 				1,1,1,6,0,0,0,0,0,0,
 				1,0,21,0,0,0,0,0,0,1
@@ -213,10 +213,24 @@ public class RoomTypeOne : MonoBehaviour {
 				0,0,0,0,0,0,0,0,0,0,
 				0,6,0,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
-				0,0,0,0,0,0,0,3,0,76,
+				0,0,0,0,0,0,0,3,0,664,
 				1,1,1,1,1,1,1,1,1,1
 			};
 			//Debug.Log("Room Type One Ten was chosen.");
+			break;
+		case 11:
+			typeOneArray = new int[] 
+			{
+				0,0,0,0,0,0,0,0,0,0,
+				0,1,1,1,0,0,0,0,0,0,
+				0,0,1,0,0,0,0,96,0,0,
+				0,0,0,0,0,0,1,1,0,0,
+				0,0,0,0,0,0,0,0,0,2,
+				0,0,0,0,0,0,0,0,21,0,
+				111,0,0,96,0,0,0,21,0,0,
+				1,1,1,1,1,1,1,1,1,1
+			};
+			//Debug.Log("Room Type One Eleven was chosen.");
 			break;
 		}
 		//calls the function to loop through the created array
@@ -269,12 +283,14 @@ public class RoomTypeOne : MonoBehaviour {
 	//istantiates tile at appropriate position and moves the postion ahead
 	private void RoomTileInstantiate(int arrayNum)
 	{
+		//Empty Tile
 		if(typeOneArray[arrayNum] == 0)
 		{
 			Instantiate(tileOfRoom[12], roomTilePosition, Quaternion.identity);
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//Random Solid Block
 		else if(typeOneArray[arrayNum] == 1)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -283,6 +299,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//50% Chance of Random Solid Block
 		else if(typeOneArray[arrayNum] == 2)
 		{
 			//50% chance the block will be instantiated
@@ -305,6 +322,7 @@ public class RoomTypeOne : MonoBehaviour {
 				transform.position = roomTilePosition;
 			}
 		}
+		//Spring
 		else if(typeOneArray[arrayNum] == 3)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -312,6 +330,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//50% of a Push Block
 		else if(typeOneArray[arrayNum] == 4)
 		{
 			int rand50 = Random.Range (0,2);
@@ -329,6 +348,7 @@ public class RoomTypeOne : MonoBehaviour {
 				transform.position = roomTilePosition;
 			}
 		}
+		//Ground Obstacle Block
 		else if(typeOneArray[arrayNum] == 5)
 		{
 			if(groundBlock1 == Vector3.zero)
@@ -346,6 +366,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//Air Obstacle Block
 		else if(typeOneArray[arrayNum] == 6)
 		{
 			
@@ -364,6 +385,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//33% Chance of Ground Spike
 		else if(typeOneArray[arrayNum] == 7)
 		{
 			int rand33 = Random.Range(1,4);
@@ -380,6 +402,7 @@ public class RoomTypeOne : MonoBehaviour {
 				transform.position = roomTilePosition;
 			}
 		}
+		//33% Chance of Top Spike
 		else if(typeOneArray[arrayNum] == 8)
 		{
 			int rand33 = Random.Range(1,4);
@@ -397,12 +420,14 @@ public class RoomTypeOne : MonoBehaviour {
 				transform.position = roomTilePosition;
 			}
 		}
+		//Locked Door
 		else if(typeOneArray[arrayNum] == 9)
 		{
 			Instantiate(tileOfRoom[10], roomTilePosition, Quaternion.identity);
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//50% Chance of a Key
 		else if(typeOneArray[arrayNum] == 10)
 		{
 			int rand50 = Random.Range(0,4);
@@ -419,6 +444,7 @@ public class RoomTypeOne : MonoBehaviour {
 				transform.position = roomTilePosition;
 			}
 		}
+		//Breakable Block
 		else if(typeOneArray[arrayNum] == 11)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -426,6 +452,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//Ground Spike
 		else if(typeOneArray[arrayNum] == 12)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -433,6 +460,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//Top Spike
 		else if(typeOneArray[arrayNum] == 13)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -440,6 +468,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//25% Chance of a Push Block
 		else if(typeOneArray[arrayNum] == 14)
 		{
 			int rand25 = Random.Range(0,4);
@@ -456,6 +485,7 @@ public class RoomTypeOne : MonoBehaviour {
 				transform.position = roomTilePosition;
 			}
 		}
+		//Left Spike
 		else if(typeOneArray[arrayNum] == 15)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -463,6 +493,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//Right Spike
 		else if(typeOneArray[arrayNum] == 16)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -470,6 +501,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//Teleport In
 		else if(typeOneArray[arrayNum] == 17)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -479,6 +511,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//Telaport Out
 		else if(typeOneArray[arrayNum] == 18)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -489,6 +522,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//Bow
 		else if(typeOneArray[arrayNum] == 20)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -496,6 +530,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//Random Solid 2x1
 		else if(typeOneArray[arrayNum] == 21)
 		{
 			Vector3 correctedPosition = roomTilePosition + new Vector3(0.5f, 0.0f, 0.0f);
@@ -522,6 +557,7 @@ public class RoomTypeOne : MonoBehaviour {
 				transform.position = roomTilePosition;
 			}
 		}
+		//Exit Door
 		else if(typeOneArray[arrayNum] == 33)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -529,12 +565,14 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//100% Chance of a Push Block
 		else if (typeOneArray[arrayNum] == 41)
 		{
 			Instantiate(tileOfRoom[7], roomTilePosition, Quaternion.identity);
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//Hidden Room Block
 		else if(typeOneArray[arrayNum] == 50)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -544,6 +582,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//Fire Wisp
 		else if(typeOneArray[arrayNum] == 66)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -552,18 +591,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
-		else if(typeOneArray[arrayNum] == 76)
-		{
-			Instantiate(tileOfRoom[28], roomTilePosition, Quaternion.identity);
-			roomTilePosition.x += 1.0f;
-			transform.position = roomTilePosition;
-		}
-		else if(typeOneArray[arrayNum] == 86)
-		{
-			Instantiate(tileOfRoom[29], roomTilePosition, Quaternion.identity);
-			roomTilePosition.x += 1.0f;
-			transform.position = roomTilePosition;
-		}
+		//Bounce Shaddow
 		else if(typeOneArray[arrayNum] == 96)
 		{
 			GameObject SB = Instantiate(tileOfRoom[30], roomTilePosition, Quaternion.identity) as GameObject;
@@ -571,6 +599,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//Forward Shaddow
 		else if(typeOneArray[arrayNum] == 97)
 		{
 			GameObject SB = Instantiate(tileOfRoom[30], roomTilePosition, Quaternion.identity) as GameObject;
@@ -578,6 +607,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//Golden Bow
 		else if(typeOneArray[arrayNum] == 99)
 		{
 			Instantiate(tileOfRoom[23], roomTilePosition, Quaternion.identity);
@@ -1485,18 +1515,6 @@ public class RoomTypeOne : MonoBehaviour {
 			//istantiates block then moves the x position ahead by one
 			GameObject BG = Instantiate(tileOfRoom[22], tilePosition, Quaternion.identity) as GameObject;
 			BG.gameObject.tag = "BadGuy";
-			tilePosition.x += 1.0f;
-			transform.position = tilePosition;
-		}
-		else if(tileBlockArray[iLoop] == 76)
-		{
-			Instantiate(tileOfRoom[28], tilePosition, Quaternion.identity);
-			tilePosition.x += 1.0f;
-			transform.position = tilePosition;
-		}
-		else if(tileBlockArray[iLoop] == 86)
-		{
-			Instantiate(tileOfRoom[29], tilePosition, Quaternion.identity);
 			tilePosition.x += 1.0f;
 			transform.position = tilePosition;
 		}

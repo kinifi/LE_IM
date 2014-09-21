@@ -12496,7 +12496,7 @@ Transform:
   m_GameObject: {fileID: 216719604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: .00345423142, y: .00345423142, z: .00345423142}
+  m_LocalScale: {x: .00459770113, y: .00459770113, z: .00459770113}
   m_Children:
   - {fileID: 853738879}
   m_Father: {fileID: 0}
@@ -47767,7 +47767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b711e4350b5cf40439241607611e3ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1519813337}
   moving: 0
   lookDistance: 4
   canMove: 1
@@ -85710,6 +85710,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: -35
   runSpeed: 3
+  groundDamping: 20
+  inAirDamping: 5
   targetJumpHeight: 2
   doubleJump: 0
   canMove: 0
@@ -99537,7 +99539,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1774553387}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MapBorders
   m_TagString: Untagged
   m_Icon: {fileID: 0}

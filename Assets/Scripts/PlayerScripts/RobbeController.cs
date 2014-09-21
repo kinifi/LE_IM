@@ -24,14 +24,14 @@ public class RobbeController : MonoBehaviour {
 
 	//scripts to get
 	private CharacterController2D _controller;
-//	private Animator _animator;
+	private Animator _animator;
 	
 	void Awake()
 	{
 		
 		//grab script components
 		_controller = GetComponent<CharacterController2D>();
-//		_animator = GetComponent<Animator>();
+		_animator = GetComponent<Animator>();
 
 		//events :) may not need this line
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
@@ -39,6 +39,9 @@ public class RobbeController : MonoBehaviour {
 	
 	void Update()
 	{
+		//Jump animation state
+		_animator.SetBool( "Grounded", _controller.isGrounded );
+
 		//grab our current velocity as base for all calculations
 		var velocity = _controller.velocity;
 		
@@ -102,8 +105,6 @@ public class RobbeController : MonoBehaviour {
 				SteamManager.StatsAndAchievements.incrementNumOfJumps();
 				audio.Play();
 				
-				/*//jump animation state
-				_animator.SetTrigger( jumpState );*/
 			}
 			else if(doubleJump == true)
 			{
@@ -111,9 +112,6 @@ public class RobbeController : MonoBehaviour {
 				doubleJump = false;
 				SteamManager.StatsAndAchievements.incrementNumOfJumps();
 				audio.Play();
-				
-				/*//jump animation state
-				_animator.SetTrigger( jumpState );*/
 			}
 
 		}
