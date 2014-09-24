@@ -22,8 +22,8 @@ public class PlayerSuccess : MonoBehaviour {
 		if(coll.transform.name == playerName)
 		{
 			FadeObj.SetActive(true);
-			coll.GetComponent<RobbeController>().canMove = false;
-			coll.GetComponent<Rigidbody2D>().isKinematic = true;
+			//coll.GetComponent<RobbeController>().canMove = false;
+			//coll.GetComponent<Rigidbody2D>().isKinematic = true;
 			Invoke("loadSuccessLevel", 1.0f);
 			if(hasSendLevelIncreaseData == false)
 			{
