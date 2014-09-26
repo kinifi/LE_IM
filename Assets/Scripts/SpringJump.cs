@@ -7,7 +7,7 @@ public class SpringJump : MonoBehaviour {
 	private Vector2 springing = new Vector2(0.0f, 275.0f);
 
 	//value for kinematic 
-	private float targetJumpHeight = 5.0f;
+	private float targetJumpHeight = 8.0f;
 	private float gravity = -25.0f;
 
 	//regulates stats reporting

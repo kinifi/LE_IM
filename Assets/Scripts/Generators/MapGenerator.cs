@@ -5,7 +5,7 @@ public class MapGenerator : MonoBehaviour {
 	
 	//Configs
 	public Matrix4x4 mapMatrix;
-	private Vector2 thisPos;
+	private Vector2 thisPos = new Vector2(0.0f, 0.0f);
 	private Vector2 nextPos;
 	private int posNum;
 	private string posNumString;

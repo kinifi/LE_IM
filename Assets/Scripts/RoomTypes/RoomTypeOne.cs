@@ -179,7 +179,7 @@ public class RoomTypeOne : MonoBehaviour {
 		case 8:
 			typeOneArray = new int[]
 			{
-				0,1,0,0,21,0,1,0,0,15,
+				0,1,0,0,0,21,1,0,0,15,
 				0,1,0,0,0,0,0,0,0,0,
 				0,1,0,0,0,21,1,2,0,0,
 				0,0,0,0,0,0,0,0,0,0,
@@ -942,8 +942,8 @@ public class RoomTypeOne : MonoBehaviour {
 		case 18:
 			tileBlockArray = new int[]
 			{
-				1,0,1,0,11,
-				1,0,11,0,0,
+				1,0,1,1,11,
+				1,0,0,0,0,
 				1,3,1,0,1
 			};
 			//Debug.Log("Room Type One Ground Eighteen was chosen.");

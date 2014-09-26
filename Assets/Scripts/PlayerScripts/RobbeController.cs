@@ -4,8 +4,8 @@ using System.Collections;
 public class RobbeController : MonoBehaviour {
 
 	//Movement Configs
-	public float gravity = -25.0f;
-	public float runSpeed = 5.0f;
+	public float gravity = -35.0f;
+	public float runSpeed = 4.0f;
 	public float groundDamping = 20f; // how fast do we change direction? higher means faster
 	public float inAirDamping = 5f;
 	public float targetJumpHeight = 3f;
@@ -16,11 +16,7 @@ public class RobbeController : MonoBehaviour {
 	private Vector2 moveColR = new Vector2(45.0f, 0.0f);
 	private Vector2 moveColL = new Vector2(-45.0f, 0.0f);
 	private bool _right;
-
-	//Animator States
-	/*private int idleState = Animator.StringToHash( "Idle" );
-	private int runState = Animator.StringToHash( "RunRight" );
-	private int jumpState = Animator.StringToHash( "JumpRight" );*/
+	private float input1 = 0.0f;
 
 	//scripts to get
 	private CharacterController2D _controller;
@@ -36,7 +32,15 @@ public class RobbeController : MonoBehaviour {
 		//events :) may not need this line
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
 	}
-	
+
+	void FixedUpdate()
+	{
+		//grab our current velocity as base for all calculations
+		var fixedVelocity = _controller.velocity;
+
+
+	}
+
 	void Update()
 	{
 		//Jump animation state
@@ -44,55 +48,46 @@ public class RobbeController : MonoBehaviour {
 
 		//grab our current velocity as base for all calculations
 		var velocity = _controller.velocity;
-		
+
+		//grab our current input and set input1
+		input1 = Mathf.Abs(Input.GetAxis( "Horizontal" ));
+
 		//zero out vertical velocity if grounded
 		if( _controller.isGrounded )
 		{
 			velocity.y = 0;
+			//grab our current input and set v1
 		}
 		
 		//HORIZONTAL INPUT//
-		
+		//move imediately to zero horizontal velocity if v1 is larger than current input.
+		if( input1 > Mathf.Abs(Input.GetAxis( "Horizontal" )))
+		{
+			velocity.x = 0.0f;
+		}
+
 		//move right
-		if( Input.GetAxis( "Horizontal" ) > 0.15f)
+		else if( Input.GetAxis( "Horizontal" ) > 0.15f)
 		{
 			velocity.x = runSpeed;
-			goRight();
 			_right = true;
-			
-			/*//running animation state
-			if( _controller.isGrounded)
-			{
-				_animator.SetTrigger( runState );
-			}*/
+			//grab our current input and set v1
 		}
 		
 		//move left
 		else if( Input.GetAxis( "Horizontal" ) < -0.15f)
 		{
 			velocity.x = -runSpeed;
-			goLeft();
 			_right = false;
-			
-			/*//running animation state
-			if( _controller.isGrounded)
-			{
-				_animator.SetTrigger( runState );
-			}*/
+			//grab our current input and set v1
 		}
-		
 		//zero out horizontal velocity if not moving
 		else
 		{
 			velocity.x = 0;
-			
-			/*//idle animation state
-			if( _controller.isGrounded)
-			{
-				_animator.SetTrigger( idleState );
-			}*/
+			//grab our current input and set v1
 		}
-		
+
 		//VERTICAL INPUT//
 		
 		//jump
@@ -116,6 +111,8 @@ public class RobbeController : MonoBehaviour {
 
 		}
 
+
+
 		//apply gravity before moving
 		velocity.y += gravity * Time.deltaTime;
 		
@@ -127,7 +124,7 @@ public class RobbeController : MonoBehaviour {
 	//Object movement via Physics
 	void onTriggerEnterEvent( Collider2D col )
 	{
-		if(col.transform.name == "PushBlock50(Clone)")
+		if(col.gameObject.layer == 10)
 		{
 			if(_right)
 			{
@@ -137,22 +134,6 @@ public class RobbeController : MonoBehaviour {
 			{
 				col.gameObject.rigidbody2D.AddForce(moveColL);
 			}
-		}
-	}
-
-	private void goLeft()
-	{
-		if( transform.localScale.x > 0f)
-		{
-			transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
-		}
-	}
-
-	private void goRight()
-	{
-		if( transform.localScale.x < 0f)
-		{
-			transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
 		}
 	}
 }
