@@ -139,9 +139,7 @@ public class MapGenerator : MonoBehaviour {
 		//Genertes a blank (0.0f) matrix
 		GenerateMatrix();
 		//Sets the first room type to 1.
-		mapMatrix[0,0] = 1.0f;
-		//Calls the method to begin the path generation
-		MoveCursor();
+		FirstRoomOne();
 		Debug.Log(mapMatrix);
 		FillInTheMap();
 	}
@@ -203,6 +201,12 @@ public class MapGenerator : MonoBehaviour {
 		mapMatrix.SetColumn(1, Vector4.zero);
 		mapMatrix.SetColumn(2, Vector4.zero);
 		mapMatrix.SetColumn(3, Vector4.zero);
+	}
+
+	//Assigns the first room to value 1;
+	private void FirstRoomOne ()
+	{
+		AssignValue(Vector2.zero, "roomOne");
 	}
 
 	//Calls the position generator method and the moves the cursor. Then calls the method to assign the room type value.
@@ -290,6 +294,12 @@ public class MapGenerator : MonoBehaviour {
 	{
 		switch(fromDirection)
 		{
+		case "roomOne":
+			//Assigns the very first room to room type one
+			mapMatrix[0,0] = 1;
+			Debug.Log("The roomtype for start is: "+mapMatrix[0,0]);
+			MoveCursor();
+			break;
 		case "fromLeft":
 			//Picks a room type with openings to the left and right
 			basicRoomNum = Random.Range(1,4);

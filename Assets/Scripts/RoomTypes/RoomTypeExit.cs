@@ -194,10 +194,10 @@ public class RoomTypeExit : MonoBehaviour {
 				0,0,0,0,0,0,0,0,0,0,
 				0,1,668,0,0,0,0,0,2,0,
 				0,2,0,0,0,0,0,667,1,0,
-				0,0,0,0,0,0,0,0,0,0,
-				0,1,668,0,0,0,0,0,2,0,
+				0,0,1,0,0,0,0,0,0,0,
+				0,1,665,0,0,0,0,0,2,0,
 				0,2,0,0,0,0,0,667,1,0,
-				0,0,0,1,0,33,0,0,0,0,
+				0,0,0,0,0,33,0,0,0,0,
 				1,1,1,1,1,1,1,1,1,1
 			};
 			//Debug.Log("Room Type Exit Nine was chosen.");
@@ -521,8 +521,12 @@ public class RoomTypeExit : MonoBehaviour {
 		}
 		else if(typeExitArray[arrayNum] == 33)
 		{
+			string theme = Random.Range (1,4).ToString();
+
 			//istantiates block then moves the x position ahead by one
-			Instantiate(tileOfRoom[15], roomTilePosition, Quaternion.identity);
+			GameObject exitDoor = Instantiate(tileOfRoom[15], roomTilePosition, Quaternion.identity) as GameObject;
+			exitDoor.name = theme;
+			Debug.Log("This is the exitDoor name!!!"+exitDoor.name);
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}

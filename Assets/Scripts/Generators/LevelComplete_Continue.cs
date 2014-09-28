@@ -40,10 +40,33 @@ public class LevelComplete_Continue : MonoBehaviour {
 				//Let me know you comopleted the level!
 				Debug.Log ("You completed the level!!");
 
-				//Load the next level and Call the movement function.
-				Application.LoadLevel("Map_Level_Gen");
-				Invoke("AllowRobbesMovement", 1.5f);
+				//Call the next level based on Exit Door Name
+				GetThemeName();
 			}
+		}
+	}
+
+	private void GetThemeName()
+	{
+		string nextTheme = this.gameObject.name;
+
+		switch (nextTheme)
+		{
+		case "1":
+			Application.LoadLevel("Map_Level_Gen");
+			Debug.Log ("Map Level Loading");
+			Invoke("AllowRobbesMovement", 1.5f);
+			break;
+		case "2":
+			Application.LoadLevel("Dusk_Level");
+			Debug.Log ("Dusk Level Loading");
+			Invoke("AllowRobbesMovement", 1.5f);
+			break;
+		case "3":
+			Application.LoadLevel("Purple_Level");
+			Debug.Log("Purple Level Loading");
+			Invoke("AllowRobbesMovement", 1.5f);
+			break;
 		}
 	}
 

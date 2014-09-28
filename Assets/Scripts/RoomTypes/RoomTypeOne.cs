@@ -174,7 +174,7 @@ public class RoomTypeOne : MonoBehaviour {
 				0,3,1,1,0,0,0,0,0,0,
 				1,1,1,1,0,21,1,1,1,1
 			};
-			//Debug.Log("Room Type One Seven was chosen.");
+			Debug.Log("Room Type One Seven was chosen.");
 			break;
 		case 8:
 			typeOneArray = new int[]
@@ -183,7 +183,7 @@ public class RoomTypeOne : MonoBehaviour {
 				0,1,0,0,0,0,0,0,0,0,
 				0,1,0,0,0,21,1,2,0,0,
 				0,0,0,0,0,0,0,0,0,0,
-				0,0,0,664,0,0,0,21,11,142,
+				0,0,0,661,0,0,0,21,11,142,
 				0,0,3,1,0,0,0,0,0,0,
 				1,1,1,6,0,0,0,0,0,0,
 				1,0,21,0,0,0,0,0,0,1
