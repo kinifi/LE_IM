@@ -24,6 +24,8 @@ public class DeathBySpikes : MonoBehaviour {
 
 					//Debug.Log ("You were killed by spikes!!");
 
+
+
 					//Find Robbe's gameobject and set his transform to the Spawn Location.
 					GameObject resetRobbe = GameObject.Find ("Player");
 					GameObject respawn = GameObject.Find("Spawn_Location");

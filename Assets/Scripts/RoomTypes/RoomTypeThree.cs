@@ -62,7 +62,7 @@ public class RoomTypeThree : MonoBehaviour {
 	{
 		RoomTypeThreePositionInitalize();
 		//picks a random number correlated to a Type 3 template
-		int temp = Random.Range(0, 12);
+		int temp = Random.Range(0, 11);
 		
 		switch (temp)
 		{
@@ -188,7 +188,7 @@ public class RoomTypeThree : MonoBehaviour {
 				0,0,0,0,0,1,1,668,0,0,
 				0,0,0,0,0,1,1,0,0,0,
 				0,0,0,0,0,0,0,0,0,0,
-				12,12,12,12,12,1,1,1,1,11
+				12,12,12,12,1,1,1,1,1,11
 			};
 			//Debug.Log("Room Type Four Eight was chosen.");
 			break;

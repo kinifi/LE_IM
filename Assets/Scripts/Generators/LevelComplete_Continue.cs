@@ -14,14 +14,8 @@ public class LevelComplete_Continue : MonoBehaviour {
 		{
 			if(robbeContinues == null)
 			{
-				
-				//Instantiate the continue splash and overlay Robbe.
-				GameObject resetRobbe = GameObject.Find ("Player");
-				robbeContinues = Instantiate(completeMessage, resetRobbe.transform.position, Quaternion.identity) as GameObject;
-				robbeContinues.transform.OverlayPosition(resetRobbe.transform);
-				robbeContinues.transform.localScale = new Vector3(15.0f,15.0f,1.0f);
-
 				//Find Robbe's gameobject and set his transform to the Spawn Location.
+				GameObject resetRobbe = GameObject.Find ("Player");
 				GameObject respawn = GameObject.Find("Spawn_Location");
 				resetRobbe.transform.position = respawn.transform.position;
 
@@ -33,9 +27,19 @@ public class LevelComplete_Continue : MonoBehaviour {
 				NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
 				_lookdown.enabled = false;
 				
+				//Instantiate the continue splash and overlay Robbe.
+				robbeContinues = Instantiate(completeMessage, resetRobbe.transform.position, Quaternion.identity) as GameObject;
+				robbeContinues.transform.OverlayPosition(resetRobbe.transform);
+				robbeContinues.transform.localScale = new Vector3(15.0f,15.0f,1.0f);
 
-
-				Destroy(robbeContinues, 2.5f);
+				if(Input.GetButtonDown("Fire1"))
+				{
+					Destroy(robbeContinues);
+				}
+				else
+				{
+					Destroy(robbeContinues, 2.5f);
+				}
 
 				//Let me know you comopleted the level!
 				Debug.Log ("You completed the level!!");

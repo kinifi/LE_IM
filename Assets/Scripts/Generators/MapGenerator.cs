@@ -161,9 +161,19 @@ public class MapGenerator : MonoBehaviour {
 		//Instantiate the controls splash and overlay Robbe.  Destroy it and call the movement function.
 		GameObject controlsSplash = Instantiate(controlsMessage, startRobbe.transform.position, Quaternion.identity) as GameObject;
 		controlsSplash.transform.OverlayPosition(startRobbe.transform);
-		Destroy(controlsSplash, 2.5f);
-		Invoke("AllowRobbesMovement", 2.5f);
 
+		//Destroy Splash
+		if(Input.GetButtonDown("Fire1"))
+		{
+			Destroy(controlsSplash);
+		}
+		else
+		{
+			Destroy(controlsSplash, 2.5f);
+		}
+		
+		//Allow Robbe's movement again
+		Invoke("AllowRobbesMovement", 2.5f);
 	}
 
 	private void LoadCompleteMessage()
@@ -179,8 +189,19 @@ public class MapGenerator : MonoBehaviour {
 		//Instantiate the complete splash and overlay Robbe.  Destroy it and call the movement function.
 		GameObject completeSplash = Instantiate(completeMessage, _robbe.transform.position, Quaternion.identity) as GameObject;
 		completeSplash.transform.OverlayPosition(_robbe.transform);
-		Destroy(completeSplash, 1.5f);
-		Invoke("AllowRobbesMovement", 1.5f);
+
+		//Destroy Splash
+		if(Input.GetButtonDown("Fire1"))
+		{
+			Destroy(completeSplash);
+		}
+		else
+		{
+			Destroy(completeSplash, 2.5f);
+		}
+
+		//Allow Robbe's movement again
+		Invoke("AllowRobbesMovement", 2.5f);
 	}
 
 	private void AllowRobbesMovement() 
