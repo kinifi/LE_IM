@@ -10,7 +10,6 @@ public class playerAnimator : MonoBehaviour {
 	//false = left, true = right
 	private bool standing = true;
 
-
 	//Animation Values:
 	//0 - Xvelo
 	//1 - Celebrate
@@ -24,6 +23,7 @@ public class playerAnimator : MonoBehaviour {
 		//get the Animator Component from the GameObject this is attached to
 		//Without the Animator we can't Animate or use Mecanim Varables
 		anim = GetComponent<Animator>();
+		//Debug.Log ("The player is on the ground is: "+ground);
 
 	}
 	
@@ -32,7 +32,6 @@ public class playerAnimator : MonoBehaviour {
 	
 		//get the horizontal input value so we can animate the player. Such as Run Left & Right
 		XaxisValue = Input.GetAxis("Horizontal");
-		YAxisValue = rigidbody2D.velocity.y;
 
 		//call the updateMecanimValues Every Frame so we never miss input
 		updateMecanimValues();
@@ -50,6 +49,7 @@ public class playerAnimator : MonoBehaviour {
 
 	private void Flip() {
 
+		//standing = right !standing = left
 		standing = !standing;
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
@@ -71,7 +71,7 @@ public class playerAnimator : MonoBehaviour {
 	/// Raises the collision enter2 d event.
 	/// </summary>
 	/// <param name="coll">Collision2D value</param>
-	void OnCollisionEnter2D(Collision2D coll) {
+	void OnTriggerEnter2D(Collider2D coll) {
 
 		for (int i = 0; i < collisionTags.Length; i++) {
 			if(coll.transform.tag == collisionTags[i])
@@ -102,7 +102,6 @@ public class playerAnimator : MonoBehaviour {
 	/// </summary>
 	private void updateMecanimValues() {
 		anim.SetFloat(animationNames[0], Mathf.Abs(XaxisValue));
-		anim.SetFloat(animationNames[5], Mathf.Abs(YAxisValue));
 		anim.SetBool(animationNames[2], hurt);
 		anim.SetBool(animationNames[1], celebrate);
 	}

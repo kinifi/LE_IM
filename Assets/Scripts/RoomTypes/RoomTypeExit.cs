@@ -58,7 +58,7 @@ public class RoomTypeExit : MonoBehaviour {
 	{
 		RoomTypeExitPositionInitalize();
 		//picks a random number correlated to a Type Exit template
-		int temp = Random.Range(0,6);
+		int temp = Random.Range(0,11);
 		
 		switch (temp)
 		{
@@ -127,7 +127,7 @@ public class RoomTypeExit : MonoBehaviour {
 				0,1,1,11,0,0,0,0,0,0,
 				0,0,8,0,0,0,0,0,0,0,
 				0,12,0,0,0,0,0,0,0,0,
-				7,1,12,12,0,0,3,0,0,0,
+				7,1,12,12,0,3,0,0,0,0,
 				1,2,1,1,1,1,1,1,1,1
 			};
 			//Debug.Log("Room Type Exit Four was chosen.");
@@ -145,6 +145,76 @@ public class RoomTypeExit : MonoBehaviour {
 				0,0,0,1,1,7,7,7,1,1
 			};
 			//Debug.Log("Room Type Exit Five was chosen.");
+			break;
+		case 6:
+			typeExitArray = new int[] 
+			{
+				0,0,0,111,0,0,0,0,0,0,
+				0,1,1,1,0,0,0,0,0,0,
+				0,0,0,0,7,7,7,0,0,0,
+				0,0,0,0,1,1,1,0,0,0,
+				0,0,50,0,0,0,50,0,0,2,
+				0,0,50,0,0,0,50,0,21,0,
+				3,50,0,33,0,50,0,21,0,0,
+				1,1,1,1,1,1,1,1,1,1
+			};
+			//Debug.Log("Room Type Exit Six was chosen.");
+			break;
+		case 7:
+			typeExitArray = new int[] 
+			{
+				0,6,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,664,0,0,
+				0,0,0,0,0,0,0,1,0,0,
+				0,0,0,0,0,0,0,665,0,0,
+				0,0,5,0,0,0,0,0,0,2,
+				0,0,0,0,0,0,0,0,0,0,
+				1,0,0,0,0,0,0,33,0,0,
+				1,1,1,1,1,1,1,1,1,1
+			};
+			//Debug.Log("Room Type Exit Seven was chosen.");
+			break;
+		case 8:
+			typeExitArray = new int[] 
+			{
+				0,0,0,0,0,0,0,0,0,0,
+				1,1,33,0,0,0,0,0,0,0,
+				0,0,1,1,0,0,0,0,0,0,
+				1,0,0,0,0,0,1,1,0,0,
+				0,0,5,0,0,0,0,0,0,2,
+				0,0,0,0,0,0,0,0,21,0,
+				1,0,0,0,0,0,0,0,0,0,
+				1,1,1,1,1,1,1,1,1,1
+			};
+			//Debug.Log("Room Type Exit Eight was chosen.");
+			break;
+		case 9:
+			typeExitArray = new int[] 
+			{
+				0,0,0,0,0,0,0,0,0,0,
+				0,1,668,0,0,0,0,0,2,0,
+				0,2,0,0,0,0,0,667,1,0,
+				0,0,1,0,0,0,0,0,0,0,
+				0,1,665,0,0,0,0,0,2,0,
+				0,2,0,0,0,0,0,667,1,0,
+				0,0,0,0,0,33,0,0,0,0,
+				1,1,1,1,1,1,1,1,1,1
+			};
+			//Debug.Log("Room Type Exit Nine was chosen.");
+			break;
+		case 10:
+			typeExitArray = new int[] 
+			{
+				0,0,11,0,11,0,11,0,11,0,
+				0,11,0,0,0,0,0,0,11,0,
+				0,11,0,0,0,0,0,0,11,0,
+				99,11,0,66,33,0,0,0,11,99,
+				0,11,0,0,1,0,0,0,11,0,
+				0,11,0,0,0,0,0,0,11,0,
+				3,11,0,20,0,0,3,0,11,3,
+				1,1,1,1,1,1,1,1,1,1
+			};
+			//Debug.Log("Room Type Exit Ten was chosen.");
 			break;
 		}
 		//calls the function to loop through the created array
@@ -451,8 +521,12 @@ public class RoomTypeExit : MonoBehaviour {
 		}
 		else if(typeExitArray[arrayNum] == 33)
 		{
+			string theme = Random.Range (1,4).ToString();
+
 			//istantiates block then moves the x position ahead by one
-			Instantiate(tileOfRoom[15], roomTilePosition, Quaternion.identity);
+			GameObject exitDoor = Instantiate(tileOfRoom[15], roomTilePosition, Quaternion.identity) as GameObject;
+			exitDoor.name = theme;
+			Debug.Log("This is the exitDoor name!!!"+exitDoor.name);
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}

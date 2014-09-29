@@ -60,7 +60,7 @@ public class RoomTypeZero : MonoBehaviour {
 	{
 		RoomTypeZeroPositionInitalize();
 		//Picks a random number correlated to a Type 0 template
-		int temp = Random.Range(0,7);
+		int temp = Random.Range(0,11);
 		
 		switch (temp)
 		{
@@ -83,12 +83,12 @@ public class RoomTypeZero : MonoBehaviour {
 			{
 				0,0,0,0,0,0,0,0,0,0,
 				0,0,2,0,0,0,0,7,2,0,
-				0,0,21,0,0,0,1,1,1,1,
+				96,0,21,0,0,0,1,1,1,1,
 				2,2,0,0,0,2,0,0,0,0,
 				0,0,5,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,661,0,
 				111,0,0,0,0,0,111,0,0,0,
-				1,1,1,142,11,11,141,1,1,1
+				1,1,11,142,11,11,141,1,1,1
 			};
 			//Debug.Log("Room Type Zero One was chosen.");
 			break;
@@ -241,6 +241,62 @@ public class RoomTypeZero : MonoBehaviour {
 				//Debug.Log("Room Type Zero Six-89 was chosen.");
 			}
 			//Debug.Log("Room Type Zero Six was chosen.");
+			break;
+		case 7:
+			typeZeroArray = new int[] 
+			{
+				0,0,0,0,0,0,0,0,0,0,
+				0,1,1,97,0,0,0,0,0,0,
+				0,0,1,1,1,1,0,0,1,1,
+				0,0,0,0,0,0,0,0,0,0,
+				1,668,0,0,0,0,0,0,0,2,
+				0,0,0,0,0,7,0,0,21,0,
+				111,0,7,0,1,0,0,0,0,0,
+				1,1,1,1,1,1,1,1,1,1
+			};
+			//Debug.Log("Room Type Zero Seven was chosen.");
+			break;
+		case 8:
+			typeZeroArray = new int[] 
+			{
+				6,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,1,1,
+				0,0,0,0,0,0,0,0,0,0,
+				1,66,0,0,0,0,0,0,0,1,
+				0,0,0,0,0,6,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				1,0,0,0,1,1,0,1,0,1
+			};
+			//Debug.Log("Room Type Zero Eight was chosen.");
+			break;
+		case 9:
+			typeZeroArray = new int[] 
+			{
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,96,0,0,0,0,0,0,1,1,
+				1,1,1,0,0,0,0,0,0,0,
+				0,0,0,5,0,0,0,0,0,1,
+				0,0,0,0,0,0,0,0,0,0,
+				1,668,0,0,0,0,0,0,0,0,
+				1,0,0,0,0,0,0,1,0,1
+			};
+			//Debug.Log("Room Type Zero Nine was chosen.");
+			break;
+		case 10:
+			typeZeroArray = new int[] 
+			{
+				6,0,0,0,0,6,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				1,16,0,0,0,661,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				5,0,0,0,0,5,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				0,0,0,0,0,0,0,0,0,0,
+				1,1,1,1,1,1,1,1,1,1
+			};
+			//Debug.Log("Room Type Zero Ten was chosen.");
 			break;
 		}
 		//Calls the function to loop through the created array

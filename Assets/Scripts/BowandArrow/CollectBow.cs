@@ -5,7 +5,7 @@ public class CollectBow : MonoBehaviour {
 
 	private string objectToFind = "Player";
 	private int bowCounter = 0;
-	void OnCollisionEnter2D (Collision2D Player) 
+	void OnTriggerEnter2D (Collider2D Player) 
 	{
 		if(Player.gameObject.tag == "Player")
 		{

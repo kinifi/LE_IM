@@ -4,7 +4,7 @@ using System.Collections;
 public class CollectKey : MonoBehaviour {
 
 		
-	void OnCollisionEnter2D (Collision2D Player) 
+	void OnTriggerEnter2D (Collider2D Player) 
 	{
 		if(Player.gameObject.tag == "Player")
 		{
@@ -13,7 +13,7 @@ public class CollectKey : MonoBehaviour {
 			Inventory keyCount = GameObject.Find("Player").GetComponent<Inventory>();
 			keyCount.Keys += 1;
 			keyCount.startCollectTimer = true;
-			//Debug.Log (keyCount.keys);
+			Debug.Log (keyCount.Keys);
 		}
 	}
 }

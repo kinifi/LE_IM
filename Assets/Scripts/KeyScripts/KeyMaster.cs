@@ -5,7 +5,7 @@ public class KeyMaster : MonoBehaviour {
 
 
 
-	void OnCollisionEnter2D (Collision2D Player) 
+	void OnTriggerEnter2D (Collider2D Player) 
 	{
 		Inventory keysOnRing = GameObject.Find("Player").GetComponent<Inventory>();
 		if(keysOnRing.Keys > 0)

@@ -12,14 +12,14 @@ public class Smooth_Follow : MonoBehaviour
 	public Vector3 cameraOffset;
 	public bool useFixedUpdate = false;
 	
-	private FakeRobbeController _playerController;
+	private RobbeController _playerController;
 	private Vector3 _smoothDampVelocity;
 	public bool movingCamera = false;
 	
 	void Awake()
 	{
 		transform = gameObject.transform;
-		_playerController = target.GetComponent<FakeRobbeController>();
+		_playerController = target.GetComponent<RobbeController>();
 	}
 	
 	

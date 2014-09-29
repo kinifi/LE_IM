@@ -41,7 +41,7 @@ public class PauseScreen : MonoBehaviour {
 
 	private void togglePlayerMovement()
 	{
-		FakeRobbeController _robbe = Player.GetComponent<FakeRobbeController>();
+		RobbeController _robbe = Player.GetComponent<RobbeController>();
 		_robbe.canMove = !_robbe.canMove;
 	}
 
