@@ -443,6 +443,12 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		setStats();
 	}
 
+	public void resetSteamData()
+	{
+		ResetStatsAndAchievements();
+		Invoke("setStats", 0.5f);
+	}
+
 	//-----------------------------------------------------------------
 
 	private class Achievement_t {
