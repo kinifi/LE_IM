@@ -19,6 +19,7 @@ public class PlayerSuccess : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D coll)
 	{
+
 		if(coll.transform.name == playerName)
 		{
 			FadeObj.SetActive(true);

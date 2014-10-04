@@ -9267,6 +9267,7 @@ GameObject:
   - 114: {fileID: 1178559455}
   - 54: {fileID: 1178559454}
   - 114: {fileID: 1178559457}
+  - 114: {fileID: 1178559458}
   m_Layer: 9
   m_Name: UI Root
   m_TagString: Untagged
@@ -9373,6 +9374,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544970da9081aae4cbc9c712f92d4378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1178559458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1178559452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b082b47a4b7ee4e8a429922c10d477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1181486731
 GameObject:
   m_ObjectHideFlags: 0
@@ -9388,7 +9400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1181486732
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18359,5 +18371,9 @@ MonoBehaviour:
   onClick:
   - mTarget: {fileID: 1178559457}
     mMethodName: openCommunity
+    mParameters: []
+    oneShot: 0
+  - mTarget: {fileID: 1178559458}
+    mMethodName: menuSelection
     mParameters: []
     oneShot: 0

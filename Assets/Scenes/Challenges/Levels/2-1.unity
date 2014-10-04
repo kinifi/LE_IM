@@ -10742,6 +10742,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &982097779
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12711,7 +12712,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd7634d8e886fb946b28a55250910c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springing: {x: 0, y: 275}
 --- !u!61 &1072749836
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12722,8 +12722,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .75, y: .75}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: .75, y: .5}
+  m_Center: {x: 0, y: -.150000006}
 --- !u!212 &1072749837
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15803,7 +15803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd7634d8e886fb946b28a55250910c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springing: {x: 0, y: 275}
 --- !u!61 &1415780368
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15814,8 +15813,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .75, y: .75}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: .75, y: .5}
+  m_Center: {x: 0, y: -.150000006}
 --- !u!212 &1415780369
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16107,7 +16106,7 @@ Transform:
   m_GameObject: {fileID: 1464037622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8, y: 6, z: 0}
-  m_LocalScale: {x: .00382409175, y: .00382409175, z: .00382409175}
+  m_LocalScale: {x: .00361663662, y: .00361663662, z: .00361663662}
   m_Children:
   - {fileID: 1041766258}
   m_Father: {fileID: 0}
@@ -18866,7 +18865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1696666212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18935,13 +18934,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: 0, b: 0, a: 1}
   mPivot: 4
-  mWidth: 6218
-  mHeight: 3499
+  mWidth: 6579
+  mHeight: 3700
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.77707922
+  aspectRatio: 1.77810812
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -19987,7 +19986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd7634d8e886fb946b28a55250910c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springing: {x: 0, y: 275}
 --- !u!61 &1859086274
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19998,8 +19996,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .75, y: .75}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: .75, y: .5}
+  m_Center: {x: 0, y: -.150000006}
 --- !u!212 &1859086275
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20150,6 +20148,7 @@ GameObject:
   - 4: {fileID: 1890131314}
   - 212: {fileID: 1890131313}
   - 61: {fileID: 1890131312}
+  - 114: {fileID: 1890131315}
   - 114: {fileID: 1890131311}
   m_Layer: 9
   m_Name: Door
@@ -20218,6 +20217,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1890131315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 0aa1eab02c8b36444909ef9e27eb21da,
+    type: 2}
+  m_PrefabInternal: {fileID: 1774197807}
+  m_GameObject: {fileID: 1890131310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b17e0cba4286f44888c64c0aef27865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1896617381
 GameObject:
   m_ObjectHideFlags: 0
