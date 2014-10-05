@@ -40,6 +40,13 @@ public class ShaddowSpike : MonoBehaviour {
 			spikeShot.gameObject.tag = "rightspike";
 			//Debug.Log ("Shot fired!");
 		}
+		if (Time.time > nextFire && this.gameObject.tag == "bossspike")
+		{
+			nextFire = Time.time + fireRate;
+			GameObject spikeShot = Instantiate(shot, shotSpawn.position, shotSpawn.rotation) as GameObject;
+			spikeShot.gameObject.tag = "bossspike";
+			//Debug.Log ("Shot fired!");
+		}
 	
 	}
 }

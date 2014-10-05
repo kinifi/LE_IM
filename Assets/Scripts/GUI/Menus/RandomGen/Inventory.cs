@@ -3,16 +3,28 @@ using System.Collections;
 
 public class Inventory : MonoBehaviour {
 
-	public int Arrows, Keys;
+	public int Arrows, Keys, Completed;
 	private float timer = 2.0f;
 	private int x = 20, y = 20;
 	public bool showInventory = false;
 	public bool startCollectTimer = false;
 	public GUISkin skin;
 
+	//Configs to get 
+	private int _arrows;
+	private int _keys;
+	private int _completed;
+
 	// Use this for initialization
 	void Start () {
-	
+		//Get starting inventory
+		_arrows = PlayerPrefs.GetInt("bow");
+		_keys = PlayerPrefs.GetInt("keys");
+		_completed = PlayerPrefs.GetInt("completed");
+		//Set starting inventory
+		Arrows = _arrows;
+		Keys = _keys;
+		Completed = _completed;
 	}
 
 	void Update() {
@@ -47,8 +59,8 @@ public class Inventory : MonoBehaviour {
 		if(showInventory)
 		{
 			GUILayout.BeginHorizontal();
-			//GUILayout.Label("Keys: " + Keys);
-			//GUILayout.Label("Arrows: " + Arrows);
+			GUILayout.Label("Keys: " + Keys);
+			GUILayout.Label("Arrows: " + Arrows);
 			GUILayout.EndHorizontal();
 		}
 		GUILayout.EndArea();

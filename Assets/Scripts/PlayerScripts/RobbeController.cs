@@ -15,12 +15,19 @@ public class RobbeController : MonoBehaviour {
 	//Object movement configs
 	private Vector2 moveColR = new Vector2(45.0f, 0.0f);
 	private Vector2 moveColL = new Vector2(-45.0f, 0.0f);
-	private bool _right;
+	public bool _right;
 	private float input1 = 0.0f;
+
+	//Audio configs
+	public AudioClip[] clips;
+	private AudioSource _screams;
 
 	//scripts to get
 	private CharacterController2D _controller;
 	private Animator _animator;
+
+	//public vars for other scripts
+	public Vector3 playervelocity;
 	
 	void Awake()
 	{
@@ -28,6 +35,7 @@ public class RobbeController : MonoBehaviour {
 		//grab script components
 		_controller = GetComponent<CharacterController2D>();
 		_animator = GetComponent<Animator>();
+		_screams = GameObject.Find ("BossDeathScream").GetComponent<AudioSource>();
 
 		//events :) may not need this line
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
@@ -48,6 +56,7 @@ public class RobbeController : MonoBehaviour {
 
 		//grab our current velocity as base for all calculations
 		var velocity = _controller.velocity;
+		playervelocity = velocity;
 
 		//grab our current input and set input1
 		input1 = Mathf.Abs(Input.GetAxis( "Horizontal" ));
@@ -95,20 +104,18 @@ public class RobbeController : MonoBehaviour {
 		{
 			if(_controller.isGrounded)
 			{
+				audio.PlayOneShot(clips[4], 0.7F);
 				velocity.y = Mathf.Sqrt( 2f * targetJumpHeight * -gravity );
 				doubleJump = true;
 				SteamManager.StatsAndAchievements.incrementNumOfJumps();
-				audio.Play();
-				
 			}
 			else if(doubleJump == true)
 			{
+				audio.PlayOneShot(clips[4], 0.7F);
 				velocity.y = Mathf.Sqrt( 2f * targetJumpHeight * -gravity );
 				doubleJump = false;
 				SteamManager.StatsAndAchievements.incrementNumOfJumps();
-				audio.Play();
 			}
-
 		}
 
 
@@ -129,12 +136,38 @@ public class RobbeController : MonoBehaviour {
 			if(_right)
 			{
 				col.gameObject.rigidbody2D.AddForce(moveColR);
+				audio.PlayOneShot(clips[0], 0.45F);
 			}
 			else if(!_right)
 			{
 				col.gameObject.rigidbody2D.AddForce(moveColL);
+				audio.PlayOneShot(clips[0], 0.45F);
 			}
 		}
+		else if(col.gameObject.tag == "Key")
+		{
+			audio.PlayOneShot(clips[1], 0.7F);
+		}
+		else if(col.gameObject.tag == "Bow")
+		{
+			audio.PlayOneShot(clips[7], 0.7F);
+			Destroy(col);
+		}
+		else if(col.gameObject.tag == "Door")
+		{
+			audio.PlayOneShot(clips[8], 0.7F);
+			Destroy(col);
+		}
+	}
+
+	public void BossDeathAudios ()
+	{
+		_screams.enabled = true;
+	}
+
+	public void EngagementAudio (int clipsNumber)
+	{
+		audio.PlayOneShot(clips[clipsNumber], 0.7f);
 	}
 }
 	

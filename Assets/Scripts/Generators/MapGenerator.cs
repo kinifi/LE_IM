@@ -12,7 +12,6 @@ public class MapGenerator : MonoBehaviour {
 	private int basicRoomNum;
 	private int downRoomNum;
 
-
 	public GameObject controlsMessage;
 	public GameObject completeMessage;
 	private bool tutorialDone = false;
@@ -29,17 +28,20 @@ public class MapGenerator : MonoBehaviour {
 			FillInTheMap();
 			Debug.Log ("Tutorial Dungeon Loaded!");
 		}
-		else if(tutorialDone == true && Application.loadedLevelName == "Map_Level_Gen")
+		else if(tutorialDone == true && Application.loadedLevel < 12)
 		{
 			LoadCompleteMessage();
 			NewDungeon();
 			Debug.Log ("Continue Loaded");
 		}
-		else if(tutorialDone == true)
+		else if(tutorialDone == true && Application.loadedLevel > 11)
 		{
-			LoadControlsMessage();
-			NewDungeon();
-			Debug.Log ("No Tutorial Random Dungeon loaded!!");
+			LoadCompleteMessage();
+			Debug.Log("Boss Level");
+		}
+		else
+		{
+			Debug.Log ("Something went wrong on Start!!!");
 		}
 	}
 
@@ -52,14 +54,11 @@ public class MapGenerator : MonoBehaviour {
 		if(_tutorialDone == "true")
 		{
 			tutorialDone = true;
-
 		}
 		else
 		{
 			tutorialDone = false;
-
 		}
-
 	}
 
 	private void incrementGamesPlayed()
@@ -128,7 +127,7 @@ public class MapGenerator : MonoBehaviour {
 		RoomCall33 sendValue33 = GameObject.Find ("Matrix33").GetComponent<RoomCall33>();
 		sendValue33.GetMatrix33Value();
 	}
-	
+
 	private void OnComplete()
 	{
 		Debug.Log ("Dungeon should be generated.");

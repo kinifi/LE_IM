@@ -521,12 +521,12 @@ public class RoomTypeExit : MonoBehaviour {
 		}
 		else if(typeExitArray[arrayNum] == 33)
 		{
-			string theme = Random.Range (1,4).ToString();
+			string theme = Random.Range (1,5).ToString();
 
 			//istantiates block then moves the x position ahead by one
 			GameObject exitDoor = Instantiate(tileOfRoom[15], roomTilePosition, Quaternion.identity) as GameObject;
 			exitDoor.name = theme;
-			Debug.Log("This is the exitDoor name!!!"+exitDoor.name);
+			//Debug.Log("This is the exitDoor name!!!"+exitDoor.name);
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}

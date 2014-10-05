@@ -8,8 +8,13 @@ public class CollectGoldenBow : MonoBehaviour {
 	{
 		if(Player.gameObject.tag == "Player")
 		{
-			Destroy(this.gameObject);
 			//Debug.Log("You grabbed a golden bow!");
+			Inventory arrowCount = GameObject.Find("Player").GetComponent<Inventory>();
+			arrowCount.Arrows += 5;
+			arrowCount.startCollectTimer = true;
+			Debug.Log (arrowCount.Arrows);
+
+
 			Quiver bowCount = GameObject.Find("Player").GetComponent<Quiver>();
 			bowCount.bow += 5;
 			//bowCount.addArrows(5);
