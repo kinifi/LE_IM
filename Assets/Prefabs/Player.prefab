@@ -71,21 +71,21 @@ AudioSource:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 3b1020a3c8b568948987f72cc00792fa, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .862999976
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Priority: 128
+  Priority: 106
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
+  rolloffMode: 2
+  BypassEffects: 1
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -95,7 +95,7 @@ AudioSource:
       outSlope: 0
       tangentMode: 0
     - time: 1
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -149,7 +149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Arrows: 0
   Keys: 0
-  showInventory: 0
+  Completed: 0
+  showInventory: 1
   startCollectTimer: 0
   skin: {fileID: 11400000, guid: 4b6deda157dfe124ea773b0b5ac398ed, type: 2}
 --- !u!114 &11400002
@@ -193,10 +194,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -35
-  runSpeed: 3
+  runSpeed: 4
+  groundDamping: 20
+  inAirDamping: 5
   targetJumpHeight: 2
   doubleJump: 0
   canMove: 0
+  _right: 0
+  clips:
+  - {fileID: 8300000, guid: c1a499b5498d9e240b03691edab495d4, type: 3}
+  - {fileID: 8300000, guid: 1c123d8eba634da4797a29fe5ef04508, type: 3}
+  - {fileID: 8300000, guid: 4b79379d6e9fdbc4988d444fc7beac8d, type: 3}
+  - {fileID: 8300000, guid: 4585272e5a2568e4289d680930bc8ee3, type: 3}
+  - {fileID: 8300000, guid: 3b1020a3c8b568948987f72cc00792fa, type: 3}
+  - {fileID: 8300000, guid: a6969884a4e61b0479e26e5e0bb73efc, type: 3}
+  - {fileID: 8300000, guid: 118aea476badf1641a26c3eb0a3108a9, type: 3}
+  - {fileID: 8300000, guid: f7b3acc6c0e481b45b32a834148d3d10, type: 3}
+  - {fileID: 8300000, guid: 3c2436a7443caf34fa8c81d7638fe0eb, type: 3}
+  playervelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

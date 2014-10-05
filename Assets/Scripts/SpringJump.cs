@@ -15,11 +15,13 @@ public class SpringJump : MonoBehaviour {
 
 	//scripts to get
 	private CharacterController2D _player;
+	private RobbeController _audioPlayer;
 
 	void Awake()
 	{
 		//grab script components
 		_player = GameObject.Find("Player").GetComponent<CharacterController2D>();
+		_audioPlayer = GameObject.Find ("Player").GetComponent<RobbeController>();
 	}
 
 	void OnCollisionEnter2D (Collision2D col)
@@ -31,6 +33,8 @@ public class SpringJump : MonoBehaviour {
 	{
 		if(coll.transform.name == "Player")
 		{
+			//play sound
+			_audioPlayer.EngagementAudio(6);
 			//grab our current velocity as base for all calculations
 			var velocity = _player.velocity;
 			velocity.y = Mathf.Sqrt( 2f * targetJumpHeight * -gravity );

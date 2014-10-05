@@ -3,7 +3,9 @@ using System.Collections;
 
 public class ArrowMover : MonoBehaviour {
 
+	//set shot speed
 	public float shootSpeed = 200.0f;
+
 
 	public void ShootUp ()
 	{

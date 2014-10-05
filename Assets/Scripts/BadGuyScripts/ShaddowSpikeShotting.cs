@@ -26,6 +26,10 @@ public class ShaddowSpikeShotting : MonoBehaviour {
 		{
 			rigidbody2D.AddForce(-Vector2.right * shotSpeed);
 		}
+		else if (this.gameObject.tag == "bossspike")
+		{
+			rigidbody2D.AddRelativeForce(-Vector2.right * shotSpeed);
+		}
 		
 	}
 	

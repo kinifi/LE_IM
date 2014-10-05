@@ -119,6 +119,7 @@ public class BadGuyController : MonoBehaviour {
 
 		if(other.gameObject.tag == "Arrow")
 		{
+			AllowRobbesMovement();
 			Vector3 pos = transform.position;
 			Destroy(other.gameObject);
 

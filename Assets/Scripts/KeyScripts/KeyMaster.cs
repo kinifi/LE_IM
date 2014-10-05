@@ -10,7 +10,6 @@ public class KeyMaster : MonoBehaviour {
 		Inventory keysOnRing = GameObject.Find("Player").GetComponent<Inventory>();
 		if(keysOnRing.Keys > 0)
 		{
-			Destroy(this.gameObject);
 			SteamManager.StatsAndAchievements.Unlock_Pick_Lock_Pro_Achievement();
 			keysOnRing.Keys -= 1;
 			keysOnRing.startCollectTimer = true;
