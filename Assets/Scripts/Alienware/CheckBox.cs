@@ -3,16 +3,13 @@ using System.Collections;
 
 public class CheckBox : MonoBehaviour {
 
+
 	public GameObject confirmationPanel;
 	public UIToggle alienwareToggle;
 	public GameObject AlienWareObject;
 
 	// Use this for initialization
 	void Start () {
-
-#if !UNITY_STANDALONE_WIN
-		alienwareToggle.enabled = false;
-#endif
 
 	}
 	
@@ -28,6 +25,7 @@ public class CheckBox : MonoBehaviour {
 
 	public void confirmAlienware()
 	{
+
 		if(GameObject.Find("_Alien") == null)
 		{
 			GameObject alien;
@@ -38,17 +36,18 @@ public class CheckBox : MonoBehaviour {
 		}
 		else
 		{
-			Debug.Log("Object Already Created");
+            HidePopUp();
+            Debug.Log("Object Already Created");
 		}
-
-		HidePopUp();
+        
+		
 	}
 
 	public void HidePopUp()
 	{
 		alienwareToggle.value = false;
 		confirmationPanel.SetActive(false);
-		Debug.Log("Cancel");
+		Debug.Log("Hide PopUp");
 	}
 
 	public void ConfirmPopUp()
@@ -66,3 +65,4 @@ public class CheckBox : MonoBehaviour {
 
 
 }
+

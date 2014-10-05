@@ -7,7 +7,15 @@ public class Menu_Color_Change : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		if (alienObject())
+		{
+			changeBlue();
+			Debug.Log("Alienware Object Exists");
+		}
+		else
+		{
+			Debug.Log("Alienware Object Does NOT Exist");
+		}
 	}
 
     public void menuSelection()
@@ -18,7 +26,7 @@ public class Menu_Color_Change : MonoBehaviour {
         if (alienObject())
         {
             Invoke("changeGreen", 0.5f);
-            Invoke("changeBlue", 1.5f);
+            Invoke("changeBlue", 2.0f);
         }
 
 #endif

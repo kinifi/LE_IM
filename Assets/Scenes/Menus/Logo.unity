@@ -123,6 +123,50 @@ Prefab:
   m_RootGameObject: {fileID: 1520195873}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1001 &988814677
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: a9cdab17581ecaa4497963952f648dfb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.153727055
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9cdab17581ecaa4497963952f648dfb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.10245037
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9cdab17581ecaa4497963952f648dfb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 15.3204384
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9cdab17581ecaa4497963952f648dfb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9cdab17581ecaa4497963952f648dfb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9cdab17581ecaa4497963952f648dfb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9cdab17581ecaa4497963952f648dfb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a9cdab17581ecaa4497963952f648dfb, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a9cdab17581ecaa4497963952f648dfb, type: 2}
+  m_RootGameObject: {fileID: 1184507319}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &996828737
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +309,55 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1
+--- !u!1 &1184507319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: a9cdab17581ecaa4497963952f648dfb, type: 2}
+  m_PrefabInternal: {fileID: 988814677}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1184507321}
+  - 114: {fileID: 1184507320}
+  m_Layer: 0
+  m_Name: Console
+  m_TagString: Untagged
+  m_Icon: {fileID: -443503690, guid: 0000000000000000d000000000000000, type: 2}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1184507320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: a9cdab17581ecaa4497963952f648dfb,
+    type: 2}
+  m_PrefabInternal: {fileID: 988814677}
+  m_GameObject: {fileID: 1184507319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34b8557d521dd443b31dba365180ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundLogo: {fileID: 2800000, guid: 7183a1bec5f9ecd4e91e07b07cb8723f, type: 3}
+  consoleIcons:
+  - {fileID: 2800000, guid: 8150ed7f9fe73544a8cd3e26e2ede40d, type: 3}
+  - {fileID: 2800000, guid: e5f2d322130160b4888fc32841ee1df3, type: 3}
+  - {fileID: 2800000, guid: f34691d367b020745a332c9b424ddd1e, type: 3}
+  - {fileID: 2800000, guid: 459eb8242b67b054598cff27617c9472, type: 3}
+  startupMsg: '- DigitalWarlords Console, www.digitalwarlords.com -'
+  toggleKey: '`'
+  logDebug: 1
+--- !u!4 &1184507321
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: a9cdab17581ecaa4497963952f648dfb, type: 2}
+  m_PrefabInternal: {fileID: 988814677}
+  m_GameObject: {fileID: 1184507319}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.153727055, y: 3.10245037, z: 15.3204384}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!1 &1520195873
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +442,7 @@ Transform:
   m_GameObject: {fileID: 1852265629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00382409175, y: .00382409175, z: .00382409175}
+  m_LocalScale: {x: .00361663662, y: .00361663662, z: .00361663662}
   m_Children:
   - {fileID: 996828741}
   - {fileID: 2027056527}

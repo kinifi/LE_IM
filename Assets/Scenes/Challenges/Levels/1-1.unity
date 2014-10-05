@@ -3096,6 +3096,7 @@ GameObject:
   - 60: {fileID: 459453017}
   - 114: {fileID: 459453016}
   - 114: {fileID: 459453015}
+  - 114: {fileID: 459453020}
   m_Layer: 0
   m_Name: ShaddowSpikeCannon
   m_TagString: Untagged
@@ -3204,6 +3205,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &459453020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: b77c6dfb129c26b4fabc5efe9a7eb755,
+    type: 2}
+  m_PrefabInternal: {fileID: 1100984153}
+  m_GameObject: {fileID: 459453014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f052e6a67ebb84ba0ea36f66da903d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &482071798
 Prefab:
   m_ObjectHideFlags: 0
@@ -3971,9 +3984,10 @@ GameObject:
   - 212: {fileID: 578715402}
   - 50: {fileID: 578715401}
   - 61: {fileID: 578715400}
+  - 114: {fileID: 578715404}
   m_Layer: 10
   m_Name: PushBlock25
-  m_TagString: Untagged
+  m_TagString: BreakableBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4041,6 +4055,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &578715404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 038587f337fe99045944d8cd14061cf7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1614836557}
+  m_GameObject: {fileID: 578715399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b8a1e12da61d14d93c13a3d081a50d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &578746086
 GameObject:
   m_ObjectHideFlags: 0
@@ -5918,6 +5944,7 @@ GameObject:
   - 60: {fileID: 824553952}
   - 114: {fileID: 824553951}
   - 114: {fileID: 824553950}
+  - 114: {fileID: 824553955}
   m_Layer: 0
   m_Name: ShaddowSpikeCannon
   m_TagString: Untagged
@@ -6026,6 +6053,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!114 &824553955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: b77c6dfb129c26b4fabc5efe9a7eb755,
+    type: 2}
+  m_PrefabInternal: {fileID: 1753151167}
+  m_GameObject: {fileID: 824553949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f052e6a67ebb84ba0ea36f66da903d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &832607630
 GameObject:
   m_ObjectHideFlags: 0
@@ -7775,6 +7814,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &982097779
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10844,6 +10884,7 @@ GameObject:
   - 60: {fileID: 1371986203}
   - 114: {fileID: 1371986202}
   - 114: {fileID: 1371986201}
+  - 114: {fileID: 1371986206}
   m_Layer: 0
   m_Name: ShaddowSpikeCannon
   m_TagString: Untagged
@@ -10952,6 +10993,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
+--- !u!114 &1371986206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: b77c6dfb129c26b4fabc5efe9a7eb755,
+    type: 2}
+  m_PrefabInternal: {fileID: 2061870256}
+  m_GameObject: {fileID: 1371986200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f052e6a67ebb84ba0ea36f66da903d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1394789993
 Prefab:
   m_ObjectHideFlags: 0
@@ -11534,7 +11587,7 @@ Transform:
   m_GameObject: {fileID: 1464037622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8, y: 6, z: 0}
-  m_LocalScale: {x: .00382409175, y: .00382409175, z: .00382409175}
+  m_LocalScale: {x: .00361663662, y: .00361663662, z: .00361663662}
   m_Children:
   - {fileID: 1041766258}
   m_Father: {fileID: 0}
@@ -13841,13 +13894,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: 0, b: 0, a: 1}
   mPivot: 4
-  mWidth: 6218
-  mHeight: 3499
+  mWidth: 6579
+  mHeight: 3700
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.77707922
+  aspectRatio: 1.77810812
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -14836,6 +14889,7 @@ GameObject:
   - 4: {fileID: 1890131314}
   - 212: {fileID: 1890131313}
   - 61: {fileID: 1890131312}
+  - 114: {fileID: 1890131315}
   - 114: {fileID: 1890131311}
   m_Layer: 9
   m_Name: Door
@@ -14904,6 +14958,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1890131315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 0aa1eab02c8b36444909ef9e27eb21da,
+    type: 2}
+  m_PrefabInternal: {fileID: 1774197807}
+  m_GameObject: {fileID: 1890131310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b17e0cba4286f44888c64c0aef27865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1890994685
 GameObject:
   m_ObjectHideFlags: 0
@@ -15890,6 +15956,7 @@ GameObject:
   - 60: {fileID: 1979387177}
   - 114: {fileID: 1979387176}
   - 114: {fileID: 1979387175}
+  - 114: {fileID: 1979387180}
   m_Layer: 0
   m_Name: ShaddowSpikeCannon
   m_TagString: Untagged
@@ -15998,6 +16065,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
+--- !u!114 &1979387180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: b77c6dfb129c26b4fabc5efe9a7eb755,
+    type: 2}
+  m_PrefabInternal: {fileID: 731197104}
+  m_GameObject: {fileID: 1979387174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f052e6a67ebb84ba0ea36f66da903d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1979689000
 Prefab:
   m_ObjectHideFlags: 0

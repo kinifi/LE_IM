@@ -20,6 +20,7 @@ public class Success_Trigger_Alienware : MonoBehaviour
             if(alienObject())
             {
                 alien.GetComponent<AlienwareFX>().ChangeColor(Color.green);
+				Debug.Log("Change Color To Green!");
             }
         }
 
