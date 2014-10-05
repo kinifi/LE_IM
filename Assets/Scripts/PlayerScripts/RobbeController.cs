@@ -151,7 +151,6 @@ public class RobbeController : MonoBehaviour {
 		else if(col.gameObject.tag == "Bow")
 		{
 			audio.PlayOneShot(clips[7], 0.7F);
-			Destroy(col);
 		}
 		else if(col.gameObject.tag == "Door")
 		{
