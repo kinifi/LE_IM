@@ -75,6 +75,11 @@ public class LevelComplete_Continue : MonoBehaviour {
 				Debug.Log ("DepthsBoss Loading");
 				Invoke("AllowRobbesMovement", 1.5f);
 				break;
+			case "3":
+				Application.LoadLevel("GoblinBoss");
+				Debug.Log ("GoblinBoss Loading");
+				Invoke("AllowRobbesMovement", 1.5f);
+				break;
 			default:
 				Application.LoadLevel("ScaredBoss");
 				Debug.Log ("ScaredBoss Loading due to default");

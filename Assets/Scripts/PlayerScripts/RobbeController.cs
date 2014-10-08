@@ -104,14 +104,14 @@ public class RobbeController : MonoBehaviour {
 		{
 			if(_controller.isGrounded)
 			{
-				audio.PlayOneShot(clips[4], 0.7F);
+				audio.PlayOneShot(clips[4], 0.55F);
 				velocity.y = Mathf.Sqrt( 2f * targetJumpHeight * -gravity );
 				doubleJump = true;
 				SteamManager.StatsAndAchievements.incrementNumOfJumps();
 			}
 			else if(doubleJump == true)
 			{
-				audio.PlayOneShot(clips[4], 0.7F);
+				audio.PlayOneShot(clips[4], 0.55F);
 				velocity.y = Mathf.Sqrt( 2f * targetJumpHeight * -gravity );
 				doubleJump = false;
 				SteamManager.StatsAndAchievements.incrementNumOfJumps();
@@ -154,8 +154,7 @@ public class RobbeController : MonoBehaviour {
 		}
 		else if(col.gameObject.tag == "Door")
 		{
-			audio.PlayOneShot(clips[8], 0.7F);
-			Destroy(col);
+			audio.PlayOneShot(clips[2], 0.7F);
 		}
 	}
 

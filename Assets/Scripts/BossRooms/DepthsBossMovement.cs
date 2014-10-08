@@ -21,15 +21,15 @@ public class DepthsBossMovement : MonoBehaviour {
 	private SpriteRenderer _renderer;
 	private RobbeController _playerController;
 	private Vector3 _position;
-	// Use this for initialization
-	void Start () {
 
+	// Use this for initialization
+	void Start () 
+	{
 		_renderer = GetComponent<SpriteRenderer>();
 		_playerController = GameObject.Find ("Player").GetComponent<RobbeController>();
 		baseColor = new Color(_renderer.color.r, _renderer.color.g, _renderer.color.b, _renderer.color.a);
 		Invoke("Fading", 2.0f);	
 		Invoke ("DownForce", 1.0f);
-	
 	}
 	
 	private void DownForce ()
