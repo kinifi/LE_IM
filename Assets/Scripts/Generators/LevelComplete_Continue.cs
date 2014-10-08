@@ -59,7 +59,7 @@ public class LevelComplete_Continue : MonoBehaviour {
 
 	private void GetThemeName(int completedDungeons)
 	{
-		if(completedDungeons == 3)
+		if(completedDungeons == 4)
 		{
 			PlayerPrefs.SetInt("completed", 0);
 			string nextBoss = this.gameObject.name;

@@ -237,7 +237,7 @@ public class BadGuyFollowController : MonoBehaviour {
 			}
 		}
 		
-		if(other.gameObject.tag == "Arrow")
+		else if(other.gameObject.tag == "Arrow")
 		{
 			//Play audio
 			audio.PlayOneShot(wispSounds[0]);
@@ -245,10 +245,13 @@ public class BadGuyFollowController : MonoBehaviour {
 			Vector3 pos = transform.position;
 			//Destroy Arrow
 			Destroy(other.gameObject);
-			//Increment Death
-			_goblinsDeadNum = GameObject.Find ("GoblinBossBody").GetComponent<GoblinBody>().gouhls;
-			_goblinsDeadNum -= 1;
-			GameObject.Find ("GoblinBossBody").GetComponent<GoblinBody>().gouhls = _goblinsDeadNum;
+			//Check if Boss Level
+			if(GameObject.Find ("GoblinBossBody") != null)
+			{
+				_goblinsDeadNum = GameObject.Find ("GoblinBossBody").GetComponent<GoblinBody>().gouhls;
+				_goblinsDeadNum -= 1;
+				GameObject.Find ("GoblinBossBody").GetComponent<GoblinBody>().gouhls = _goblinsDeadNum;
+			}
 			//chance of drop
 			int drop = Random.Range(1,6);
 			//drop

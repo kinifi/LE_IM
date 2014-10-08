@@ -38,7 +38,7 @@ public class ShaddowBox : MonoBehaviour {
 			{
 				nextJump = Time.time + jumpRate;
 				Bounce();
-				Invoke("PlaySquish", 0.65f);
+				Invoke("PlaySquish", 1.0f);
 				//Debug.Log ("Bounce was called");
 			}
 		}

@@ -10666,7 +10666,7 @@ Transform:
   m_GameObject: {fileID: 179352687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: -1, z: 0}
-  m_LocalScale: {x: .00449438207, y: .00449438207, z: .00449438207}
+  m_LocalScale: {x: .00382409175, y: .00382409175, z: .00382409175}
   m_Children:
   - {fileID: 1978235848}
   m_Father: {fileID: 0}
@@ -14014,7 +14014,10 @@ GameObject:
   - 4: {fileID: 232523939}
   - 212: {fileID: 232523938}
   - 114: {fileID: 232523940}
-  m_Layer: 16
+  - 114: {fileID: 232523943}
+  - 114: {fileID: 232523942}
+  - 61: {fileID: 232523941}
+  m_Layer: 9
   m_Name: PEntrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14068,6 +14071,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fcd72b4c4dd144419894492eb8ff9f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &232523941
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: 1c73d02943dbed44ca278430fc9d7259,
+    type: 2}
+  m_PrefabInternal: {fileID: 760818506}
+  m_GameObject: {fileID: 232523937}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .620000005, y: 1.08000004}
+  m_Center: {x: 0, y: .0799999982}
+--- !u!114 &232523942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: 1c73d02943dbed44ca278430fc9d7259,
+    type: 2}
+  m_PrefabInternal: {fileID: 760818506}
+  m_GameObject: {fileID: 232523937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4800440f0d684c84ab09637515208919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &232523943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: 1c73d02943dbed44ca278430fc9d7259,
+    type: 2}
+  m_PrefabInternal: {fileID: 760818506}
+  m_GameObject: {fileID: 232523937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8178cf43b0a1f4a9fabb71390fbe1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completeMessage: {fileID: 100000, guid: df6734f67d9e89043a0fcae8c6b857f9, type: 2}
+  robbeContinues: {fileID: 0}
 --- !u!1 &232531962
 GameObject:
   m_ObjectHideFlags: 0
@@ -54760,21 +54801,21 @@ AudioSource:
   m_GameObject: {fileID: 1033996062}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 3b1020a3c8b568948987f72cc00792fa, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .862999976
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Priority: 128
+  Priority: 106
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 1
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -54784,7 +54825,7 @@ AudioSource:
       outSlope: 0
       tangentMode: 0
     - time: 1
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -54824,6 +54865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Arrows: 0
   Keys: 0
+  Completed: 0
   showInventory: 1
   startCollectTimer: 0
   skin: {fileID: 11400000, guid: 4b6deda157dfe124ea773b0b5ac398ed, type: 2}
@@ -54878,12 +54920,15 @@ MonoBehaviour:
   canMove: 0
   _right: 0
   clips:
-  - {fileID: 8300000, guid: 31fa21205a4bd7944901d1f4d4c001d9, type: 3}
+  - {fileID: 8300000, guid: c1a499b5498d9e240b03691edab495d4, type: 3}
   - {fileID: 8300000, guid: 1c123d8eba634da4797a29fe5ef04508, type: 3}
   - {fileID: 8300000, guid: 4b79379d6e9fdbc4988d444fc7beac8d, type: 3}
-  - {fileID: 8300000, guid: 4ecb26c462ed72b4dbfba168ff91e2fa, type: 3}
+  - {fileID: 8300000, guid: 4585272e5a2568e4289d680930bc8ee3, type: 3}
   - {fileID: 8300000, guid: 3b1020a3c8b568948987f72cc00792fa, type: 3}
   - {fileID: 8300000, guid: a6969884a4e61b0479e26e5e0bb73efc, type: 3}
+  - {fileID: 8300000, guid: 118aea476badf1641a26c3eb0a3108a9, type: 3}
+  - {fileID: 8300000, guid: f7b3acc6c0e481b45b32a834148d3d10, type: 3}
+  - {fileID: 8300000, guid: 3c2436a7443caf34fa8c81d7638fe0eb, type: 3}
   playervelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &1033996067
 MonoBehaviour:
@@ -64809,7 +64854,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 0693d333ff469b542a1ab2ccf83d8157, type: 2}
   - {fileID: 100000, guid: dae6368c3cc76504b846c183e42280de, type: 2}
   - {fileID: 100000, guid: 172227699df068a4697d7089bca5489c, type: 2}
-  - {fileID: 100000, guid: f750f344bfece474b9128c65bda753d5, type: 2}
+  - {fileID: 100000, guid: e09f83d14a382a24e98053c57c826e07, type: 2}
   - {fileID: 100000, guid: 0a0b4f5c5988bdf478c742d8f40b2f1c, type: 2}
   - {fileID: 100000, guid: 21f9626e4fd44c447a5552c049cd81da, type: 2}
   - {fileID: 100000, guid: 5cf50b17193d070499cdccd89c6a48e4, type: 2}
@@ -64820,6 +64865,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 55ef0c3bfd32daf4ca5c1d32f097333f, type: 2}
   - {fileID: 100000, guid: f53af1777e7a68c4fbabefae4e5423ac, type: 2}
   - {fileID: 100000, guid: 3d56c3b9be06dd24b8a36c7704628df8, type: 2}
+  - {fileID: 100000, guid: 3423d639740f5ff4fb51af71891743cd, type: 2}
   startingPosition2: {x: 0, y: 0, z: 0}
   typeTwoArray: 
 --- !u!114 &1225973173
@@ -64856,7 +64902,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 0693d333ff469b542a1ab2ccf83d8157, type: 2}
   - {fileID: 100000, guid: dae6368c3cc76504b846c183e42280de, type: 2}
   - {fileID: 100000, guid: 172227699df068a4697d7089bca5489c, type: 2}
-  - {fileID: 100000, guid: f750f344bfece474b9128c65bda753d5, type: 2}
+  - {fileID: 100000, guid: e09f83d14a382a24e98053c57c826e07, type: 2}
   - {fileID: 100000, guid: 0a0b4f5c5988bdf478c742d8f40b2f1c, type: 2}
   - {fileID: 100000, guid: 21f9626e4fd44c447a5552c049cd81da, type: 2}
   - {fileID: 100000, guid: 5cf50b17193d070499cdccd89c6a48e4, type: 2}
@@ -64867,6 +64913,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 55ef0c3bfd32daf4ca5c1d32f097333f, type: 2}
   - {fileID: 100000, guid: f53af1777e7a68c4fbabefae4e5423ac, type: 2}
   - {fileID: 100000, guid: 3d56c3b9be06dd24b8a36c7704628df8, type: 2}
+  - {fileID: 100000, guid: 3423d639740f5ff4fb51af71891743cd, type: 2}
   startingPosition1: {x: 0, y: 0, z: 0}
   typeOneArray: 
 --- !u!4 &1225973174
@@ -64915,7 +64962,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 0693d333ff469b542a1ab2ccf83d8157, type: 2}
   - {fileID: 100000, guid: dae6368c3cc76504b846c183e42280de, type: 2}
   - {fileID: 100000, guid: 172227699df068a4697d7089bca5489c, type: 2}
-  - {fileID: 100000, guid: f750f344bfece474b9128c65bda753d5, type: 2}
+  - {fileID: 100000, guid: e09f83d14a382a24e98053c57c826e07, type: 2}
   - {fileID: 100000, guid: 0a0b4f5c5988bdf478c742d8f40b2f1c, type: 2}
   - {fileID: 100000, guid: 21f9626e4fd44c447a5552c049cd81da, type: 2}
   - {fileID: 100000, guid: 5cf50b17193d070499cdccd89c6a48e4, type: 2}
@@ -64926,6 +64973,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 55ef0c3bfd32daf4ca5c1d32f097333f, type: 2}
   - {fileID: 100000, guid: f53af1777e7a68c4fbabefae4e5423ac, type: 2}
   - {fileID: 100000, guid: 3d56c3b9be06dd24b8a36c7704628df8, type: 2}
+  - {fileID: 100000, guid: 3423d639740f5ff4fb51af71891743cd, type: 2}
   startingPosition3: {x: 0, y: 0, z: 0}
   typeThreeArray: 
 --- !u!114 &1225973176
@@ -64962,7 +65010,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 0693d333ff469b542a1ab2ccf83d8157, type: 2}
   - {fileID: 100000, guid: dae6368c3cc76504b846c183e42280de, type: 2}
   - {fileID: 100000, guid: 172227699df068a4697d7089bca5489c, type: 2}
-  - {fileID: 100000, guid: f750f344bfece474b9128c65bda753d5, type: 2}
+  - {fileID: 100000, guid: e09f83d14a382a24e98053c57c826e07, type: 2}
   - {fileID: 100000, guid: 0a0b4f5c5988bdf478c742d8f40b2f1c, type: 2}
   - {fileID: 100000, guid: 21f9626e4fd44c447a5552c049cd81da, type: 2}
   - {fileID: 100000, guid: 5cf50b17193d070499cdccd89c6a48e4, type: 2}
@@ -64973,6 +65021,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 55ef0c3bfd32daf4ca5c1d32f097333f, type: 2}
   - {fileID: 100000, guid: f53af1777e7a68c4fbabefae4e5423ac, type: 2}
   - {fileID: 100000, guid: 3d56c3b9be06dd24b8a36c7704628df8, type: 2}
+  - {fileID: 100000, guid: 3423d639740f5ff4fb51af71891743cd, type: 2}
   startingPosition0: {x: 0, y: 0, z: 0}
   typeZeroArray: 
 --- !u!114 &1225973177
@@ -65009,7 +65058,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 0693d333ff469b542a1ab2ccf83d8157, type: 2}
   - {fileID: 100000, guid: dae6368c3cc76504b846c183e42280de, type: 2}
   - {fileID: 100000, guid: 172227699df068a4697d7089bca5489c, type: 2}
-  - {fileID: 100000, guid: f750f344bfece474b9128c65bda753d5, type: 2}
+  - {fileID: 100000, guid: e09f83d14a382a24e98053c57c826e07, type: 2}
   - {fileID: 100000, guid: 0a0b4f5c5988bdf478c742d8f40b2f1c, type: 2}
   - {fileID: 100000, guid: 21f9626e4fd44c447a5552c049cd81da, type: 2}
   - {fileID: 100000, guid: 5cf50b17193d070499cdccd89c6a48e4, type: 2}
@@ -65020,6 +65069,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 55ef0c3bfd32daf4ca5c1d32f097333f, type: 2}
   - {fileID: 100000, guid: f53af1777e7a68c4fbabefae4e5423ac, type: 2}
   - {fileID: 100000, guid: 3d56c3b9be06dd24b8a36c7704628df8, type: 2}
+  - {fileID: 100000, guid: 3423d639740f5ff4fb51af71891743cd, type: 2}
   startingPosition4: {x: 0, y: 0, z: 0}
   typeFourArray: 
 --- !u!114 &1225973178
@@ -65056,7 +65106,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 0693d333ff469b542a1ab2ccf83d8157, type: 2}
   - {fileID: 100000, guid: dae6368c3cc76504b846c183e42280de, type: 2}
   - {fileID: 100000, guid: 172227699df068a4697d7089bca5489c, type: 2}
-  - {fileID: 100000, guid: f750f344bfece474b9128c65bda753d5, type: 2}
+  - {fileID: 100000, guid: e09f83d14a382a24e98053c57c826e07, type: 2}
   - {fileID: 100000, guid: 0a0b4f5c5988bdf478c742d8f40b2f1c, type: 2}
   - {fileID: 100000, guid: 21f9626e4fd44c447a5552c049cd81da, type: 2}
   - {fileID: 100000, guid: 5cf50b17193d070499cdccd89c6a48e4, type: 2}
@@ -65067,6 +65117,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 55ef0c3bfd32daf4ca5c1d32f097333f, type: 2}
   - {fileID: 100000, guid: f53af1777e7a68c4fbabefae4e5423ac, type: 2}
   - {fileID: 100000, guid: 3d56c3b9be06dd24b8a36c7704628df8, type: 2}
+  - {fileID: 100000, guid: 3423d639740f5ff4fb51af71891743cd, type: 2}
   startingPosition5: {x: 0, y: 0, z: 0}
   typeFiveArray: 
 --- !u!114 &1225973179
@@ -65103,7 +65154,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 0693d333ff469b542a1ab2ccf83d8157, type: 2}
   - {fileID: 100000, guid: dae6368c3cc76504b846c183e42280de, type: 2}
   - {fileID: 100000, guid: 172227699df068a4697d7089bca5489c, type: 2}
-  - {fileID: 100000, guid: f750f344bfece474b9128c65bda753d5, type: 2}
+  - {fileID: 100000, guid: e09f83d14a382a24e98053c57c826e07, type: 2}
   - {fileID: 100000, guid: 0a0b4f5c5988bdf478c742d8f40b2f1c, type: 2}
   - {fileID: 100000, guid: 21f9626e4fd44c447a5552c049cd81da, type: 2}
   - {fileID: 100000, guid: 5cf50b17193d070499cdccd89c6a48e4, type: 2}
@@ -65114,6 +65165,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 55ef0c3bfd32daf4ca5c1d32f097333f, type: 2}
   - {fileID: 100000, guid: f53af1777e7a68c4fbabefae4e5423ac, type: 2}
   - {fileID: 100000, guid: 3d56c3b9be06dd24b8a36c7704628df8, type: 2}
+  - {fileID: 100000, guid: 3423d639740f5ff4fb51af71891743cd, type: 2}
   startingPositionE: {x: 0, y: 0, z: 0}
   typeExitArray: 
 --- !u!1 &1226553660
@@ -70416,8 +70468,8 @@ AudioSource:
   m_GameObject: {fileID: 1335835121}
   m_Enabled: 0
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: a6969884a4e61b0479e26e5e0bb73efc, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: f1d097b744184be4f8d496819167e484, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: .100000001
   m_Pitch: 1.08000004
   Loop: 0

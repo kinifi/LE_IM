@@ -25,13 +25,19 @@ public class ScaredController : MonoBehaviour {
 	//componenets to get
 	private SpriteRenderer _renderer;
 	private RobbeController _playerController;
+	private bool _deadCond;
+	private bool _deadCond1;
 	private Vector3 _position;
 
 
 	// Use this for initialization
 	void Start () 
 	{
+		//Get Componenets
 		_renderer = GetComponent<SpriteRenderer>();
+		_deadCond = GameObject.Find ("ScaredExitBlock").GetComponent<ScaredBossCompleteCond>().scaredDead;
+		_deadCond1 = GameObject.Find ("ScaredExitBlock1").GetComponent<ScaredBossCompleteCond>().scaredDead;
+
 		baseColor = new Color(_renderer.color.r, _renderer.color.g, _renderer.color.b, _renderer.color.a);
 		Invoke("Fading", 2.0f);	
 		Invoke ("GhostMover", 2.0f);
@@ -183,6 +189,11 @@ public class ScaredController : MonoBehaviour {
 			//Check if 3 hits have been reached then initiate death sequence
 			if(hits >= 3)
 			{
+				//Set win condition to true
+				_deadCond = true;
+				GameObject.Find ("ScaredExitBlock").GetComponent<ScaredBossCompleteCond>().scaredDead = _deadCond;
+				_deadCond1 = true;
+				GameObject.Find ("ScaredExitBlock1").GetComponent<ScaredBossCompleteCond>().scaredDead = _deadCond;
 				//Change color to blood read and play death soundclip
 				_playerController.BossDeathAudios();
 				_renderer.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
