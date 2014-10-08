@@ -14,6 +14,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 61: {fileID: 6100006}
   - 114: {fileID: 11400000}
+  - 82: {fileID: 8200000}
   m_Layer: 17
   m_Name: ShaddowBox
   m_TagString: BadGuy
@@ -81,6 +82,64 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .25, y: .850000024}
   m_Center: {x: .400000006, y: 0}
+--- !u!82 &8200000
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: .850000024
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 180
+  DopplerLevel: 2.99000001
+  MinDistance: 0
+  MaxDistance: 8
+  Pan2D: 1
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: -3.2507441
+      outSlope: -3.2507441
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: .055772569
+      outSlope: .055772569
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: .5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,6 +157,9 @@ MonoBehaviour:
   kill: {fileID: 0}
   deathSplash: {fileID: 100000, guid: 9be3cbd3cf08ce14eaa6c0f86e3bf20d, type: 2}
   bowGolden: {fileID: 100000, guid: 0a0b4f5c5988bdf478c742d8f40b2f1c, type: 2}
+  voices:
+  - {fileID: 8300000, guid: 44c3f21b0364da64699aae04ea6ee38a, type: 3}
+  - {fileID: 8300000, guid: f4abfea97e4daba40b8e097081916aeb, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -59,7 +59,7 @@ public class LevelComplete_Continue : MonoBehaviour {
 
 	private void GetThemeName(int completedDungeons)
 	{
-		if(completedDungeons == 3)
+		if(completedDungeons == 4)
 		{
 			PlayerPrefs.SetInt("completed", 0);
 			string nextBoss = this.gameObject.name;
@@ -73,6 +73,11 @@ public class LevelComplete_Continue : MonoBehaviour {
 			case "2":
 				Application.LoadLevel("DepthsBoss");
 				Debug.Log ("DepthsBoss Loading");
+				Invoke("AllowRobbesMovement", 1.5f);
+				break;
+			case "3":
+				Application.LoadLevel("GoblinBoss");
+				Debug.Log ("GoblinBoss Loading");
 				Invoke("AllowRobbesMovement", 1.5f);
 				break;
 			default:

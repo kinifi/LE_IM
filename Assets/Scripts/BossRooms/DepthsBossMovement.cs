@@ -9,10 +9,13 @@ public class DepthsBossMovement : MonoBehaviour {
 	//Config for Audio
 	public AudioClip[] depthClips;
 	
-	//Configs for hits and death
+	//Configs for hits and perlWings
 	private Color baseColor;
 	private Color currentColor;
 	private int hits = 0;
+	public int perlWings = 2;
+
+	//Configs for death
 	public GameObject kill;
 	public GameObject deathSplash;
 	public GameObject bowGolden;
@@ -21,15 +24,15 @@ public class DepthsBossMovement : MonoBehaviour {
 	private SpriteRenderer _renderer;
 	private RobbeController _playerController;
 	private Vector3 _position;
-	// Use this for initialization
-	void Start () {
 
+	// Use this for initialization
+	void Start () 
+	{
 		_renderer = GetComponent<SpriteRenderer>();
 		_playerController = GameObject.Find ("Player").GetComponent<RobbeController>();
 		baseColor = new Color(_renderer.color.r, _renderer.color.g, _renderer.color.b, _renderer.color.a);
 		Invoke("Fading", 2.0f);	
 		Invoke ("DownForce", 1.0f);
-	
 	}
 	
 	private void DownForce ()
@@ -97,7 +100,7 @@ public class DepthsBossMovement : MonoBehaviour {
 			hits +=1;
 			
 			//Check if 3 hits have been reached then initiate death sequence
-			if(hits >= 3)
+			if(hits >= 3 && perlWings == 0 )
 			{
 				//Change color to blood read and play death soundclip
 				_playerController.BossDeathAudios();

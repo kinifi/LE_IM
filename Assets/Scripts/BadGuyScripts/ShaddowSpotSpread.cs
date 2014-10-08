@@ -9,6 +9,9 @@ public class ShaddowSpotSpread : MonoBehaviour {
 	public float fireRate;
 	private float nextFire;
 
+	//Audio Configs
+	public AudioClip[] perlshotclips;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -21,6 +24,9 @@ public class ShaddowSpotSpread : MonoBehaviour {
 		if (Time.time > nextFire && this.gameObject.tag == "spotspread")
 		{
 			nextFire = Time.time + fireRate;
+			//Play sound
+			int wclip = Random.Range (0,2);
+			audio.PlayOneShot(perlshotclips[wclip]);
 
 			GameObject spotShot1 = Instantiate(spot[0], spotSpawn.position, Quaternion.identity) as GameObject;
 			spotShot1.gameObject.tag = "spotspread";
@@ -35,6 +41,9 @@ public class ShaddowSpotSpread : MonoBehaviour {
 		if (Time.time > nextFire && this.gameObject.tag == "spotspreadtop")
 		{
 			nextFire = Time.time + fireRate;
+			//Play sound
+			int wclip = Random.Range (0,2);
+			audio.PlayOneShot(perlshotclips[wclip]);
 
 			GameObject spotShot1 = Instantiate(spot[0], spotSpawn.position, Quaternion.identity) as GameObject;
 			spotShot1.gameObject.tag = "spotspreadtop";
@@ -49,6 +58,9 @@ public class ShaddowSpotSpread : MonoBehaviour {
 		if (Time.time > nextFire && this.gameObject.tag == "spotspreadleft")
 		{
 			nextFire = Time.time + fireRate;
+			//Play sound
+			int wclip = Random.Range (0,2);
+			audio.PlayOneShot(perlshotclips[wclip]);
 
 			GameObject spotShot1 = Instantiate(spot[0], spotSpawn.position, Quaternion.identity) as GameObject;
 			spotShot1.gameObject.tag = "spotspreadleft";
@@ -63,6 +75,9 @@ public class ShaddowSpotSpread : MonoBehaviour {
 		if (Time.time > nextFire && this.gameObject.tag == "spotspreadright")
 		{
 			nextFire = Time.time + fireRate;
+			//Play sound
+			int wclip = Random.Range (0,2);
+			audio.PlayOneShot(perlshotclips[wclip]);
 
 			GameObject spotShot1 = Instantiate(spot[0], spotSpawn.position, Quaternion.identity) as GameObject;
 			spotShot1.gameObject.tag = "spotspreadright";

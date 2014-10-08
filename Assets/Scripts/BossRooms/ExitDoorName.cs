@@ -20,13 +20,12 @@ public class ExitDoorName : MonoBehaviour {
 			this.gameObject.name = "3";
 			Debug.Log("MY NAME IS: "+this.gameObject.name);
 			break;
+		case "GoblinExit":
+			this.gameObject.name = "1";
+			Debug.Log("MY NAME IS: "+this.gameObject.name);
+			break;
 		}
 
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
 	
 	}
 }
