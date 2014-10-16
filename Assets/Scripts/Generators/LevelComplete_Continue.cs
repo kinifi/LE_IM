@@ -87,7 +87,7 @@ public class LevelComplete_Continue : MonoBehaviour {
 				break;
 			}
 		}
-		else if(completedDungeons < 3)
+		else if(completedDungeons < 4)
 		{
 			string nextTheme = this.gameObject.name;
 			switch (nextTheme)
