@@ -7,15 +7,17 @@ public class Teleport : MonoBehaviour {
 	void Start ()
 	{
 		string telaIn = this.gameObject.name;
-		string telaOutName = "telaOut"+telaIn;
-		telaOut = GameObject.Find(telaOutName);
+		string telaOutName = "TelaOut";
+
+		//telaOut = GameObject.Find(telaOutName);
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if(other.gameObject.tag == "Player")
 		{
-			other.gameObject.transform.position = telaOut.transform.position;
+			other.transform.position = telaOut.transform.position;
+			audio.Play();
 		}
 	}
 }
