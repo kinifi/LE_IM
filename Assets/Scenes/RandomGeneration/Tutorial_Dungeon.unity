@@ -12481,6 +12481,7 @@ GameObject:
   - 114: {fileID: 216719609}
   - 54: {fileID: 216719608}
   - 114: {fileID: 216719606}
+  - 114: {fileID: 216719607}
   m_Layer: 9
   m_Name: UI Root
   m_TagString: Untagged
@@ -12496,7 +12497,7 @@ Transform:
   m_GameObject: {fileID: 216719604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: .00382409175, y: .00382409175, z: .00382409175}
+  m_LocalScale: {x: .00392927323, y: .00392927323, z: .00392927323}
   m_Children:
   - {fileID: 853738879}
   m_Father: {fileID: 0}
@@ -12516,6 +12517,18 @@ MonoBehaviour:
   cam: {fileID: 853738875}
   Player: {fileID: 1519813337}
   isChallengeLevels: 0
+--- !u!114 &216719607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 216719604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f6c98f404fd5d4c93de99663a4fa4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextDungeonName: 
 --- !u!54 &216719608
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -46557,7 +46570,7 @@ AudioReverbFilter:
   m_DecayTime: 14.1000004
   m_DecayHFRatio: .910000026
   m_ReflectionsLevel: -626
-  m_ReverbLevel: 1637
+  m_ReverbLevel: 750
   m_ReverbDelay: .0113000004
   m_Diffusion: 100
   m_Density: 69.8000031
@@ -46585,7 +46598,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: f1d097b744184be4f8d496819167e484, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: .100000001
   m_Pitch: 1.08000004
   Loop: 0

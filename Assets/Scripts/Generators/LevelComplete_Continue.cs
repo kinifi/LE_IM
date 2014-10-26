@@ -11,9 +11,12 @@ public class LevelComplete_Continue : MonoBehaviour {
 	private int _keys;
 	private int _completed;
 
+	//Configs
+	string thisDoorName;
+
 	void OnTriggerEnter2D (Collider2D Player) 
 	{
-		Debug.Log ("THIS HAS COLLIDED!!! "+Player);
+		Debug.Log ("The exit door has been colided by!!! "+Player);
 		if(Player.gameObject.tag == "Player")
 		{
 			if(robbeContinues == null)
@@ -44,6 +47,8 @@ public class LevelComplete_Continue : MonoBehaviour {
 				}
 
 				//Let me know you comopleted the level!
+				thisDoorName = this.gameObject.name;
+				SetDoorNameToPlayerPref(thisDoorName);
 				Debug.Log ("You completed the level!!");
 
 				//Get current inventory and call the set method
@@ -51,72 +56,14 @@ public class LevelComplete_Continue : MonoBehaviour {
 				_keys = GameObject.Find("Player").GetComponent<Inventory>().Keys;
 				_completed = GameObject.Find("Player").GetComponent<Inventory>().Completed + 1;
 				SetInventoryToPlayerPref (_bows, _keys, _completed);
-				//Call the next level based on Exit Door Name
-				GetThemeName(_completed);
+				LoadStoryScreen();
 			}
 		}
 	}
 
-	private void GetThemeName(int completedDungeons)
+	private void LoadStoryScreen()
 	{
-		if(completedDungeons == 4)
-		{
-			PlayerPrefs.SetInt("completed", 0);
-			string nextBoss = this.gameObject.name;
-			switch (nextBoss)
-			{
-			case "1":
-				Application.LoadLevel("ScaredBoss");
-				Debug.Log ("ScaredBoss Loading");
-				Invoke("AllowRobbesMovement", 1.5f);
-				break;
-			case "2":
-				Application.LoadLevel("DepthsBoss");
-				Debug.Log ("DepthsBoss Loading");
-				Invoke("AllowRobbesMovement", 1.5f);
-				break;
-			case "3":
-				Application.LoadLevel("GoblinBoss");
-				Debug.Log ("GoblinBoss Loading");
-				Invoke("AllowRobbesMovement", 1.5f);
-				break;
-			default:
-				Application.LoadLevel("ScaredBoss");
-				Debug.Log ("ScaredBoss Loading due to default");
-				Invoke("AllowRobbesMovement", 1.5f);
-				break;
-			}
-		}
-		else if(completedDungeons < 4)
-		{
-			string nextTheme = this.gameObject.name;
-			switch (nextTheme)
-			{
-			case "1":
-				Application.LoadLevel("Map_Level_Gen");
-				Debug.Log ("Map Level Loading");
-				Invoke("AllowRobbesMovement", 1.5f);
-				break;
-			case "2":
-				Application.LoadLevel("Dusk_Level");
-				Debug.Log ("Dusk Level Loading");
-				Invoke("AllowRobbesMovement", 1.5f);
-				break;
-			case "3":
-				Application.LoadLevel("Purple_Level");
-				Debug.Log("Purple Level Loading");
-				Invoke("AllowRobbesMovement", 1.5f);
-				break;
-			case "4":
-				Application.LoadLevel("Nightmare_Level");
-				Debug.Log ("Nightmare Level Loading");
-				Invoke("AllowRobbesMovement", 1.5f);
-				break;
-			default:
-				Debug.Log ("Something has gone wrong");
-				break;
-			}
-		}
+		Application.LoadLevel("StoryScreen");
 	}
 
 	private void AllowRobbesMovement() 
@@ -136,5 +83,10 @@ public class LevelComplete_Continue : MonoBehaviour {
 		PlayerPrefs.SetInt("bow", bows);
 		PlayerPrefs.SetInt("keys", keys);
 		PlayerPrefs.SetInt("completed", completed);
+	}
+
+	private void SetDoorNameToPlayerPref (string doorName)
+	{
+		PlayerPrefs.SetString("door", doorName);
 	}
 }
