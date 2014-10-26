@@ -24,13 +24,9 @@ class SteamStatsAndAchievements : MonoBehaviour {
 	private Achievement_t[] m_Achievements = new Achievement_t[] {
 
 		new Achievement_t(Achievement.Pick_Lock_Pro,"Pick lock your first door", ""),
-		//new Achievement_t(Achievement.Boot_Camp, "Finished all the Tutorial Levels", ""),
 		new Achievement_t(Achievement.Falling_Is_Fun, "Falling into the Darkness", ""),
 		new Achievement_t(Achievement.Trampolines_Forever,"Jump on a Trampoline 100 times", ""),
-		//new Achievement_t(Achievement.Story_Start, "This is only the beginning", ""),
-		//new Achievement_t(Achievement.Memory_Creator,"Create a Memory in the Memory Creator", ""),
 		new Achievement_t(Achievement.Gen_Dungeon, "Generate A Dungeon in the Random Generation", ""),
-		//new Achievement_t(Achievement.Read_Memory, "Read the last Memory and find out about Robbe", ""),
 		new Achievement_t(Achievement.Keep_Trying, "Fall for the 50th Time", ""),
 		new Achievement_t(Achievement.Base_Jumper, "Fall for the 100th Time", ""),
 		new Achievement_t(Achievement.Tysjacha, "Fall for the 1000th Time", ""),
