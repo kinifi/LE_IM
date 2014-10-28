@@ -51,10 +51,20 @@ public class LevelComplete_Continue : MonoBehaviour {
 				SetDoorNameToPlayerPref(thisDoorName);
 				Debug.Log ("You completed the level!!");
 
+				//Check completed levels is 4 or less then set
+				_completed = GameObject.Find("Player").GetComponent<Inventory>().Completed;
+				if (_completed >= 4)
+				{
+					_completed = 0;
+				}
+				else if(_completed < 4)
+				{
+					_completed += 1;
+				}
+
 				//Get current inventory and call the set method
 				_bows = GameObject.Find("Player").GetComponent<Inventory>().Arrows;
 				_keys = GameObject.Find("Player").GetComponent<Inventory>().Keys;
-				_completed = GameObject.Find("Player").GetComponent<Inventory>().Completed + 1;
 				SetInventoryToPlayerPref (_bows, _keys, _completed);
 				LoadStoryScreen();
 			}
