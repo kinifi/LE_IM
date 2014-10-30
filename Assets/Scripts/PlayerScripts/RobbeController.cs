@@ -167,5 +167,33 @@ public class RobbeController : MonoBehaviour {
 	{
 		audio.PlayOneShot(clips[clipsNumber], 0.7f);
 	}
+
+	public void DelayAllowMovement()
+	{
+		//Find Robbe's gameobject and set his transform to the Spawn Location.
+		GameObject resetRobbe = GameObject.Find ("Player");
+		GameObject respawn = GameObject.Find("Spawn_Location");
+		resetRobbe.transform.position = respawn.transform.position;
+
+		//Find Robbe's controller and prevent his movement.
+		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
+		_robbe.enabled = false;
+		
+		//Find the LookDown camera and prevent its movement.
+		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
+		_lookdown.enabled = false;
+		Invoke ("AllowRobbesMovement", 1.5f);
+	}
+
+	private void AllowRobbesMovement() 
+	{
+		//Find Robbe and allow his movement again.  Turn kinematic to false.
+		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
+		_robbe.enabled = true;
+		
+		//Find the LookDown camera and allow its movement.
+		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
+		_lookdown.enabled = true;
+	}
 }
 	

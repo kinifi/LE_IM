@@ -239,7 +239,10 @@ public class BadGuyFollowController : MonoBehaviour {
 			{
 				//Debug.Log ("You were killed by a bad guy!!");
 				
-				//Find Robbe's gameobject and set his transform to the Spawn Location.
+				//Failsafe enable movement
+				GameObject.Find("Player").GetComponent<RobbeController>().DelayAllowMovement();
+				
+				/*	//Find Robbe's gameobject and set his transform to the Spawn Location.
 				GameObject resetRobbe = GameObject.Find ("Player");
 				GameObject respawn = GameObject.Find("Spawn_Location");
 				resetRobbe.transform.position = respawn.transform.position;
@@ -250,22 +253,22 @@ public class BadGuyFollowController : MonoBehaviour {
 				
 				//Find the LookDown camera and prevent its movement.
 				NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-				_lookdown.enabled = false;
+				_lookdown.enabled = false;*/
 				
 				//Instantiate the death splash and overlay Robbe.  Destroy it and call the movement function.
+				GameObject resetRobbe = GameObject.Find ("Player");
 				kill = Instantiate(deathSplash, resetRobbe.transform.position, Quaternion.identity) as GameObject;
 				kill.transform.OverlayPosition(resetRobbe.transform);
 				kill.transform.localScale = new Vector3(50.0f,50.0f,1.0f);
 				
 				Destroy(kill, 2.5f);
-				Invoke("AllowRobbesMovement", 2.5f);
 			}
 		}
 		
 
 	}
 
-	private void AllowRobbesMovement() 
+	/*private void AllowRobbesMovement() 
 	{
 		//Allow movement of the bad guy again
 		this.gameObject.rigidbody2D.isKinematic = false;
@@ -277,7 +280,7 @@ public class BadGuyFollowController : MonoBehaviour {
 		//Find the LookDown camera and allow its movement.
 		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
 		_lookdown.enabled = true;
-	}
+	}*/
 
 	private void DestroyObject ()
 	{

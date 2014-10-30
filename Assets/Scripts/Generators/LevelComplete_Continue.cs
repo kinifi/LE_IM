@@ -37,14 +37,7 @@ public class LevelComplete_Continue : MonoBehaviour {
 				GameObject respawn = GameObject.Find("Spawn_Location");
 				_robbe.transform.position = respawn.transform.position;
 
-				if(Input.GetButtonDown("Fire1"))
-				{
-					Destroy(robbeContinues);
-				}
-				else
-				{
-					Destroy(robbeContinues, 2.5f);
-				}
+				Destroy(completeSplash, 1.0f);
 
 				//Let me know you comopleted the level!
 				thisDoorName = this.gameObject.name;
