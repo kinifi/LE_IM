@@ -6,21 +6,27 @@ public class StoryStory : MonoBehaviour {
 
 	//The string the current story chapter is set to
 	private string textStory;
+	private string textTitle;
 
 	//Total progress in shortStoryArray. Also gets assigned in PlayerPrefs as spoilersInt.
 	private int storyChapter = 0;
+	private int storyArch = 0;
 
 
 	//Configs to get
 	private string textForScreen;
+	private string textForTitle;
 	private ArrayList storyArray;
+	private string[] storyTitleArray;
 
 	// Use this for initialization
 	void Start () 
 	{
 		GetStory();
 		GetLabel();
+		GetTitle();
 		SetLabel();
+		SetTitle();
 		StoryArchCompleteCheck();
 		SetNextChapter();
 	}
@@ -32,6 +38,8 @@ public class StoryStory : MonoBehaviour {
 		//Debug.Log ("This is the storyChapter: " + storyChapter);
 		Stories ();  
 		//Debug.Log ("This is the textStory: " + textStory);
+		storyArch = PlayerPrefs.GetInt("spoilersArchInt");
+		//Debug.Log ("This is the storyChapter: " + storyChapter);
 	}
 
 	//Get full short story and set variable to current chapter text.
@@ -54,6 +62,20 @@ public class StoryStory : MonoBehaviour {
 		//Debug.Log("This is label text: " + textForScreen);
 	}
 
+	//Finds the game object title and sets temporary variable to story title text
+	private void GetTitle ()
+	{
+		//Find and get the full stories Title array :D
+		storyTitleArray = GameObject.Find ("UI Root").GetComponent<ShortStories>().storyTitlesArray;
+		//Finds the game object title
+		textForTitle = GameObject.Find("StoryTitle").GetComponent<UILabel>().text;
+		//Sets current story title text to temp variable
+		textTitle = storyTitleArray[storyArch];
+		//Debug.Log("This is label text: " + textForScreen);
+		textForTitle = textTitle;
+		//Debug.Log("This is title text: " + textForTitle);
+	}
+
 	//Set the game object label to the current chapter text
 	private void SetLabel ()
 	{
@@ -61,14 +83,27 @@ public class StoryStory : MonoBehaviour {
 		GameObject.Find("StoryMessage").GetComponent<UILabel>().text = textForScreen;
 	}
 
-	//Upkeep
+	//Set the game object label to the current chapter text
+	private void SetTitle ()
+	{
+		//Sets the game object label to the current story text
+		GameObject.Find("StoryTitle").GetComponent<UILabel>().text = textForTitle;
+	}
+
+	//Increments the next story arch and updates PlayerPref	
 	private void StoryArchCompleteCheck ()
 	{
 		if(storyChapter%4 == 0)
 		{
 			Debug.Log("Memory Complete!!");
+			//Increments the next story arch 
+			int nextChapter = (int)Mathf.Repeat(storyArch + 1, storyTitleArray.Length);
+			//Updates PlayerPref
+			PlayerPrefs.SetInt("spoilersArchInt", nextChapter);
+			//Debug.Log ("This is the new storyArch: " + storyArch);
 		}
 	}
+
 	//Increments the next chapter and updates PlayerPref
 	private void SetNextChapter()
 	{

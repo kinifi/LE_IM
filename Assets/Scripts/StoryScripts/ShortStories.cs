@@ -5,13 +5,29 @@ public class ShortStories : MonoBehaviour {
 
 	//Configs - each story needs a string and a string[];
 	public ArrayList shortStoriesArray = new ArrayList();
-	public int storyCount = 2;
+	public int storyCount = 5;
+	public string[] storyTitlesArray = new string[5] {"0", "1", "2", "3", "4"};
 
+
+	public string storyTitle1;
 	private string story1;
 	private string[] story1Array;
 
+	public string storyTitle2;
 	private string story2;
 	private string[] story2Array;
+
+	public string storyTitle3;
+	private string story3;
+	private string[] story3Array;
+
+	public string storyTitle4;
+	private string story4;
+	private string[] story4Array;
+
+	public string storyTitle5;
+	private string story5;
+	private string[] story5Array;
 
 
 	// Use this for initialization
@@ -19,30 +35,59 @@ public class ShortStories : MonoBehaviour {
 	{
 		ParagraphForm();
 		LoadStoriesToArray();
+		LoadTitlesToArray();
 		//Debug.Log ("Short stories script complete");
 	}
 
 	private void ParagraphForm ()
 	{
+		//Set Story Title
+		storyTitle1 = "Robbe, the shy kid";
 		//Story as paragraph
-		story1 = @"They'd met in the kitchen. Married in the parlor. She'd miss the house, but lit the match anyway./
-It felt uncomfortable, like putting on a shirt a size too small. He looked across at his old human body, now no more than a husk./
-'What is this?' asked the little girl, flipping over the dusty pile.'It's a book,' said her mother, 'Sit here, I'll show you.'/
-She held him. The small part that was well battled the giant illness inside her for enough time to just be his mom for awhile./
-It cried for help. I held it in my hands. I ran for help. It was dying. Saw a drug store nearby. Luckily they had a phone charger.";
+		story1 = @"Sitting alone made it easy to have a conversation with himself. 'I guess that's ONE perk of being shy,' Robbe said aloud./'Mom said 3rd grade would be easier for me. I've got multiplication down, but I'm no braver than a second grader. Sheesh. Maybe I'll always be shy.'/The thought of being shy forever terrified Robbe. It's not that the other kids scared him. He just felt invisible around them. Especially if SHE was in the room./'She' being Robbe's cousin. About the same age, they were opposites in every way. 'That girl is so annoying!' Robbe said aloud to no one. 'She thinks she's so cool.'/'She' was the one who had said he was shy. Robbe remembered it clearly from 2nd grade. 'Why are you always so shy?' But he would show her! Third grade would be different.";
 		//Convert to string array
 		story1Array = story1.Split('/');
 		//Debug.Log ("This is shortstoryarray1 element 0" + story1Array[0]);
 
+		//Set Story Title
+		storyTitle2 = "Jack";
 		//Story as paragraph
-		story2 = @"The house was dark. It felt it. He said, It's dim, and he laughed, but none of us did, because he was right, and we knew he would die first./
-Toronto's been through the Fords anf this endless election and now Jiangate. At least the Leafs still suck./
-We kissed under an azure sky. She texted a friend to tell her she was in love. Her friend was my ex. That was mean, I said. We kissed again./
-They nuzzled by the fireplace. He said, Remember the night we met in Paris? But she had never been to Paris. Suddenly the fire felt too hot./
-We went swimming. I fell in love. It was simple. But she wasn't in love. Not with me or with anyone else. I learned later she hated swimming.";
+		story2 = @"'Talking to yourself again?' A disheveled-haired boy came up to him, kickball in hand. 'You're weird that way, but I don't mind.' Jack continued talking as he sat down./Jack had decided he was Robbe's best friend. Robbe didn't remember having a say in the matter, but he did enjoy Jack's company - even if Jack was the one who was a bit weird./Jack continued rambling on and Robbe only half listened. Something about the kickball tournament. Neither boy was very athletic, but Jack loved kickball./'Are you even listening?!' Jack asked, pulling Robbe away from his thoughts. 'You derp. Sometimes it's like you live in your head' Robbe half smiled in reply 'Ya sorry'/At that moment the bell rang. Recess was over. 'Aw! Back to dumb class.' Jack hated school. Their next class was PE and today's lesson was archery. Robbe loved archery.";
 		//Convert to string array
 		story2Array = story2.Split('/');
 		//Debug.Log ("This is shortstoryarray2 element 0" + story2Array[0]);
+
+		//Set Story Title
+		storyTitle3 = "Archery";
+		//Story as paragraph
+		story3 = @"Robbe had tried archery for the first time at summer camp, and had loved it! Of course those bows and arrows were plastic, but these were real./Robbe followed Jack to the fields and waited with excitement. The teacher was going over safety, but Robbe's eyes stayed on the bow. 'It's a good day to be a 3rd grader.'/'Something to share with the class, Robbe?' The whole class was looking at him. Jack nudged him with his elbow. 'erm, no' The teacher looked vexed but handed Robbe a bow./The bow was in his hands. The teacher was talking again and motioned to come over '...demonstrate for the class.' Robbe took an arrow and stepped to the shooting line./Robbe nocked the arrow, took his stance, and drew back.  He could feel the string on the side of his face. Aim. Everyone was watching. Release...Thump! He hit the target!";
+		//Convert to string array
+		story3Array = story3.Split('/');
+		//Debug.Log ("This is shortstoryarray3 element 0" + story3Array[0]);
+
+		//Set Story Title
+		storyTitle4 = "The girl cousin";
+		//Story as paragraph
+		story4 = @"The class cheered. At least that's the way Robbe saw it. 'Nice work' commented the teacher. 'But he didn't even hit the center' Robbe moaned. It was her, his girl cousin./Why does she always have to ruin everything? Robbe thought. The teacher was talking again - 'Hitting the target was good.' It made it worse. Now he looked weak. Shy and weak./She'd always made him look bad. She was the first to walk, first to talk, the first to make friends. She'd probably be the first to hit a bull's eye./Robbe knew his attitude wasn't entirely fair.  She just always managed to get under his skin. Stupid girl cousin. Now he was in a foul mood and it was all her fault./Robbe returned to stand by Jack. 'Where did you learn to shoot a bow?!' Jack asked with excitement, but Robbe was watching the girl cousin take a turn...bull's eye.";
+		//Convert to string array
+		story4Array = story4.Split('/');
+		//Debug.Log ("This is shortstoryarray4 element 0" + story4Array[0]);
+
+		//Set Story Title
+		storyTitle5 = "All alone";
+		//Story as paragraph
+		story5 = @"The day ended and Robbe rode the bus home. He pulled out his game finally finding a bit of peace. Robbe's mom had bought it for him. He remembered that day vividly./They had gone for school supplies. As they passed the electronics he heard , “Hey there, Rob!' his Uncle said. Robbe rolled his eyes 'It's Robbe.'/The adults chatted as he shifted away towards the game. He progressed through challenge levels, defeated monsters in dungeons. Robbe had never felt more confident./Time passed and Robbe began to wonder if his Mom would ever stop - she was GONE! He looked around, but she was no where. All of a sudden, Robbe felt very much alone./He had turned back to the game ashamed of the tears in his eyes. Minutes seemed like years before she reappeared. Tears in her own eyes, she had ran to him 'I'm sorry Robbe!'";
+		//Convert to string array
+		story5Array = story5.Split('/');
+		//Debug.Log ("This is shortstoryarray5 element 0" + story5Array[0]);
+
+		/*//Set Story Title
+		storyTitle# = "";
+		//Story as paragraph
+		story# = @"";
+		//Convert to string array
+		story#Array = story#.Split('/');
+		//Debug.Log ("This is shortstoryarray# element 0" + story#Array[0]);*/
 	}
 
 	private void LoadStoriesToArray ()
@@ -60,11 +105,57 @@ We went swimming. I fell in love. It was simple. But she wasn't in love. Not wit
 		for (int i = 0; i < story2Array.Length; i++)
 		{
 			string line2 = story2Array[i].ToString();
-			//Debug.Log ("This is the value of line1: " + line2);
+			//Debug.Log ("This is the value of line2: " + line2);
 
 			shortStoriesArray.Add(line2);
 			//Debug.Log ("This is the second shortstoriesarray: " + shortStoriesArray);
 		}
+
+		for (int i = 0; i < story3Array.Length; i++)
+		{
+			string line3 = story3Array[i].ToString();
+			//Debug.Log ("This is the value of line3: " + line3);
+			
+			shortStoriesArray.Add(line3);
+			//Debug.Log ("This is the third shortstoriesarray: " + shortStoriesArray);
+		}
+
+		for (int i = 0; i < story4Array.Length; i++)
+		{
+			string line4 = story4Array[i].ToString();
+			//Debug.Log ("This is the value of line4: " + line4);
+			
+			shortStoriesArray.Add(line4);
+			//Debug.Log ("This is the fourth shortstoriesarray: " + shortStoriesArray);
+		}
+
+		for (int i = 0; i < story5Array.Length; i++)
+		{
+			string line5 = story5Array[i].ToString();
+			//Debug.Log ("This is the value of line5: " + line5);
+			
+			shortStoriesArray.Add(line5);
+			//Debug.Log ("This is the fifth shortstoriesarray: " + shortStoriesArray);
+		}
+
+		/*for (int i = 0; i < story#Array.Length; i++)
+		{
+			string line# = story#Array[i].ToString();
+			//Debug.Log ("This is the value of line#: " + line#);
+			
+			shortStoriesArray.Add(line#);
+			//Debug.Log ("This is the #### shortstoriesarray: " + shortStoriesArray);
+		}*/
 		Debug.Log ("This is the shortStoriesArray count: " + shortStoriesArray.Count);
 	}
+
+	private void LoadTitlesToArray()
+	{
+		storyTitlesArray[0] = storyTitle1;
+		storyTitlesArray[1] = storyTitle2;
+		storyTitlesArray[2] = storyTitle3;
+		storyTitlesArray[3] = storyTitle4;
+		storyTitlesArray[4] = storyTitle5;
+	}
+
 }
