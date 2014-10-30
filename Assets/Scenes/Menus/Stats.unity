@@ -1495,7 +1495,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 571055105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -109, z: 0}
+  m_LocalPosition: {x: 0, y: -80, z: 0}
   m_LocalScale: {x: .999984026, y: .999984026, z: .999984026}
   m_Children: []
   m_Father: {fileID: 1602432727}
@@ -2166,7 +2166,7 @@ Transform:
   m_PrefabInternal: {fileID: 1573568800}
   m_GameObject: {fileID: 813294294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -316.749939, y: 479, z: 0}
+  m_LocalPosition: {x: -313.75, y: 344, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1239048882}
@@ -2479,6 +2479,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f5389d1dbd70242b08e4585c376459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &919703100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 919703101}
+  - 114: {fileID: 919703102}
+  m_Layer: 9
+  m_Name: NumOfCandiesHalloween
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &919703101
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 919703100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -203, z: 0}
+  m_LocalScale: {x: .999894023, y: .999894023, z: .999894023}
+  m_Children: []
+  m_Father: {fileID: 1602432727}
+  m_RootOrder: 6
+--- !u!114 &919703102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 919703100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 500
+  mHeight: 40
+  mDepth: 0
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 12.5
+  keepCrispWhenShrunk: 1
+  mTrueTypeFont: {fileID: 12800000, guid: 7dd4b3373d072c1469105252ff072105, type: 3}
+  mFont: {fileID: 0}
+  mText: Space/A Button To Go Back
+  mFontSize: 48
+  mFontStyle: 0
+  mAlignment: 4
+  mEncoding: 1
+  mMaxLineCount: 0
+  mEffectStyle: 0
+  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
+  mSymbols: 1
+  mEffectDistance: {x: 1, y: 1}
+  mOverflow: 0
+  mMaterial: {fileID: 0}
+  mApplyGradient: 1
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
+  mSpacingX: 0
+  mSpacingY: 0
+  mShrinkToFit: 0
+  mMaxLineWidth: 0
+  mMaxLineHeight: 0
+  mLineWidth: 0
+  mMultiline: 1
 --- !u!1 &919969104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2543,6 +2633,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f5389d1dbd70242b08e4585c376459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &929112592
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: fd7ca73a3ff5e1447b2394cd7b66bec3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .656100631
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fd7ca73a3ff5e1447b2394cd7b66bec3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 10.2818594
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fd7ca73a3ff5e1447b2394cd7b66bec3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fd7ca73a3ff5e1447b2394cd7b66bec3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fd7ca73a3ff5e1447b2394cd7b66bec3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fd7ca73a3ff5e1447b2394cd7b66bec3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fd7ca73a3ff5e1447b2394cd7b66bec3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fd7ca73a3ff5e1447b2394cd7b66bec3, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: fd7ca73a3ff5e1447b2394cd7b66bec3, type: 2}
+  m_RootGameObject: {fileID: 1059028435}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1001 &936905943
 Prefab:
   m_ObjectHideFlags: 0
@@ -2682,7 +2816,7 @@ Transform:
   m_PrefabInternal: {fileID: 1573568800}
   m_GameObject: {fileID: 968571069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -568.749939, y: 479, z: 0}
+  m_LocalPosition: {x: -565.75, y: 344, z: 0}
   m_LocalScale: {x: .999984026, y: .999984026, z: .999984026}
   m_Children: []
   m_Father: {fileID: 1239048882}
@@ -2942,6 +3076,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f5389d1dbd70242b08e4585c376459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1059028435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: fd7ca73a3ff5e1447b2394cd7b66bec3, type: 2}
+  m_PrefabInternal: {fileID: 929112592}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1059028439}
+  - 114: {fileID: 1059028438}
+  - 114: {fileID: 1059028437}
+  - 114: {fileID: 1059028436}
+  m_Layer: 0
+  m_Name: _Steam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1059028436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: fd7ca73a3ff5e1447b2394cd7b66bec3,
+    type: 2}
+  m_PrefabInternal: {fileID: 929112592}
+  m_GameObject: {fileID: 1059028435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2930e23384ecb7b43a12b4bd2df5a825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1059028437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: fd7ca73a3ff5e1447b2394cd7b66bec3,
+    type: 2}
+  m_PrefabInternal: {fileID: 929112592}
+  m_GameObject: {fileID: 1059028435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6cd48020ba23624e8fa4c7c2ada4c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_nTotalGamesPlayed: 0
+  m_nTotalNumJumps: 0
+  m_nTotalNumTrampJumps: 0
+  m_nTotalNumDeathBySpikes: 0
+  m_nTotalNumDeathByFalling: 0
+  m_nTotalNumHalloweenCandies: 0
+--- !u!114 &1059028438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: fd7ca73a3ff5e1447b2394cd7b66bec3,
+    type: 2}
+  m_PrefabInternal: {fileID: 929112592}
+  m_GameObject: {fileID: 1059028435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbae714cb53bc24aa160d95d44d0c03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1059028439
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: fd7ca73a3ff5e1447b2394cd7b66bec3, type: 2}
+  m_PrefabInternal: {fileID: 929112592}
+  m_GameObject: {fileID: 1059028435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .656100631, y: 10.2818594, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1 &1064410877
 GameObject:
   m_ObjectHideFlags: 0
@@ -3501,7 +3707,7 @@ Transform:
   m_GameObject: {fileID: 1178559452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00280898879, y: .00280898879, z: .00280898879}
+  m_LocalScale: {x: .00375939859, y: .00375939859, z: .00375939859}
   m_Children:
   - {fileID: 1167647333}
   m_Father: {fileID: 0}
@@ -3597,6 +3803,7 @@ MonoBehaviour:
   NumDeathsBySpikes: {fileID: 24546236}
   NumJumps: {fileID: 1436286650}
   NumTrampJumps: {fileID: 1103467745}
+  HalloweenCandies: {fileID: 919703102}
 --- !u!1 &1181486731
 GameObject:
   m_ObjectHideFlags: 0
@@ -4717,19 +4924,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 4b14fa9c0e94eeb47bd7ef09ed56506b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -568.749939
+      value: -565.75
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 4b14fa9c0e94eeb47bd7ef09ed56506b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 479
+      value: 344
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4b14fa9c0e94eeb47bd7ef09ed56506b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -316.749939
+      value: -313.75
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4b14fa9c0e94eeb47bd7ef09ed56506b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 479
+      value: 344
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b14fa9c0e94eeb47bd7ef09ed56506b, type: 2}
@@ -4897,6 +5104,7 @@ Transform:
   - {fileID: 1103467744}
   - {fileID: 1436286649}
   - {fileID: 24546235}
+  - {fileID: 919703101}
   m_Father: {fileID: 1167647333}
   m_RootOrder: 0
 --- !u!54 &1602432728

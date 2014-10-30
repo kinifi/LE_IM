@@ -48,6 +48,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 	public int m_nTotalNumTrampJumps;
 	public int m_nTotalNumDeathBySpikes;
 	public int m_nTotalNumDeathByFalling;
+	public int m_nTotalNumHalloweenCandies;
 
 	protected Callback<UserStatsReceived_t> m_UserStatsReceived;
 	protected Callback<UserStatsStored_t> m_UserStatsStored;
@@ -144,7 +145,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 			SteamUserStats.SetStat("NumTrampJumps", m_nTotalNumTrampJumps);
 			SteamUserStats.SetStat("NumDeathsBySpikes", m_nTotalNumDeathBySpikes);
 			SteamUserStats.SetStat("NumDeathsByFalling", m_nTotalNumDeathByFalling);
-
+			SteamUserStats.SetStat("NumCandiesCollectedHalloween", m_nTotalNumHalloweenCandies);
 
 			bool bSuccess = SteamUserStats.StoreStats();
 			// If this failed, we never sent anything to the server, try
@@ -295,6 +296,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		SteamUserStats.SetStat("NumTrampJumps", m_nTotalNumTrampJumps);
 		SteamUserStats.SetStat("NumDeathsBySpikes", m_nTotalNumDeathBySpikes);
 		SteamUserStats.SetStat("NumDeathsByFalling", m_nTotalNumDeathByFalling);
+		SteamUserStats.SetStat("NumCandiesCollectedHalloween", m_nTotalNumHalloweenCandies);
 
 		bool bSuccess = SteamUserStats.StoreStats();
 		if(bSuccess)
@@ -315,11 +317,13 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		SteamUserStats.GetStat("NumTrampJumps", out m_nTotalNumTrampJumps);
 		SteamUserStats.GetStat("NumDeathsBySpikes", out m_nTotalNumDeathBySpikes);
 		SteamUserStats.GetStat("NumDeathsByFalling", out m_nTotalNumDeathByFalling);
+		SteamUserStats.GetStat("NumCandiesCollectedHalloween", out m_nTotalNumHalloweenCandies);
 		Debug.Log("NumGames: " + m_nTotalGamesPlayed);
 		Debug.Log("NumJumps: " + m_nTotalNumJumps);
 		Debug.Log("NumTrampJumps: " + m_nTotalNumTrampJumps);
 		Debug.Log("NumDeathsBySpikes: " + m_nTotalNumDeathBySpikes);
 		Debug.Log("NumDeathsByFalling: " + m_nTotalNumDeathByFalling);
+		Debug.Log("NumCandiesCollectedHalloween: " + m_nTotalNumHalloweenCandies);
 	}
 
 	//-----------------------------------------------------------------------------
@@ -436,6 +440,12 @@ class SteamStatsAndAchievements : MonoBehaviour {
 
 	public void incrementNumOfDeathsByFalling() {
 		m_nTotalNumDeathByFalling++;
+		setStats();
+	}
+
+	public void incrementNumOfCandiesCollected()
+	{
+		m_nTotalNumHalloweenCandies++;
 		setStats();
 	}
 
