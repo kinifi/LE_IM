@@ -44,11 +44,14 @@ public class spikeBullet : MonoBehaviour {
 		}
 		else
 		{
+
+			//Debug.Log(coll.name);
+
 			//I'm suppose to die here
-			if(coll.name == "solid0")
+			if(coll.tag == "ChallengeGround")
 			{
-				//Destroy(this.gameObject);
-				Debug.Log(coll.name);
+				Destroy(this.gameObject);
+				//Debug.Log(coll.name);
 			}
 		}
 	}

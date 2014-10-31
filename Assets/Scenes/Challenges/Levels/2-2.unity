@@ -109,7 +109,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2764193
@@ -176,6 +176,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1184331445}
@@ -216,7 +220,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &9446863
@@ -266,7 +270,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &13250406
@@ -316,7 +320,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &14177587
@@ -407,7 +411,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 15
 --- !u!1001 &35739726
 Prefab:
   m_ObjectHideFlags: 0
@@ -460,6 +464,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1921240893}
@@ -550,7 +558,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 27
 --- !u!1 &49782098
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +571,7 @@ GameObject:
   - 61: {fileID: 49782100}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -796,11 +804,81 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1266666497}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &60602393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+  m_PrefabInternal: {fileID: 706475454}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 60602396}
+  - 212: {fileID: 60602395}
+  - 114: {fileID: 60602394}
+  m_Layer: 0
+  m_Name: tombstone1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &60602394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 82d796bc4c13d284084f4ae595b28a21,
+    type: 2}
+  m_PrefabInternal: {fileID: 706475454}
+  m_GameObject: {fileID: 60602393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e72706449fdc674cbe2f179df9206d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Halloween: 1
+  doNotCollect: 1
+--- !u!212 &60602395
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200000, guid: 82d796bc4c13d284084f4ae595b28a21,
+    type: 2}
+  m_PrefabInternal: {fileID: 706475454}
+  m_GameObject: {fileID: 60602393}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 71779a70117e12e4793676706e7408a7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &60602396
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+  m_PrefabInternal: {fileID: 706475454}
+  m_GameObject: {fileID: 60602393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.16448724, y: 3.01773763, z: 0}
+  m_LocalScale: {x: 1.6122179, y: 1.61221743, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1 &64431838
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +891,7 @@ GameObject:
   - 61: {fileID: 64431840}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -900,7 +978,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &67155837
@@ -927,7 +1005,7 @@ GameObject:
   - 61: {fileID: 77244482}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1031,6 +1109,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 447552495}
@@ -1048,7 +1130,7 @@ GameObject:
   - 61: {fileID: 80134797}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1135,7 +1217,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &85722817
@@ -1202,6 +1284,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 49782098}
@@ -1259,6 +1345,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1516571287}
@@ -1299,7 +1389,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &98518345
@@ -1366,6 +1456,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1801599287}
@@ -1406,7 +1500,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &107974573
@@ -1473,11 +1567,178 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1760007010}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &117017970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+  m_PrefabInternal: {fileID: 1256194855}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 117017975}
+  - 212: {fileID: 117017974}
+  - 60: {fileID: 117017973}
+  - 114: {fileID: 117017972}
+  - 82: {fileID: 117017971}
+  m_Layer: 0
+  m_Name: candy_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &117017971
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 058a096e016b90a4199a2111ca61f97f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1256194855}
+  m_GameObject: {fileID: 117017970}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: d6bd8b2fc49e9a94f81e2a0554b3827b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &117017972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 058a096e016b90a4199a2111ca61f97f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1256194855}
+  m_GameObject: {fileID: 117017970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e72706449fdc674cbe2f179df9206d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Halloween: 1
+  doNotCollect: 0
+--- !u!60 &117017973
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6000000, guid: 058a096e016b90a4199a2111ca61f97f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1256194855}
+  m_GameObject: {fileID: 117017970}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Poly:
+    m_Paths:
+    - - {x: .265625, y: -.015625}
+      - {x: .265625, y: .05078125}
+      - {x: .26171875, y: .07421875}
+      - {x: .24609375, y: .11328125}
+      - {x: .18359375, y: .15625}
+      - {x: .1328125, y: .15625}
+      - {x: .08203125, y: .10546875}
+      - {x: .03125, y: .14453125}
+      - {x: -.078125, y: .13671875}
+      - {x: -.11328125, y: .12109375}
+      - {x: -.1640625, y: .04296875}
+      - {x: -.2109375, y: .07421875}
+      - {x: -.2734375, y: .04296875}
+      - {x: -.2734375, y: -.1015625}
+      - {x: -.26953125, y: -.1328125}
+      - {x: -.2265625, y: -.17578125}
+      - {x: -.1875, y: -.17578125}
+      - {x: -.08984375, y: -.1328125}
+      - {x: -.05859375, y: -.15625}
+      - {x: -.01171875, y: -.17578125}
+      - {x: .0546875, y: -.17578125}
+      - {x: .11328125, y: -.14453125}
+      - {x: .15234375, y: -.109375}
+      - {x: .234375, y: -.06640625}
+--- !u!212 &117017974
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200000, guid: 058a096e016b90a4199a2111ca61f97f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1256194855}
+  m_GameObject: {fileID: 117017970}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 14fbcb074c41d1546af201c71acd7429, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &117017975
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+  m_PrefabInternal: {fileID: 1256194855}
+  m_GameObject: {fileID: 117017970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.22148085, y: 7.073349, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!1001 &128074367
 Prefab:
   m_ObjectHideFlags: 0
@@ -1557,7 +1818,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &128123105
@@ -1950,7 +2211,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &140382847
@@ -1977,7 +2238,7 @@ GameObject:
   - 61: {fileID: 143099654}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2064,7 +2325,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &147095907
@@ -2091,7 +2352,7 @@ GameObject:
   - 61: {fileID: 158000389}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2143,6 +2404,158 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &165749192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+  m_PrefabInternal: {fileID: 1160606240}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 165749197}
+  - 212: {fileID: 165749196}
+  - 60: {fileID: 165749195}
+  - 114: {fileID: 165749194}
+  - 82: {fileID: 165749193}
+  m_Layer: 0
+  m_Name: candy_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &165749193
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 45705b9b9c427bb4098dd4670c504b7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1160606240}
+  m_GameObject: {fileID: 165749192}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: d6bd8b2fc49e9a94f81e2a0554b3827b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &165749194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 45705b9b9c427bb4098dd4670c504b7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1160606240}
+  m_GameObject: {fileID: 165749192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e72706449fdc674cbe2f179df9206d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Halloween: 1
+  doNotCollect: 0
+--- !u!60 &165749195
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6000000, guid: 45705b9b9c427bb4098dd4670c504b7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1160606240}
+  m_GameObject: {fileID: 165749192}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Poly:
+    m_Paths:
+    - - {x: .18359375, y: .05859375}
+      - {x: .17578125, y: .1015625}
+      - {x: .0625, y: .17578125}
+      - {x: -.04296875, y: .17578125}
+      - {x: -.08984375, y: .171875}
+      - {x: -.12890625, y: .1484375}
+      - {x: -.18359375, y: .078125}
+      - {x: -.18359375, y: -.04296875}
+      - {x: -.0859375, y: -.12890625}
+      - {x: .03515625, y: -.12890625}
+      - {x: .11328125, y: -.1015625}
+      - {x: .17578125, y: -.02734375}
+      - {x: .18359375, y: -.01171875}
+--- !u!212 &165749196
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200000, guid: 45705b9b9c427bb4098dd4670c504b7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1160606240}
+  m_GameObject: {fileID: 165749192}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c364fb805654d754b9904824ae592cc3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &165749197
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+  m_PrefabInternal: {fileID: 1160606240}
+  m_GameObject: {fileID: 165749192}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.8801994, y: 10.1507225, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &169129577
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,7 +2591,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &169129579
@@ -2245,6 +2658,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: f77e027fae9f9f44b9ecae3e4c787232,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 80134795}
@@ -2262,7 +2679,7 @@ GameObject:
   - 61: {fileID: 176208690}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2349,7 +2766,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &181536919
@@ -2411,7 +2828,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &206080942
@@ -2691,7 +3108,7 @@ GameObject:
   - 61: {fileID: 212550851}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2795,6 +3212,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1962435311}
@@ -2851,6 +3272,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
@@ -2909,6 +3334,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 578746086}
@@ -2949,7 +3378,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &235460419
@@ -2999,7 +3428,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &236713884
@@ -3066,6 +3495,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 318400323}
@@ -3106,7 +3539,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &243241568
@@ -3241,7 +3674,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 22
 --- !u!114 &251873098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3289,7 +3722,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &253108791
@@ -3316,7 +3749,7 @@ GameObject:
   - 61: {fileID: 257190284}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3380,7 +3813,7 @@ GameObject:
   - 61: {fileID: 262101779}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3444,7 +3877,7 @@ GameObject:
   - 61: {fileID: 270042605}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3548,6 +3981,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 434212271}
@@ -3565,7 +4002,7 @@ GameObject:
   - 61: {fileID: 290229181}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3617,6 +4054,72 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &311929857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+  m_PrefabInternal: {fileID: 568075943}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 311929860}
+  - 212: {fileID: 311929859}
+  - 114: {fileID: 311929858}
+  m_Layer: 0
+  m_Name: tombstone1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &311929858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 82d796bc4c13d284084f4ae595b28a21,
+    type: 2}
+  m_PrefabInternal: {fileID: 568075943}
+  m_GameObject: {fileID: 311929857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e72706449fdc674cbe2f179df9206d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Halloween: 1
+  doNotCollect: 1
+--- !u!212 &311929859
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200000, guid: 82d796bc4c13d284084f4ae595b28a21,
+    type: 2}
+  m_PrefabInternal: {fileID: 568075943}
+  m_GameObject: {fileID: 311929857}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 71779a70117e12e4793676706e7408a7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &311929860
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+  m_PrefabInternal: {fileID: 568075943}
+  m_GameObject: {fileID: 311929857}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.57070446, y: 3.03811765, z: 0}
+  m_LocalScale: {x: 1.6122179, y: 1.61221743, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1 &315048867
 GameObject:
   m_ObjectHideFlags: 0
@@ -3629,7 +4132,7 @@ GameObject:
   - 61: {fileID: 315048869}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3693,7 +4196,7 @@ GameObject:
   - 61: {fileID: 318400325}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3797,6 +4300,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 991943086}
@@ -3814,7 +4321,7 @@ GameObject:
   - 61: {fileID: 367223109}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3922,6 +4429,14 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 1bc6874ca214c1848bc0583d79f14b61,
         type: 3}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
   m_RootGameObject: {fileID: 251873092}
@@ -3962,7 +4477,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &407562393
@@ -3989,7 +4504,7 @@ GameObject:
   - 61: {fileID: 412223797}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4076,7 +4591,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &412489181
@@ -4103,7 +4618,7 @@ GameObject:
   - 61: {fileID: 417365424}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4207,6 +4722,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1719159628}
@@ -4259,6 +4778,7 @@ MonoBehaviour:
   m_nTotalNumTrampJumps: 0
   m_nTotalNumDeathBySpikes: 0
   m_nTotalNumDeathByFalling: 0
+  m_nTotalNumHalloweenCandies: 0
 --- !u!114 &421981302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4282,7 +4802,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 25
 --- !u!1001 &433108972
 Prefab:
   m_ObjectHideFlags: 0
@@ -4335,6 +4855,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1696491225}
@@ -4352,7 +4876,7 @@ GameObject:
   - 61: {fileID: 434212273}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4416,7 +4940,7 @@ GameObject:
   - 61: {fileID: 445181543}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4480,7 +5004,7 @@ GameObject:
   - 61: {fileID: 447552497}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4579,7 +5103,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &473195913
@@ -4703,7 +5227,7 @@ GameObject:
   - 61: {fileID: 479106057}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4806,6 +5330,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
@@ -4920,7 +5448,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 24
 --- !u!1 &493179436
 GameObject:
   m_ObjectHideFlags: 0
@@ -4956,7 +5484,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &493179438
@@ -4983,7 +5511,7 @@ GameObject:
   - 61: {fileID: 497813273}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5035,6 +5563,50 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f77e027fae9f9f44b9ecae3e4c787232, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &500089639
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 14.1669006
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.01911974
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+  m_RootGameObject: {fileID: 996533239}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &505392052
 GameObject:
   m_ObjectHideFlags: 0
@@ -5070,7 +5642,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &505392054
@@ -5120,7 +5692,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &505529686
@@ -5187,6 +5759,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 631165024}
@@ -5243,6 +5819,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
@@ -5301,6 +5881,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 601949262}
@@ -5318,7 +5902,7 @@ GameObject:
   - 61: {fileID: 523198133}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5382,7 +5966,7 @@ GameObject:
   - 61: {fileID: 530170684}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5469,7 +6053,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &534160748
@@ -5536,6 +6120,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 2081174842}
@@ -5576,7 +6164,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &554515515
@@ -5626,7 +6214,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &554942416
@@ -5780,6 +6368,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 367223107}
@@ -5893,7 +6485,51 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 28
+--- !u!1001 &568075943
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.57070446
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.03811765
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+  m_RootGameObject: {fileID: 311929857}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &574193357
 GameObject:
   m_ObjectHideFlags: 0
@@ -5929,7 +6565,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &574193359
@@ -6064,7 +6700,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 26
 --- !u!114 &575001121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6112,7 +6748,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &576713937
@@ -6162,7 +6798,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &577138519
@@ -6189,7 +6825,7 @@ GameObject:
   - 61: {fileID: 578746088}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6293,6 +6929,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 262101777}
@@ -6310,7 +6950,7 @@ GameObject:
   - 61: {fileID: 581701908}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6414,6 +7054,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 2142714090}
@@ -6431,7 +7075,7 @@ GameObject:
   - 61: {fileID: 601949264}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6483,6 +7127,158 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &628160972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+  m_PrefabInternal: {fileID: 1227846432}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 628160977}
+  - 212: {fileID: 628160976}
+  - 60: {fileID: 628160975}
+  - 114: {fileID: 628160974}
+  - 82: {fileID: 628160973}
+  m_Layer: 0
+  m_Name: candy_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &628160973
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 45705b9b9c427bb4098dd4670c504b7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1227846432}
+  m_GameObject: {fileID: 628160972}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: d6bd8b2fc49e9a94f81e2a0554b3827b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &628160974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 45705b9b9c427bb4098dd4670c504b7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1227846432}
+  m_GameObject: {fileID: 628160972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e72706449fdc674cbe2f179df9206d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Halloween: 1
+  doNotCollect: 0
+--- !u!60 &628160975
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6000000, guid: 45705b9b9c427bb4098dd4670c504b7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1227846432}
+  m_GameObject: {fileID: 628160972}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Poly:
+    m_Paths:
+    - - {x: .18359375, y: .05859375}
+      - {x: .17578125, y: .1015625}
+      - {x: .0625, y: .17578125}
+      - {x: -.04296875, y: .17578125}
+      - {x: -.08984375, y: .171875}
+      - {x: -.12890625, y: .1484375}
+      - {x: -.18359375, y: .078125}
+      - {x: -.18359375, y: -.04296875}
+      - {x: -.0859375, y: -.12890625}
+      - {x: .03515625, y: -.12890625}
+      - {x: .11328125, y: -.1015625}
+      - {x: .17578125, y: -.02734375}
+      - {x: .18359375, y: -.01171875}
+--- !u!212 &628160976
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200000, guid: 45705b9b9c427bb4098dd4670c504b7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1227846432}
+  m_GameObject: {fileID: 628160972}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c364fb805654d754b9904824ae592cc3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &628160977
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+  m_PrefabInternal: {fileID: 1227846432}
+  m_GameObject: {fileID: 628160972}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.131669, y: 7.1752491, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1 &628636420
 GameObject:
   m_ObjectHideFlags: 0
@@ -6518,7 +7314,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &628636422
@@ -6545,7 +7341,7 @@ GameObject:
   - 61: {fileID: 631165026}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6609,7 +7405,7 @@ GameObject:
   - 61: {fileID: 636779104}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6708,7 +7504,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &681018689
@@ -6746,7 +7542,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &681018691
@@ -7043,7 +7839,7 @@ GameObject:
   - 61: {fileID: 689804369}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7130,7 +7926,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &690832498
@@ -7366,6 +8162,50 @@ Prefab:
   m_RootGameObject: {fileID: 900345307}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1001 &706475454
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.16448724
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.01773763
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 82d796bc4c13d284084f4ae595b28a21, type: 2}
+  m_RootGameObject: {fileID: 60602393}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &706846916
 GameObject:
   m_ObjectHideFlags: 0
@@ -7378,7 +8218,7 @@ GameObject:
   - 61: {fileID: 706846918}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7465,7 +8305,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &709836906
@@ -7492,7 +8332,7 @@ GameObject:
   - 61: {fileID: 710363644}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7556,7 +8396,7 @@ GameObject:
   - 61: {fileID: 715404966}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7660,6 +8500,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 9f8da91e17259bf469e6350e2e4d3968,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 315048867}
@@ -7769,6 +8613,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1304033888}
@@ -7826,6 +8674,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1644284354}
@@ -7866,7 +8718,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &792913415
@@ -7893,7 +8745,7 @@ GameObject:
   - 61: {fileID: 793840647}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7997,6 +8849,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1368426928}
@@ -8037,7 +8893,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &806662079
@@ -8087,7 +8943,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &807795154
@@ -8154,9 +9010,57 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 290229179}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1001 &812570942
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.03391504
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 7.23638868
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+  m_RootGameObject: {fileID: 1868237981}
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1001 &813106727
@@ -8211,6 +9115,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1071220876}
@@ -8251,7 +9159,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &813215023
@@ -8278,7 +9186,7 @@ GameObject:
   - 61: {fileID: 814546766}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8382,6 +9290,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1599191835}
@@ -8439,6 +9351,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1837065853}
@@ -8479,7 +9395,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &832607632
@@ -8529,7 +9445,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &840824397
@@ -8579,7 +9495,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &841272262
@@ -8645,6 +9561,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
@@ -8738,7 +9658,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &873372034
@@ -8765,7 +9685,7 @@ GameObject:
   - 61: {fileID: 883142141}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8868,6 +9788,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
@@ -9101,7 +10025,7 @@ GameObject:
   - 61: {fileID: 897739193}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9249,7 +10173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 19
 --- !u!114 &898051172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9370,7 +10294,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 29
 --- !u!1001 &908917516
 Prefab:
   m_ObjectHideFlags: 0
@@ -9427,6 +10351,14 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 1bc6874ca214c1848bc0583d79f14b61,
         type: 3}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
   m_RootGameObject: {fileID: 1222432096}
@@ -9467,7 +10399,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &912217909
@@ -9517,7 +10449,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &914165192
@@ -9584,6 +10516,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1148871385}
@@ -9601,7 +10537,7 @@ GameObject:
   - 61: {fileID: 924703396}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9705,6 +10641,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 928786582}
@@ -9722,7 +10662,7 @@ GameObject:
   - 61: {fileID: 928786584}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9830,6 +10770,14 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 1bc6874ca214c1848bc0583d79f14b61,
         type: 3}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
   m_RootGameObject: {fileID: 575001115}
@@ -9870,7 +10818,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &930931234
@@ -9920,7 +10868,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &931674069
@@ -9970,7 +10918,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &937468538
@@ -9997,7 +10945,7 @@ GameObject:
   - 61: {fileID: 937667565}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10061,7 +11009,7 @@ GameObject:
   - 61: {fileID: 946980789}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10148,7 +11096,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &950049016
@@ -10224,7 +11172,7 @@ GameObject:
   - 61: {fileID: 960726803}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10328,6 +11276,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 64431838}
@@ -10384,6 +11336,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
@@ -10442,6 +11398,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1854834778}
@@ -10459,7 +11419,7 @@ GameObject:
   - 61: {fileID: 971827170}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10546,7 +11506,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &973913838
@@ -10613,6 +11573,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 417365422}
@@ -10630,7 +11594,7 @@ GameObject:
   - 61: {fileID: 981521055}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11024,8 +11988,8 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 3096589785
-  m_SortingOrder: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2a91d271175acc94fb7d736ce7816d56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &987874190
@@ -11039,7 +12003,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1001 &988719307
 Prefab:
   m_ObjectHideFlags: 0
@@ -11092,6 +12056,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1228013483}
@@ -11109,7 +12077,7 @@ GameObject:
   - 61: {fileID: 991943088}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11161,6 +12129,102 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &996533239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+  m_PrefabInternal: {fileID: 500089639}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 996533244}
+  - 212: {fileID: 996533243}
+  - 58: {fileID: 996533242}
+  - 50: {fileID: 996533241}
+  - 114: {fileID: 996533240}
+  m_Layer: 10
+  m_Name: pumpkin
+  m_TagString: BreakableBlock
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &996533240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: af6f221180aca3241b62a8fddc88176c,
+    type: 2}
+  m_PrefabInternal: {fileID: 500089639}
+  m_GameObject: {fileID: 996533239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e72706449fdc674cbe2f179df9206d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Halloween: 1
+  doNotCollect: 1
+--- !u!50 &996533241
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: af6f221180aca3241b62a8fddc88176c,
+    type: 2}
+  m_PrefabInternal: {fileID: 500089639}
+  m_GameObject: {fileID: 996533239}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!58 &996533242
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: af6f221180aca3241b62a8fddc88176c,
+    type: 2}
+  m_PrefabInternal: {fileID: 500089639}
+  m_GameObject: {fileID: 996533239}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .419999987
+  m_Center: {x: 0, y: 0}
+--- !u!212 &996533243
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200000, guid: af6f221180aca3241b62a8fddc88176c,
+    type: 2}
+  m_PrefabInternal: {fileID: 500089639}
+  m_GameObject: {fileID: 996533239}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 9eba9c95e561ac5419f9263eb9d5aa79, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &996533244
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+  m_PrefabInternal: {fileID: 500089639}
+  m_GameObject: {fileID: 996533239}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.1669006, y: 2.01911974, z: 0}
+  m_LocalScale: {x: 1.11463594, y: 1.11463594, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
 --- !u!1 &1001791159
 GameObject:
   m_ObjectHideFlags: 0
@@ -11173,7 +12237,7 @@ GameObject:
   - 61: {fileID: 1001791161}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11260,7 +12324,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1001967866
@@ -11371,7 +12435,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 18
 --- !u!114 &1020835757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11440,6 +12504,14 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 1bc6874ca214c1848bc0583d79f14b61,
         type: 3}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
   m_RootGameObject: {fileID: 1648140309}
@@ -11497,6 +12569,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 981521053}
@@ -11578,7 +12654,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
 --- !u!1 &1025735790
 GameObject:
   m_ObjectHideFlags: 0
@@ -11614,7 +12690,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1025735792
@@ -11894,7 +12970,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1063943379
@@ -11921,7 +12997,7 @@ GameObject:
   - 61: {fileID: 1071220878}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12049,7 +13125,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 21
 --- !u!1001 &1073391274
 Prefab:
   m_ObjectHideFlags: 0
@@ -12102,6 +13178,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1909499686}
@@ -12142,7 +13222,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1077209324
@@ -12209,6 +13289,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1513915547}
@@ -12265,6 +13349,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
@@ -12410,6 +13498,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1747796381}
@@ -12427,7 +13519,7 @@ GameObject:
   - 61: {fileID: 1110463824}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12479,6 +13571,102 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f77e027fae9f9f44b9ecae3e4c787232, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1127567315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+  m_PrefabInternal: {fileID: 1421199420}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1127567320}
+  - 212: {fileID: 1127567319}
+  - 58: {fileID: 1127567318}
+  - 50: {fileID: 1127567317}
+  - 114: {fileID: 1127567316}
+  m_Layer: 10
+  m_Name: pumpkin
+  m_TagString: BreakableBlock
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1127567316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: af6f221180aca3241b62a8fddc88176c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1421199420}
+  m_GameObject: {fileID: 1127567315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e72706449fdc674cbe2f179df9206d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Halloween: 1
+  doNotCollect: 1
+--- !u!50 &1127567317
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5000000, guid: af6f221180aca3241b62a8fddc88176c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1421199420}
+  m_GameObject: {fileID: 1127567315}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!58 &1127567318
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800000, guid: af6f221180aca3241b62a8fddc88176c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1421199420}
+  m_GameObject: {fileID: 1127567315}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .419999987
+  m_Center: {x: 0, y: 0}
+--- !u!212 &1127567319
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200000, guid: af6f221180aca3241b62a8fddc88176c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1421199420}
+  m_GameObject: {fileID: 1127567315}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 9eba9c95e561ac5419f9263eb9d5aa79, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &1127567320
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+  m_PrefabInternal: {fileID: 1421199420}
+  m_GameObject: {fileID: 1127567315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.9399576, y: 10.0080633, z: 0}
+  m_LocalScale: {x: 1.11463594, y: 1.11463594, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1 &1133603227
 GameObject:
   m_ObjectHideFlags: 0
@@ -12526,7 +13714,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1148871385
@@ -12541,7 +13729,7 @@ GameObject:
   - 61: {fileID: 1148871387}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12628,7 +13816,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1150755832
@@ -12678,7 +13866,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1157480499
@@ -12693,6 +13881,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 58397409}
   m_RootOrder: 31
+--- !u!1001 &1160606240
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 14.8801994
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 10.1507225
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+  m_RootGameObject: {fileID: 165749192}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1001 &1161744170
 Prefab:
   m_ObjectHideFlags: 0
@@ -12745,6 +13977,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1986372198}
@@ -12762,7 +13998,7 @@ GameObject:
   - 61: {fileID: 1170082533}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12866,6 +14102,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 793840645}
@@ -12883,7 +14123,7 @@ GameObject:
   - 61: {fileID: 1184331447}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12987,6 +14227,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1475957979}
@@ -13044,6 +14288,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1854176443}
@@ -13084,7 +14332,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1212218538
@@ -13111,7 +14359,7 @@ GameObject:
   - 61: {fileID: 1214991124}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13215,6 +14463,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 924703394}
@@ -13271,6 +14523,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
@@ -13397,7 +14653,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 23
 --- !u!114 &1222432102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13461,6 +14717,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
@@ -13640,6 +14900,50 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!1001 &1227846432
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10.131669
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 7.1752491
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 45705b9b9c427bb4098dd4670c504b7e, type: 2}
+  m_RootGameObject: {fileID: 628160972}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1228013483
 GameObject:
   m_ObjectHideFlags: 0
@@ -13652,7 +14956,7 @@ GameObject:
   - 61: {fileID: 1228013485}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13716,7 +15020,7 @@ GameObject:
   - 61: {fileID: 1231144851}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13803,7 +15107,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1234649925
@@ -13853,7 +15157,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1245509575
@@ -13868,6 +15172,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 58397409}
   m_RootOrder: 79
+--- !u!1001 &1256194855
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.22148085
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 7.073349
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+  m_RootGameObject: {fileID: 117017970}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1001 &1257991890
 Prefab:
   m_ObjectHideFlags: 0
@@ -13955,7 +15303,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1258108395
@@ -14068,7 +15416,7 @@ GameObject:
   - 61: {fileID: 1266666499}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14155,7 +15503,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1283119719
@@ -14182,7 +15530,7 @@ GameObject:
   - 61: {fileID: 1283299213}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14286,6 +15634,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 445181541}
@@ -14326,7 +15678,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1297669700
@@ -14393,6 +15745,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 479106055}
@@ -14433,7 +15789,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1303529767
@@ -14460,7 +15816,7 @@ GameObject:
   - 61: {fileID: 1304033890}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14547,7 +15903,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1307961941
@@ -14574,7 +15930,7 @@ GameObject:
   - 61: {fileID: 1310722114}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14678,6 +16034,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 581701906}
@@ -14734,6 +16094,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
@@ -14792,6 +16156,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 706846916}
@@ -14849,6 +16217,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: f77e027fae9f9f44b9ecae3e4c787232,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1701603635}
@@ -14889,7 +16261,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1337348074
@@ -14956,6 +16328,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 937667563}
@@ -15013,6 +16389,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1427731578}
@@ -15030,7 +16410,7 @@ GameObject:
   - 61: {fileID: 1352787050}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15134,6 +16514,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 897739191}
@@ -15151,7 +16535,7 @@ GameObject:
   - 61: {fileID: 1368426930}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15282,7 +16666,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1413472685
@@ -15373,7 +16757,51 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 17
+--- !u!1001 &1421199420
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 15.9399576
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 10.0080633
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: af6f221180aca3241b62a8fddc88176c, type: 2}
+  m_RootGameObject: {fileID: 1127567315}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1427731578
 GameObject:
   m_ObjectHideFlags: 0
@@ -15386,7 +16814,7 @@ GameObject:
   - 61: {fileID: 1427731580}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15490,6 +16918,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1001791159}
@@ -15530,7 +16962,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1437214355
@@ -15597,6 +17029,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 257190282}
@@ -15630,11 +17066,11 @@ Transform:
   m_GameObject: {fileID: 1464037622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8, y: 6, z: 0}
-  m_LocalScale: {x: .00445434311, y: .00445434311, z: .00445434311}
+  m_LocalScale: {x: .00395256933, y: .00395256933, z: .00395256933}
   m_Children:
   - {fileID: 1041766258}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 20
 --- !u!54 &1464037624
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15813,7 +17249,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 30
 --- !u!1 &1475957979
 GameObject:
   m_ObjectHideFlags: 0
@@ -15826,7 +17262,7 @@ GameObject:
   - 61: {fileID: 1475957981}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15930,6 +17366,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 960726801}
@@ -15970,7 +17410,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1494970465
@@ -16037,6 +17477,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 636779102}
@@ -16054,7 +17498,7 @@ GameObject:
   - 61: {fileID: 1499344297}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16141,7 +17585,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1502717669
@@ -16185,7 +17629,7 @@ Transform:
   - {fileID: 555115548}
   - {fileID: 884108285}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 16
 --- !u!1 &1508783385
 GameObject:
   m_ObjectHideFlags: 0
@@ -16221,7 +17665,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1508783387
@@ -16271,7 +17715,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1512542389
@@ -16298,7 +17742,7 @@ GameObject:
   - 61: {fileID: 1513915549}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16402,6 +17846,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1977555834}
@@ -16419,7 +17867,7 @@ GameObject:
   - 61: {fileID: 1515989785}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16483,7 +17931,7 @@ GameObject:
   - 61: {fileID: 1516571289}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16570,7 +18018,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1529121140
@@ -16637,6 +18085,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 412223795}
@@ -16654,7 +18106,7 @@ GameObject:
   - 61: {fileID: 1543276781}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16758,6 +18210,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 971827168}
@@ -16798,7 +18254,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1546390751
@@ -16825,7 +18281,7 @@ GameObject:
   - 61: {fileID: 1551670350}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17133,7 +18589,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1567513152
@@ -17200,6 +18656,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1499344295}
@@ -17240,7 +18700,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1573207403
@@ -17307,6 +18767,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1910692087}
@@ -17347,7 +18811,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1585950756
@@ -17374,7 +18838,7 @@ GameObject:
   - 61: {fileID: 1590309379}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17589,7 +19053,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1595789166
@@ -17616,7 +19080,7 @@ GameObject:
   - 61: {fileID: 1596589470}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17703,7 +19167,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1597250835
@@ -17730,7 +19194,7 @@ GameObject:
   - 61: {fileID: 1599191837}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17834,6 +19298,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 158000387}
@@ -17874,7 +19342,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1608237780
@@ -17936,7 +19404,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1615786360
@@ -17974,7 +19442,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1615786362
@@ -18041,6 +19509,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1864637060}
@@ -18098,6 +19570,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1231144849}
@@ -18115,7 +19591,7 @@ GameObject:
   - 61: {fileID: 1644284356}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18287,7 +19763,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 13
 --- !u!114 &1648140315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18335,7 +19811,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1649798312
@@ -18402,6 +19878,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1826704612}
@@ -18459,6 +19939,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1596589468}
@@ -18499,7 +19983,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1667988152
@@ -18549,7 +20033,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1675274658
@@ -18605,7 +20089,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 233eedcd317ff754bbb44ba9eb45dea4, type: 2}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: 233eedcd317ff754bbb44ba9eb45dea4, type: 2}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 233eedcd317ff754bbb44ba9eb45dea4, type: 2}
@@ -18624,7 +20112,7 @@ GameObject:
   - 61: {fileID: 1696491227}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18761,13 +20249,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: 0, b: 0, a: 1}
   mPivot: 4
-  mWidth: 5342
-  mHeight: 3004
+  mWidth: 6017
+  mHeight: 3386
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.77673197
+  aspectRatio: 1.77702308
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -18812,7 +20300,7 @@ GameObject:
   - 61: {fileID: 1701603637}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18876,7 +20364,7 @@ GameObject:
   - 61: {fileID: 1719159630}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18980,6 +20468,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1515989783}
@@ -19020,7 +20512,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1735761945
@@ -19070,7 +20562,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1742967065
@@ -19137,6 +20629,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 814546764}
@@ -19154,7 +20650,7 @@ GameObject:
   - 61: {fileID: 1747796383}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19218,7 +20714,7 @@ GameObject:
   - 61: {fileID: 1760007012}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19305,7 +20801,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1773642531
@@ -19436,6 +20932,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 715404964}
@@ -19453,7 +20953,7 @@ GameObject:
   - 61: {fileID: 1801599289}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19540,7 +21040,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1815713874
@@ -19590,7 +21090,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1817352675
@@ -19617,7 +21117,7 @@ GameObject:
   - 61: {fileID: 1826704614}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19704,7 +21204,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1827687932
@@ -19731,7 +21231,7 @@ GameObject:
   - 61: {fileID: 1837065855}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19835,6 +21335,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 2032256759}
@@ -19852,7 +21356,7 @@ GameObject:
   - 61: {fileID: 1854176445}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19916,7 +21420,7 @@ GameObject:
   - 61: {fileID: 1854834780}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19980,7 +21484,7 @@ GameObject:
   - 61: {fileID: 1864637062}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20032,6 +21536,169 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1868237981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+  m_PrefabInternal: {fileID: 812570942}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1868237986}
+  - 212: {fileID: 1868237985}
+  - 60: {fileID: 1868237984}
+  - 114: {fileID: 1868237983}
+  - 82: {fileID: 1868237982}
+  m_Layer: 0
+  m_Name: candy_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1868237982
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: 058a096e016b90a4199a2111ca61f97f,
+    type: 2}
+  m_PrefabInternal: {fileID: 812570942}
+  m_GameObject: {fileID: 1868237981}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: d6bd8b2fc49e9a94f81e2a0554b3827b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &1868237983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 058a096e016b90a4199a2111ca61f97f,
+    type: 2}
+  m_PrefabInternal: {fileID: 812570942}
+  m_GameObject: {fileID: 1868237981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e72706449fdc674cbe2f179df9206d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Halloween: 1
+  doNotCollect: 0
+--- !u!60 &1868237984
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6000000, guid: 058a096e016b90a4199a2111ca61f97f,
+    type: 2}
+  m_PrefabInternal: {fileID: 812570942}
+  m_GameObject: {fileID: 1868237981}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Poly:
+    m_Paths:
+    - - {x: .265625, y: -.015625}
+      - {x: .265625, y: .05078125}
+      - {x: .26171875, y: .07421875}
+      - {x: .24609375, y: .11328125}
+      - {x: .18359375, y: .15625}
+      - {x: .1328125, y: .15625}
+      - {x: .08203125, y: .10546875}
+      - {x: .03125, y: .14453125}
+      - {x: -.078125, y: .13671875}
+      - {x: -.11328125, y: .12109375}
+      - {x: -.1640625, y: .04296875}
+      - {x: -.2109375, y: .07421875}
+      - {x: -.2734375, y: .04296875}
+      - {x: -.2734375, y: -.1015625}
+      - {x: -.26953125, y: -.1328125}
+      - {x: -.2265625, y: -.17578125}
+      - {x: -.1875, y: -.17578125}
+      - {x: -.08984375, y: -.1328125}
+      - {x: -.05859375, y: -.15625}
+      - {x: -.01171875, y: -.17578125}
+      - {x: .0546875, y: -.17578125}
+      - {x: .11328125, y: -.14453125}
+      - {x: .15234375, y: -.109375}
+      - {x: .234375, y: -.06640625}
+--- !u!212 &1868237985
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200000, guid: 058a096e016b90a4199a2111ca61f97f,
+    type: 2}
+  m_PrefabInternal: {fileID: 812570942}
+  m_GameObject: {fileID: 1868237981}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 14fbcb074c41d1546af201c71acd7429, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &1868237986
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 058a096e016b90a4199a2111ca61f97f, type: 2}
+  m_PrefabInternal: {fileID: 812570942}
+  m_GameObject: {fileID: 1868237981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.03391504, y: 7.23638868, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &1890131310
 GameObject:
   m_ObjectHideFlags: 0
@@ -20170,7 +21837,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1905006976
@@ -20225,6 +21892,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 710363642}
@@ -20242,7 +21913,7 @@ GameObject:
   - 61: {fileID: 1909499688}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20306,7 +21977,7 @@ GameObject:
   - 61: {fileID: 1910692089}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20393,7 +22064,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1914675987
@@ -20436,7 +22107,7 @@ Transform:
   - {fileID: 58397409}
   - {fileID: 128994482}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 14
 --- !u!1001 &1920580945
 Prefab:
   m_ObjectHideFlags: 0
@@ -20489,6 +22160,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 77244480}
@@ -20506,7 +22181,7 @@ GameObject:
   - 61: {fileID: 1921240895}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20593,7 +22268,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1934945156
@@ -20655,7 +22330,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1938655537
@@ -20709,6 +22384,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
@@ -20767,6 +22446,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1283299211}
@@ -20784,7 +22467,7 @@ GameObject:
   - 61: {fileID: 1942750191}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20887,6 +22570,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
@@ -21033,7 +22720,7 @@ GameObject:
   - 61: {fileID: 1962435313}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21120,7 +22807,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1963814226
@@ -21238,7 +22925,7 @@ GameObject:
   - 61: {fileID: 1977555836}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21325,7 +23012,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1978054982
@@ -21392,6 +23079,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 143099652}
@@ -21409,7 +23100,7 @@ GameObject:
   - 61: {fileID: 1980138067}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21473,7 +23164,7 @@ GameObject:
   - 61: {fileID: 1986372200}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21601,7 +23292,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 31
 --- !u!1001 &2011218768
 Prefab:
   m_ObjectHideFlags: 0
@@ -21653,6 +23344,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
@@ -21932,6 +23627,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1352787048}
@@ -22122,7 +23821,7 @@ GameObject:
   - 61: {fileID: 2032256761}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22209,7 +23908,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2035725413
@@ -22497,6 +24196,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 151fcecb0f004fb47a47f726ce1c0a12,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 2128185876}
@@ -22554,6 +24257,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1543276779}
@@ -22594,7 +24301,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2065871919
@@ -22644,7 +24351,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2069290293
@@ -22671,7 +24378,7 @@ GameObject:
   - 61: {fileID: 2081174844}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22775,6 +24482,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1980138065}
@@ -22815,7 +24526,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2101004596
@@ -22882,6 +24593,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 9f8da91e17259bf469e6350e2e4d3968,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1942750189}
@@ -22939,6 +24654,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: f77e027fae9f9f44b9ecae3e4c787232,
         type: 3}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
   m_RootGameObject: {fileID: 1110463822}
@@ -22956,7 +24675,7 @@ GameObject:
   - 61: {fileID: 2128185878}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23043,7 +24762,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6375660722600234fb8fe99b28a6bdd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2128727423
@@ -23070,7 +24789,7 @@ GameObject:
   - 61: {fileID: 2142714092}
   m_Layer: 9
   m_Name: Solid0
-  m_TagString: Untagged
+  m_TagString: ChallengeGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23173,6 +24892,10 @@ Prefab:
     - target: {fileID: 21200000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
+      propertyPath: m_TagString
+      value: ChallengeGround
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff2d04dbde2df240b3e5c11b71a8dac, type: 2}
