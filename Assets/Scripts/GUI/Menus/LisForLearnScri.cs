@@ -24,7 +24,7 @@ public class LisForLearnScri : MonoBehaviour {
 		else if(Input.GetButtonDown("Back") && Application.loadedLevelName == "Options")
 		{
 			Debug.Log ("This is the level loaded name: " + Application.loadedLevelName);
-			if(Panel.activeSelf == false)
+			if(Panel.activeSelf == true)
 			{
 				OptionsToggle ();
 			}
