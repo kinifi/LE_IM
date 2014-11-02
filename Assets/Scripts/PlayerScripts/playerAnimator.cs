@@ -31,7 +31,7 @@ public class playerAnimator : MonoBehaviour {
 	void Update () {
 	
 		//get the horizontal input value so we can animate the player. Such as Run Left & Right
-		XaxisValue = Input.GetAxis("Horizontal");
+		XaxisValue = Input.GetAxis("Horiz");
 
 		//call the updateMecanimValues Every Frame so we never miss input
 		updateMecanimValues();

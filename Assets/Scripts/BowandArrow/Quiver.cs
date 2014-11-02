@@ -31,7 +31,7 @@ public class Quiver : MonoBehaviour {
 			Transform shootTransform = getTransform;
 			GameObject projectile;
 
-			if(Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetAxis("Fire Up/Down") < -0.9f)
+			if(Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetAxis("ShootUD") < -0.9f)
 			{
 				if(canFire == true)
 				{
@@ -46,7 +46,7 @@ public class Quiver : MonoBehaviour {
 					Invoke("AllowFire", 0.5f);
 				}
 			}
-			if(Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetAxis("Fire Up/Down") > 0.9f)
+			if(Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetAxis("ShootUD") > 0.9f)
 			{
 				if(canFire == true)
 				{
@@ -61,7 +61,7 @@ public class Quiver : MonoBehaviour {
 					Invoke("AllowFire", 0.5f);
 				}
 			}
-			if(Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetAxis("Fire Left/Right") > 0.9f)
+			if(Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetAxis("ShootLR") > 0.9f)
 			{
 				if(canFire == true)
 				{
@@ -76,7 +76,7 @@ public class Quiver : MonoBehaviour {
 					Invoke("AllowFire", 0.5f);
 				}
 			}
-			if(Input.GetKeyDown(KeyCode.LeftArrow)|| Input.GetAxis("Fire Left/Right") < -0.9f)
+			if(Input.GetKeyDown(KeyCode.LeftArrow)|| Input.GetAxis("ShootLR") < -0.9f)
 			{
 				if(canFire == true)
 				{

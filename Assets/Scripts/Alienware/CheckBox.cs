@@ -16,7 +16,7 @@ public class CheckBox : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		if(Input.GetButtonDown("Fire2"))
+		if(Input.GetButtonDown("Back"))
 		{
 			HidePopUp();
 		}

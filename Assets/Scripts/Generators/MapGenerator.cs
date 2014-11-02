@@ -162,7 +162,7 @@ public class MapGenerator : MonoBehaviour {
 		controlsSplash.transform.OverlayPosition(startRobbe.transform);
 
 		//Destroy Splash
-		if(Input.GetButtonDown("Fire1"))
+		if(Input.GetButtonDown("Confirm"))
 		{
 			Destroy(controlsSplash);
 		}
@@ -190,7 +190,7 @@ public class MapGenerator : MonoBehaviour {
 		completeSplash.transform.OverlayPosition(_robbe.transform);
 
 		//Destroy Splash
-		if(Input.GetButtonDown("Fire1"))
+		if(Input.GetButtonDown("Confirm"))
 		{
 			Destroy(completeSplash);
 		}

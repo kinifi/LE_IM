@@ -39,7 +39,7 @@ public class FakeRobbeController : MonoBehaviour {
 
 		if(canMove)
 		{
-			float moveHorizontal = Input.GetAxis("Horizontal");
+			float moveHorizontal = Input.GetAxis("Horiz");
 
 			Vector2 movement = new Vector2(moveHorizontal, 0.0f);
 
@@ -57,7 +57,7 @@ public class FakeRobbeController : MonoBehaviour {
 				}
 			}
 
-			if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("JoystickButton0"))
+			if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("AButton"))
 			{
 				if(grounded == true)
 				{

@@ -61,7 +61,7 @@ public class RobbeController : MonoBehaviour {
 		playervelocity = velocity;
 
 		//grab our current input and set input1
-		input1 = Mathf.Abs(Input.GetAxis( "Horizontal" ));
+		input1 = Mathf.Abs(Input.GetAxis( "Horiz" ));
 
 		//zero out vertical velocity if grounded
 		if( _controller.isGrounded )
@@ -72,13 +72,13 @@ public class RobbeController : MonoBehaviour {
 		
 		//HORIZONTAL INPUT//
 		//move imediately to zero horizontal velocity if v1 is larger than current input.
-		if( input1 > Mathf.Abs(Input.GetAxis( "Horizontal" )))
+		if( input1 > Mathf.Abs(Input.GetAxis( "Horiz" )))
 		{
 			velocity.x = 0.0f;
 		}
 
 		//move right
-		else if( Input.GetAxis( "Horizontal" ) > 0.15f)
+		else if( Input.GetAxis( "Horiz" ) > 0.15f)
 		{
 			velocity.x = runSpeed;
 			_right = true;
@@ -86,7 +86,7 @@ public class RobbeController : MonoBehaviour {
 		}
 		
 		//move left
-		else if( Input.GetAxis( "Horizontal" ) < -0.15f)
+		else if( Input.GetAxis( "Horiz" ) < -0.15f)
 		{
 			velocity.x = -runSpeed;
 			_right = false;
@@ -102,7 +102,7 @@ public class RobbeController : MonoBehaviour {
 		//VERTICAL INPUT//
 		
 		//jump
-		if( Input.GetButtonDown( "Jump" ))
+		if( Input.GetButtonDown( "Jumped" ))
 		{
 			if(_controller.isGrounded)
 			{

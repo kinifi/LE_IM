@@ -16,20 +16,22 @@ public class LisForLearnScri : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if(Input.GetButtonDown("LearnKeyboard") && Application.loadedLevelName != "Options")
-		{
-			togglePanel();
-		}
-		else if(Input.GetButtonDown("LearnKeyboard") && Application.loadedLevelName == "Options")
+
+		if(Input.GetButtonDown("LearnButton") && Application.loadedLevelName == "Options")
 		{
 			OptionsToggle ();
 		}
-		else if(Input.GetButtonDown("Fire2") && Application.loadedLevelName == "Options")
+		else if(Input.GetButtonDown("Back") && Application.loadedLevelName == "Options")
 		{
-			if(Panel.activeSelf == true)
+			Debug.Log ("This is the level loaded name: " + Application.loadedLevelName);
+			if(Panel.activeSelf == false)
 			{
 				OptionsToggle ();
 			}
+		}
+		else if(Input.GetButtonDown("LearnButton") && Application.loadedLevelName != "Options")
+		{
+			togglePanel();
 		}
 	}
 

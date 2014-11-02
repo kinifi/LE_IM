@@ -20,7 +20,7 @@ public class NoFaithController : MonoBehaviour {
 		if(canMove)
 		{
 
-			if(Input.GetButton("Fire3"))
+			if(Input.GetButton("LookDown"))
 			{
 				if(moving == false)
 				{
@@ -30,7 +30,7 @@ public class NoFaithController : MonoBehaviour {
 					_smoothFollow.movingCamera = true;
 				}
 			}
-			if(Input.GetButton("Fire3") == false)
+			if(Input.GetButton("LookDown") == false)
 			{
 				if(moving == true)
 				{
