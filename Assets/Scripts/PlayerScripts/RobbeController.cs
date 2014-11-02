@@ -51,6 +51,8 @@ public class RobbeController : MonoBehaviour {
 
 	void Update()
 	{
+
+
 		//Jump animation state
 		_animator.SetBool( "Grounded", _controller.isGrounded );
 
