@@ -7,6 +7,7 @@ public class halloweenCollect : MonoBehaviour {
 	private bool hasCollected = false;
 	public bool Halloween = true;
 	public bool doNotCollect = false;
+	public GameObject candySound;
 
 	// Use this for initialization
 	void Start () {
@@ -33,7 +34,8 @@ public class halloweenCollect : MonoBehaviour {
 				
 				if(hasCollected == false)
 				{
-					audio.Play();
+					//audio.Play();
+					Instantiate(candySound, transform.position, Quaternion.identity);
 					hasCollected = true;
 					SteamManager.StatsAndAchievements.incrementNumOfCandiesCollected();
 				}
