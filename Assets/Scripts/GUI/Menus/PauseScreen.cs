@@ -8,9 +8,12 @@ public class PauseScreen : MonoBehaviour {
 	public GameObject Player;
 	public bool isChallengeLevels = false;
 
-	// Use this for initialization
-	void Start () {
+	//Set Private Configs
+	private GameObject learnScreen;
 
+	// Use this for initialization
+	void Awake () 
+	{
 	}
 	
 	// Update is called once per frame
@@ -19,6 +22,11 @@ public class PauseScreen : MonoBehaviour {
 		if(Input.GetButtonDown("Back"))
 		{
 			togglePanel();
+			if(GameObject.Find ("Learn") != null)
+			{
+				GameObject learnScreen = GameObject.Find ("Learn");
+				learnScreen.SetActive(false);
+			}
 		}
 	
 	}

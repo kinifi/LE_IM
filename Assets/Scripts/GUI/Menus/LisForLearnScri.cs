@@ -3,14 +3,16 @@ using System.Collections;
 
 public class LisForLearnScri : MonoBehaviour {
 
+	//Set Public Configs
 	public GameObject Panel;
 	public GameObject cam;
 	public GameObject Player;
 	public bool isChallengeLevels = false;
 
+
 	// Use this for initialization
-	void Start () {
-	
+	void Awake () 
+	{
 	}
 	
 	// Update is called once per frame
@@ -21,7 +23,7 @@ public class LisForLearnScri : MonoBehaviour {
 		{
 			OptionsToggle ();
 		}
-		else if(Input.GetButtonDown("Back") && Application.loadedLevelName == "Options")
+		else if(Application.loadedLevelName == "Options")
 		{
 			Debug.Log ("This is the level loaded name: " + Application.loadedLevelName);
 			if(Panel.activeSelf == true)
@@ -31,7 +33,10 @@ public class LisForLearnScri : MonoBehaviour {
 		}
 		else if(Input.GetButtonDown("LearnButton") && Application.loadedLevelName != "Options")
 		{
-			togglePanel();
+			if(GameObject.Find("Pause") == null)
+			{
+				togglePanel();
+			}
 		}
 	}
 
