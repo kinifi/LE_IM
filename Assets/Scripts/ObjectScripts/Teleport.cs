@@ -7,9 +7,11 @@ public class Teleport : MonoBehaviour {
 	void Start ()
 	{
 		string telaIn = this.gameObject.name;
-		string telaOutName = "TelaOut";
+		string telaOutName = "telaOut" + telaIn;
 
-		//telaOut = GameObject.Find(telaOutName);
+		Debug.Log ("This is the telaOutName: " + telaOutName);
+
+		telaOut = GameObject.Find(telaOutName);
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
