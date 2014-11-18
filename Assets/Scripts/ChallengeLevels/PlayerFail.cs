@@ -15,6 +15,7 @@ public class PlayerFail : MonoBehaviour {
 	void Start () {
 
 		this.collider2D.isTrigger = true;
+        saveLevelName();
 	}
 	
 	public void startDeath() {
@@ -34,6 +35,7 @@ public class PlayerFail : MonoBehaviour {
 		if(coll.transform.name == playerName)
 		{
 			startDeath();
+            saveLevelName();
 		}
 	}
 
@@ -59,7 +61,17 @@ public class PlayerFail : MonoBehaviour {
 
 	private void loadFailLevel()
 	{
+
+        
+        //Debug.Log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> load failed level");
+        
 		Application.LoadLevel("FailedLevel");
 	}
+
+    private void saveLevelName()
+    {
+        //Debug.Log(">>>>>>>>>>>>>>>>>>>>>>Saved Level name: " + Application.loadedLevelName);
+        PlayerPrefs.SetString("PreviousLevel", Application.loadedLevelName);
+    }
 
 }
