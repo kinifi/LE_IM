@@ -5186,6 +5186,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: 9e6383add509387499bc287731c1713b, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dda909875db113f4c8eddfda1f6512fd,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e6383add509387499bc287731c1713b, type: 2}
   m_RootGameObject: {fileID: 1752796788}
@@ -7157,7 +7162,6 @@ GameObject:
   - 212: {fileID: 693194913}
   - 60: {fileID: 693194912}
   - 114: {fileID: 693194911}
-  - 82: {fileID: 693194910}
   m_Layer: 0
   m_Name: candy_01
   m_TagString: Untagged
@@ -7165,65 +7169,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &693194910
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 058a096e016b90a4199a2111ca61f97f,
-    type: 2}
-  m_PrefabInternal: {fileID: 953507947}
-  m_GameObject: {fileID: 693194909}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: d6bd8b2fc49e9a94f81e2a0554b3827b, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &693194911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7236,8 +7181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e72706449fdc674cbe2f179df9206d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Halloween: 1
-  doNotCollect: 0
+  Halloween: 0
+  doNotCollect: 1
+  candySound: {fileID: 100000, guid: 6ac67a928b353af44939c25254b45711, type: 2}
 --- !u!60 &693194912
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9960,7 +9906,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 36ac71577b37689408a34f6bba71f316, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dda909875db113f4c8eddfda1f6512fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &927333440
 Transform:
@@ -10821,8 +10767,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e72706449fdc674cbe2f179df9206d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Halloween: 1
+  Halloween: 0
   doNotCollect: 1
+  candySound: {fileID: 0}
 --- !u!50 &982821862
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -12112,7 +12059,6 @@ GameObject:
   - 212: {fileID: 1104218251}
   - 60: {fileID: 1104218250}
   - 114: {fileID: 1104218249}
-  - 82: {fileID: 1104218248}
   m_Layer: 0
   m_Name: candy_01
   m_TagString: Untagged
@@ -12120,65 +12066,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1104218248
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 058a096e016b90a4199a2111ca61f97f,
-    type: 2}
-  m_PrefabInternal: {fileID: 799602712}
-  m_GameObject: {fileID: 1104218247}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: d6bd8b2fc49e9a94f81e2a0554b3827b, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &1104218249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12191,8 +12078,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e72706449fdc674cbe2f179df9206d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Halloween: 1
-  doNotCollect: 0
+  Halloween: 0
+  doNotCollect: 1
+  candySound: {fileID: 100000, guid: 6ac67a928b353af44939c25254b45711, type: 2}
 --- !u!60 &1104218250
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14671,7 +14559,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 36ac71577b37689408a34f6bba71f316, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dda909875db113f4c8eddfda1f6512fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1290054041
 Transform:
@@ -17883,6 +17771,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: 9e6383add509387499bc287731c1713b, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dda909875db113f4c8eddfda1f6512fd,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e6383add509387499bc287731c1713b, type: 2}
   m_RootGameObject: {fileID: 1290054037}
@@ -18478,7 +18371,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.77814102
+  aspectRatio: 1.7791642
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -19046,7 +18939,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 36ac71577b37689408a34f6bba71f316, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dda909875db113f4c8eddfda1f6512fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1752796792
 Transform:
@@ -19163,6 +19056,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: 9e6383add509387499bc287731c1713b, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dda909875db113f4c8eddfda1f6512fd,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e6383add509387499bc287731c1713b, type: 2}
   m_RootGameObject: {fileID: 927333436}
@@ -19277,6 +19175,11 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: 0aa1eab02c8b36444909ef9e27eb21da, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aa67e6a75f7bbfe489b5340b2d619e66,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0aa1eab02c8b36444909ef9e27eb21da, type: 2}
   m_RootGameObject: {fileID: 1890131310}
@@ -19831,7 +19734,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 90f6e3fbc44a26e458ed841b0f6afe29, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa67e6a75f7bbfe489b5340b2d619e66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1890131314
 Transform:
