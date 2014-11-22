@@ -17,19 +17,11 @@ public class LisForLearnScri : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 
 		if(Input.GetButtonDown("LearnButton") && Application.loadedLevelName == "Options")
 		{
+			Debug.Log ("LearnButton was pressed.");
 			OptionsToggle ();
-		}
-		else if(Application.loadedLevelName == "Options")
-		{
-			Debug.Log ("This is the level loaded name: " + Application.loadedLevelName);
-			if(Panel.activeSelf == true)
-			{
-				OptionsToggle ();
-			}
 		}
 		else if(Input.GetButtonDown("LearnButton") && Application.loadedLevelName != "Options")
 		{
@@ -37,6 +29,11 @@ public class LisForLearnScri : MonoBehaviour {
 			{
 				togglePanel();
 			}
+		}
+		if(Input.GetButtonDown("Back") && Panel.activeSelf == true)
+		{
+			Panel.SetActive(false);
+			Debug.Log ("The Learn panel should go away.");
 		}
 	}
 
@@ -100,10 +97,13 @@ public class LisForLearnScri : MonoBehaviour {
 		if(Panel.activeSelf == false)
 		{
 			Panel.SetActive(true);
+			Debug.Log ("The Learn panel should be visible.");
 		}
-		else
+		else if(Panel.activeSelf == true)
 		{
 			Panel.SetActive(false);
+			Debug.Log ("The Learn panel should go away.");
 		}
 	}
+
 }
