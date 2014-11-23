@@ -28,7 +28,7 @@ public class MenuButtons : MonoBehaviour {
 
 	public void goToCampaignLevels() {
 
-		Application.LoadLevel("Tutorial_Dungeon");
+		Application.LoadLevel("IntroScene");
 		Debug.Log("Loading Campaign");
 	}
 

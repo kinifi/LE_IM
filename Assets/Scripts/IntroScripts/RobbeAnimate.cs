@@ -21,16 +21,21 @@ public class RobbeAnimate : MonoBehaviour {
 	private bool scaleGuide = false;
 	private float smooth = 2.0f;
 
-
 	//Robbe text configs
 	public GameObject[] textObjects;
 	private GameObject textOff;
-	
+
+	//Robbe movement configs
 	public Transform photoPosition;
+	public Transform exitPosition;
 	private Vector3 nextPosition;
 	private float speed = 5.0f;
 	private bool moveRobbe = false;
 	private bool stopUpdateCall = false;
+
+	//Audio Configs
+	public AudioClip[] sounds;
+	private AudioSource _speaker;
 
 	// Use this for initialization
 	void Start () 
@@ -46,6 +51,7 @@ public class RobbeAnimate : MonoBehaviour {
 		_guideSprite = GameObject.Find ("GuideGrow").GetComponent<SpriteRenderer>();
 		//Other initalization
 		_photoPoint = GameObject.Find ("PointofPhoto");
+		_speaker = GameObject.Find ("Speaker").GetComponent<AudioSource>();
 
 		//Upkeep
 		moveRobbe = false;
@@ -82,6 +88,11 @@ public class RobbeAnimate : MonoBehaviour {
 			stopUpdateCall = true;
 		}
 
+		if(nextPosition.x >= exitPosition.position.x)
+		{
+			_robbe.GetComponent<SpriteRenderer>().enabled = false;
+		}
+
 		//scales guide down
 		if(scaleGuide == true)
 		{
@@ -116,6 +127,8 @@ public class RobbeAnimate : MonoBehaviour {
 	//Act1 part1
 	private void StartRobbe ()
 	{
+		//play breathing
+		_robbe.audio.PlayOneShot(sounds[0]);
 		//Displays first text
 		TurnOnText(textObjects[0]);
 		//Starts the photo and guide particle
@@ -154,6 +167,8 @@ public class RobbeAnimate : MonoBehaviour {
 		_guide.Stop();
 		//Starts Robbe's movement controlled in update
 		moveRobbe = true;
+		//play running sound
+		_speaker.PlayOneShot(sounds[2], 1.0f);
 	}
 
 	//Act 3 part 1a
@@ -168,6 +183,8 @@ public class RobbeAnimate : MonoBehaviour {
 
 		//Displays the third text
 		TurnOnText(textObjects[3]);
+		//play crash sound
+		_speaker.PlayOneShot(sounds[3]);
 		//Turns off the large polaroid
 		Invoke ("PolaroidGrowB", 2.5f);
 	}
@@ -189,6 +206,8 @@ public class RobbeAnimate : MonoBehaviour {
 		//Grows guide
 		_guideSprite.enabled = true;
 		guideAnim.enabled = true;
+		//play guide crumple sound
+		_speaker.PlayOneShot(sounds[4]);
 		Debug.Log ("The guide should be growing");
 		
 		//Displays the fifth text
@@ -210,6 +229,8 @@ public class RobbeAnimate : MonoBehaviour {
 	{
 		//Shrings guide
 		guideAnim.SetBool("TimeToShrink", true);
+		//play guide crumple sound
+		_speaker.PlayOneShot(sounds[4]);
 		Debug.Log ("Guide should be shrinking.");
 		//Sets the update bool to true so the guide shrinks
 		scaleGuide = true;
@@ -232,12 +253,14 @@ public class RobbeAnimate : MonoBehaviour {
 	private void DecideToLeave()
 	{
 		moveRobbe = true;
+		//play running sound
+		_speaker.PlayOneShot(sounds[2], 1.0f);
 		//Starts first dungeon
 		Invoke("LaunchGame", 1.5f);
 	}
 
 	//Starts first dungeon
-	private void LaunchGame ()
+	public void LaunchGame ()
 	{
 		Debug.Log("Launching first Dungeon");
 		Application.LoadLevel("Tutorial_Dungeon");
@@ -246,7 +269,11 @@ public class RobbeAnimate : MonoBehaviour {
 	//Controls the Sprite Renderer state - on
 	private void TurnOnText (GameObject textOn)
 	{
+		//play thought sound
+		_speaker.PlayOneShot(sounds[1], 0.35f);
+		//turn on render
 		textOn.GetComponent<SpriteRenderer>().enabled = true;
+		//assign textOff to current text
 		textOff = textOn;
 		Invoke("TurnOffText", 2.0f);
 	}
