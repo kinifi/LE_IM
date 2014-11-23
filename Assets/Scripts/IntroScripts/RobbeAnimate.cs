@@ -18,6 +18,8 @@ public class RobbeAnimate : MonoBehaviour {
 	//Quick Guide
 	private SpriteRenderer _guideSprite;
 	public ParticleSystem _guide;
+	private bool scaleGuide = false;
+	private float smooth = 2.0f;
 
 
 	//Robbe text configs
@@ -47,6 +49,7 @@ public class RobbeAnimate : MonoBehaviour {
 
 		//Upkeep
 		moveRobbe = false;
+		scaleGuide = false;
 
 		//Begin Scene Animations
 		Invoke ("StartRobbe", 1.5f);	
@@ -77,6 +80,36 @@ public class RobbeAnimate : MonoBehaviour {
 			Invoke ("PolaroidGrow", 1.0f);
 			//prevents this from running again
 			stopUpdateCall = true;
+		}
+
+		//scales guide down
+		if(scaleGuide == true)
+		{
+			//gets the local scale of the guide
+			float gX = GameObject.Find ("GuideGrow").transform.localScale.x;
+			float gY = GameObject.Find ("GuideGrow").transform.localScale.y;
+			float gZ = GameObject.Find ("GuideGrow").transform.localScale.z;
+
+			//checks the scale is not negative
+			if(gX > 0.0f)
+			{
+				//shrinks the value
+				gX -= 0.15f;
+				gY -= 0.15f;
+			}
+
+			//sets the updated value to a temp variable
+			Vector3 guideScaleUpdate = new Vector3(gX, gY, gZ);
+
+			//gets the curent position
+			Vector3 gPos = GameObject.Find ("GuideGrow").transform.position;
+			Vector3 rPos = GameObject.Find ("Robbe_Intro").transform.position;
+			//sets the updated position to a temp variable
+			GameObject.Find ("GuideGrow").transform.position = Vector3.Lerp(gPos, rPos, smooth * Time.deltaTime);
+
+			//updates the local scale of the guide
+			GameObject.Find ("GuideGrow").transform.localScale = guideScaleUpdate;
+
 		}
 	}
 
@@ -160,8 +193,8 @@ public class RobbeAnimate : MonoBehaviour {
 		
 		//Displays the fifth text
 		TurnOnText(textObjects[5]);
-		//Turns off the large polaroid
-		Invoke ("GuideGrowB", 4.0f);
+		//Invokes next text
+		Invoke ("GuideGrowB", 2.5f);
 	}
 
 	//Act 3 part 2b
@@ -169,21 +202,26 @@ public class RobbeAnimate : MonoBehaviour {
 	{
 		//Displays the fifth text
 		TurnOnText(textObjects[6]);
-		//Invokes GuideShrink
-		Invoke ("GuideShrink", 4.0f);
-		Debug.Log ("Guide should be shrinking.");
+		//Invokes the Guide to Shrink
+		Invoke ("GuideShrink", 2.5f);
 	}
 
-	private void GuideShrink()
+	private void GuideShrink ()
 	{
+		//Shrings guide
 		guideAnim.SetBool("TimeToShrink", true);
+		Debug.Log ("Guide should be shrinking.");
+		//Sets the update bool to true so the guide shrinks
+		scaleGuide = true;
 		//Invokes turns off the guide
-		Invoke ("GuideReset", 1.0f);
+		Invoke ("GuideReset", 2.5f);
 	}
 
 	//Act 3 part 2c
 	private void GuideReset ()
 	{
+		//Sets the update bool to false
+		scaleGuide = false;
 		//Turn off the guide
 		_guideSprite.enabled = false;
 		//Display last text and move robbe off
@@ -195,13 +233,14 @@ public class RobbeAnimate : MonoBehaviour {
 	{
 		moveRobbe = true;
 		//Starts first dungeon
-		Invoke("LaunchGame", 2.0f);
+		Invoke("LaunchGame", 1.5f);
 	}
 
 	//Starts first dungeon
 	private void LaunchGame ()
 	{
 		Debug.Log("Launching first Dungeon");
+		Application.LoadLevel("Tutorial_Dungeon");
 	}
 
 	//Controls the Sprite Renderer state - on
@@ -217,5 +256,4 @@ public class RobbeAnimate : MonoBehaviour {
 	{
 		textOff.GetComponent<SpriteRenderer>().enabled = false;
 	}
-
 }
