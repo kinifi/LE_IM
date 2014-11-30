@@ -96,6 +96,8 @@ public class StoryStory : MonoBehaviour {
 		if(storyChapter%4 == 0)
 		{
 			Debug.Log("Memory Complete!!");
+			//saves completed memory to playerPrefs
+			PlayerPrefs.SetString(textForTitle, "completed");
 			//Increments the next story arch 
 			int nextChapter = (int)Mathf.Repeat(storyArch + 1, storyTitleArray.Length);
 			//Updates PlayerPref
