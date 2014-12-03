@@ -24,6 +24,8 @@ public class LevelMemLoader : MonoBehaviour {
 		{
 			levelUnlocked = PlayerPrefs.GetInt("levelUnlock");
             Debug.Log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + levelUnlocked);
+            
+            /*
             //check if the achievements need to be unlocked
             if(levelUnlocked >= 15)
             {
@@ -42,6 +44,7 @@ public class LevelMemLoader : MonoBehaviour {
                 Debug.Log("less than 15 levels unlocked");
             }
 
+            */
 
 			if(levelUnlocked >= Levels.Length)
 			{
