@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SteamStats : MonoBehaviour {
 
-	public UILabel NumGames, NumDeathsByFalling, NumDeathsBySpikes, NumJumps, NumTrampJumps, HalloweenCandies;
+	public UILabel NumGames, NumDeathsByFalling, NumDeathsBySpikes, NumJumps, NumTrampJumps, HalloweenCandies, NumBossDeaths;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +23,7 @@ public class SteamStats : MonoBehaviour {
 		NumDeathsByFalling.text = "Number of Deaths By Falling: " + SteamManager.StatsAndAchievements.m_nTotalNumDeathByFalling;
 		NumDeathsBySpikes.text = "Number of Deaths By Spikes: " + SteamManager.StatsAndAchievements.m_nTotalNumDeathBySpikes;
 		//HalloweenCandies.text = "Number of Halloween Candies: " + SteamManager.StatsAndAchievements.m_nTotalNumHalloweenCandies;
+        NumBossDeaths.text = "Number of Bosses Killed: " + SteamManager.StatsAndAchievements.m_nTotalNumBossesDefeated;
 	}
 
 	public void backToMain() {
