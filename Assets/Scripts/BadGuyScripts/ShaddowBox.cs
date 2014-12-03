@@ -73,7 +73,7 @@ public class ShaddowBox : MonoBehaviour {
 				Instantiate(bowGolden, pos, Quaternion.identity);
 			}
 			//destroy object
-			Invoke ("DestroyObj", 0.25f);
+			Invoke ("DestroyObj", 0.05f);
 		}
 
 		if(other.gameObject.tag == "Player")
