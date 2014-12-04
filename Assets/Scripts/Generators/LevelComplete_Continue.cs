@@ -19,6 +19,9 @@ public class LevelComplete_Continue : MonoBehaviour {
 		Debug.Log ("The exit door has been colided by!!! "+Player);
 		if(Player.gameObject.tag == "Player")
 		{
+			//Set tutorial complete to true
+			GameObject.Find ("Dungeon Generator").GetComponent<MapGenerator>().tutorialDone = true;
+
 			if(robbeContinues == null)
 			{
 				//Find Robbe's controller and prevent his movement.
@@ -59,6 +62,8 @@ public class LevelComplete_Continue : MonoBehaviour {
 				_bows = GameObject.Find("Player").GetComponent<Inventory>().Arrows;
 				_keys = GameObject.Find("Player").GetComponent<Inventory>().Keys;
 				SetInventoryToPlayerPref (_bows, _keys, _completed);
+
+				//Start Story Scene
 				LoadStoryScreen();
 			}
 		}

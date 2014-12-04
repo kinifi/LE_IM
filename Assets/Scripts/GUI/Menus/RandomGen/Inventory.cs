@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Inventory : MonoBehaviour {
 
-	public int Arrows, Keys, Completed;
+
 	private float timer = 2.0f;
 	private int x = 20, y = 20;
 	public bool showInventory = false;
@@ -15,16 +15,15 @@ public class Inventory : MonoBehaviour {
 	private int _keys;
 	private int _completed;
 
+	[System.NonSerialized]
+	public int Arrows, Keys, Completed;
+
 	// Use this for initialization
-	void Start () {
-		//Get starting inventory
-		_arrows = PlayerPrefs.GetInt("bow");
-		_keys = PlayerPrefs.GetInt("keys");
-		_completed = PlayerPrefs.GetInt("completed");
-		//Set starting inventory
-		Arrows = _arrows;
-		Keys = _keys;
-		Completed = _completed;
+	void Awake () {
+
+		GetInventory();
+		SetInventory();
+
 	}
 
 	void Update() {
@@ -49,6 +48,22 @@ public class Inventory : MonoBehaviour {
 			}
 		}
 
+	}
+
+	public void GetInventory()
+	{
+		//Get starting inventory
+		_arrows = PlayerPrefs.GetInt("bow");
+		_keys = PlayerPrefs.GetInt("keys");
+		_completed = PlayerPrefs.GetInt("completed");
+	}
+
+	public void SetInventory()
+	{
+		//Set starting inventory
+		Arrows = _arrows;
+		Keys = _keys;
+		Completed = _completed;
 	}
 	
 	void OnGUI() {

@@ -29,12 +29,11 @@ public class LevelMemLoader : MonoBehaviour {
             //check if the achievements need to be unlocked
             if(levelUnlocked >= 15)
             {
-                SteamManager.StatsAndAchievements.Unlock_Halfway_There_Achievement();
+               
                 Debug.Log("15 or more levels unlocked");
                 
                 if (levelUnlocked >= 30)
                 {
-                    SteamManager.StatsAndAchievements.Unlock_Full_Tank_Achievement();
                     Debug.Log("30 or more");
                 }
 

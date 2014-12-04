@@ -11,21 +11,18 @@ public class MapGenerator : MonoBehaviour {
 	private string posNumString;
 	private int basicRoomNum;
 	private int downRoomNum;
+	public bool tutorialDone = false;
 
 	public GameObject controlsMessage;
 	public GameObject completeMessage;
-	private bool tutorialDone = false;
-	
+
 	private void Start() 
 	{
-		//check to see if the tutorial has been complete
-		isTutorialComplete();
 
 		if(tutorialDone == false)
 		{
 			LoadControlsMessage();
-			GenerateTutorialMatrix();
-			FillInTheMap();
+			NewDungeon();
 			Debug.Log ("Tutorial Dungeon Loaded!");
 		}
 		else if(tutorialDone == true && Application.loadedLevel < 12)
