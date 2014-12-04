@@ -42,8 +42,9 @@ public class Quiver : MonoBehaviour {
 					bow -= 1;
 					Inventory arrowCount = GameObject.Find("Player").GetComponent<Inventory>();
 					arrowCount.Arrows -= 1;
-					Debug.Log (bow);
+					Debug.Log ("This is the bow count " + bow + " and the arrow count " + arrowCount.Arrows);
 					Invoke("AllowFire", 0.5f);
+					arrowCount.InventoryOnTimer();
 				}
 			}
 			if(Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetAxis("ShootUD") > 0.9f)
@@ -57,8 +58,9 @@ public class Quiver : MonoBehaviour {
 					bow -= 1;
 					Inventory arrowCount = GameObject.Find("Player").GetComponent<Inventory>();
 					arrowCount.Arrows -= 1;
-					Debug.Log (bow);
+					Debug.Log ("This is the bow count " + bow + " and the arrow count " + arrowCount.Arrows);
 					Invoke("AllowFire", 0.5f);
+					arrowCount.InventoryOnTimer();
 				}
 			}
 			if(Input.GetKeyDown(KeyCode.RightArrow)|| Input.GetAxis("ShootLR") > 0.9f)
@@ -72,7 +74,8 @@ public class Quiver : MonoBehaviour {
 					bow -= 1;
 					Inventory arrowCount = GameObject.Find("Player").GetComponent<Inventory>();
 					arrowCount.Arrows -= 1;
-					Debug.Log (bow);
+					arrowCount.InventoryOnTimer();
+					Debug.Log ("This is the bow count " + bow + " and the arrow count " + arrowCount.Arrows);
 					Invoke("AllowFire", 0.5f);
 				}
 			}
@@ -87,7 +90,8 @@ public class Quiver : MonoBehaviour {
 					bow -= 1;
 					Inventory arrowCount = GameObject.Find("Player").GetComponent<Inventory>();
 					arrowCount.Arrows -= 1;
-					Debug.Log (bow);
+					arrowCount.InventoryOnTimer();
+					Debug.Log ("This is the bow count " + bow + " and the arrow count " + arrowCount.Arrows);
 					Invoke("AllowFire", 0.5f);
 				}
 			}

@@ -26,6 +26,10 @@ public class RobbeController : MonoBehaviour {
 	private CharacterController2D _controller;
 	private Animator _animator;
 
+	//Inventory configs
+	Inventory _arrowCount;
+	Quiver _bowCount;
+
 	//public vars for other scripts
 	public Vector3 playervelocity;
 	
@@ -159,6 +163,43 @@ public class RobbeController : MonoBehaviour {
 		else if(col.gameObject.tag == "Bow")
 		{
 			audio.PlayOneShot(clips[7], 0.7F);
+			if(col.gameObject.GetComponent<CollectBow>() != null)
+			{
+				//Inventory add
+				//Debug.Log("You found a bow!");
+				_arrowCount = GameObject.Find("Player").GetComponent<Inventory>();
+				_arrowCount.Arrows += 1;
+				Debug.Log ("Your Arrow as been inventoried!!!"+_arrowCount.Arrows);
+				
+				//Quiver add
+				//Debug.Log("You grabbed a bow!");
+				_bowCount = GameObject.Find("Player").GetComponent<Quiver>();
+				_bowCount.bow += 1;
+				Debug.Log ("This is the bow count" + _bowCount.bow);
+				//Update PlayerPrefs
+				PlayerPrefs.SetInt("bow", _bowCount.bow);
+				
+				_arrowCount.InventoryOnTimer();
+			}
+			else if (col.gameObject.GetComponent<CollectGoldenBow>() != null)
+			{
+				//Inventory add
+				//Debug.Log("You found a bow!");
+				_arrowCount = GameObject.Find("Player").GetComponent<Inventory>();
+				_arrowCount.Arrows += 5;
+				_arrowCount.startCollectTimer = true;
+				Debug.Log ("Your Arrow as been inventoried!!!"+_arrowCount.Arrows);
+				
+				//Quiver add
+				//Debug.Log("You grabbed a bow!");
+				_bowCount = GameObject.Find("Player").GetComponent<Quiver>();
+				_bowCount.bow += 5;
+				Debug.Log ("This is the bow count" + _bowCount.bow);
+				//Update PlayerPrefs
+				PlayerPrefs.SetInt("bow", _bowCount.bow);
+				
+				_arrowCount.InventoryOnTimer();
+			}
 			//Destroy object
 			Destroy(col.gameObject);
 		}

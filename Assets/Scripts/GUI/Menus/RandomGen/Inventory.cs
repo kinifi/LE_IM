@@ -23,7 +23,6 @@ public class Inventory : MonoBehaviour {
 
 		GetInventory();
 		SetInventory();
-
 	}
 
 	void Update() {
@@ -47,7 +46,6 @@ public class Inventory : MonoBehaviour {
 				toggleInventory();
 			}
 		}
-
 	}
 
 	public void GetInventory()
@@ -84,5 +82,10 @@ public class Inventory : MonoBehaviour {
 	private void toggleInventory()
 	{
 		showInventory = !showInventory;
+	}
+
+	public void InventoryOnTimer ()
+	{
+		startCollectTimer = true;
 	}
 }
