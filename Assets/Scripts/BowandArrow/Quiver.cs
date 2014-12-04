@@ -42,8 +42,12 @@ public class Quiver : MonoBehaviour {
 					bow -= 1;
 					Inventory arrowCount = GameObject.Find("Player").GetComponent<Inventory>();
 					arrowCount.Arrows -= 1;
+					//Update PlayerPrefs
+					PlayerPrefs.SetInt("bow", arrowCount.Arrows);
 					Debug.Log ("This is the bow count " + bow + " and the arrow count " + arrowCount.Arrows);
+					//Allow shooting in 0.5s
 					Invoke("AllowFire", 0.5f);
+					//Start HUD
 					arrowCount.InventoryOnTimer();
 				}
 			}
@@ -58,8 +62,12 @@ public class Quiver : MonoBehaviour {
 					bow -= 1;
 					Inventory arrowCount = GameObject.Find("Player").GetComponent<Inventory>();
 					arrowCount.Arrows -= 1;
+					//Update PlayerPrefs
+					PlayerPrefs.SetInt("bow", arrowCount.Arrows);
 					Debug.Log ("This is the bow count " + bow + " and the arrow count " + arrowCount.Arrows);
+					//Allow shooting in 0.5s
 					Invoke("AllowFire", 0.5f);
+					//Start HUD
 					arrowCount.InventoryOnTimer();
 				}
 			}
@@ -74,9 +82,13 @@ public class Quiver : MonoBehaviour {
 					bow -= 1;
 					Inventory arrowCount = GameObject.Find("Player").GetComponent<Inventory>();
 					arrowCount.Arrows -= 1;
-					arrowCount.InventoryOnTimer();
+					//Update PlayerPrefs
+					PlayerPrefs.SetInt("bow", arrowCount.Arrows);
 					Debug.Log ("This is the bow count " + bow + " and the arrow count " + arrowCount.Arrows);
+					//Allow shooting in 0.5s
 					Invoke("AllowFire", 0.5f);
+					//Start HUD
+					arrowCount.InventoryOnTimer();
 				}
 			}
 			if(Input.GetKeyDown(KeyCode.LeftArrow)|| Input.GetAxis("ShootLR") < -0.9f)
@@ -90,9 +102,13 @@ public class Quiver : MonoBehaviour {
 					bow -= 1;
 					Inventory arrowCount = GameObject.Find("Player").GetComponent<Inventory>();
 					arrowCount.Arrows -= 1;
-					arrowCount.InventoryOnTimer();
+					//Update PlayerPrefs
+					PlayerPrefs.SetInt("bow", arrowCount.Arrows);
 					Debug.Log ("This is the bow count " + bow + " and the arrow count " + arrowCount.Arrows);
+					//Allow shooting in 0.5s
 					Invoke("AllowFire", 0.5f);
+					//Start HUD
+					arrowCount.InventoryOnTimer();
 				}
 			}
 		}
