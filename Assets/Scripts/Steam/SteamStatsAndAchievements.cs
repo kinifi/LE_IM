@@ -13,7 +13,6 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		Trampolines_Forever,
 		Gen_Dungeon,
 		Tysjacha,
-        /*
 		Remain_Strong,
 		Conquer_the_Nightmare,
 		Peace_at_Last,
@@ -21,7 +20,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		Full_Tank,
 		Check_the_Memory_Book,
 		Nice_Game_Developers,
-         */
+        
 	};
 	
 	private Achievement_t[] m_Achievements = new Achievement_t[] {
@@ -30,8 +29,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		new Achievement_t(Achievement.Falling_Is_Fun, "Falling into the Darkness", ""),
 		new Achievement_t(Achievement.Trampolines_Forever,"Jump on a Trampoline 100 times", ""),
 		new Achievement_t(Achievement.Gen_Dungeon, "Generate A Dungeon in the Random Generation", ""),
-		new Achievement_t(Achievement.Tysjacha, "Fall for the 15th Time", ""),
-        /*
+		new Achievement_t(Achievement.Tysjacha, "Fall for the 15th Time", ""),       
 		new Achievement_t(Achievement.Remain_Strong, "Beat One Boss", ""),
 		new Achievement_t(Achievement.Conquer_the_Nightmare, "Beat Two Bosses", ""),
 		new Achievement_t(Achievement.Peace_at_Last, "Beat Three Bosses", ""),
@@ -39,7 +37,6 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		new Achievement_t(Achievement.Full_Tank, "Complete 100% of the Challenge Levels", ""),
 		new Achievement_t(Achievement.Check_the_Memory_Book, "Complete One Story Page", ""),
 		new Achievement_t(Achievement.Nice_Game_Developers, "Move a Crate. Have an Achievement", ""),
-         * */
 	};
 	
 	// Our GameID
@@ -137,7 +134,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 			
 		}
 		
-        /*
+        
 		/////////////////////////////////////////////////////
 		//////Evaluate the stat and see if the boss achievements
 		//////Should be unlocked
@@ -170,7 +167,6 @@ class SteamStatsAndAchievements : MonoBehaviour {
 			}
 			
 		}
-         * */
 		
 		
 		//Store stats in the Steam database if necessary
@@ -254,7 +250,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		m_bStoreStats = true;
 	}
 	
-    /*
+    
 
 	/// <summary>
 	/// Unlock_s the Nice Game Developers Achievement
@@ -293,7 +289,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		m_bStoreStats = true;
 	}
 	
-	*/
+	
      
 	/// <summary>
 	/// Unlock_s the falling_ is_ fun_ achievement.
