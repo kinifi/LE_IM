@@ -85,6 +85,7 @@ public class MemoryEnableScript : MonoBehaviour {
 		//Turn on polaroid image and Set Story Seven bool to true if complete
 		if(oneSevenStatus == "completed")
 		{
+			Debug.Log("Memory 7");
 			GameObject.Find ("MusicClassMemoryImage").GetComponent<SpriteRenderer>().enabled = true;
 			GameObject.Find ("MusicClassLabel").GetComponent<UILabel>().enabled = false;
 			MusicClass = true;
