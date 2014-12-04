@@ -148,29 +148,16 @@ public class ScaredController : MonoBehaviour {
 				//Get the needed game objects
 				GameObject resetRobbe = GameObject.Find ("Player");
 				GameObject respawn = GameObject.Find("Spawn_Location");
+				GameObject cameraView = GameObject.Find ("UI Root");
 
 				//Instantiate the death splash and overlay Robbe.  Destroy it and call the movement function.
 				kill = Instantiate(deathSplash, resetRobbe.transform.position, Quaternion.identity) as GameObject;
-				kill.transform.OverlayPosition(resetRobbe.transform);
+				kill.transform.OverlayPosition(cameraView.transform);
 				kill.transform.localScale = new Vector3(50.0f,50.0f,1.0f);
 
-				//Set Robbe's transform to the Spawn Location.
-				resetRobbe.transform.position = respawn.transform.position;
-
-				//Find the Smooth Flow script and disable it
-				Smooth_Follow _smthFollow = GameObject.Find("Camera").GetComponent<Smooth_Follow>();
-				_smthFollow.enabled = false;
-
-				//Find Robbe's controller and prevent his movement.
-				RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-				_robbe.enabled = false;
-				
-				//Find the LookDown camera and prevent its movement.
-				NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-				_lookdown.enabled = false;
+				resetRobbe.GetComponent<RobbeController>().DelayAllowMovement();
 
 				Destroy(kill, 2.5f);
-				Invoke("AllowRobbesMovement", 2.6f);
 			}
 		}
 		
@@ -197,6 +184,8 @@ public class ScaredController : MonoBehaviour {
 				//Change color to blood read and play death soundclip
 				_playerController.BossDeathAudios();
 				_renderer.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
+				//Increment Steam Stat
+				SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
 				Debug.Log("YOU KILLED THE BOSS!!!!");
 				//Invoke drop and destroy
 				Vector3 pos = transform.position;
@@ -208,20 +197,5 @@ public class ScaredController : MonoBehaviour {
 	private void ReturnToBaseColor()
 	{
 		_renderer.color = baseColor;
-	}
-
-	private void AllowRobbesMovement() 
-	{
-		//Find Robbe and allow his movement again.  Turn kinematic to false.
-		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-		_robbe.enabled = true;
-		
-		//Find the LookDown camera and allow its movement.
-		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-		_lookdown.enabled = true;
-
-		//Find the Smooth Flow script and enable it
-		Smooth_Follow _smthFollow = GameObject.Find("Camera").GetComponent<Smooth_Follow>();
-		_smthFollow.enabled = true;
 	}
 }

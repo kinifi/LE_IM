@@ -138,11 +138,17 @@ public class RobbeController : MonoBehaviour {
 			if(_right)
 			{
 				col.gameObject.rigidbody2D.AddForce(moveColR);
+				//Unlock Achievement
+				SteamManager.StatsAndAchievements.Unlock_Nice_Game_Developers_Achievement();
+				//Play crate noise
 				audio.PlayOneShot(clips[0], 0.45F);
 			}
 			else if(!_right)
 			{
 				col.gameObject.rigidbody2D.AddForce(moveColL);
+				//Unlock Achievement
+				SteamManager.StatsAndAchievements.Unlock_Nice_Game_Developers_Achievement();
+				//Play crate noise
 				audio.PlayOneShot(clips[0], 0.45F);
 			}
 		}

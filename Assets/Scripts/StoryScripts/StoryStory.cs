@@ -96,6 +96,8 @@ public class StoryStory : MonoBehaviour {
 	{
 		if(storyChapter%4 == 0)
 		{
+			//Unlock Achievement
+			SteamManager.StatsAndAchievements.Unlock_Check_the_Memory_Book();
 			Debug.Log("Memory Complete!!");
 			//saves completed memory to playerPrefs
 			PlayerPrefs.SetString(textForTitle, "completed");

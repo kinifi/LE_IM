@@ -99,6 +99,8 @@ public class GoblinBody : MonoBehaviour {
 				_renderer.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
 				_armRender.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
 				_headRender.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
+				//Increment Steam Stat
+				SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
 				Debug.Log("YOU KILLED THE BOSS!!!!");
 				//Invoke drop and destroy
 				Vector3 pos = transform.position;

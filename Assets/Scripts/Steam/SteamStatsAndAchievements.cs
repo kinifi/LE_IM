@@ -133,42 +133,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 			}
 			
 		}
-		
-        
-		/////////////////////////////////////////////////////
-		//////Evaluate the stat and see if the boss achievements
-		//////Should be unlocked
-		/////////////////////////////////////////////////////
-		foreach (Achievement_t achievement in m_Achievements)
-		{
-			if (achievement.m_bAchieved)
-				continue;
-			
-			switch (achievement.m_eAchievementID)
-			{
-			case Achievement.Remain_Strong:
-				if (m_nTotalNumBossesDefeated == 1)
-				{
-					UnlockAchievement(achievement);
-				}
-				break;
-			case Achievement.Conquer_the_Nightmare:
-				if (m_nTotalNumBossesDefeated == 2)
-				{
-					UnlockAchievement(achievement);
-				}
-				break;
-			case Achievement.Peace_at_Last:
-				if (m_nTotalNumBossesDefeated >= 3)
-				{
-					UnlockAchievement(achievement);
-				}
-				break;
-			}
-			
-		}
-		
-		
+
 		//Store stats in the Steam database if necessary
 		if (m_bStoreStats) {
 			// already set any achievements in UnlockAchievement
@@ -325,7 +290,40 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		//store the stats on the next frame
 		m_bStoreStats = true;
 	}
-	
+
+	/// <summary>
+	/// Unlock_s the boss_ defeat_ one_ achievement.
+	/// </summary>
+	public void Unlock_Boss_Defeat_One_Achievement() {
+		//set the achievement we want to unlock
+		SteamUserStats.SetAchievement("Remain_Strong");
+		
+		//store the stats on the next frame
+		m_bStoreStats = true;
+	}
+
+	/// <summary>
+	/// Unlock_s the boss_ defeat_ two_ achievement.
+	/// </summary>
+	public void Unlock_Boss_Defeat_Two_Achievement () {
+		//set the achievement we want to unlock
+		SteamUserStats.SetAchievement("Conquer_the_Nightmare");
+		
+		//store the stats on the next frame
+		m_bStoreStats = true;
+	}
+
+	/// <summary>
+	/// Unlock_s the boss_ defeat_ three_ achievement.
+	/// </summary>
+	public void Unlock_Boss_Defeat_Three_Achievement () {
+		//set the achievement we want to unlock
+		SteamUserStats.SetAchievement("Conquer_the_Nightmare");
+		
+		//store the stats on the next frame
+		m_bStoreStats = true;
+	}
+
 	//-----------------------------------------------------------------------------
 	// Purpose: We have stats data from Steam. It is authoritative, so update
 	//			our data with those results now.
@@ -530,6 +528,21 @@ class SteamStatsAndAchievements : MonoBehaviour {
 	public void incrementNumBossesDefeated()
 	{
 		m_nTotalNumBossesDefeated++;
+
+		if(m_nTotalNumBossesDefeated >= 1)
+		{
+			Unlock_Boss_Defeat_One_Achievement();
+		}
+		else if(m_nTotalNumBossesDefeated >= 2)
+		{
+			Unlock_Boss_Defeat_Two_Achievement();
+		}
+		else
+		{
+			Unlock_Boss_Defeat_Three_Achievement();
+		}
+
+		Debug.Log("Defeated A Boss. Adding to Stat");
 		setStats();
 	}
 	

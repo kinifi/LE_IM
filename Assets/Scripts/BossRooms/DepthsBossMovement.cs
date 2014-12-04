@@ -105,6 +105,8 @@ public class DepthsBossMovement : MonoBehaviour {
 				//Change color to blood read and play death soundclip
 				_playerController.BossDeathAudios();
 				_renderer.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
+				//Inrement Steam Stat
+				SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
 				Debug.Log("YOU KILLED THE BOSS!!!!");
 				//Invoke drop and destroy
 				Vector3 pos = transform.position;
