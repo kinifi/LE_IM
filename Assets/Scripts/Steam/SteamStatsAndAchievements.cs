@@ -318,7 +318,7 @@ class SteamStatsAndAchievements : MonoBehaviour {
 	/// </summary>
 	public void Unlock_Boss_Defeat_Three_Achievement () {
 		//set the achievement we want to unlock
-		SteamUserStats.SetAchievement("Conquer_the_Nightmare");
+		SteamUserStats.SetAchievement("Peace_at_Last");
 		
 		//store the stats on the next frame
 		m_bStoreStats = true;
@@ -533,11 +533,11 @@ class SteamStatsAndAchievements : MonoBehaviour {
 		{
 			Unlock_Boss_Defeat_One_Achievement();
 		}
-		else if(m_nTotalNumBossesDefeated >= 2)
+		if(m_nTotalNumBossesDefeated >= 2)
 		{
 			Unlock_Boss_Defeat_Two_Achievement();
 		}
-		else
+		if(m_nTotalNumBossesDefeated >= 3)
 		{
 			Unlock_Boss_Defeat_Three_Achievement();
 		}
