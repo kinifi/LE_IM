@@ -5,8 +5,10 @@ public class ShortStories : MonoBehaviour {
 
 	//Configs - each story needs a string and a string[];
 	public ArrayList shortStoriesArray = new ArrayList();
-	public int storyCount = 5;
-	public string[] storyTitlesArray = new string[5] {"0", "1", "2", "3", "4"};
+	public int storyCount = 6;
+
+	//BE SURE TO SET IN INSPECTOR!!!!!
+	public string[] storyTitlesArray = new string[6] {"0", "1", "2", "3", "4", "5"};
 
 
 	public string storyTitle1;
@@ -28,6 +30,10 @@ public class ShortStories : MonoBehaviour {
 	public string storyTitle5;
 	private string story5;
 	private string[] story5Array;
+
+	public string storyTitle6;
+	private string story6;
+	private string[] story6Array;
 
 
 	// Use this for initialization
@@ -80,6 +86,14 @@ public class ShortStories : MonoBehaviour {
 		//Convert to string array
 		story5Array = story5.Split('/');
 		//Debug.Log ("This is shortstoryarray5 element 0" + story5Array[0]);
+
+		//Set Story Title
+		storyTitle6 = "Music Class";
+		//Story as paragraph
+		story6 = @"Robbe found himself in Music Class with Mrs. Louis. 'Today we will be discussing a favorite of mine, truly a classic! In the Hall of the Mountain King'/Jack rolled his eyes, but Mrs Louis saw and threatened to sit on him. Rumor had it she once sat on a student and the kid was never the same. Jack looked a little scared./'In the Norwegian play Peer Gynt a troll king rules in a mountain.' Mrs. Louis explained.  'A troll?! Cool!' Jack shouted. 'Yes indeed,' replied Mrs. Louis 'and his troll daughter.'/The way she said it made Robbe wonder if she knew the trolls personally. 'Now close your eyes and listen' Mrs. Louis pressed play on the stereo.  The song started slow and low then grew./With his eyes shut, Robbe could almost see the green troll king with his imps and wisps dancing about.  Somewhere in the distance Mrs. Louis was whispering 'tee-tee tee-tee tah.'";
+		//Convert to string array
+		story6Array = story6.Split('/');
+		//Debug.Log ("This is shortstoryarray6 element 0" + story6Array[0]);
 
 		/*//Set Story Title
 		storyTitle# = "";
@@ -138,6 +152,15 @@ public class ShortStories : MonoBehaviour {
 			//Debug.Log ("This is the fifth shortstoriesarray: " + shortStoriesArray);
 		}
 
+		for (int i = 0; i < story6Array.Length; i++)
+		{
+			string line6 = story6Array[i].ToString();
+			//Debug.Log ("This is the value of line#: " + line#);
+			
+			shortStoriesArray.Add(line6);
+			//Debug.Log ("This is the sixth shortstoriesarray: " + shortStoriesArray);
+		}
+
 		/*for (int i = 0; i < story#Array.Length; i++)
 		{
 			string line# = story#Array[i].ToString();
@@ -156,6 +179,8 @@ public class ShortStories : MonoBehaviour {
 		storyTitlesArray[2] = storyTitle3;
 		storyTitlesArray[3] = storyTitle4;
 		storyTitlesArray[4] = storyTitle5;
+		storyTitlesArray[5] = storyTitle6;
+		//storyTitleArray[#] = storyTitle#;
 	}
 
 }

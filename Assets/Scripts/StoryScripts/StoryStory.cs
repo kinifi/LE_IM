@@ -71,7 +71,8 @@ public class StoryStory : MonoBehaviour {
 		textForTitle = GameObject.Find("StoryTitle").GetComponent<UILabel>().text;
 		//Sets current story title text to temp variable
 		textTitle = storyTitleArray[storyArch];
-		//Debug.Log("This is label text: " + textForScreen);
+		Debug.Log ("This is the story title" + storyArch);
+		Debug.Log("This is label text: " + textForScreen);
 		textForTitle = textTitle;
 		//Debug.Log("This is title text: " + textForTitle);
 	}

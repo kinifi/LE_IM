@@ -22,9 +22,6 @@ public class CollectBow : MonoBehaviour {
 			//Debug.Log("You grabbed a bow!");
 			_bowCount = GameObject.Find("Player").GetComponent<Quiver>();
 			_bowCount.bow += 1;
-
-			//Destroy object
-			Destroy(this.gameObject);
 		}
 	}
 }

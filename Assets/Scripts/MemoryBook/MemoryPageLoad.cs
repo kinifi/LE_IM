@@ -84,6 +84,14 @@ public class MemoryPageLoad : MonoBehaviour {
 				Debug.Log("All Alone Story Should Display");
 			}
 			break;
+		case "MusicClass":
+			//if the memory has been completed, calls the Music Class Story Page
+			if(_memEnable.MusicClass == true)
+			{
+				DisplayPage("MusicClassStoryPage");
+				Debug.Log("Music Class Story Should Display");
+			}
+			break;
 		default:
 			//Default message if something goes wrong
 			Debug.Log ("Something went wrong assigning the story page");

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class CollectGoldenBow : MonoBehaviour {
@@ -11,7 +11,6 @@ public class CollectGoldenBow : MonoBehaviour {
 	{
 		if(Player.gameObject.tag == "Player")
 		{
-			
 			//Inventory add
 			//Debug.Log("You found a bow!");
 			_arrowCount = GameObject.Find("Player").GetComponent<Inventory>();
@@ -23,9 +22,6 @@ public class CollectGoldenBow : MonoBehaviour {
 			//Debug.Log("You grabbed a bow!");
 			_bowCount = GameObject.Find("Player").GetComponent<Quiver>();
 			_bowCount.bow += 5;
-			
-			//Destroy object
-			Destroy(this.gameObject);
 		}
 	}
 }

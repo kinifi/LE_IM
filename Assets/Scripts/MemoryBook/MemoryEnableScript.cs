@@ -10,6 +10,7 @@ public class MemoryEnableScript : MonoBehaviour {
 	private string oneFourStatus;
 	private string oneFiveStatus;
 	private string oneSixStatus;
+	private string oneSevenStatus;
 
 	//MemoryPageBool configs
 	public bool Crash;
@@ -18,6 +19,7 @@ public class MemoryEnableScript : MonoBehaviour {
 	public bool Archery;
 	public bool TheGirlCousin;
 	public bool AllAlone;
+	public bool MusicClass;
 
 	// Use this for initialization
 	void Awake () 
@@ -77,6 +79,15 @@ public class MemoryEnableScript : MonoBehaviour {
 			GameObject.Find ("AllAloneMemoryImage").GetComponent<SpriteRenderer>().enabled = true;
 			GameObject.Find ("AllAloneLabel").GetComponent<UILabel>().enabled = false;
 			AllAlone = true;
+		}
+		//GetPlayerPrefs for Seventh Story
+		oneSevenStatus = PlayerPrefs.GetString("Music Class");
+		//Turn on polaroid image and Set Story Seven bool to true if complete
+		if(oneSevenStatus == "completed")
+		{
+			GameObject.Find ("MusicClassMemoryImage").GetComponent<SpriteRenderer>().enabled = true;
+			GameObject.Find ("MusicClassLabel").GetComponent<UILabel>().enabled = false;
+			MusicClass = true;
 		}
 	}
 }
