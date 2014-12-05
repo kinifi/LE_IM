@@ -38,11 +38,11 @@ Shader "Hidden/FastBloom" {
 			o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
         	o.uv = v.texcoord;		
         	
-        #if UNITY_UV_STARTS_AT_TOP
-        	o.uv2 = v.texcoord;				
-        	if (_MainTex_TexelSize.y < 0.0)
-        		o.uv.y = 1.0 - o.uv.y;
-        #endif
+        //#if UNITY_UV_STARTS_AT_TOP
+        	//o.uv2 = v.texcoord;				
+        	//if (_MainTex_TexelSize.y < 0.0)
+        		//o.uv.y = 1.0 - o.uv.y;
+        //#endif
         	        	
 			return o; 
 		}
