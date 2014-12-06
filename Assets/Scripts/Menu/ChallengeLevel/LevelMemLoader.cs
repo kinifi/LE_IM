@@ -5,7 +5,6 @@ public class LevelMemLoader : MonoBehaviour {
 
 	//The level 1 is always unlocked
 	private int levelUnlocked = 1;
-
 	public UIButton[] Levels;
 
 	// Use this for initialization
@@ -23,35 +22,17 @@ public class LevelMemLoader : MonoBehaviour {
 		if(PlayerPrefs.HasKey("levelUnlock"))
 		{
 			levelUnlocked = PlayerPrefs.GetInt("levelUnlock");
-            Debug.Log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + levelUnlocked);
-            
-            
-            //check if the achievements need to be unlocked
-            if(levelUnlocked >= 15)
-            {
-               
-                Debug.Log("15 or more levels unlocked");
-                
-                if (levelUnlocked >= 30)
-                {
-                    Debug.Log("30 or more");
-                }
-
-            }
-            else
-            {
-                Debug.Log("less than 15 levels unlocked");
-            }
-
-            
+            //Debug.Log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + levelUnlocked);
 
 			if(levelUnlocked >= Levels.Length)
 			{
 				levelUnlocked = Levels.Length;
 
 			}
+            // Call levels to be unlocked 
 			unlockLevels();
-			Debug.Log("Exists:" + levelUnlocked);
+			
+            Debug.Log("Exists:" + levelUnlocked);
 
 		}
 		else
@@ -66,18 +47,22 @@ public class LevelMemLoader : MonoBehaviour {
 		for (int i = 0; i < Levels.Length; i++) {
 			if(i >= levelUnlocked)
 			{
-				Levels[i].isEnabled = false;
+                if (Levels[i] != null)
+                {
+                    Levels[i].isEnabled = false;
+                }
 			}
 			else
 			{
-				Levels[i].isEnabled = true;
+                if (Levels[i] != null)
+                {
+                    
+                    Levels[i].isEnabled = true;
+                }
 			}
 
 		}
 	}
 
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }
