@@ -93,6 +93,10 @@ public class NextDungeon : MonoBehaviour {
 				Debug.Log ("Nightmare Level Set");
 				Application.LoadLevel("Nightmare_Level");
 				break;
+			case "5":
+				Debug.Log ("Olive Level Set");
+				Application.LoadLevel("Olive_Level");
+				break;
 			default:
 				Debug.Log ("Something has gone wrong judging on the next dungeon");
 				Application.LoadLevel("Tutorial_Dungeon");
