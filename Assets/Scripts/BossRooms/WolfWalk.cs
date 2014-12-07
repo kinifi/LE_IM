@@ -21,7 +21,7 @@ public class WolfWalk : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(faceRight)
+		if(facingRight)
 		{
 			transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
 		}
