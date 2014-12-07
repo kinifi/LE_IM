@@ -521,7 +521,7 @@ public class RoomTypeExit : MonoBehaviour {
 		}
 		else if(typeExitArray[arrayNum] == 33)
 		{
-			string theme = Random.Range (1,6).ToString();
+			string theme = Random.Range (1,7).ToString();
 
 			//istantiates block then moves the x position ahead by one
 			GameObject exitDoor = Instantiate(tileOfRoom[15], roomTilePosition, Quaternion.identity) as GameObject;
