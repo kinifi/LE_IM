@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class WolfWalk : MonoBehaviour {
-
+	
 	//Configs for walk
 	public bool faceRight = true;
 	public bool walls = false;
 	public float moveSpeed = 2000.0f;
-
+	
 	//Configs for wall rays
 	private Vector2 wallRayStart;
 	private Vector2 wallRayEnd;
@@ -17,21 +17,21 @@ public class WolfWalk : MonoBehaviour {
 	public LayerMask walllayerMask; //make sure we aren't in this layer 
 	//Transform configs
 	public Transform wallStart, wallEnd;
-
+	
 	//Configs for breath
 	private float nextPause;
-
+	
 	//Death Configs
 	public GameObject kill;
 	public GameObject deathSplash;
 	public GameObject bowGolden;
-
+	
 	//Configs for hits
 	private SpriteRenderer _renderer;
 	private Color baseColor;
 	private Color currentColor;
 	private int hits = 0;
-
+	
 	// Use this for initialization
 	void Awake () 
 	{
@@ -39,7 +39,7 @@ public class WolfWalk : MonoBehaviour {
 		ColorInitialize();
 		InvokeRepeating("RandomBreathPause", 0.5f, nextPause);
 	}
-
+	
 	// Update is called once per frame
 	void Update () 
 	{
@@ -47,9 +47,9 @@ public class WolfWalk : MonoBehaviour {
 		Behaviours();
 		UpdateWallRayPosition();
 	}
-
+	
 	//---------------------Movement Methods----------------------------//
-
+	
 	//initializes wolf movement
 	private void WolfWalkInitialize()
 	{
@@ -57,16 +57,16 @@ public class WolfWalk : MonoBehaviour {
 		wallRayStart = wallStart.position;
 		wallRayEnd = wallEnd.position;
 	}
-
-
+	
+	
 	//sets the original color of the boss
 	private void ColorInitialize()
 	{
 		_renderer = GetComponent<SpriteRenderer>();
 		baseColor = new Color(_renderer.color.r, _renderer.color.g, _renderer.color.b, _renderer.color.a);
 	}
-
-
+	
+	
 	//flips then contiinues in opposite direcitron
 	private void Patrol ()
 	{
@@ -84,8 +84,8 @@ public class WolfWalk : MonoBehaviour {
 			rigidbody2D.AddForce(Vector2.right * moveSpeed * Time.deltaTime);
 		}
 	}
-
-
+	
+	
 	//flips the wolf and adjust rotaiton
 	private void Flip()
 	{
@@ -98,14 +98,14 @@ public class WolfWalk : MonoBehaviour {
 		transform.localRotation = theRotation;
 		//Debug.Log ("Flip ran and moveForward is now: " + moveForward);
 	}
-
+	
 	//Zeros out forces for fliping the wolf
 	private void ZeroOutFources ()
 	{
 		rigidbody2D.isKinematic = true;
 		rigidbody2D.isKinematic = false;
 	}
-
+	
 	//draws the raycast lines
 	private void RaycastMethod ()
 	{
@@ -113,7 +113,7 @@ public class WolfWalk : MonoBehaviour {
 		Debug.DrawLine (wallRayStart, wallRayEnd, Color.yellow);
 		walls = Physics2D.Linecast(wallRayStart, wallRayEnd, walllayerMask);
 	}
-
+	
 	//manages all the behaviours associated with raycasting
 	private void Behaviours ()
 	{
@@ -124,7 +124,7 @@ public class WolfWalk : MonoBehaviour {
 			Patrol();
 		}
 	}
-
+	
 	//manages the raypositions
 	private void UpdateWallRayPosition ()
 	{
@@ -157,7 +157,7 @@ public class WolfWalk : MonoBehaviour {
 			wallRayEnd = wallRayUpdateEnd;
 		}
 	}
-
+	
 	//Randomly pauses the breath particles then invokes the play
 	private void RandomBreathPause ()
 	{
@@ -165,14 +165,14 @@ public class WolfWalk : MonoBehaviour {
 		GameObject.Find("DeathBreath").particleSystem.Pause();
 		Invoke ("BreathPlay", 0.5f);
 	}
-
+	
 	//Plays the breath particles
 	private void BreathPlay ()
 	{
 		GameObject.Find("DeathBreath").particleSystem.Play();
 	}
-
-
+	
+	
 	//Magages All The Trigger Collision
 	private void OnTriggerEnter2D (Collider2D other)
 	{
@@ -187,7 +187,7 @@ public class WolfWalk : MonoBehaviour {
 				
 				//Failsafe enable movement
 				GameObject.Find("Player").GetComponent<RobbeController>().DelayAllowMovement();
-
+				
 				//Instantiate the death splash and overlay Robbe.  Destroy it and call the movement function.
 				GameObject resetRobbe = GameObject.Find ("Player");
 				kill = Instantiate(deathSplash, resetRobbe.transform.position, Quaternion.identity) as GameObject;
@@ -197,7 +197,7 @@ public class WolfWalk : MonoBehaviour {
 				Destroy(kill, 1.0f);
 			}
 		}
-
+		
 		if(other.gameObject.tag == "Arrow")
 		{
 			//Destroy arrow
