@@ -5,6 +5,6 @@ public class ParticlesOnLevelTilesLayer : MonoBehaviour {
 
 	void Awake ()
 	{
-		particleSystem.renderer.sortingLayerName = "Level Tiles";
+		particleSystem.renderer.sortingLayerName = "Player";
 	}
 }

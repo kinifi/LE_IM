@@ -209,6 +209,11 @@ public class RobbeController : MonoBehaviour {
 		}
 	}
 
+	void OnParticleCollision(GameObject particle) 
+	{
+		Debug.Log ("This is the particle name " + particle.name);
+	}
+
 	public void BossDeathAudios ()
 	{
 		_screams.enabled = true;

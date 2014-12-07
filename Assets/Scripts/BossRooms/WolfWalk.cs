@@ -6,6 +6,7 @@ public class WolfWalk : MonoBehaviour {
 	//Configs for walk
 	public bool faceRight = true;
 	public bool walls = false;
+	public bool sighted = false;
 	public float moveSpeed = 2000.0f;
 	
 	//Configs for wall rays
@@ -13,31 +14,43 @@ public class WolfWalk : MonoBehaviour {
 	private Vector2 wallRayEnd;
 	private Vector2 wallRayUpdateStart;
 	private Vector2 wallRayUpdateEnd;
-	//Config for sight layermask	
+	//Config for wall layermask	
 	public LayerMask walllayerMask; //make sure we aren't in this layer 
-	//Transform configs
+	//Transform wall configs
 	public Transform wallStart, wallEnd;
-	
-	//Configs for breath
-	private float nextPause;
-	
+
+	//Configs for sight rays
+	private Vector2 sightRayStart;
+	private Vector2 sightRayEnd;
+	private Vector2 sightRayUpdateStart;
+	private Vector2 sightRayUpdateEnd;
+	//Config for sight layermask	
+	public LayerMask sightlayerMask; //make sure we aren't in this layer 
+	//Transform sight configs
+	public Transform sightStart, sightEnd;
+
 	//Death Configs
 	public GameObject kill;
 	public GameObject deathSplash;
 	public GameObject bowGolden;
+	public GameObject telaIn;
+	private RobbeController _playerController;
 	
 	//Configs for hits
 	private SpriteRenderer _renderer;
 	private Color baseColor;
 	private Color currentColor;
 	private int hits = 0;
+
+	//Audio Configs
+	public AudioClip[] wolfClips;
 	
 	// Use this for initialization
 	void Awake () 
 	{
 		WolfWalkInitialize();
 		ColorInitialize();
-		InvokeRepeating("RandomBreathPause", 0.5f, nextPause);
+		_playerController = GameObject.Find ("Player").GetComponent<RobbeController>();
 	}
 	
 	// Update is called once per frame
@@ -46,6 +59,7 @@ public class WolfWalk : MonoBehaviour {
 		RaycastMethod();
 		Behaviours();
 		UpdateWallRayPosition();
+		UpdateSightRayPosition();
 	}
 	
 	//---------------------Movement Methods----------------------------//
@@ -56,17 +70,19 @@ public class WolfWalk : MonoBehaviour {
 		//Initialize wall ray
 		wallRayStart = wallStart.position;
 		wallRayEnd = wallEnd.position;
+
+		//Initalize sight ray
+		sightRayStart = sightStart.position;
+		sightRayEnd = sightEnd.position;
 	}
-	
-	
+
 	//sets the original color of the boss
 	private void ColorInitialize()
 	{
 		_renderer = GetComponent<SpriteRenderer>();
 		baseColor = new Color(_renderer.color.r, _renderer.color.g, _renderer.color.b, _renderer.color.a);
 	}
-	
-	
+
 	//flips then contiinues in opposite direcitron
 	private void Patrol ()
 	{
@@ -84,8 +100,7 @@ public class WolfWalk : MonoBehaviour {
 			rigidbody2D.AddForce(Vector2.right * moveSpeed * Time.deltaTime);
 		}
 	}
-	
-	
+
 	//flips the wolf and adjust rotaiton
 	private void Flip()
 	{
@@ -112,6 +127,9 @@ public class WolfWalk : MonoBehaviour {
 		//Wall Rays
 		Debug.DrawLine (wallRayStart, wallRayEnd, Color.yellow);
 		walls = Physics2D.Linecast(wallRayStart, wallRayEnd, walllayerMask);
+		//Sight Rays
+		Debug.DrawLine (sightRayStart, sightRayEnd, Color.red);
+		sighted = Physics2D.Linecast(sightRayStart, sightRayEnd, sightlayerMask);
 	}
 	
 	//manages all the behaviours associated with raycasting
@@ -122,6 +140,32 @@ public class WolfWalk : MonoBehaviour {
 		{
 			//Debug.Log ("Walls is: "+walls);
 			Patrol();
+		}
+		if(sighted == true)
+		{
+			//Debug.Log("Sighted is: " + sighted);
+			Dash();
+		}
+		if(sighted == false)
+		{
+			moveSpeed = 2000.0f;
+		}
+	}
+
+	//Wolf dashes forward if player is sighted
+	private void Dash ()
+	{
+		if(faceRight == true)
+		{
+			moveSpeed = 5000.0f;
+			rigidbody2D.AddForce(-Vector2.right * moveSpeed * Time.deltaTime);
+			Invoke ("SightedIsFalse", 2.0f);
+		}
+		if(faceRight == false)
+		{
+			moveSpeed = 5000.0f;
+			rigidbody2D.AddForce(Vector2.right * moveSpeed * Time.deltaTime);
+			Invoke ("SightedIsFalse", 2.0f);
 		}
 	}
 	
@@ -157,22 +201,39 @@ public class WolfWalk : MonoBehaviour {
 			wallRayEnd = wallRayUpdateEnd;
 		}
 	}
-	
-	//Randomly pauses the breath particles then invokes the play
-	private void RandomBreathPause ()
+
+	private void UpdateSightRayPosition ()
 	{
-		nextPause = Random.Range (0.5f, 1.5f);
-		GameObject.Find("DeathBreath").particleSystem.Pause();
-		Invoke ("BreathPlay", 0.5f);
+		if(faceRight)
+		{
+			//update the sight start ray pos
+			sightRayUpdateStart = transform.position;
+			sightRayUpdateStart.x -= 2.0f;
+			sightRayUpdateStart.y +=0.5f;
+			sightRayStart = sightRayUpdateStart;
+			
+			//update the sight end ray pos
+			sightRayUpdateEnd = transform.position;
+			sightRayUpdateEnd.x -= 8.0f;
+			sightRayUpdateEnd.y -=2.5f;
+			sightRayEnd = sightRayUpdateEnd;
+		}
+		else
+		{
+			//update the wall start ray pos
+			sightRayUpdateStart = transform.position;
+			sightRayUpdateStart.x += 2.0f;
+			sightRayUpdateStart.y +=0.5f;
+			sightRayStart = sightRayUpdateStart;
+			
+			//update the wall end ray pos
+			sightRayUpdateEnd = transform.position;
+			sightRayUpdateEnd.x += 8.0f;
+			sightRayUpdateEnd.y -=2.5f;
+			sightRayEnd = sightRayUpdateEnd;
+		}
 	}
-	
-	//Plays the breath particles
-	private void BreathPlay ()
-	{
-		GameObject.Find("DeathBreath").particleSystem.Play();
-	}
-	
-	
+
 	//Magages All The Trigger Collision
 	private void OnTriggerEnter2D (Collider2D other)
 	{
@@ -183,7 +244,7 @@ public class WolfWalk : MonoBehaviour {
 			
 			if(kill == null)
 			{
-				//Debug.Log ("You were killed by a bad guy!!");
+				//Debug.Log ("You were killed by the wolf boss!!");
 				
 				//Failsafe enable movement
 				GameObject.Find("Player").GetComponent<RobbeController>().DelayAllowMovement();
@@ -203,7 +264,7 @@ public class WolfWalk : MonoBehaviour {
 			//Destroy arrow
 			Destroy(other.gameObject);
 			//Play damaged soundclip 
-			//audio.PlayOneShot(goblinClips[0], 0.5f);//////////////////////////
+			audio.PlayOneShot(wolfClips[0], 0.45f);//////////////////////////
 			//flash blood red color before returning to baseColor
 			_renderer.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
 			Invoke("ReturnToBaseColor", 0.5f);
@@ -214,17 +275,26 @@ public class WolfWalk : MonoBehaviour {
 			if(hits >= 3)
 			{
 				//Change color to blood read and play death soundclip
-				//_playerController.BossDeathAudios();////////////////////////
+				_playerController.BossDeathAudios();////////////////////////
 				_renderer.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
 				//Increment Steam Stat
 				SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
 				Debug.Log("YOU KILLED THE BOSS!!!!");
 				//Invoke drop and destroy
 				Vector3 pos = transform.position;
+				Vector3 pos2 = pos;
+				pos2.x +=2.0f;
 				Instantiate(bowGolden, pos, Quaternion.identity);
+				Instantiate(telaIn, pos2, Quaternion.identity);
 				Invoke("DestroyObject", 0.5f);
 			}
 		}
+	}
+
+	private void SightedIsFalse ()
+	{
+		sighted = false;
+		Patrol();
 	}
 	
 	private void ReturnToBaseColor()
