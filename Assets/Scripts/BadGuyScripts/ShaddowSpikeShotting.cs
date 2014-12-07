@@ -93,7 +93,7 @@ public class ShaddowSpikeShotting : MonoBehaviour {
 				kill.transform.OverlayPosition(resetRobbe.transform);
 				kill.transform.localScale = new Vector3(50.0f,50.0f,1.0f);
 				
-				Destroy(kill, 2.5f);
+				Destroy(kill, 1.0f);
 				Invoke("AllowRobbesMovement", 2.5f);
 			}
 		}

@@ -143,21 +143,18 @@ public class ScaredController : MonoBehaviour {
 						
 			if(kill == null)
 			{
-				Debug.Log ("You were killed by a the boss!!");
+				//Debug.Log ("You were killed by a bad guy!!");
 				
-				//Get the needed game objects
-				GameObject resetRobbe = GameObject.Find ("Player");
-				GameObject respawn = GameObject.Find("Spawn_Location");
-				GameObject cameraView = GameObject.Find ("UI Root");
-
+				//Failsafe enable movement
+				GameObject.Find("Player").GetComponent<RobbeController>().DelayAllowMovement();
+				
 				//Instantiate the death splash and overlay Robbe.  Destroy it and call the movement function.
+				GameObject resetRobbe = GameObject.Find ("Player");
 				kill = Instantiate(deathSplash, resetRobbe.transform.position, Quaternion.identity) as GameObject;
-				kill.transform.OverlayPosition(cameraView.transform);
+				kill.transform.OverlayPosition(resetRobbe.transform);
 				kill.transform.localScale = new Vector3(50.0f,50.0f,1.0f);
-
-				resetRobbe.GetComponent<RobbeController>().DelayAllowMovement();
-
-				Destroy(kill, 2.5f);
+				
+				Destroy(kill, 1.0f);
 			}
 		}
 		

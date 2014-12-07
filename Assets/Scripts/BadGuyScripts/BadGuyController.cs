@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -89,26 +89,12 @@ public class BadGuyController : MonoBehaviour {
 			//Stop all movement of the bad guy!!
 			this.gameObject.rigidbody2D.isKinematic = true;
 			
-//			Transform currentTransform = GameObject.Find("Player").GetComponent<Transform>();
 			if(kill == null)
 			{
 				//Debug.Log ("You were killed by a bad guy!!");
-
+				
 				//Failsafe enable movement
 				GameObject.Find("Player").GetComponent<RobbeController>().DelayAllowMovement();
-
-			/*	//Find Robbe's gameobject and set his transform to the Spawn Location.
-				GameObject resetRobbe = GameObject.Find ("Player");
-				GameObject respawn = GameObject.Find("Spawn_Location");
-				resetRobbe.transform.position = respawn.transform.position;
-				
-				//Find Robbe's controller and prevent his movement.
-				RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-				_robbe.enabled = false;
-				
-				//Find the LookDown camera and prevent its movement.
-				NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-				_lookdown.enabled = false;*/
 				
 				//Instantiate the death splash and overlay Robbe.  Destroy it and call the movement function.
 				GameObject resetRobbe = GameObject.Find ("Player");
@@ -116,7 +102,7 @@ public class BadGuyController : MonoBehaviour {
 				kill.transform.OverlayPosition(resetRobbe.transform);
 				kill.transform.localScale = new Vector3(50.0f,50.0f,1.0f);
 				
-				Destroy(kill, 2.5f);
+				Destroy(kill, 1.0f);
 			}
 		}
 
