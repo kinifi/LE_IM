@@ -7,12 +7,22 @@ public class Ball_Boss : MonoBehaviour {
     public int Life = 3;
     public float Speed = 5;
     public Transform LeftofLevel, RightofLevel;
+	public AudioClip[] bullyClips;
+
+	//Death Configs
+	public GameObject kill;
+	public GameObject deathSplash;
+	public GameObject bowGolden;
+	public GameObject telaIn;
+	private RobbeController _playerController;
 
 	// Use this for initialization
 	void Start () {
 
         //start with the boss laughter and idle state
+		_playerController = GameObject.Find ("Player").GetComponent<RobbeController>();
         Laugh(true);
+		audio.PlayOneShot(bullyClips[1], 0.85f);
 
 	}
 	
@@ -67,7 +77,9 @@ public class Ball_Boss : MonoBehaviour {
 
 
         //Subtract from the life total
+		//Play damaged soundclip 
         Life--;
+
         Debug.Log("" + Life);
         //Check if we need to kill the player
         if(Life <= 0)
@@ -81,6 +93,17 @@ public class Ball_Boss : MonoBehaviour {
     private void BossDeath_OnComplete()
     {
         Debug.Log("Destory Boss Here");
+		//Change color to blood read and play death soundclip
+		_playerController.BossDeathAudios();////////////////////////
+		//Increment Steam Stat
+		SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
+		Debug.Log("YOU KILLED THE BOSS!!!!");
+		//Invoke drop and destroy
+		Vector3 pos = transform.position;
+		Vector3 pos2 = pos;
+		pos2.y -=2.25f;
+		Instantiate(bowGolden, pos, Quaternion.identity);
+		Instantiate(telaIn, pos2, Quaternion.identity);
         Destroy(this.gameObject);
     }
 
@@ -117,8 +140,7 @@ public class Ball_Boss : MonoBehaviour {
     //Set to false by default
     public void Laugh(bool playIdle = false)
     {
-        Debug.Log("Boss Laugh");
-        //TODO: Play Laugh Sound here
+		Debug.Log("Boss Laugh");
 
         if(playIdle)
         {

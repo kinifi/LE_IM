@@ -71,6 +71,10 @@ public class NextDungeon : MonoBehaviour {
 				Debug.Log ("WolfBoss Set");
 				Application.LoadLevel("WolfBoss");
 				break;
+			case "5":
+				Debug.Log ("Bully Set");
+				Application.LoadLevel("BullyBoss");
+				break;
 			default:
 				Debug.Log ("ScaredBoss Set due to default");
 				Application.LoadLevel("ScaredBoss");
