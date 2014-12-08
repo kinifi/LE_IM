@@ -13,8 +13,8 @@ public class CameraController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Hor = Input.GetAxis("Horizontal");
-        Vert = Input.GetAxis("Vertical");
+        Hor = Input.GetAxis("Horiz");
+        Vert = Input.GetAxis("Vert");
 
         this.transform.position += new Vector3(Hor, Vert, 0);
 

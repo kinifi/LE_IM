@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using System.Text;
 using System.IO;
+using Steamworks;
 
 public class GameManager : MonoBehaviour {
 
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour {
 
 
 	void Start () {
+
+        author_Name = SteamBasic.getPersonaName();
 
 	}
 
@@ -95,6 +98,9 @@ public class GameManager : MonoBehaviour {
         if(GUILayout.Button("Upload to Steam WorkShop", GUILayout.Height(50)))
         {
             Debug.Log("Successfully uploaded");
+
+            
+
             attemptingToUploadToSteamWorkshop = false;
         }
 
@@ -182,6 +188,12 @@ public class GameManager : MonoBehaviour {
         if (GUILayout.Button("Upload to Steam WorkShop", GUILayout.Height(20)))
         {
             Debug.Log("Start Steam WorkShop Upload");
+
+            //SteamAPICall_t handle = SteamUGC.CreateItem((AppId_t)480, EWorkshopFileType.k_EWorkshopFileTypeWebGuide);
+            //SteamAPICall_t handle = 
+            
+
+
             attemptingToUploadToSteamWorkshop = true;
         }
 
@@ -284,7 +296,7 @@ public class GameManager : MonoBehaviour {
         //clear the existing level on the screen
         ClearLevel();
 
-		path = Application.dataPath + "/XmlDocs/"+mapName+".xml";
+		path = Application.dataPath + "/UserLevels/"+mapName+".xml";
 		
 		XmlReader reader = XmlReader.Create(path);
 		XmlDocument xmlDoc = new XmlDocument();
