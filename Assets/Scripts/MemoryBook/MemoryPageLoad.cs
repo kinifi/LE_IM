@@ -92,6 +92,14 @@ public class MemoryPageLoad : MonoBehaviour {
 				Debug.Log("Music Class Story Should Display");
 			}
 			break;
+		case "TheWalkHome":
+			//if the memory has been completed, calls The Way Home Story Page
+			if(_memEnable.TheWalkHome == true)
+			{
+				DisplayPage("TheWalkHomeStoryPage");
+				Debug.Log("The Way Home Story Should Display");
+			}
+			break;
 		default:
 			//Default message if something goes wrong
 			Debug.Log ("Something went wrong assigning the story page");

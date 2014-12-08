@@ -30,6 +30,7 @@ public class WolfWalk : MonoBehaviour {
 	public Transform sightStart, sightEnd;
 
 	//Death Configs
+	private bool dead = false;
 	public GameObject kill;
 	public GameObject deathSplash;
 	public GameObject bowGolden;
@@ -182,7 +183,7 @@ public class WolfWalk : MonoBehaviour {
 			
 			//update the wall end ray pos
 			wallRayUpdateEnd = transform.position;
-			wallRayUpdateEnd.x -= 5.0f;
+			wallRayUpdateEnd.x -= 7.0f;
 			wallRayUpdateEnd.y -=1.5f;
 			wallRayEnd = wallRayUpdateEnd;
 		}
@@ -196,7 +197,7 @@ public class WolfWalk : MonoBehaviour {
 			
 			//update the wall end ray pos
 			wallRayUpdateEnd = transform.position;
-			wallRayUpdateEnd.x += 5.0f;
+			wallRayUpdateEnd.x += 7.0f;
 			wallRayUpdateEnd.y -=1.5f;
 			wallRayEnd = wallRayUpdateEnd;
 		}
@@ -274,19 +275,24 @@ public class WolfWalk : MonoBehaviour {
 			//Check if 3 hits have been reached then initiate death sequence
 			if(hits >= 3)
 			{
-				//Change color to blood read and play death soundclip
-				_playerController.BossDeathAudios();////////////////////////
-				_renderer.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
-				//Increment Steam Stat
-				SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
-				Debug.Log("YOU KILLED THE BOSS!!!!");
-				//Invoke drop and destroy
-				Vector3 pos = transform.position;
-				Vector3 pos2 = pos;
-				pos2.x +=2.0f;
-				Instantiate(bowGolden, pos, Quaternion.identity);
-				Instantiate(telaIn, pos2, Quaternion.identity);
-				Invoke("DestroyObject", 0.5f);
+				if(dead == false)
+				{
+					dead = true;
+					//Change color to blood read and play death soundclip
+					_playerController.BossDeathAudios();////////////////////////
+					_renderer.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
+					//Increment Steam Stat
+					SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
+					Debug.Log("YOU KILLED THE BOSS!!!!");
+					//Invoke drop and destroy
+					Vector3 pos = transform.position;
+					Vector3 pos2 = pos;
+					pos2.x +=2.0f;
+					Instantiate(bowGolden, pos, Quaternion.identity);
+					Instantiate(telaIn, pos2, Quaternion.identity);
+					Invoke("DestroyObject", 0.5f);
+				}
+
 			}
 		}
 	}

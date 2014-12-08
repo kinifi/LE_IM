@@ -11,6 +11,7 @@ public class MemoryEnableScript : MonoBehaviour {
 	private string oneFiveStatus;
 	private string oneSixStatus;
 	private string oneSevenStatus;
+	private string oneEightStatus;
 
 	//MemoryPageBool configs
 	public bool Crash;
@@ -20,6 +21,7 @@ public class MemoryEnableScript : MonoBehaviour {
 	public bool TheGirlCousin;
 	public bool AllAlone;
 	public bool MusicClass;
+	public bool TheWalkHome;
 
 	// Use this for initialization
 	void Awake () 
@@ -89,6 +91,16 @@ public class MemoryEnableScript : MonoBehaviour {
 			GameObject.Find ("MusicClassMemoryImage").GetComponent<SpriteRenderer>().enabled = true;
 			GameObject.Find ("MusicClassLabel").GetComponent<UILabel>().enabled = false;
 			MusicClass = true;
+		}
+		//GetPlayerPrefs for Eighth Story
+		oneEightStatus = PlayerPrefs.GetString("The Walk Home");
+		//Turn on polaroid image and Set Story Eight bool to true if complete
+		if(oneEightStatus == "completed")
+		{
+			Debug.Log("Memory 8");
+			GameObject.Find ("TheWalkHomeMemoryImage").GetComponent<SpriteRenderer>().enabled = true;
+			GameObject.Find ("TheWalkHomeLabel").GetComponent<UILabel>().enabled = false;
+			TheWalkHome = true;
 		}
 	}
 }

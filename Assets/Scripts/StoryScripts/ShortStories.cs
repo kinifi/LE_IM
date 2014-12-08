@@ -5,10 +5,10 @@ public class ShortStories : MonoBehaviour {
 
 	//Configs - each story needs a string and a string[];
 	public ArrayList shortStoriesArray = new ArrayList();
-	public int storyCount = 6;
+	public int storyCount = 7;
 
 	//BE SURE TO SET IN INSPECTOR!!!!!
-	public string[] storyTitlesArray = new string[6] {"0", "1", "2", "3", "4", "5"};
+	public string[] storyTitlesArray = new string[7] {"0", "1", "2", "3", "4", "5", "6"};
 
 
 	public string storyTitle1;
@@ -34,6 +34,10 @@ public class ShortStories : MonoBehaviour {
 	public string storyTitle6;
 	private string story6;
 	private string[] story6Array;
+
+	public string storyTitle7;
+	private string story7;
+	private string[] story7Array;
 
 
 	// Use this for initialization
@@ -95,6 +99,14 @@ public class ShortStories : MonoBehaviour {
 		story6Array = story6.Split('/');
 		//Debug.Log ("This is shortstoryarray6 element 0" + story6Array[0]);
 
+		//Set Story Title
+		storyTitle7 = "The Walk Home";
+		//Story as paragraph
+		story7 = @"There was a short walk from the bus stop back to Robbe's house. Passed the back of a shop and an alley way, left down Elm Street, his house was second on the right./One day, Robbe noticed a group of older kids in the alley. Normally, he would have hurried past, but something or maybe it was someone, called for him to stop./'Hey, What are *you* looking at?' said a big kid with a stick in his hand. 'Um, nothing' Robbe replied, 'just walking home.' The big kid now towered over over Robbe 'Then get home.'/Robbe turned and left. He didn't need trouble, but felt he should have stayed. At home, he told his mom about the kids. 'Let's check it out later so you feel better' Mom said./After supper, they walked back to the ally. There midst the boxes was a dog...or what used to be a dog. Robbe's mom pulled him away but the sight would stay with him for a very long time.";
+		//Convert to string array
+		story7Array = story7.Split('/');
+		//Debug.Log ("This is shortstoryarray7 element 0" + story7Array[0]);
+
 		/*//Set Story Title
 		storyTitle# = "";
 		//Story as paragraph
@@ -155,10 +167,19 @@ public class ShortStories : MonoBehaviour {
 		for (int i = 0; i < story6Array.Length; i++)
 		{
 			string line6 = story6Array[i].ToString();
-			//Debug.Log ("This is the value of line#: " + line#);
+			//Debug.Log ("This is the value of line7: " + line7);
 			
 			shortStoriesArray.Add(line6);
 			//Debug.Log ("This is the sixth shortstoriesarray: " + shortStoriesArray);
+		}
+
+		for (int i = 0; i < story7Array.Length; i++)
+		{
+			string line7 = story7Array[i].ToString();
+			//Debug.Log ("This is the value of line7: " + line7);
+			
+			shortStoriesArray.Add(line7);
+			//Debug.Log ("This is the seventh shortstoriesarray: " + shortStoriesArray);
 		}
 
 		/*for (int i = 0; i < story#Array.Length; i++)
@@ -180,6 +201,7 @@ public class ShortStories : MonoBehaviour {
 		storyTitlesArray[3] = storyTitle4;
 		storyTitlesArray[4] = storyTitle5;
 		storyTitlesArray[5] = storyTitle6;
+		storyTitlesArray[6] = storyTitle7;
 		//storyTitleArray[#] = storyTitle#;
 	}
 
