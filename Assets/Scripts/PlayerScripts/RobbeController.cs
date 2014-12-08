@@ -10,7 +10,9 @@ public class RobbeController : MonoBehaviour {
 	public float inAirDamping = 5f;
 	public float targetJumpHeight = 3f;
 	public bool doubleJump = false;
-	public bool canMove;
+	public bool canMove = true;
+
+	private bool allowInput = true;
 
 	//Object movement configs
 	private Vector2 moveColR = new Vector2(45.0f, 0.0f);
@@ -35,7 +37,9 @@ public class RobbeController : MonoBehaviour {
 	
 	void Awake()
 	{
-		
+		//Robbe can move
+		canMove = true;
+
 		//grab script components
 		_controller = GetComponent<CharacterController2D>();
 		_animator = GetComponent<Animator>();
@@ -76,51 +80,54 @@ public class RobbeController : MonoBehaviour {
 		
 		//HORIZONTAL INPUT//
 		//move imediately to zero horizontal velocity if v1 is larger than current input.
-		if( input1 > Mathf.Abs(Input.GetAxis( "Horiz" )))
+		if(allowInput == true)
 		{
-			velocity.x = 0.0f;
-		}
+			if( input1 > Mathf.Abs(Input.GetAxis( "Horiz" )))
+			{
+				velocity.x = 0.0f;
+			}
 
-		//move right
-		else if( Input.GetAxis( "Horiz" ) > 0.15f)
-		{
-			velocity.x = runSpeed;
-			_right = true;
-			//grab our current input and set v1
-		}
-		
-		//move left
-		else if( Input.GetAxis( "Horiz" ) < -0.15f)
-		{
-			velocity.x = -runSpeed;
-			_right = false;
-			//grab our current input and set v1
-		}
-		//zero out horizontal velocity if not moving
-		else
-		{
-			velocity.x = 0;
-			//grab our current input and set v1
-		}
+			//move right
+			else if( Input.GetAxis( "Horiz" ) > 0.15f)
+			{
+				velocity.x = runSpeed;
+				_right = true;
+				//grab our current input and set v1
+			}
+			
+			//move left
+			else if( Input.GetAxis( "Horiz" ) < -0.15f)
+			{
+				velocity.x = -runSpeed;
+				_right = false;
+				//grab our current input and set v1
+			}
+			//zero out horizontal velocity if not moving
+			else
+			{
+				velocity.x = 0;
+				//grab our current input and set v1
+			}
 
 		//VERTICAL INPUT//
 		
-		//jump
-		if( Input.GetButtonDown( "Jumped" ))
-		{
-			if(_controller.isGrounded)
+			//jump
+			if( Input.GetButtonDown( "Jumped" ))
 			{
-				audio.PlayOneShot(clips[4], 0.55F);
-				velocity.y = Mathf.Sqrt( 2f * targetJumpHeight * -gravity );
-				doubleJump = true;
-				SteamManager.StatsAndAchievements.incrementNumOfJumps();
-			}
-			else if(doubleJump == true)
-			{
-				audio.PlayOneShot(clips[4], 0.55F);
-				velocity.y = Mathf.Sqrt( 2f * targetJumpHeight * -gravity );
-				doubleJump = false;
-				SteamManager.StatsAndAchievements.incrementNumOfJumps();
+				if(_controller.isGrounded)
+				{
+					audio.PlayOneShot(clips[4], 0.55F);
+					velocity.y = Mathf.Sqrt( 2f * targetJumpHeight * -gravity );
+					doubleJump = true;
+					SteamManager.StatsAndAchievements.incrementNumOfJumps();
+				}
+				else if(doubleJump == true)
+				{
+					audio.PlayOneShot(clips[4], 0.55F);
+					velocity.y = Mathf.Sqrt( 2f * targetJumpHeight * -gravity );
+					doubleJump = false;
+					SteamManager.StatsAndAchievements.incrementNumOfJumps();
+				}
 			}
 		}
 
@@ -226,6 +233,8 @@ public class RobbeController : MonoBehaviour {
 
 	public void DelayAllowMovement()
 	{
+		//Restrict Player Input
+		allowInput = false;
 		//Find Robbe's gameobject and set his transform to the Spawn Location.
 		GameObject resetRobbe = GameObject.Find ("Player");
 		GameObject respawn = GameObject.Find("Spawn_Location");
@@ -238,11 +247,14 @@ public class RobbeController : MonoBehaviour {
 		//Find the LookDown camera and prevent its movement.
 		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
 		_lookdown.enabled = false;
-		Invoke ("AllowRobbesMovement", 1.5f);
+		Invoke ("AllowRobbesMovement", 1.0f);
 	}
 
 	private void AllowRobbesMovement() 
 	{
+		//Allow Player Input
+		allowInput = true;
+
 		//Find Robbe and allow his movement again.  Turn kinematic to false.
 		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
 		_robbe.enabled = true;
