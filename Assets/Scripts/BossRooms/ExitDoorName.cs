@@ -28,6 +28,10 @@ public class ExitDoorName : MonoBehaviour {
 			this.gameObject.name = "2";
 			Debug.Log ("My name is: "+this.gameObject.name);
 			break;
+		case "BullyExit":
+			this.gameObject.name = "5";
+			Debug.Log ("My name is: "+this.gameObject.name);
+			break;
 		default:
 			Debug.Log ("Something went wrong with the exit door!");
 			break;

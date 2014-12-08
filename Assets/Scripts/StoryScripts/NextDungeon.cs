@@ -67,9 +67,13 @@ public class NextDungeon : MonoBehaviour {
 				Debug.Log ("GoblinBoss Set");
 				Application.LoadLevel("GoblinBoss");
 				break;
+			case "4":
+				Debug.Log ("WolfBoss Set");
+				Application.LoadLevel("WolfBoss");
+				break;
 			default:
-				Debug.Log ("GoblinBoss Set due to default");
-				Application.LoadLevel("GoblinBoss");
+				Debug.Log ("ScaredBoss Set due to default");
+				Application.LoadLevel("ScaredBoss");
 				break;
 			}
 		}
@@ -96,6 +100,10 @@ public class NextDungeon : MonoBehaviour {
 			case "5":
 				Debug.Log ("Olive Level Set");
 				Application.LoadLevel("Olive_Level");
+				break;
+			case "6":
+				Debug.Log ("Rouche Level Set");
+				Application.LoadLevel("Rouche_Level");
 				break;
 			default:
 				Debug.Log ("Something has gone wrong judging on the next dungeon");
