@@ -3,11 +3,12 @@ using System.Collections;
 
 public class ShortStories : MonoBehaviour {
 
+	//NOTE!!!!!!!! Be sure to change the if statement for th title in StoryStory.cs <-----------!!!
 	//Configs - each story needs a string and a string[];
 	public ArrayList shortStoriesArray = new ArrayList();
 	public int storyCount = 7;
 
-	//BE SURE TO SET IN INSPECTOR!!!!!
+	//BE SURE TO SET IN INSPECTOR!!!!! <-----------!!!
 	public string[] storyTitlesArray = new string[7] {"0", "1", "2", "3", "4", "5", "6"};
 
 
