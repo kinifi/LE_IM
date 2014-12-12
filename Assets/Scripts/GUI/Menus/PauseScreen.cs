@@ -47,6 +47,13 @@ public class PauseScreen : MonoBehaviour {
 		Panel.SetActive(false);
 	}
 
+	public void RespawnRobbe ()
+	{
+		GameObject respawnPosition = GameObject.Find ("Spawn_Location");
+		Player.transform.position = respawnPosition.transform.position;
+		Resume ();
+	}
+
 	private void togglePlayerMovement()
 	{
 		RobbeController _robbe = Player.GetComponent<RobbeController>();
