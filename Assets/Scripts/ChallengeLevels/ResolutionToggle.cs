@@ -58,10 +58,12 @@ public class ResolutionToggle : MonoBehaviour {
 			if(Screen.fullScreen)
 			{
 				Screen.SetResolution(resolutions[ResValue].width, resolutions[ResValue].height, Screen.fullScreen);
+				Debug.Log(">>>>>>>>>>>>>Dirty: fullscreen");
 			}
 			else
 			{
 				Screen.SetResolution(resolutions[ResValue].width, resolutions[ResValue].height, !Screen.fullScreen);
+				Debug.Log(">>>>>>>>>>>>>Not Dirty: Not fullscreen");
 			}
 		}
 		else
@@ -69,10 +71,13 @@ public class ResolutionToggle : MonoBehaviour {
 			if(Screen.fullScreen)
 			{
 				Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, Screen.fullScreen);
+				Debug.Log(">>>>>>>>>>>>>>> fullscreen");
 			}
 			else
 			{
 				Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, !Screen.fullScreen);
+				Screen.fullScreen = false;
+				Debug.Log(">>>>>>>>>>>>>> not fullscreen");
 			}
 		}
 	}
