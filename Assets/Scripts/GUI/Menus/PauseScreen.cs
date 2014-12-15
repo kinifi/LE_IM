@@ -10,10 +10,13 @@ public class PauseScreen : MonoBehaviour {
 
 	//Set Private Configs
 	private GameObject learnScreen;
+	private bool _canFire;
 
 	// Use this for initialization
 	void Awake () 
 	{
+		_canFire = GameObject.Find ("Player").GetComponent<Quiver>().canFire;
+
 	}
 	
 	// Update is called once per frame
@@ -22,6 +25,7 @@ public class PauseScreen : MonoBehaviour {
 		if(Input.GetButtonDown("Back"))
 		{
 			togglePanel();
+			toggleCanFire();
 			if(GameObject.Find ("Learn") != null)
 			{
 				GameObject learnScreen = GameObject.Find ("Learn");
@@ -39,6 +43,7 @@ public class PauseScreen : MonoBehaviour {
 	public void Resume()
 	{
 		togglePlayerMovement();
+		toggleCanFire();
 		if(isChallengeLevels == false)
 		{
 			toggleCameraMovement();
@@ -76,7 +81,6 @@ public class PauseScreen : MonoBehaviour {
 	{
 		if(Panel.activeSelf == false)
 		{
-			GameObject.Find ("Player").GetComponent<Quiver>().canFire = false;
 			togglePlayerMovement();
 			if(isChallengeLevels == false)
 			{
@@ -88,7 +92,6 @@ public class PauseScreen : MonoBehaviour {
 		}
 		else
 		{
-			GameObject.Find ("Player").GetComponent<Quiver>().canFire = true;
 			togglePlayerMovement();
 			if(isChallengeLevels == false)
 			{
@@ -98,5 +101,11 @@ public class PauseScreen : MonoBehaviour {
 
 			Panel.SetActive(false);
 		}
+	}
+
+	private void toggleCanFire ()
+	{
+		_canFire = !_canFire;
+		GameObject.Find ("Player").GetComponent<Quiver>().canFire = _canFire;
 	}
 }
