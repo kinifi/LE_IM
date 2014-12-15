@@ -12,7 +12,8 @@ public class Quiver : MonoBehaviour {
 	public GameObject[] arrows = new GameObject[10];
 	private AudioClip[] _shotsound;
 	//Shooting Configs
-	private bool canFire = true;
+	[System.NonSerialized]
+	public bool canFire = true;
 
 	//Components to get
 	private int _quiverCount;

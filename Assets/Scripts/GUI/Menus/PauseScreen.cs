@@ -76,6 +76,7 @@ public class PauseScreen : MonoBehaviour {
 	{
 		if(Panel.activeSelf == false)
 		{
+			GameObject.Find ("Player").GetComponent<Quiver>().canFire = false;
 			togglePlayerMovement();
 			if(isChallengeLevels == false)
 			{
@@ -87,6 +88,7 @@ public class PauseScreen : MonoBehaviour {
 		}
 		else
 		{
+			GameObject.Find ("Player").GetComponent<Quiver>().canFire = true;
 			togglePlayerMovement();
 			if(isChallengeLevels == false)
 			{

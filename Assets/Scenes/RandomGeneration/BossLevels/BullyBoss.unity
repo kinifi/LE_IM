@@ -103,6 +103,7 @@ Transform:
   m_Children:
   - {fileID: 1516712523}
   - {fileID: 892578272}
+  - {fileID: 1804349948}
   - {fileID: 1018260750}
   - {fileID: 730500620}
   m_Father: {fileID: 1978235848}
@@ -8128,9 +8129,10 @@ GameObject:
   - 4: {fileID: 141418759}
   - 61: {fileID: 141418761}
   - 212: {fileID: 141418760}
+  - 114: {fileID: 141418762}
   m_Layer: 9
   m_Name: WolfTile2x2
-  m_TagString: Untagged
+  m_TagString: BreakableBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8182,6 +8184,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 2.00784326, y: .899999976}
   m_Center: {x: -1, y: -0}
+--- !u!114 &141418762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: dbfca41b90a591f4b8271b0061e19df0,
+    type: 2}
+  m_PrefabInternal: {fileID: 539284495}
+  m_GameObject: {fileID: 141418758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bc0de242f210f4b9ab4fb2686d39da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &141486680
 GameObject:
   m_ObjectHideFlags: 0
@@ -12937,9 +12951,10 @@ GameObject:
   - 4: {fileID: 236509290}
   - 61: {fileID: 236509292}
   - 212: {fileID: 236509291}
+  - 114: {fileID: 236509293}
   m_Layer: 9
   m_Name: WolfTile2x2
-  m_TagString: Untagged
+  m_TagString: BreakableBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12991,6 +13006,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 2.00784326, y: .899999976}
   m_Center: {x: -1, y: -0}
+--- !u!114 &236509293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: dbfca41b90a591f4b8271b0061e19df0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1309793596}
+  m_GameObject: {fileID: 236509289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bc0de242f210f4b9ab4fb2686d39da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &236724915
 GameObject:
   m_ObjectHideFlags: 0
@@ -19952,9 +19979,10 @@ GameObject:
   - 4: {fileID: 380094737}
   - 61: {fileID: 380094739}
   - 212: {fileID: 380094738}
+  - 114: {fileID: 380094740}
   m_Layer: 9
   m_Name: WolfTile3
-  m_TagString: Untagged
+  m_TagString: BreakableBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20006,6 +20034,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 1, y: .899999976}
   m_Center: {x: 0, y: 0}
+--- !u!114 &380094740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 70c94229dbcd9304f90d9e2d3dc3ed14,
+    type: 2}
+  m_PrefabInternal: {fileID: 1307886556}
+  m_GameObject: {fileID: 380094736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bc0de242f210f4b9ab4fb2686d39da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &380143260
 GameObject:
   m_ObjectHideFlags: 0
@@ -21684,6 +21724,18 @@ Prefab:
       propertyPath: onClick.Array.data[0].mTarget
       value: 
       objectReference: {fileID: 179352692}
+    - target: {fileID: 11400014, guid: ac7f4e602481d544faf46040fd531c9f, type: 2}
+      propertyPath: onClick.Array.data[0].mMethodName
+      value: RespawnRobbe
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400026, guid: ac7f4e602481d544faf46040fd531c9f, type: 2}
+      propertyPath: onClick.Array.data[0].mTarget
+      value: 
+      objectReference: {fileID: 179352692}
+    - target: {fileID: 11400026, guid: ac7f4e602481d544faf46040fd531c9f, type: 2}
+      propertyPath: onClick.Array.data[0].mMethodName
+      value: Resume
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac7f4e602481d544faf46040fd531c9f, type: 2}
   m_RootGameObject: {fileID: 1925093}
@@ -39162,11 +39214,11 @@ Transform:
   m_PrefabInternal: {fileID: 410390842}
   m_GameObject: {fileID: 730500619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -462, z: 0}
+  m_LocalPosition: {x: 24, y: -575, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1925094}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!65 &730500621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39178,7 +39230,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2210, y: 544, z: 0}
+  m_Size: {x: 1426, y: 556, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &730500622
 MonoBehaviour:
@@ -39198,7 +39250,7 @@ MonoBehaviour:
   onLeft: {fileID: 0}
   onRight: {fileID: 0}
   onClick: {fileID: 0}
-  startsSelected: 1
+  startsSelected: 0
 --- !u!114 &730500623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39276,13 +39328,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 2210
-  mHeight: 544
+  mWidth: 1426
+  mHeight: 556
   mDepth: 1
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 4.0625
+  aspectRatio: 2.56474829
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: ae7977fc308fe0744ae4e28721c41c47, type: 3}
   mFont: {fileID: 0}
@@ -47725,7 +47777,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 4.51599979
+  aspectRatio: 4.50400019
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: ae7977fc308fe0744ae4e28721c41c47, type: 3}
   mFont: {fileID: 0}
@@ -54646,7 +54698,7 @@ GameObject:
   - 114: {fileID: 1018260752}
   - 65: {fileID: 1018260751}
   m_Layer: 9
-  m_Name: Resume
+  m_Name: Respawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54659,11 +54711,11 @@ Transform:
   m_PrefabInternal: {fileID: 410390842}
   m_GameObject: {fileID: 1018260749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 202, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 41, y: -25, z: -0}
+  m_LocalScale: {x: .99999994, y: .99999994, z: .99999994}
   m_Children: []
   m_Father: {fileID: 1925094}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!65 &1018260751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54695,7 +54747,7 @@ MonoBehaviour:
   onLeft: {fileID: 0}
   onRight: {fileID: 0}
   onClick: {fileID: 0}
-  startsSelected: 1
+  startsSelected: 0
 --- !u!114 &1018260753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54723,7 +54775,7 @@ MonoBehaviour:
   pixelSnap: 0
   onClick:
   - mTarget: {fileID: 179352692}
-    mMethodName: Resume
+    mMethodName: RespawnRobbe
     mParameters: []
     oneShot: 0
 --- !u!114 &1018260754
@@ -54767,7 +54819,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: ae7977fc308fe0744ae4e28721c41c47, type: 3}
   mFont: {fileID: 0}
-  mText: Resume
+  mText: Respawn
   mFontSize: 300
   mFontStyle: 0
   mAlignment: 0
@@ -55550,6 +55602,7 @@ MonoBehaviour:
   inAirDamping: 5
   targetJumpHeight: 2
   doubleJump: 0
+  canMove: 0
   _right: 0
   clips:
   - {fileID: 8300000, guid: c1a499b5498d9e240b03691edab495d4, type: 3}
@@ -56483,9 +56536,10 @@ GameObject:
   - 4: {fileID: 1050663302}
   - 61: {fileID: 1050663304}
   - 212: {fileID: 1050663303}
+  - 114: {fileID: 1050663305}
   m_Layer: 9
   m_Name: WolfTile3
-  m_TagString: Untagged
+  m_TagString: BreakableBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56537,6 +56591,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 1, y: .899999976}
   m_Center: {x: 0, y: 0}
+--- !u!114 &1050663305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 70c94229dbcd9304f90d9e2d3dc3ed14,
+    type: 2}
+  m_PrefabInternal: {fileID: 1013935297}
+  m_GameObject: {fileID: 1050663301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bc0de242f210f4b9ab4fb2686d39da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1051667219
 GameObject:
   m_ObjectHideFlags: 0
@@ -97138,9 +97204,10 @@ GameObject:
   - 4: {fileID: 1729667044}
   - 61: {fileID: 1729667046}
   - 212: {fileID: 1729667045}
+  - 114: {fileID: 1729667047}
   m_Layer: 9
   m_Name: WolfTile3
-  m_TagString: Untagged
+  m_TagString: BreakableBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97192,6 +97259,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 1, y: .899999976}
   m_Center: {x: 0, y: 0}
+--- !u!114 &1729667047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 70c94229dbcd9304f90d9e2d3dc3ed14,
+    type: 2}
+  m_PrefabInternal: {fileID: 1461108452}
+  m_GameObject: {fileID: 1729667043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bc0de242f210f4b9ab4fb2686d39da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1729995342
 GameObject:
   m_ObjectHideFlags: 0
@@ -97814,9 +97893,10 @@ GameObject:
   - 4: {fileID: 1739447762}
   - 61: {fileID: 1739447764}
   - 212: {fileID: 1739447763}
+  - 114: {fileID: 1739447765}
   m_Layer: 9
   m_Name: WolfTile2x2
-  m_TagString: Untagged
+  m_TagString: BreakableBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97868,6 +97948,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 2.00784326, y: .899999976}
   m_Center: {x: -1, y: -0}
+--- !u!114 &1739447765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: dbfca41b90a591f4b8271b0061e19df0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1815986883}
+  m_GameObject: {fileID: 1739447761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bc0de242f210f4b9ab4fb2686d39da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1740543996
 GameObject:
   m_ObjectHideFlags: 0
@@ -102046,6 +102138,179 @@ Prefab:
   m_RootGameObject: {fileID: 1187051868}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1804349947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100010, guid: ac7f4e602481d544faf46040fd531c9f, type: 2}
+  m_PrefabInternal: {fileID: 410390842}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1804349948}
+  - 114: {fileID: 1804349953}
+  - 114: {fileID: 1804349952}
+  - 114: {fileID: 1804349951}
+  - 114: {fileID: 1804349950}
+  - 65: {fileID: 1804349949}
+  m_Layer: 9
+  m_Name: Resume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1804349948
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400010, guid: ac7f4e602481d544faf46040fd531c9f, type: 2}
+  m_PrefabInternal: {fileID: 410390842}
+  m_GameObject: {fileID: 1804349947}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 41, y: 450, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1925094}
+  m_RootOrder: 2
+--- !u!65 &1804349949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500004, guid: ac7f4e602481d544faf46040fd531c9f,
+    type: 2}
+  m_PrefabInternal: {fileID: 410390842}
+  m_GameObject: {fileID: 1804349947}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1176, y: 494, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1804349950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400024, guid: ac7f4e602481d544faf46040fd531c9f,
+    type: 2}
+  m_PrefabInternal: {fileID: 410390842}
+  m_GameObject: {fileID: 1804349947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643ea4bc79b55444d974ddbd31a6cd5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constraint: 0
+  onUp: {fileID: 0}
+  onDown: {fileID: 0}
+  onLeft: {fileID: 0}
+  onRight: {fileID: 0}
+  onClick: {fileID: 0}
+  startsSelected: 1
+--- !u!114 &1804349951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400022, guid: ac7f4e602481d544faf46040fd531c9f,
+    type: 2}
+  m_PrefabInternal: {fileID: 410390842}
+  m_GameObject: {fileID: 1804349947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c041f61e4a9fbf4e830210f5d933ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 0}
+  hover: {x: 1.10000002, y: 1.10000002, z: 1.10000002}
+  pressed: {x: 1.04999995, y: 1.04999995, z: 1.04999995}
+  duration: .200000003
+--- !u!114 &1804349952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400026, guid: ac7f4e602481d544faf46040fd531c9f,
+    type: 2}
+  m_PrefabInternal: {fileID: 410390842}
+  m_GameObject: {fileID: 1804349947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 1804349947}
+  hover: {r: .376470596, g: .776470602, b: .690196097, a: 1}
+  pressed: {r: .13333334, g: .274509817, b: .247058824, a: 1}
+  disabledColor: {r: .5, g: .5, b: .5, a: 1}
+  duration: .200000003
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick:
+  - mTarget: {fileID: 179352692}
+    mMethodName: Resume
+    mParameters: []
+    oneShot: 0
+--- !u!114 &1804349953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400028, guid: ac7f4e602481d544faf46040fd531c9f,
+    type: 2}
+  m_PrefabInternal: {fileID: 410390842}
+  m_GameObject: {fileID: 1804349947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 1176
+  mHeight: 494
+  mDepth: 1
+  autoResizeBoxCollider: 1
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 2.38056684
+  keepCrispWhenShrunk: 1
+  mTrueTypeFont: {fileID: 12800000, guid: ae7977fc308fe0744ae4e28721c41c47, type: 3}
+  mFont: {fileID: 0}
+  mText: Resume
+  mFontSize: 300
+  mFontStyle: 0
+  mAlignment: 0
+  mEncoding: 1
+  mMaxLineCount: 0
+  mEffectStyle: 0
+  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
+  mSymbols: 1
+  mEffectDistance: {x: 1, y: 1}
+  mOverflow: 0
+  mMaterial: {fileID: 0}
+  mApplyGradient: 1
+  mGradientTop: {r: .580392182, g: .403921574, b: .482352942, a: 1}
+  mGradientBottom: {r: .337254912, g: .20784314, b: .321568638, a: 1}
+  mSpacingX: 0
+  mSpacingY: 0
+  mShrinkToFit: 0
+  mMaxLineWidth: 0
+  mMaxLineHeight: 0
+  mLineWidth: 0
+  mMultiline: 1
 --- !u!1 &1804536649
 GameObject:
   m_ObjectHideFlags: 0
@@ -103200,9 +103465,10 @@ GameObject:
   - 4: {fileID: 1823011653}
   - 61: {fileID: 1823011655}
   - 212: {fileID: 1823011654}
+  - 114: {fileID: 1823011656}
   m_Layer: 9
   m_Name: WolfTile3
-  m_TagString: Untagged
+  m_TagString: BreakableBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103254,6 +103520,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 1, y: .899999976}
   m_Center: {x: 0, y: 0}
+--- !u!114 &1823011656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 70c94229dbcd9304f90d9e2d3dc3ed14,
+    type: 2}
+  m_PrefabInternal: {fileID: 227894343}
+  m_GameObject: {fileID: 1823011652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bc0de242f210f4b9ab4fb2686d39da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1823065314
 GameObject:
   m_ObjectHideFlags: 0
@@ -107829,9 +108107,10 @@ GameObject:
   - 4: {fileID: 1915823711}
   - 61: {fileID: 1915823713}
   - 212: {fileID: 1915823712}
+  - 114: {fileID: 1915823714}
   m_Layer: 9
   m_Name: WolfTile2x2
-  m_TagString: Untagged
+  m_TagString: BreakableBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107883,6 +108162,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 2.00784326, y: .899999976}
   m_Center: {x: -1, y: -0}
+--- !u!114 &1915823714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: dbfca41b90a591f4b8271b0061e19df0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1822634416}
+  m_GameObject: {fileID: 1915823710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bc0de242f210f4b9ab4fb2686d39da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1915950827
 GameObject:
   m_ObjectHideFlags: 0
