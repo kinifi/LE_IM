@@ -34,6 +34,7 @@ public class MemoryPageLoad : MonoBehaviour {
 	{
 		//sets name to string for switch input
 		string pickStory = storySelected.name;
+		//Debug.Log ("The pickStory value is: "+ pickStory);
 		switch (pickStory)
 		{
 		case "Crash":
@@ -97,7 +98,7 @@ public class MemoryPageLoad : MonoBehaviour {
 			if(_memEnable.TheWalkHome == true)
 			{
 				DisplayPage("TheWalkHomeStoryPage");
-				Debug.Log("The Way Home Story Should Display");
+				Debug.Log("The Walk Home Story Should Display");
 			}
 			break;
 		default:
@@ -113,10 +114,12 @@ public class MemoryPageLoad : MonoBehaviour {
 	{
 		//takes the incoming and finds the corresponding game object
 		storyPage = GameObject.Find(storyToDisplay);
+		Debug.Log ("the page to display is: " + storyToDisplay);
 		//displays the page
 		if(pageDisplayed == false)
 		{
 			storyPage.GetComponent<SpriteRenderer>().enabled = true;
+			Debug.Log ("This page should be displayed: " + storyPage.name);
 			//sets pagedisplayed to true for the back button Update call
 			pageDisplayed = true;
 		}
