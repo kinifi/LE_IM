@@ -72,15 +72,15 @@ public class StoryStory : MonoBehaviour {
 		//Sets current story title text to temp variable
 		if(storyChapter<5)
 		{
-			textTitle = storyTitleArray[0];
+			textTitle = storyTitleArray[6];
 		}
 		else if(storyChapter > 4 && storyChapter < 10)
 		{
-			textTitle = storyTitleArray[1];
+			textTitle = storyTitleArray[5];
 		}
 		else if(storyChapter > 9 && storyChapter < 15)
 		{
-			textTitle = storyTitleArray[2];
+			textTitle = storyTitleArray[4];
 		}
 		else if(storyChapter > 14 && storyChapter < 20)
 		{
@@ -88,15 +88,15 @@ public class StoryStory : MonoBehaviour {
 		}
 		else if(storyChapter > 19 && storyChapter < 25)
 		{
-			textTitle = storyTitleArray[4];
+			textTitle = storyTitleArray[2];
 		}
 		else if(storyChapter > 24 && storyChapter < 30)
 		{
-			textTitle = storyTitleArray[5];
+			textTitle = storyTitleArray[1];
 		}
 		else if(storyChapter > 29 && storyChapter < 35)
 		{
-			textTitle = storyTitleArray[6];
+			textTitle = storyTitleArray[0];
 		}
 		else
 		{
