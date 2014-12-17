@@ -3,13 +3,13 @@ using System.Collections;
 
 public class ShortStories : MonoBehaviour {
 
-	//NOTE!!!!!!!! Be sure to change the if statement for th title in StoryStory.cs <-----------!!!
+	//NOTE!!!!!!!! Be sure to change the if statement for the title in StoryStory.cs <-----------!!!
 	//Configs - each story needs a string and a string[];
 	public ArrayList shortStoriesArray = new ArrayList();
-	public int storyCount = 7;
+	public int storyCount = 8;
 
 	//BE SURE TO SET IN INSPECTOR!!!!! <-----------!!!
-	public string[] storyTitlesArray = new string[7] {"0", "1", "2", "3", "4", "5", "6"};
+	public string[] storyTitlesArray = new string[8] {"0", "1", "2", "3", "4", "5", "6", "7"};
 
 
 	public string storyTitle1;
@@ -39,6 +39,10 @@ public class ShortStories : MonoBehaviour {
 	public string storyTitle7;
 	private string story7;
 	private string[] story7Array;
+
+	public string storyTitle8;
+	private string story8;
+	private string[] story8Array;
 
 
 	// Use this for initialization
@@ -107,6 +111,14 @@ public class ShortStories : MonoBehaviour {
 		//Convert to string array
 		story7Array = story7.Split('/');
 		//Debug.Log ("This is shortstoryarray7 element 0" + story7Array[0]);
+
+		//Set Story Title
+		storyTitle8 = "The Bully";
+		//Story as paragraph
+		story8 = @"At Robbe's school, third and fourth grade had lunch together.  He wasn't sure why but all the fourth graders in his school were big...REALLY big and one of them was a bully./The Bully liked to push smaller kids around, sometimes he'd throw a punch, and he always called names.  Robbe was smaller and shy - a perfect target. Robbe made sure to stay away from him./On his way to lunch, Robbe past a 4th grade classroom.  The Bully was at a table with a robot.  When he pushed a button the eyes glowed red.  The Bully laughed, but when he looked up he saw Robbe./Robbe ran down the hall to the cafeteria.  His girl cousin saw the whole thing and said 'You should just stand up to him, Robbe'  'I'd prefer to stay alive, thank you.' Robbe replied./'A bully is only going to get worse the longer you wait to stand up for yourself' she said.  Robbe turned and ignored her, but she was right and Robbe knew it. He needed to be brave.";
+		//Convert to string array
+		story8Array = story8.Split ('/');
+		//Debug.Log("This is shortstoryarray8 element 0" + story8Array[0]);
 
 		/*//Set Story Title
 		storyTitle# = "";
@@ -182,6 +194,14 @@ public class ShortStories : MonoBehaviour {
 			shortStoriesArray.Add(line7);
 			//Debug.Log ("This is the seventh shortstoriesarray: " + shortStoriesArray);
 		}
+		for (int i = 0; i < story8Array.Length; i++)
+		{
+			string line8 = story8Array[i].ToString();
+			//Debug.Log ("This is the value of line8: " + line8);
+			
+			shortStoriesArray.Add(line8);
+			//Debug.Log ("This is the eighth shortstoriesarray: " + shortStoriesArray);
+		}
 
 		/*for (int i = 0; i < story#Array.Length; i++)
 		{
@@ -203,6 +223,8 @@ public class ShortStories : MonoBehaviour {
 		storyTitlesArray[4] = storyTitle5;
 		storyTitlesArray[5] = storyTitle6;
 		storyTitlesArray[6] = storyTitle7;
+		storyTitlesArray[7] = storyTitle8;
+
 		//storyTitleArray[#] = storyTitle#;
 	}
 

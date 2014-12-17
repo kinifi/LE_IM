@@ -99,6 +99,10 @@ public class StoryStory : MonoBehaviour {
 		{
 			textTitle = storyTitleArray[6];
 		}
+		else if(storyChapter > 34 && storyChapter < 40)
+		{
+			textTitle = storyTitleArray[7];
+		}
 		else
 		{
 			textTitle = "Another Memory";
