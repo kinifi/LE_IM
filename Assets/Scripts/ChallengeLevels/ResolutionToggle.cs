@@ -27,6 +27,19 @@ public class ResolutionToggle : MonoBehaviour {
 	private void updateLabel()
 	{
 		resolutionLabel.text = resolutions[ResValue].width + "," + resolutions[ResValue].height;
+		
+		if(Screen.fullScreen)
+		{
+			Screen.SetResolution(resolutions[ResValue].width, resolutions[ResValue].height, Screen.fullScreen);
+			
+			Debug.Log(">>>>>>>>>>>>>Dirty: fullscreen");
+		}
+		else
+		{
+			Screen.SetResolution(resolutions[ResValue].width, resolutions[ResValue].height, !Screen.fullScreen);
+			Screen.fullScreen = false;
+			Debug.Log(">>>>>>>>>>>>>Not Dirty: Not fullscreen");
+		}
 		//Debug.Log("Update Label value");
 	}
 	
@@ -51,6 +64,7 @@ public class ResolutionToggle : MonoBehaviour {
 	}
 	
 	
+	/*
 	public void setResolution()
 	{
 		if(isDirty)
@@ -58,11 +72,13 @@ public class ResolutionToggle : MonoBehaviour {
 			if(Screen.fullScreen)
 			{
 				Screen.SetResolution(resolutions[ResValue].width, resolutions[ResValue].height, Screen.fullScreen);
+
 				Debug.Log(">>>>>>>>>>>>>Dirty: fullscreen");
 			}
 			else
 			{
 				Screen.SetResolution(resolutions[ResValue].width, resolutions[ResValue].height, !Screen.fullScreen);
+				Screen.fullScreen = false;
 				Debug.Log(">>>>>>>>>>>>>Not Dirty: Not fullscreen");
 			}
 		}
@@ -81,5 +97,6 @@ public class ResolutionToggle : MonoBehaviour {
 			}
 		}
 	}
+	*/
 	
 }
