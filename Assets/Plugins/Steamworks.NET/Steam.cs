@@ -4,14 +4,19 @@
 
 // Changes to this file will be reverted when you update Steamworks.NET
 
-// Steamworks.NET Version: 3.0.0
-// Steamworks SDK Version: 1.29a
-
 #define VERSION_SAFE_STEAM_API_INTERFACES
 
 using System.Runtime.InteropServices;
 
 namespace Steamworks {
+	public static class Version {
+		public const string SteamworksNETVersion = "5.0.0";
+		public const string SteamworksSDKVersion = "1.31";
+		public const string SteamAPIDLLVersion = "02.37.91.26";
+		public const int SteamAPIDLLSize = 145600;
+		public const int SteamAPI64DLLSize = 169152;
+	}
+
 	public static class SteamAPI {
 		//----------------------------------------------------------------------------------------------------------------------------------------------------------//
 		//	Steam API setup & shutdown
