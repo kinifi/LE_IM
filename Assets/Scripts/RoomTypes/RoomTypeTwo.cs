@@ -563,10 +563,17 @@ public class RoomTypeTwo : MonoBehaviour {
 		}
 		else if(typeTwoArray[arrayNum] == 50)
 		{
-			//istantiates block then moves the x position ahead by one
+			//istantiates block
 			int randomSolid = Random.Range (0,6);
 			GameObject hiddenRoom = Instantiate(tileOfRoom[randomSolid], roomTilePosition, Quaternion.identity) as GameObject;
+			//set tile to empty layer
 			hiddenRoom.layer = 15;
+			//set new alpha value for tile
+			Color hidden = hiddenRoom.GetComponent<SpriteRenderer>().color;
+			float alphaH = 0.45f;
+			hidden.a = alphaH;
+			hiddenRoom.GetComponent<SpriteRenderer>().color = hidden;
+			//move the x position ahead by one
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
@@ -1308,10 +1315,17 @@ public class RoomTypeTwo : MonoBehaviour {
 		}
 		else if(tileBlockArray[iLoop] == 50)
 		{
-			//istantiates block then moves the x position ahead by one
+			//istantiates block
 			int randomSolid = Random.Range (0,6);
-			GameObject hiddenRoom = Instantiate(tileOfRoom[randomSolid], tilePosition, Quaternion.identity) as GameObject;
+			GameObject hiddenRoom = Instantiate(tileOfRoom[randomSolid], roomTilePosition, Quaternion.identity) as GameObject;
+			//set tile to empty layer
 			hiddenRoom.layer = 15;
+			//set new alpha value for tile
+			Color hidden = hiddenRoom.GetComponent<SpriteRenderer>().color;
+			float alphaH = 0.45f;
+			hidden.a = alphaH;
+			hiddenRoom.GetComponent<SpriteRenderer>().color = hidden;
+			//move the x position ahead by one
 			tilePosition.x += 1.0f;
 			transform.position = tilePosition;
 		}
