@@ -401,7 +401,7 @@ public class CharacterController2D : MonoBehaviour
 	private void moveHorizontally( ref Vector3 deltaMovement )
 	{
 		var isGoingRight = deltaMovement.x > 0;
-		var rayDistance = Mathf.Abs( deltaMovement.x ) + _skinWidth;
+		var rayDistance = Mathf.Abs( deltaMovement.x) + _skinWidth;
 		var rayDirection = isGoingRight ? Vector2.right : -Vector2.right;
 		var initialRayOrigin = isGoingRight ? _raycastOrigins.bottomRight : _raycastOrigins.bottomLeft;
 

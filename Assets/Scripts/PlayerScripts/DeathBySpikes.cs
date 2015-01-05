@@ -8,6 +8,14 @@ public class DeathBySpikes : MonoBehaviour {
 	private bool hasCollided = false;
 
 
+	void OnCollisionEnter2D (Collision2D Player)
+	{
+		if(Player.gameObject.tag == "Player")
+		{
+			Debug.Log ("The player has collided");
+		}
+	}
+
 	void OnTriggerEnter2D (Collider2D Player) 
 	{
 		if(Player.gameObject.tag == "Player")
@@ -21,7 +29,7 @@ public class DeathBySpikes : MonoBehaviour {
 					IncrementStats();
 					Invoke("InvokeReset", 0.2f);
 
-					//Debug.Log ("You were killed by spikes!!");
+					Debug.Log ("You were killed by spikes!!");
 
 					
 					//Failsafe enable movement
@@ -39,7 +47,7 @@ public class DeathBySpikes : MonoBehaviour {
 		}
 	}
 
-	private void AllowRobbesMovement() 
+	/*private void AllowRobbesMovement() 
 	{
 		//Find Robbe and allow his movement again.  Turn kinematic to false.
 		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
@@ -48,7 +56,7 @@ public class DeathBySpikes : MonoBehaviour {
 		//Find the LookDown camera and allow its movement.
 		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
 		_lookdown.enabled = true;
-	}
+	}*/
 
 	/// <summary>
 	/// Increments the stats 

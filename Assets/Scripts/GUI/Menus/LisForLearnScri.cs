@@ -14,7 +14,7 @@ public class LisForLearnScri : MonoBehaviour {
 	void Awake () 
 	{
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -47,8 +47,10 @@ public class LisForLearnScri : MonoBehaviour {
 				toggleCameraMovement();
 				changeVectorOffSet(-50);
 			}
+			//Displays the learn panel
 			Panel.SetActive(true);
-			
+			//Pauses the game time scale
+			GameTimePause ();			
 		}
 		else
 		{
@@ -58,7 +60,9 @@ public class LisForLearnScri : MonoBehaviour {
 				toggleCameraMovement();
 				changeVectorOffSet(0);
 			}
-			
+			//Starts the game time scale
+			GameTimePlay ();
+			//Turns off the panel
 			Panel.SetActive(false);
 		}
 	}
@@ -71,6 +75,9 @@ public class LisForLearnScri : MonoBehaviour {
 			toggleCameraMovement();
 			changeVectorOffSet(0);
 		}
+		//Starts the game time scale
+		GameTimePlay ();
+		//Turns off the panel
 		Panel.SetActive(false);
 	}
 
@@ -96,14 +103,28 @@ public class LisForLearnScri : MonoBehaviour {
 	{
 		if(Panel.activeSelf == false)
 		{
+			//Displays the Learn panel
 			Panel.SetActive(true);
 			Debug.Log ("The Learn panel should be visible.");
 		}
 		else if(Panel.activeSelf == true)
 		{
+			//Turns off the panel
 			Panel.SetActive(false);
 			Debug.Log ("The Learn panel should go away.");
 		}
+	}
+
+	//Pauses the game time scale
+	private void GameTimePause ()
+	{
+		Time.timeScale = 0.0f;
+	}
+	
+	//Starts the game time scale
+	private void GameTimePlay ()
+	{
+		Time.timeScale = 1.0f;
 	}
 
 }

@@ -247,7 +247,7 @@ public class RobbeController : MonoBehaviour {
 		//Find the LookDown camera and prevent its movement.
 		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
 		_lookdown.enabled = false;
-		Invoke ("AllowRobbesMovement", 1.0f);
+		Invoke ("AllowRobbesMovement", 0.25f);
 	}
 
 	private void AllowRobbesMovement() 
