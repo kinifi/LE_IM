@@ -14,6 +14,7 @@ GameObject:
   - 50: {fileID: 5000002}
   - 58: {fileID: 5800000}
   - 82: {fileID: 8200000}
+  - 95: {fileID: 9500000}
   m_Layer: 17
   m_Name: GoblinGoulVert
   m_TagString: BadGuyFollow
@@ -105,7 +106,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.5063076, y: -6.05327415, z: -5}
+  m_LocalPosition: {x: 85.053154, y: -34.7238464, z: -5}
   m_LocalScale: {x: .299104899, y: .299104989, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -270,6 +271,21 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!95 &9500000
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 30b116e715ba2cf45acd588dff20ed63, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1

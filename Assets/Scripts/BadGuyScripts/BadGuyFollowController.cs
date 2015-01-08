@@ -40,8 +40,16 @@ public class BadGuyFollowController : MonoBehaviour {
 	//Audio Configs
 	public AudioClip[] wispSounds;
 
+	//Animation Configs
+	private Animator _anim;
+
 	//Components to get
 	private int _goblinsDeadNum;
+
+	void Awake()
+	{
+		_anim = GetComponent<Animator>();
+	}
 
 	void Start ()
 	{
@@ -207,6 +215,12 @@ public class BadGuyFollowController : MonoBehaviour {
 	{
 		if(other.gameObject.tag == "Arrow")
 		{
+			//Stop movement
+			ZeroOutFources();
+			//Stop anim body
+			this.gameObject.GetComponentInChildren<ParticleSystem>().renderer.enabled = false;
+			//Start anim
+			_anim.SetBool("IsDead", true);
 			//Play audio
 			audio.PlayOneShot(wispSounds[0]);
 			//Get position for bow drop

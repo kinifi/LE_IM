@@ -38,6 +38,7 @@ public class ShaddowSpikeShotting : MonoBehaviour {
 		if(other.gameObject.tag == "Player")
 		{
 			DeathbySpikes();
+			Destroy(this.gameObject);
 		}
 		else if(other.gameObject.tag != "Player")
 		{

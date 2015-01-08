@@ -43,8 +43,16 @@ public class BadGuyDiag : MonoBehaviour {
 	//Audio Configs
 	public AudioClip[] vertWispSounds;
 
+	//Animation Configs
+	private Animator _anim;
+
 	//Components to get
 	private int _goblinsDeadNum;
+
+	void Awake()
+	{
+		_anim = GetComponent<Animator>();
+	}
 	
 	void Start ()
 	{
@@ -232,6 +240,12 @@ public class BadGuyDiag : MonoBehaviour {
 		
 		else if(other.gameObject.tag == "Arrow")
 		{
+			//Stop movement
+			ZeroOutFources();
+			//Stop anim body
+			this.gameObject.GetComponentInChildren<ParticleSystem>().renderer.enabled = false;
+			//Start anim
+			_anim.SetBool("IsDead", true);
 			//Play audio
 			audio.PlayOneShot(vertWispSounds[0]);
 			//Get position for bow drop
