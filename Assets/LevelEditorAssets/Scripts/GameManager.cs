@@ -21,16 +21,34 @@ public class GameManager : MonoBehaviour {
     private bool attemptingToUploadToSteamWorkshop = false;
     private bool privateLevel = false;
 
-
+	//Steam workshop stuff
+	private PublishedFileId_t m_PublishedFileId;
+	private UGCUpdateHandle_t m_UGCUpdateHandle;
+	private CallResult<CreateItemResult_t> OnCreateItemResultCallResult;
+	private CallResult<SubmitItemUpdateResult_t> OnSubmitItemUpdateResultCallResult;
+	private ulong BytesProcessed;
+	private ulong BytesTotal;
+	private string imagePath;
+	
 	void Start () {
 
+        //TODO: Give users the ability to give a path to a picture
+		imagePath = Application.dataPath + "/UserLevels/" + "SantaHat.png";
+
+		OnCreateItemResultCallResult = CallResult<CreateItemResult_t>.Create(OnCreateItemResult);
+		OnSubmitItemUpdateResultCallResult = CallResult<SubmitItemUpdateResult_t>.Create(OnSubmitItemUpdateResult);
+
+		//Set the author name to the Steam Persona Name. Example: authorName = Kinifi
         author_Name = SteamBasic.getPersonaName();
 
 	}
 
     void Update ()
     {
-        //If the Left Mouse button is down, change the sprite to the sprite selected
+
+		EItemUpdateStatus ret = SteamUGC.GetItemUpdateProgress(m_UGCUpdateHandle, out BytesProcessed, out BytesTotal);
+		
+		//If the Left Mouse button is down, change the sprite to the sprite selected
         if (Input.GetMouseButtonDown(1))
         {
             var worldTouch = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -43,7 +61,7 @@ public class GameManager : MonoBehaviour {
                     //TODO: This will get an Error if the Hit.GameObject doesn't have a Collider2D
                     hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Tiles[0].gameObject.GetComponent<SpriteRenderer>().sprite;
                     hit.transform.name = Tiles[0].gameObject.GetComponent<SpriteRenderer>().sprite.name;
-                    hit.transform.tag = "Block";
+                    //hit.transform.tag = "Block";
                     //Debug.Log(hit.transform.name);
                 }
                 else
@@ -80,6 +98,13 @@ public class GameManager : MonoBehaviour {
 
         GUILayout.Label("Export to Steam Workshop");
 
+
+        if(GUILayout.Button("Cancel Workshop Upload"))
+        {
+            attemptingToUploadToSteamWorkshop = false;
+            Debug.Log("Cancelled Workshop");
+        }
+
         GUILayout.Label("Created By: " + author_Name);
 
         GUILayout.BeginHorizontal();
@@ -92,17 +117,55 @@ public class GameManager : MonoBehaviour {
         privateLevel = GUILayout.Toggle(privateLevel, "");
         GUILayout.EndHorizontal();
 
+        GUILayout.Space(10);
+
+        GUILayout.Label("Image Preview Path");
+        GUILayout.Label("Put in the Exact file location for a preview image");
+        GUILayout.Label("Example: C:/Users/Chris/Desktop/previewImage.jpg");
+        GUILayout.Label("Only Accepted formats: JPG, PNG or GIF.");
+        GUILayout.Label("Must be under 1MB in size");
+        //image path text field
+        imagePath = GUILayout.TextField(imagePath, 200);
+        
+
+        GUILayout.Space(10);
+
         GUILayout.Label("Author Notes:");
         author_Note = GUILayout.TextArea(author_Note, 75, GUILayout.Height(50));
 
-        if(GUILayout.Button("Upload to Steam WorkShop", GUILayout.Height(50)))
+        #region Steam Workshop Upload Button
+        if (GUILayout.Button("Upload to Steam WorkShop", GUILayout.Height(50)))
         {
-            Debug.Log("Successfully uploaded");
+            //Debug.Log("Successfully uploaded");
 
-            
 
-            attemptingToUploadToSteamWorkshop = false;
+			SteamAPICall_t handle = SteamUGC.CreateItem((AppId_t)265670, EWorkshopFileType.k_EWorkshopFileTypeCommunity);
+			OnCreateItemResultCallResult.Set(handle);
+
+			m_UGCUpdateHandle = SteamUGC.StartItemUpdate((AppId_t)265670, m_PublishedFileId);
+
+			bool retMapName = SteamUGC.SetItemTitle(m_UGCUpdateHandle, mapName);
+			bool retDescription = SteamUGC.SetItemDescription(m_UGCUpdateHandle, author_Note);
+
+			if(privateLevel)
+			{
+				bool retVisibility = SteamUGC.SetItemVisibility(m_UGCUpdateHandle, ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPrivate);
+				Debug.Log("" + retVisibility);
+			}
+			else
+			{
+				bool retVisibility = SteamUGC.SetItemVisibility(m_UGCUpdateHandle, ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPublic);
+				Debug.Log("" + retVisibility);
+			}
+
+			bool retTags = SteamUGC.SetItemTags(m_UGCUpdateHandle, new string[] {"Challenge Level", "Hard"});
+			bool retContent = SteamUGC.SetItemContent(m_UGCUpdateHandle, path);
+			bool retPreview = SteamUGC.SetItemPreview(m_UGCUpdateHandle, imagePath);
+			SteamAPICall_t handleUpdate = SteamUGC.SubmitItemUpdate(m_UGCUpdateHandle, "Test Changenote");
+			OnSubmitItemUpdateResultCallResult.Set(handleUpdate);
         }
+
+        #endregion
 
         GUILayout.EndArea();
 
@@ -113,7 +176,7 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     private void GUI_LevelEditor()
     {
-        GUILayout.BeginArea(new Rect(0, 0, 200, Screen.height));
+        GUILayout.BeginArea(new Rect(0, 0, 250, Screen.height));
 
         GUILayout.Label("Level Creation / Loading");
         GUILayout.BeginHorizontal();
@@ -185,15 +248,9 @@ public class GameManager : MonoBehaviour {
 
         GUILayout.Label("When you are ready. Click Below to Upload to Steam Workshop");
 
-        if (GUILayout.Button("Upload to Steam WorkShop", GUILayout.Height(20)))
+        if (GUILayout.Button("Upload to Steam WorkShop", GUILayout.Height(50)))
         {
             Debug.Log("Start Steam WorkShop Upload");
-
-            //SteamAPICall_t handle = SteamUGC.CreateItem((AppId_t)480, EWorkshopFileType.k_EWorkshopFileTypeWebGuide);
-            //SteamAPICall_t handle = 
-            
-
-
             attemptingToUploadToSteamWorkshop = true;
         }
 
@@ -232,14 +289,16 @@ public class GameManager : MonoBehaviour {
     /// Delete every GameObject with the "Block" Tag
     /// Can pass any tag name to it. Defaults to Block
     /// </summary>
-    private void ClearLevel(string tagName = "Block")
+    private void ClearLevel(string tagName = "ChallengeGround")
     {
         gameObjs = GameObject.FindGameObjectsWithTag(tagName);
-        for (int i = 0; i < gameObjs.Length; i++)
-        {
-            Destroy(gameObjs[i].gameObject);
-        }
-
+		if(gameObjs != null)
+		{
+	        for (int i = 0; i < gameObjs.Length; i++)
+	        {
+	            Destroy(gameObjs[i].gameObject);
+	        }
+		}
         GameObject _lvl;
         _lvl = GameObject.Find("_Level");
         if (_lvl != null)
@@ -294,9 +353,9 @@ public class GameManager : MonoBehaviour {
 	void LoadXML(string mapName)
 	{
         //clear the existing level on the screen
-        ClearLevel();
+        //ClearLevel();
 
-		path = Application.dataPath + "/UserLevels/"+mapName+".xml";
+		path = Application.dataPath + "/UserLevels/" + mapName + ".xml";
 		
 		XmlReader reader = XmlReader.Create(path);
 		XmlDocument xmlDoc = new XmlDocument();
@@ -335,8 +394,8 @@ public class GameManager : MonoBehaviour {
                 {
                     GameObject _newBlock;
                     _newBlock = Instantiate(Tiles[t], new Vector2(float.Parse(allGameObjects.Item(1).InnerText), float.Parse(allGameObjects.Item(2).InnerText)), Quaternion.identity) as GameObject;
-                    _newBlock.tag = "Block";
-                    _newBlock.name = allGameObjects.Item(0).InnerText;
+					_newBlock.tag = "ChallengeGround";
+					_newBlock.name = allGameObjects.Item(0).InnerText;
                     _newBlock.transform.parent = _newLevel.transform;
                 }
             }
@@ -367,7 +426,7 @@ public class GameManager : MonoBehaviour {
     /// </summary>
 	private void saveXML()
 	{
-   		path = Application.dataPath + "/XmlDocs/"+ mapName +".xml";
+   		path = Application.dataPath + "/UserLevels/"+ mapName +".xml";
 		XmlDocument xmlDoc = new XmlDocument();
 	    XmlElement elmRoot = xmlDoc.CreateElement("Level");
     	xmlDoc.AppendChild(elmRoot);
@@ -419,4 +478,14 @@ public class GameManager : MonoBehaviour {
 	    outStream.Close();
         Debug.Log("Finished Save" + Time.realtimeSinceStartup);
 	}
+
+	void OnCreateItemResult(CreateItemResult_t pCallback, bool bIOFailure) {
+		Debug.Log("[" + CreateItemResult_t.k_iCallback + " - CreateItemResult_t] - " + pCallback.m_eResult + " -- " + pCallback.m_nPublishedFileId + " -- " + pCallback.m_bUserNeedsToAcceptWorkshopLegalAgreement);
+		m_PublishedFileId = pCallback.m_nPublishedFileId;
+	}
+
+	void OnSubmitItemUpdateResult(SubmitItemUpdateResult_t pCallback, bool bIOFailure) {
+		Debug.Log("[" + SubmitItemUpdateResult_t.k_iCallback + " - SubmitItemUpdateResult_t] - " + pCallback.m_eResult + " -- " + pCallback.m_bUserNeedsToAcceptWorkshopLegalAgreement);
+	}
+
 }
