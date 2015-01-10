@@ -10,6 +10,7 @@ public class MonsterCreator : MonoBehaviour {
 
     public string author_Name, author_Note, monsterName, monsterDescription, monsterCreated, monsterEnemy, memoryConnection;
     private string path;
+	public GUISkin skin;
 
     //Steam workshop stuff
     private PublishedFileId_t m_PublishedFileId;
@@ -41,6 +42,9 @@ public class MonsterCreator : MonoBehaviour {
 	void OnGUI()
     {
 
+		GUI.skin = skin;
+
+
         GUILayout.BeginArea(new Rect(300, 0, Screen.width-300, Screen.height));
         if (previewImage != null)
         {
@@ -59,7 +63,7 @@ public class MonsterCreator : MonoBehaviour {
         }
 
         GUILayout.Space(10);
-        GUILayout.Label("Monster Creator");
+        GUILayout.Label("Monster Creator: " + author_Name);
 
         ///Monster Name
         GUILayout.Label("Monster Name");
@@ -85,6 +89,10 @@ public class MonsterCreator : MonoBehaviour {
             }
 
         }
+
+		GUILayout.EndArea();
+
+		GUILayout.BeginArea(new Rect(Screen.width-300, 0, 300, Screen.height));
 
         //Created
         //How was the monster created?
@@ -112,7 +120,7 @@ public class MonsterCreator : MonoBehaviour {
         author_Note = GUILayout.TextArea(author_Note, 200, GUILayout.Height(100));
 
         //bool to toggle private or public
-        privateLevel = GUILayout.Toggle(privateLevel, "Private? ");
+        //privateLevel = GUILayout.Toggle(privateLevel, "Private? ");
 
 
         #region Steam Workshop Upload Button
@@ -143,8 +151,9 @@ public class MonsterCreator : MonoBehaviour {
             bool retTags = SteamUGC.SetItemTags(m_UGCUpdateHandle, new string[] { "Monster", "Enemy" });
             bool retContent = SteamUGC.SetItemContent(m_UGCUpdateHandle, path);
             bool retPreview = SteamUGC.SetItemPreview(m_UGCUpdateHandle, imagePath);
-            SteamAPICall_t handleUpdate = SteamUGC.SubmitItemUpdate(m_UGCUpdateHandle, "Test Changenote");
+			SteamAPICall_t handleUpdate = SteamUGC.SubmitItemUpdate(m_UGCUpdateHandle, "Test Changenote");
             OnSubmitItemUpdateResultCallResult.Set(handleUpdate);
+
         }
 
         #endregion
@@ -209,6 +218,7 @@ public class MonsterCreator : MonoBehaviour {
 
     void OnSubmitItemUpdateResult(SubmitItemUpdateResult_t pCallback, bool bIOFailure)
     {
+		//Debug.Log(OnSubmitItemUpdateResult.);
         Debug.Log("[" + SubmitItemUpdateResult_t.k_iCallback + " - SubmitItemUpdateResult_t] - " + pCallback.m_eResult + " -- " + pCallback.m_bUserNeedsToAcceptWorkshopLegalAgreement);
     }
 

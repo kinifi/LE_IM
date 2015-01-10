@@ -29,7 +29,9 @@ public class GameManager : MonoBehaviour {
 	private ulong BytesProcessed;
 	private ulong BytesTotal;
 	private string imagePath;
-	
+
+	public GUISkin skin;
+
 	void Start () {
 
         //TODO: Give users the ability to give a path to a picture
@@ -76,6 +78,8 @@ public class GameManager : MonoBehaviour {
 
     void OnGUI()
     {
+		GUI.skin = skin;
+
         if (!attemptingToUploadToSteamWorkshop)
         {
             GUI_LevelEditor();

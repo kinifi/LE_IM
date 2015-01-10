@@ -8,6 +8,7 @@ public class Level_Intro : MonoBehaviour {
 
 	public GameObject introPanel;
     public GameObject gameManager, enemyCreator;
+	public GUISkin skin;
 
 	//SteamUGC
     private CallResult<SteamUGCRequestUGCDetailsResult_t> OnSteamUGCRequestUGCDetailsResultCallResult;
@@ -16,6 +17,7 @@ public class Level_Intro : MonoBehaviour {
 
     //GUI vars
     private bool doneLoading = false;
+	private Vector2 scrollPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +37,7 @@ public class Level_Intro : MonoBehaviour {
         public ulong unusedSizeOnDisk;
         public bool unusedLegacyItem;
         public PublishedFileId_t publishFileID;
+		public string Tags;
     }
 
     public void enableGameManager()
@@ -160,7 +163,7 @@ public class Level_Intro : MonoBehaviour {
         for (int i = 0; i < m_CreatedLevels.Count; i++)
 		{
 			
-                if (m_CreatedLevels[i].publishFileID != pCallback.m_details.m_nPublishedFileId) 
+				if (m_CreatedLevels[i].publishFileID != pCallback.m_details.m_nPublishedFileId && m_CreatedLevels[i].Tags == "Challenge Level,Hard") 
                 { 
                     continue;
                 }
@@ -168,6 +171,8 @@ public class Level_Intro : MonoBehaviour {
                 //do this shit here
                 m_CreatedLevels[i].title = pCallback.m_details.m_rgchTitle;
                 m_CreatedLevels[i].Description = pCallback.m_details.m_rgchDescription;
+				m_CreatedLevels[i].Tags = pCallback.m_details.m_rgchTags;
+				Debug.Log(m_CreatedLevels[i].Tags);
                 doneLoading = true;
                 Debug.Log("Added Data");
                 break;
@@ -180,24 +185,29 @@ public class Level_Intro : MonoBehaviour {
     void OnGUI()
     {
 
+		GUI.skin = skin;
+
         GUILayout.BeginArea(new Rect(0, 0, 250, Screen.height));
+
 
         if (doneLoading)
         {
-            GUILayout.Label("Workshop Levels");
 
+            GUILayout.Label("Workshop Levels");
+			scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.Height(Screen.height));
             //creat the gui buttons for the levels
             for (int i = 0; i < m_CreatedLevels.Count; i++)
             {
-                if (GUILayout.Button(m_CreatedLevels[i].title))
+				if (GUILayout.Button(m_CreatedLevels[i].title))
                 {
                     Debug.Log("Title: " + m_CreatedLevels[i].title + " | " + m_CreatedLevels[i].Description + " | " + m_CreatedLevels[i].path + "/" + m_CreatedLevels[i].title + ".xml");
                     PlayerPrefs.SetString("Title", m_CreatedLevels[i].title);
                     PlayerPrefs.SetString("Description", m_CreatedLevels[i].Description);
                     PlayerPrefs.SetString("Path", m_CreatedLevels[i].path + "/" + m_CreatedLevels[i].title + ".xml");
-                    Application.LoadLevel("OneOffLevel");
+                    //Application.LoadLevel("OneOffLevel");
                 }
             }
+			GUILayout.EndScrollView();
         }
 
 

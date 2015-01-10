@@ -459,6 +459,7 @@ MonoBehaviour:
   Tiles: []
   EditorTile: {fileID: 100000, guid: a0d3000a35c61544db172e19879bb4f2, type: 2}
   cam: {fileID: 244017671}
+  skin: {fileID: 11400000, guid: feaa2e6c972bde7449e118245842aa81, type: 2}
 --- !u!4 &385329113
 Transform:
   m_ObjectHideFlags: 0
@@ -517,6 +518,7 @@ MonoBehaviour:
   monsterCreated: 
   monsterEnemy: 
   memoryConnection: 
+  skin: {fileID: 11400000, guid: feaa2e6c972bde7449e118245842aa81, type: 2}
 --- !u!1 &508098526
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +621,7 @@ GameObject:
   - 114: {fileID: 587259164}
   - 114: {fileID: 587259163}
   - 65: {fileID: 587259162}
+  - 114: {fileID: 587259165}
   m_Layer: 9
   m_Name: Tutorial
   m_TagString: Untagged
@@ -729,6 +732,18 @@ MonoBehaviour:
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Button
   mFillCenter: 1
+--- !u!114 &587259165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 587259160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6811d803086bb614ca83c12ea62797c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorkShopItemURL: http://steamcommunity.com/workshop/browse/?appid=265670&browsesort=trend&section=readytouseitems
 --- !u!1 &683291108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1332,7 @@ GameObject:
   - 114: {fileID: 1476783024}
   - 114: {fileID: 1476783023}
   - 65: {fileID: 1476783022}
+  - 114: {fileID: 1476783025}
   m_Layer: 9
   m_Name: WorkShop Page
   m_TagString: Untagged
@@ -1375,7 +1391,11 @@ MonoBehaviour:
   pressedSprite2D: {fileID: 0}
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
-  onClick: []
+  onClick:
+  - mTarget: {fileID: 1476783025}
+    mMethodName: GoToWorkShopItemPage
+    mParameters: []
+    oneShot: 0
 --- !u!114 &1476783024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1427,6 +1447,18 @@ MonoBehaviour:
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Button
   mFillCenter: 1
+--- !u!114 &1476783025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1476783020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6811d803086bb614ca83c12ea62797c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorkShopItemURL: http://steamcommunity.com/workshop/browse/?appid=265670&browsesort=trend&section=readytouseitems
 --- !u!1 &1509500239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,7 +1528,15 @@ MonoBehaviour:
   pressedSprite2D: {fileID: 0}
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
-  onClick: []
+  onClick:
+  - mTarget: {fileID: 1655584574}
+    mMethodName: toggleIntroPanel
+    mParameters: []
+    oneShot: 0
+  - mTarget: {fileID: 1655584574}
+    mMethodName: enableEnemyCreator
+    mParameters: []
+    oneShot: 0
 --- !u!114 &1509500243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1575,7 +1615,7 @@ Transform:
   m_GameObject: {fileID: 1655584572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00392927323, y: .00392927323, z: .00392927323}
+  m_LocalScale: {x: .00408997945, y: .00408997945, z: .00408997945}
   m_Children:
   - {fileID: 244017670}
   m_Father: {fileID: 0}
@@ -1594,6 +1634,7 @@ MonoBehaviour:
   introPanel: {fileID: 1203516781}
   gameManager: {fileID: 385329111}
   enemyCreator: {fileID: 495544950}
+  skin: {fileID: 11400000, guid: feaa2e6c972bde7449e118245842aa81, type: 2}
 --- !u!54 &1655584575
 Rigidbody:
   m_ObjectHideFlags: 0
