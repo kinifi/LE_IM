@@ -210,11 +210,22 @@ public class MonsterCreator : MonoBehaviour {
         Debug.Log("Finished Save" + Time.realtimeSinceStartup);
     }
 
-    void OnCreateItemResult(CreateItemResult_t pCallback, bool bIOFailure)
+    void OnCreateItemResult(CreateItemResult_t pCallback, bool bIOFailed)
     {
-        Debug.Log("[" + CreateItemResult_t.k_iCallback + " - CreateItemResult_t] - " + pCallback.m_eResult + " -- " + pCallback.m_nPublishedFileId + " -- " + pCallback.m_bUserNeedsToAcceptWorkshopLegalAgreement);
-        m_PublishedFileId = pCallback.m_nPublishedFileId;
+		print("OnCreateItemResult - m_eResult: " + pCallback.m_eResult + " | m_nPublishedFileId: " + pCallback.m_nPublishedFileId + " | m_bUserNeedsToAcceptWorkshopLegalAgreement: " + pCallback.m_bUserNeedsToAcceptWorkshopLegalAgreement);
+		
+		if (bIOFailed) {
+			Debug.LogError("OnCreateItemResult bIOFailed = true. ");
+			return;
+		}
+		
+		if (pCallback.m_eResult != EResult.k_EResultOK) {
+			Debug.LogError("OnCreateItemResult m_eResult != k_EResultOK");
+			return;
+		}
+
     }
+
 
     void OnSubmitItemUpdateResult(SubmitItemUpdateResult_t pCallback, bool bIOFailure)
     {
