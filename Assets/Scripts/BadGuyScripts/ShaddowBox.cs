@@ -24,6 +24,11 @@ public class ShaddowBox : MonoBehaviour {
 	//Audio Configs
 	public AudioClip[] voices;
 
+	//Anaimation Configs
+	public GameObject splash;
+
+
+
 	void Update()
 	{
 		if(Mathf.Abs(rigidbody2D.velocity.x) < Mathf.Abs(maxSpeed))
@@ -59,6 +64,8 @@ public class ShaddowBox : MonoBehaviour {
 	{
 		if(other.gameObject.tag == "Arrow")
 		{
+			//start animation
+			Instantiate(splash, this.gameObject.transform.position, Quaternion.identity);
 			//play audio
 			audio.PlayOneShot(voices[1], 1.0f);
 			//grab position for bow drop
