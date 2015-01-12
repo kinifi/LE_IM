@@ -11,6 +11,7 @@ public class ShaddowBox : MonoBehaviour {
 	public float maxSpeed = 3.0f;
 	private float nextForwardJump;
 	private bool facingRight = true;
+	private bool canFlip = true;
 
 	//Bounce configs
 	public float jumpRate = 2.0f;
@@ -118,7 +119,7 @@ public class ShaddowBox : MonoBehaviour {
 		
 		if(other.gameObject.layer != 12 && other.gameObject.layer != 15)
 		{
-			if(this.gameObject.name == "ShaddowForward")
+			if(this.gameObject.name == "ShaddowForward" && canFlip == true)
 			{
 				AboutFace();
 				//Debug.Log ("AboutFace was called");
@@ -130,13 +131,17 @@ public class ShaddowBox : MonoBehaviour {
 	{
 		if(facingRight)
 		{
+			canFlip = false;
 			moveForward = new Vector3(3.0f, 10.0f, 0.0f);
 			facingRight = !facingRight;
+			Invoke ("CanFlipTrue", 0.5f);
 		}
 		else if(!facingRight)
 		{
+			canFlip = false;
 			moveForward = new Vector3(-3.0f, 10.0f, 0.0f);
 			facingRight = true;
+			Invoke ("CanFlipTrue", 0.5f);
 		}
 		//Debug.Log("AboutFace Ran!!!!!!!!!");
 	}
@@ -157,5 +162,10 @@ public class ShaddowBox : MonoBehaviour {
 	{
 		//Destroy obj
 		Destroy(this.gameObject);
+	}
+
+	void CanFlipTrue()
+	{
+		canFlip = true;
 	}
 }
