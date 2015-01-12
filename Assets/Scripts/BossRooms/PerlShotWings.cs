@@ -6,6 +6,7 @@ public class PerlShotWings : MonoBehaviour {
 	//Components to get
 	private HingeJoint2D wingHinge;
 	private JointMotor2D wingMotor;
+	private int _perlWings;
 
 	//AI Configs
 	private float nextFlight = 1.0f;
@@ -17,6 +18,11 @@ public class PerlShotWings : MonoBehaviour {
 	public GameObject kill;
 	public GameObject deathSplash;
 	public GameObject bowGolden;
+
+	void Awake ()
+	{
+		_perlWings = GameObject.Find ("DepthsBossProfile").GetComponent<DepthsBossMovement>().perlWings;
+	}
 
 	// Use this for initialization
 	void Start () 
@@ -91,6 +97,12 @@ public class PerlShotWings : MonoBehaviour {
 			Vector3 pos = transform.position;
 			//Destroy Arrow
 			Destroy(other.gameObject);
+			//Decrease perlwings count
+			if(GameObject.Find ("DepthsBossProfile") != null)
+			{
+				_perlWings -= 1;
+				Debug.Log ("The number of wings left is: " + _perlWings);
+			}
 			//chance of drop
 			int drop = Random.Range(1,6);
 			//drop

@@ -11,10 +11,10 @@ GameObject:
   - 212: {fileID: 21200000}
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
-  - 114: {fileID: 11400000}
+  - 232: {fileID: 23200000}
   m_Layer: 9
   m_Name: RotateBlocks_big
-  m_TagString: big
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26, y: -15, z: 0}
+  m_LocalPosition: {x: 4.43725824, y: -5.30462074, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,7 +41,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
-  m_FixedAngle: 0
+  m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -57,19 +57,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f68a4308e876741bc62731cf763770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  bigSpeed: -20
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -90,8 +77,21 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1809295637
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 747f9c29e5832e547bf02989d7517ed7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78196a8a00edb6a438907a1cee997041, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!232 &23200000
+DistanceJoint2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_CollideConnected: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 4.5, y: -5}
+  m_Distance: .00499999989
+  m_MaxDistanceOnly: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -4,10 +4,10 @@ using System.Collections;
 public class SpringJump : MonoBehaviour {
 
 	//value for rigidbodies
-	private Vector2 springing = new Vector2(0.0f, 275.0f);
+	private Vector2 springing = new Vector2(0.0f, 75.0f);
 
 	//value for kinematic 
-	private float targetJumpHeight = 8.0f;
+	private float targetJumpHeight = 6.0f;
 	private float gravity = -25.0f;
 
 	//regulates stats reporting

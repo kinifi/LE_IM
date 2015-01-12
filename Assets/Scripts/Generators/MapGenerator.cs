@@ -13,7 +13,6 @@ public class MapGenerator : MonoBehaviour {
 	private int downRoomNum;
 	public bool tutorialDone = false;
 
-	public GameObject controlsMessage;
 	public GameObject completeMessage;
 
 	private void Start() 
@@ -154,22 +153,8 @@ public class MapGenerator : MonoBehaviour {
 		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
 		_lookdown.enabled = false;
 
-		//Instantiate the controls splash and overlay Robbe.  Destroy it and call the movement function.
-		GameObject controlsSplash = Instantiate(controlsMessage, startRobbe.transform.position, Quaternion.identity) as GameObject;
-		controlsSplash.transform.OverlayPosition(startRobbe.transform);
-
-		//Destroy Splash
-		if(Input.GetButtonDown("Confirm"))
-		{
-			Destroy(controlsSplash);
-		}
-		else
-		{
-			Destroy(controlsSplash, 2.5f);
-		}
-		
 		//Allow Robbe's movement again
-		Invoke("AllowRobbesMovement", 2.5f);
+		Invoke("AllowRobbesMovement", 0.25f);
 	}
 
 	private void LoadCompleteMessage()
@@ -197,7 +182,7 @@ public class MapGenerator : MonoBehaviour {
 		}
 
 		//Allow Robbe's movement again
-		Invoke("AllowRobbesMovement", 2.5f);
+		Invoke("AllowRobbesMovement", 0.25f);
 	}
 
 	private void AllowRobbesMovement() 

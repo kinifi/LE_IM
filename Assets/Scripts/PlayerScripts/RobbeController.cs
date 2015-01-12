@@ -4,7 +4,7 @@ using System.Collections;
 public class RobbeController : MonoBehaviour {
 
 	//Movement Configs
-	public float gravity = -35.0f;
+	public float gravity = -25.0f;
 	public float runSpeed = 4.0f;
 	public float groundDamping = 20f; // how fast do we change direction? higher means faster
 	public float inAirDamping = 5f;
