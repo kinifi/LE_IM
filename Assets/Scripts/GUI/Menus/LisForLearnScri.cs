@@ -30,51 +30,37 @@ public class LisForLearnScri : MonoBehaviour {
 				togglePanel();
 			}
 		}
-		if(Input.GetButtonDown("Back") && Panel.activeSelf == true)
-		{
-			Panel.SetActive(false);
-			Debug.Log ("The Learn panel should go away.");
-		}
 	}
 
-	private void togglePanel()
+	public void togglePanel()
 	{
 		if(Panel.activeSelf == false)
 		{
-			togglePlayerMovement();
+			/*togglePlayerMovement();
 			if(isChallengeLevels == false)
 			{
 				toggleCameraMovement();
 				changeVectorOffSet(-50);
-			}
+			}*/
 			//Displays the learn panel
 			Panel.SetActive(true);
 			//Pauses the game time scale
-			GameTimePause ();			
+			Invoke("GameTimePause", 0.55f);
 		}
 		else
 		{
-			togglePlayerMovement();
+			/*togglePlayerMovement();
 			if(isChallengeLevels == false)
 			{
 				toggleCameraMovement();
 				changeVectorOffSet(0);
-			}
-			//Starts the game time scale
-			GameTimePlay ();
-			//Turns off the panel
-			Panel.SetActive(false);
+			}*/
+			Resume ();
 		}
 	}
 
 	public void Resume()
 	{
-		togglePlayerMovement();
-		if(isChallengeLevels == false)
-		{
-			toggleCameraMovement();
-			changeVectorOffSet(0);
-		}
 		//Starts the game time scale
 		GameTimePlay ();
 		//Turns off the panel
@@ -106,9 +92,13 @@ public class LisForLearnScri : MonoBehaviour {
 			//Displays the Learn panel
 			Panel.SetActive(true);
 			Debug.Log ("The Learn panel should be visible.");
+			//Pauses the game time scale
+			Invoke("GameTimePause", 0.25f);
 		}
 		else if(Panel.activeSelf == true)
 		{
+			//Starts the game time scale
+			GameTimePlay ();
 			//Turns off the panel
 			Panel.SetActive(false);
 			Debug.Log ("The Learn panel should go away.");
@@ -126,5 +116,4 @@ public class LisForLearnScri : MonoBehaviour {
 	{
 		Time.timeScale = 1.0f;
 	}
-
 }

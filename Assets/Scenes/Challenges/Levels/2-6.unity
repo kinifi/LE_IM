@@ -9457,7 +9457,7 @@ Transform:
   m_PrefabInternal: {fileID: 1724091880}
   m_GameObject: {fileID: 789554628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1195.41724, y: 365.846497, z: 0}
+  m_LocalPosition: {x: 4028.27881, y: 2168.57617, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 372689780}
@@ -18337,7 +18337,6 @@ GameObject:
   - 54: {fileID: 1464037624}
   - 114: {fileID: 1464037627}
   - 114: {fileID: 1464037628}
-  - 114: {fileID: 1464037629}
   m_Layer: 9
   m_Name: UI Root
   m_TagString: Untagged
@@ -18353,7 +18352,7 @@ Transform:
   m_GameObject: {fileID: 1464037622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8, y: 6, z: 0}
-  m_LocalScale: {x: .00564971752, y: .00564971752, z: .00564971752}
+  m_LocalScale: {x: .00625000009, y: .00625000009, z: .00625000009}
   m_Children:
   - {fileID: 1041766258}
   m_Father: {fileID: 0}
@@ -18444,8 +18443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841d514439cf2fa48b3b5214ce8c45cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 889266595}
-  cam: {fileID: 1041766254}
+  PausePanel: {fileID: 889266595}
+  LearnPanel: {fileID: 372689779}
   Player: {fileID: 987874179}
   isChallengeLevels: 1
 --- !u!114 &1464037628
@@ -18460,21 +18459,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: FailedLevel
---- !u!114 &1464037629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1464037622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23750be8ce47714439a521306f65405a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 372689779}
-  cam: {fileID: 1041766254}
-  Player: {fileID: 987874179}
-  isChallengeLevels: 1
 --- !u!1001 &1473123999
 Prefab:
   m_ObjectHideFlags: 0
@@ -21508,8 +21492,8 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: 0, b: 0, a: 1}
   mPivot: 4
-  mWidth: 5863
-  mHeight: 2369
+  mWidth: 3810
+  mHeight: 2141
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0

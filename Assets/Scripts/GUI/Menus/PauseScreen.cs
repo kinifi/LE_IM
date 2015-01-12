@@ -4,36 +4,76 @@ using System.Collections;
 public class PauseScreen : MonoBehaviour {
 
 	/// VERY IMPORTANT !!!!!! If you touch this script be sure to call GameTimePlay() to start the Time Scale again!!!!!! READ THIS!!!! //
-	public GameObject Panel;
-	public GameObject cam;
+
+	//panel configs
+	public GameObject PausePanel;
+	public GameObject LearnPanel;
+	private GameObject Panel;
+
+	//other configs
 	public GameObject Player;
 	public bool isChallengeLevels = false;
+	private bool canToggle = true;
 
-	//Set Private Configs
-	private GameObject learnScreen;
-	private bool _canFire;
 
-	// Use this for initialization
-	void Awake () 
-	{
-		//prevents the player from shooting during the pause menu
-		_canFire = GameObject.Find ("Player").GetComponent<Quiver>().canFire;
-	}
-
-	// Update is called once per frame
 	void Update () {
 
-		if(Input.GetButtonDown("Back"))
+		if(Input.GetButtonDown("Back") && canToggle == true)
 		{
-			togglePanel();
-			toggleCanFire();
+			canToggle = false;
+			Debug.Log ("canToggle is now false: "+canToggle);
 			if(GameObject.Find ("Learn") != null)
 			{
-				GameObject learnScreen = GameObject.Find ("Learn");
-				learnScreen.SetActive(false);
+				Panel = LearnPanel;
+				togglePanel ();
+			}
+			else if(GameObject.Find ("Pause") != null)
+			{
+				Panel = PausePanel;
+				togglePanel();
+			}
+			else
+			{
+				Panel = PausePanel;
+				togglePanel();
 			}
 		}
-	
+		if(Input.GetButtonDown("LearnButton") && Application.loadedLevelName == "Options" && canToggle == true)
+		{
+			canToggle = false;
+			Debug.Log ("canToggle is now false: "+canToggle);
+			Debug.Log ("LearnButton was pressed.");
+			Panel = LearnPanel;
+			togglePanel ();
+		}
+		if(Input.GetButtonDown("LearnButton") && Application.loadedLevelName != "Options" && canToggle == true)
+		{
+			canToggle = false;
+			Debug.Log ("canToggle is now false: "+canToggle);
+			Debug.Log ("LearnButton was pressed.");
+			if(GameObject.Find("Pause") == null)
+			{
+				Panel = LearnPanel;
+				togglePanel();
+			}
+			else
+			{
+				Invoke ("ToggleTrue", 0.05f);
+			}
+		}
+		if(Panel != null)
+		{
+			if(GameObject.Find ("Learn") != null || GameObject.Find ("Pause") != null)
+			{
+				GameObject.Find ("Camera").GetComponent<Camera>().cullingMask = 1 << (LayerMask.NameToLayer("UI"));
+				GameObject.Find ("Player").GetComponent<Quiver>().canFire = false;
+			}
+			else
+			{
+				GameObject.Find ("Camera").GetComponent<Camera>().cullingMask = LayerMask.NameToLayer("Everything");
+				GameObject.Find ("Player").GetComponent<Quiver>().canFire = true;
+			}
+		}
 	}
 
 	public void goToMain()
@@ -46,13 +86,8 @@ public class PauseScreen : MonoBehaviour {
 
 	public void Resume()
 	{
-		togglePlayerMovement();
-		toggleCanFire();
-		if(isChallengeLevels == false)
-		{
-			toggleCameraMovement();
-			changeVectorOffSet(0);
-		}
+		//Set canToggle to true
+		ToggleTrue();
 		//Starts the game time scale
 		GameTimePlay ();
 		//Turns off the panel
@@ -77,86 +112,63 @@ public class PauseScreen : MonoBehaviour {
 		Application.LoadLevel(currentLevel);
 	}
 
-	private void togglePlayerMovement()
-	{
-		RobbeController _robbe = Player.GetComponent<RobbeController>();
-		_robbe.canMove = !_robbe.canMove;
-	}
-
-	private void changeVectorOffSet(int changeValue)
-	{
-		Smooth_Follow _smoothFollow = cam.GetComponent<Smooth_Follow>();
-		_smoothFollow.cameraOffset = new Vector3(0, 0, changeValue);
-	}
-
-	private void toggleCameraMovement()
-	{
-		NoFaithController _nofaith = cam.GetComponent<NoFaithController>();
-		_nofaith.canMove = !_nofaith.canMove;
-	}
-
 	private void togglePanel()
 	{
+		Invoke ("ToggleTrue", 0.05f);
+
 		if(Panel.activeSelf == false)
 		{
-			togglePlayerMovement();
-			if(isChallengeLevels == false)
-			{
-				toggleCameraMovement();
-				changeVectorOffSet(-50);
-			}
 			//Displays the Panel
 			Panel.SetActive(true);
+			Debug.Log ("Panel should be set to on!");
 			//Disables the Regnerate button if on Challenge Levels
 			DisableRegenerate ();
 			//Pauses the game time scale
-			Invoke("GameTimePause", 0.25f);
-
+			Invoke("GameTimePause", 0.15f);
 		}
 		else
 		{
-			togglePlayerMovement();
-			if(isChallengeLevels == false)
-			{
-				toggleCameraMovement();
-				changeVectorOffSet(0);
-			}
-			//Starts the game time scale
-			GameTimePlay ();
-			//Turns off the Panel
-			Panel.SetActive(false);
+			//Resumes the game
+			Resume();
 		}
-	}
-
-	private void toggleCanFire ()
-	{
-		_canFire = !_canFire;
-		GameObject.Find ("Player").GetComponent<Quiver>().canFire = _canFire;
 	}
 
 	//Disables the Regnerate button if on Challenge Levels
 	private void DisableRegenerate ()
 	{
-		if(isChallengeLevels == true)
+		if(Panel == PausePanel)
 		{
-			GameObject.Find ("ReGenerate").SetActive(false);
-		}
-		else
-		{
-			GameObject.Find ("ReGenerate").SetActive(true);
+			if(isChallengeLevels == true)
+			{
+				GameObject.Find ("ReGenerate").SetActive(false);
+				Debug.Log ("Regenerate has been deactivated");
+			}
+			else
+			{
+				GameObject.Find ("ReGenerate").SetActive(true);
+				Debug.Log ("No need to deactivate regenerate");
+			}
 		}
 	}
 
 	//Pauses the game time scale
 	private void GameTimePause ()
 	{
+		Debug.Log ("Pausing Game Time");
 		Time.timeScale = 0.0f;
 	}
 
 	//Starts the game time scale
 	private void GameTimePlay ()
 	{
+		Debug.Log ("Resume game time");
 		Time.timeScale = 1.0f;
 	}
 
+	//setToggle to true
+	private void ToggleTrue ()
+	{
+		canToggle = true;
+		Debug.Log ("canToggle is now true: "+canToggle);
+	}
 }
