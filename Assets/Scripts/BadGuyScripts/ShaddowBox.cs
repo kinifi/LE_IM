@@ -126,6 +126,30 @@ public class ShaddowBox : MonoBehaviour {
 			}
 		}
 	}
+
+	void OnCollisionEnter2D (Collision2D other)
+	{
+		if(other.gameObject.tag == "Arrow")
+		{
+			//start animation
+			Instantiate(splash, this.gameObject.transform.position, Quaternion.identity);
+			//play audio
+			audio.PlayOneShot(voices[1], 1.0f);
+			//grab position for bow drop
+			Vector3 pos = transform.position;
+			//destroy arrow
+			Destroy(other.gameObject);
+			//chance of drop
+			int drop = Random.Range(1,6);
+			//drop
+			if(drop == 5)
+			{
+				Instantiate(bowGolden, pos, Quaternion.identity);
+			}
+			//destroy object
+			Invoke ("DestroyObj", 0.05f);
+		}
+	}
 	
 	void AboutFace()
 	{

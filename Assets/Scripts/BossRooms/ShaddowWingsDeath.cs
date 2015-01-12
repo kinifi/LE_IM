@@ -4,7 +4,7 @@ using System.Collections;
 public class ShaddowWingsDeath : MonoBehaviour {
 
 	//Components to get
-	private int _wingsLeft;
+	private int _perlWings;
 
 	//Audio Configs
 	public AudioClip[] shaddowWingsSounds;
@@ -14,6 +14,11 @@ public class ShaddowWingsDeath : MonoBehaviour {
 	public GameObject deathSplash;
 	public GameObject bowGolden;
 	
+	void Awake ()
+	{
+		_perlWings = GameObject.Find ("DepthsBossProfile").GetComponent<DepthsBossMovement>().perlWings;
+	}
+
 	private void OnTriggerEnter2D (Collider2D other)
 	{
 		if(other.gameObject.tag == "Player")
@@ -49,9 +54,8 @@ public class ShaddowWingsDeath : MonoBehaviour {
 			//Check if Boss Level
 			if(GameObject.Find ("DepthsBossProfile") != null)
 			{
-				_wingsLeft = GameObject.Find ("DepthsBossProfile").GetComponent<DepthsBossMovement>().perlWings;
-				_wingsLeft -= 1;
-				GameObject.Find ("DepthsBossProfile").GetComponent<DepthsBossMovement>().perlWings = _wingsLeft;
+				_perlWings -= 1;
+				Debug.Log ("The number of wings left is: " + _perlWings);
 			}
 			//chance of drop
 			int drop = Random.Range(1,6);

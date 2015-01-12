@@ -5,7 +5,8 @@ public class RotateBlocks : MonoBehaviour {
 
 	public float speed = 2.0f;
 	public float bigSpeed = -20.0f;
-	
+
+
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
