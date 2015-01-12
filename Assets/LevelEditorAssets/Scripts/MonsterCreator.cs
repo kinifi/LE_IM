@@ -126,33 +126,8 @@ public class MonsterCreator : MonoBehaviour {
         #region Steam Workshop Upload Button
         if (GUILayout.Button("Upload to Steam WorkShop", GUILayout.Height(50)))
         {
-            //Debug.Log("Successfully uploaded");
-
-
-            SteamAPICall_t handle = SteamUGC.CreateItem((AppId_t)265670, EWorkshopFileType.k_EWorkshopFileTypeCommunity);
-            OnCreateItemResultCallResult.Set(handle);
-
-            m_UGCUpdateHandle = SteamUGC.StartItemUpdate((AppId_t)265670, m_PublishedFileId);
-
-            bool retMapName = SteamUGC.SetItemTitle(m_UGCUpdateHandle, monsterName);
-            bool retDescription = SteamUGC.SetItemDescription(m_UGCUpdateHandle, author_Note);
-
-            if (privateLevel)
-            {
-                bool retVisibility = SteamUGC.SetItemVisibility(m_UGCUpdateHandle, ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPrivate);
-                Debug.Log("" + retVisibility);
-            }
-            else
-            {
-                bool retVisibility = SteamUGC.SetItemVisibility(m_UGCUpdateHandle, ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPublic);
-                Debug.Log("" + retVisibility);
-            }
-
-            bool retTags = SteamUGC.SetItemTags(m_UGCUpdateHandle, new string[] { "Monster", "Enemy" });
-            bool retContent = SteamUGC.SetItemContent(m_UGCUpdateHandle, path);
-            bool retPreview = SteamUGC.SetItemPreview(m_UGCUpdateHandle, imagePath);
-			SteamAPICall_t handleUpdate = SteamUGC.SubmitItemUpdate(m_UGCUpdateHandle, "Test Changenote");
-            OnSubmitItemUpdateResultCallResult.Set(handleUpdate);
+			saveXML();
+			Debug.Log("Starting Upload Process");
 
         }
 
@@ -162,6 +137,36 @@ public class MonsterCreator : MonoBehaviour {
         //GUILayout.EndScrollView();
         GUILayout.EndArea();
     }
+
+	private void uploadToWorkShop()
+	{
+		
+		SteamAPICall_t handle = SteamUGC.CreateItem((AppId_t)265670, EWorkshopFileType.k_EWorkshopFileTypeCommunity);
+		OnCreateItemResultCallResult.Set(handle);
+		
+		m_UGCUpdateHandle = SteamUGC.StartItemUpdate((AppId_t)265670, m_PublishedFileId);
+		
+		bool retMapName = SteamUGC.SetItemTitle(m_UGCUpdateHandle, monsterName);
+		bool retDescription = SteamUGC.SetItemDescription(m_UGCUpdateHandle, author_Note);
+		
+		if (privateLevel)
+		{
+			bool retVisibility = SteamUGC.SetItemVisibility(m_UGCUpdateHandle, ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPrivate);
+			Debug.Log("" + retVisibility);
+		}
+		else
+		{
+			bool retVisibility = SteamUGC.SetItemVisibility(m_UGCUpdateHandle, ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPublic);
+			Debug.Log("" + retVisibility);
+		}
+		
+		bool retTags = SteamUGC.SetItemTags(m_UGCUpdateHandle, new string[] { "Monster", "Enemy" });
+		bool retContent = SteamUGC.SetItemContent(m_UGCUpdateHandle, path);
+		bool retPreview = SteamUGC.SetItemPreview(m_UGCUpdateHandle, imagePath);
+		SteamAPICall_t handleUpdate = SteamUGC.SubmitItemUpdate(m_UGCUpdateHandle, author_Note);
+		OnSubmitItemUpdateResultCallResult.Set(handleUpdate);
+
+	}
 
     /// <summary>
     /// Load the Image passed. This will check if the image exists also
@@ -185,12 +190,23 @@ public class MonsterCreator : MonoBehaviour {
 
 
     /// <summary>
-    /// DO NOT CALL. save the XML by finding all the gameobjects in the level with the "Block" Tag
+    /// Save monster xml
     /// </summary>
     private void saveXML()
     {
+
         path = Application.dataPath + "/UserMonsters/" + monsterName + ".xml";
-        XmlDocument xmlDoc = new XmlDocument();
+		if(!File.Exists(path))
+		{
+			DirectoryInfo di = Directory.CreateDirectory(Application.dataPath + "/UserMonsters");
+			Debug.Log("UserMonsters Directory Created");
+		}
+		else
+		{
+			Debug.Log("UserMonsters Folder exists");
+		}
+
+		XmlDocument xmlDoc = new XmlDocument();
         XmlElement elmRoot = xmlDoc.CreateElement("Monster");
         xmlDoc.AppendChild(elmRoot);
 
@@ -207,7 +223,8 @@ public class MonsterCreator : MonoBehaviour {
         StreamWriter outStream = System.IO.File.CreateText(path);
         xmlDoc.Save(outStream);
         outStream.Close();
-        Debug.Log("Finished Save" + Time.realtimeSinceStartup);
+        Debug.Log("Finished Save: " + Time.realtimeSinceStartup);
+		uploadToWorkShop();
     }
 
     void OnCreateItemResult(CreateItemResult_t pCallback, bool bIOFailed)
@@ -229,7 +246,7 @@ public class MonsterCreator : MonoBehaviour {
 
     void OnSubmitItemUpdateResult(SubmitItemUpdateResult_t pCallback, bool bIOFailure)
     {
-		//Debug.Log(OnSubmitItemUpdateResult.);
+
         Debug.Log("[" + SubmitItemUpdateResult_t.k_iCallback + " - SubmitItemUpdateResult_t] - " + pCallback.m_eResult + " -- " + pCallback.m_bUserNeedsToAcceptWorkshopLegalAgreement);
     }
 
