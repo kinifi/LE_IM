@@ -34,6 +34,7 @@ public class RobbeController : MonoBehaviour {
 
 	//public vars for other scripts
 	public Vector3 playervelocity;
+	public bool canJump;
 	
 	void Awake()
 	{
@@ -114,7 +115,7 @@ public class RobbeController : MonoBehaviour {
 			//jump
 			if( Input.GetButtonDown( "Jumped" ))
 			{
-				if(_controller.isGrounded)
+				if(_controller.isGrounded || canJump == true)
 				{
 					audio.PlayOneShot(clips[4], 0.55F);
 					velocity.y = Mathf.Sqrt( 2f * targetJumpHeight * -gravity );

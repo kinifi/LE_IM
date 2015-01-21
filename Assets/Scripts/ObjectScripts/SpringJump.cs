@@ -16,6 +16,7 @@ public class SpringJump : MonoBehaviour {
 	//scripts to get
 	private CharacterController2D _player;
 	private RobbeController _audioPlayer;
+	private RobbeController _isGrounded;
 
 	void Awake()
 	{
@@ -48,6 +49,7 @@ public class SpringJump : MonoBehaviour {
 			if(!hasCollided)
 			{
 				hasCollided = true;
+				_audioPlayer.canJump = true;
 
 				IncrementStats();
 				Invoke("InvokeReset", 0.2f);
@@ -69,5 +71,11 @@ public class SpringJump : MonoBehaviour {
 	private void InvokeReset()
 	{
 		hasCollided = false;
+		Invoke ("InvokeCantDouble", 1.5f);
+	}
+
+	private void InvokeCantDouble()
+	{
+		_audioPlayer.canJump = false;
 	}
 }
