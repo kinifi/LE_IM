@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -9,7 +10,7 @@ using Steamworks;
 
 public class GameManager : MonoBehaviour {
 
-    private GameObject[] gameObjs;
+    private List<GameObject> gameObjs = new List<GameObject>();
 	private string path;
 	public string mapName;
     public string author_Name, author_Note, background_Color;
@@ -31,6 +32,11 @@ public class GameManager : MonoBehaviour {
 	private string imagePath;
 
 	public GUISkin skin;
+	public Text inputMapName;
+	public Text UploadPanelText;
+	public GameObject GoToMainMenuButton;
+
+	public int currentSelectedTile;
 
 	void Start () {
 
@@ -43,6 +49,21 @@ public class GameManager : MonoBehaviour {
 		//Set the author name to the Steam Persona Name. Example: authorName = Kinifi
         author_Name = SteamBasic.getPersonaName();
 
+	}
+
+	public void setCurrentSelectedTile (int _tileNumber) {
+
+		currentSelectedTile = _tileNumber;
+	}
+
+	public void setMapName () {
+
+		mapName = inputMapName.text;
+	}
+
+	public void setBackGroundColor (string _color) {
+
+		background_Color = _color;
 	}
 
     void Update ()
@@ -61,9 +82,9 @@ public class GameManager : MonoBehaviour {
                 if (canDraw)
                 {
                     //TODO: This will get an Error if the Hit.GameObject doesn't have a Collider2D
-                    hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Tiles[0].gameObject.GetComponent<SpriteRenderer>().sprite;
-                    hit.transform.name = Tiles[0].gameObject.GetComponent<SpriteRenderer>().sprite.name;
-                    //hit.transform.tag = "Block";
+                    hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Tiles[currentSelectedTile].gameObject.GetComponent<SpriteRenderer>().sprite;
+                    hit.transform.name = Tiles[currentSelectedTile].gameObject.GetComponent<SpriteRenderer>().sprite.name;
+                    hit.transform.tag = "Untagged";
                     //Debug.Log(hit.transform.name);
                 }
                 else
@@ -142,32 +163,7 @@ public class GameManager : MonoBehaviour {
         if (GUILayout.Button("Upload to Steam WorkShop", GUILayout.Height(50)))
         {
             //Debug.Log("Successfully uploaded");
-
-
-			SteamAPICall_t handle = SteamUGC.CreateItem((AppId_t)265670, EWorkshopFileType.k_EWorkshopFileTypeCommunity);
-			OnCreateItemResultCallResult.Set(handle);
-
-			m_UGCUpdateHandle = SteamUGC.StartItemUpdate((AppId_t)265670, m_PublishedFileId);
-
-			bool retMapName = SteamUGC.SetItemTitle(m_UGCUpdateHandle, mapName);
-			bool retDescription = SteamUGC.SetItemDescription(m_UGCUpdateHandle, author_Note);
-
-			if(privateLevel)
-			{
-				bool retVisibility = SteamUGC.SetItemVisibility(m_UGCUpdateHandle, ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPrivate);
-				Debug.Log("" + retVisibility);
-			}
-			else
-			{
-				bool retVisibility = SteamUGC.SetItemVisibility(m_UGCUpdateHandle, ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPublic);
-				Debug.Log("" + retVisibility);
-			}
-
-			bool retTags = SteamUGC.SetItemTags(m_UGCUpdateHandle, new string[] {"Challenge Level", "Hard"});
-			bool retContent = SteamUGC.SetItemContent(m_UGCUpdateHandle, path);
-			bool retPreview = SteamUGC.SetItemPreview(m_UGCUpdateHandle, imagePath);
-			SteamAPICall_t handleUpdate = SteamUGC.SubmitItemUpdate(m_UGCUpdateHandle, "Test Changenote");
-			OnSubmitItemUpdateResultCallResult.Set(handleUpdate);
+			UploadToSteamWorkShopPlease();
         }
 
         #endregion
@@ -175,6 +171,38 @@ public class GameManager : MonoBehaviour {
         GUILayout.EndArea();
 
     }
+
+	public void UploadToSteamWorkShopPlease ()
+	{
+		
+		
+		SteamAPICall_t handle = SteamUGC.CreateItem((AppId_t)265670, EWorkshopFileType.k_EWorkshopFileTypeCommunity);
+		OnCreateItemResultCallResult.Set(handle);
+		
+		m_UGCUpdateHandle = SteamUGC.StartItemUpdate((AppId_t)265670, m_PublishedFileId);
+		
+		bool retMapName = SteamUGC.SetItemTitle(m_UGCUpdateHandle, mapName);
+		bool retDescription = SteamUGC.SetItemDescription(m_UGCUpdateHandle, author_Note);
+		
+		if(privateLevel)
+		{
+			bool retVisibility = SteamUGC.SetItemVisibility(m_UGCUpdateHandle, ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPrivate);
+			Debug.Log("" + retVisibility);
+		}
+		else
+		{
+			bool retVisibility = SteamUGC.SetItemVisibility(m_UGCUpdateHandle, ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPublic);
+			Debug.Log("" + retVisibility);
+		}
+		
+		bool retTags = SteamUGC.SetItemTags(m_UGCUpdateHandle, new string[] {"Challenge Level", "Hard"});
+		bool retContent = SteamUGC.SetItemContent(m_UGCUpdateHandle, path);
+		bool retPreview = SteamUGC.SetItemPreview(m_UGCUpdateHandle, imagePath);
+		SteamAPICall_t handleUpdate = SteamUGC.SubmitItemUpdate(m_UGCUpdateHandle, "Test Changenote");
+		OnSubmitItemUpdateResultCallResult.Set(handleUpdate);
+		UploadPanelText.text = "Completed Uploading to Steam!";
+		GoToMainMenuButton.SetActive(true);
+	}
 
     /// <summary>
     /// The GUI used for creating, loading, and saving Levels
@@ -335,7 +363,9 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     private void ClearLevel(string tagName = "ChallengeGround")
     {
+		/*
         gameObjs = GameObject.FindGameObjectsWithTag(tagName);
+
 		if(gameObjs != null)
 		{
 	        for (int i = 0; i < gameObjs.Length; i++)
@@ -343,6 +373,8 @@ public class GameManager : MonoBehaviour {
 	            Destroy(gameObjs[i].gameObject);
 	        }
 		}
+		*/
+
         GameObject _lvl;
         _lvl = GameObject.Find("_Level");
         if (_lvl != null)
@@ -350,7 +382,15 @@ public class GameManager : MonoBehaviour {
             Destroy(_lvl);
         }
 
-        cam.backgroundColor = new Color(0.192f, 0.30f, 0.474f, 0.019f);
+        //cam.backgroundColor = new Color(0.192f, 0.30f, 0.474f, 0.019f);
+		if(background_Color != null || background_Color != "")
+		{
+			parseBackgroundColor(background_Color);
+		}
+		else
+		{
+			parseBackgroundColor("blue");
+		}
     }
 
     /// <summary>
@@ -458,7 +498,20 @@ public class GameManager : MonoBehaviour {
     private void SaveLevel()
     {
         Debug.Log("Started Save" + Time.realtimeSinceStartup);
-        gameObjs = GameObject.FindGameObjectsWithTag("Block");
+        //gameObjs = GameObject.FindGameObjectsWithTag("Block");
+
+		GameObject _gameObjs;
+		_gameObjs = GameObject.Find("_Level");
+
+		foreach (Transform child in _gameObjs.transform)
+		{
+			if(child.tag != "EditorOnly")
+			{
+				gameObjs.Add(child.gameObject);
+			}
+		}
+
+
         mapName = Regex.Replace(mapName, @"\s", "");
         author_Name = Regex.Replace(author_Name, @"\s", "");
         background_Color = Regex.Replace(background_Color, @"\s", "");
