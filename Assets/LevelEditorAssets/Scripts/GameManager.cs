@@ -82,18 +82,19 @@ public class GameManager : MonoBehaviour {
 
         if (!attemptingToUploadToSteamWorkshop)
         {
-            GUI_LevelEditor();
+            //GUI_LevelEditor();
         }
         else
         {
             GUI_SteamWorkShop();
         }
 
+		/*
         //////Box for background 
         GUILayout.BeginArea(new Rect(0, 0, 275, Screen.height));
         GUILayout.Box("", GUILayout.Height(Screen.height));
         GUILayout.EndArea();
-
+		*/
     }
 
     private void GUI_SteamWorkShop()
@@ -261,6 +262,45 @@ public class GameManager : MonoBehaviour {
         GUILayout.EndArea();
 
     }
+
+	#region OnButton Actions for uGUI 
+
+	public void onSaveLevel() {
+
+		SaveLevel();
+	}
+
+	public void onCreateBlankLevel () {
+
+		createBlankLevel();
+	}
+
+	public void onClearLevel () {
+
+		ClearLevel();
+	}
+
+	public void onDraw () {
+
+		canDraw = true;
+	}
+
+	public void onErase () {
+
+		canDraw = false;
+	}
+
+	public void onZoomOut() {
+
+		cam.orthographicSize++;
+	}
+
+	public void onZoomIn() {
+
+		cam.orthographicSize--;
+	}
+
+	#endregion
 
     /// <summary>
     /// Call this to create a 20x20 blank level
