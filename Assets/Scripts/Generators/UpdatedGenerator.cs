@@ -114,25 +114,25 @@ public class UpdatedGenerator : MonoBehaviour {
 		//find room part 2
 		if(mapMatrixInt < 5)
 		{
-			Debug.Log ("Part2_A was called");
+			//Debug.Log ("Part2_A was called");
 			FindRoomPart2_A();
 			//Debug.Log ("The second part of the room at " + mapMatrixInt + " is: " + roomPart2);
 		}
 		else if (mapMatrixInt > 4 && mapMatrixInt < 8)
 		{
-			Debug.Log ("Part2_B was called");
+			//Debug.Log ("Part2_B was called");
 			FindRoomPart2_B();
 			//Debug.Log ("The second part of the room at " + mapMatrixInt + " is: " + roomPart2);
 		}
 		else if (mapMatrixInt > 7 && mapMatrixInt < 12)
 		{
-			Debug.Log ("Part2_C was called");
+			//Debug.Log ("Part2_C was called");
 			FindRoomPart2_C();
 			//Debug.Log ("The second part of the room at " + mapMatrixInt + " is: " + roomPart2);
 		}
 		else if (mapMatrixInt > 11 && mapMatrixInt < 16)
 		{
-			Debug.Log ("Part2_D was called");
+			//Debug.Log ("Part2_D was called");
 			FindRoomPart2_D();
 			//Debug.Log ("The second part of the room at " + mapMatrixInt + " is: " + roomPart2);
 		}
@@ -431,17 +431,17 @@ public class UpdatedGenerator : MonoBehaviour {
 	{
 		//combine the room parts
 		string nextRoom = roomPart1 + "," + roomPart2;
-		Debug.Log ("The next room is: " + nextRoom);
+		//Debug.Log ("The next room is: " + nextRoom);
 		
 		//check against the forbiden list
 		if(forbiddenRoomList.Contains(nextRoom))
 		{
-			Debug.Log ("The next room is a forbidden room. START OVER!!!");
+			//Debug.Log ("The next room is a forbidden room. START OVER!!!");
 			NextRoom(lastRoom);
 		}
 		else
 		{
-			Debug.Log ("The next room is good to go!!");
+			//Debug.Log ("The next room is good to go!!");
 			SetMapMatrixValue(nextRoom);
 		}
 	}
@@ -458,7 +458,7 @@ public class UpdatedGenerator : MonoBehaviour {
 		
 		//increment mapMatrixInt
 		mapMatrixInt = (mapMatrixInt + positionModifier);
-		Debug.Log ("The next map matrix position is: " + mapMatrixInt);
+		//Debug.Log ("The next map matrix position is: " + mapMatrixInt);
 		//Add new mapMatrixInt to inMatrix list
 		inMatrix.Add(mapMatrixInt);
 		//set the row Modifier back to zero;
@@ -487,21 +487,29 @@ public class UpdatedGenerator : MonoBehaviour {
 			if(defaultRegex.IsMatch(mapMatrix[i]) == false)
 			{
 				mapMatrix[i] = "O,O";
-				Debug.Log("There was no match");
+				//Debug.Log("There was no match");
 			}
 		}
 		//invoke OnComplete
 		Invoke ("OnComplete", 0.5f);
 	}
-
-	/*
+	
+	private void OnComplete()
+	{
+		Debug.Log ("Dungeon should be generated.");
+		for(int i = 0; i < 16; i++)
+		{
+			Debug.Log (mapMatrix[i]);
+		}
+		Invoke ("FillInTheMap", 0.15f);
+	}
 
 	private void FillInTheMap()
 	{
 		//Debug.Log (mapMatrix);
 		RoomCall00 sendValue00 = GameObject.Find ("Matrix00").GetComponent<RoomCall00>();
 		sendValue00.GetMatrix00Value();
-		
+		/*
 		RoomCall01 sendValue01 = GameObject.Find ("Matrix01").GetComponent<RoomCall01>();
 		sendValue01.GetMatrix01Value();
 		
@@ -545,15 +553,6 @@ public class UpdatedGenerator : MonoBehaviour {
 		sendValue32.GetMatrix32Value();
 		
 		RoomCall33 sendValue33 = GameObject.Find ("Matrix33").GetComponent<RoomCall33>();
-		sendValue33.GetMatrix33Value();
-	}*/
-	
-	private void OnComplete()
-	{
-		Debug.Log ("Dungeon should be generated.");
-		for(int i = 0; i < 16; i++)
-		{
-			Debug.Log (mapMatrix[i]);
-		}
+		sendValue33.GetMatrix33Value();*/
 	}
 }
