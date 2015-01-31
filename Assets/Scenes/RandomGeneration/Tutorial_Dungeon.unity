@@ -7917,6 +7917,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 138126776}
   - 114: {fileID: 138126777}
+  - 114: {fileID: 138126775}
   m_Layer: 0
   m_Name: Dungeon Generator
   m_TagString: Untagged
@@ -7924,6 +7925,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &138126775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 138126774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177406433694c824daf17e934a679a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapMatrix:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!4 &138126776
 Transform:
   m_ObjectHideFlags: 0
@@ -7942,7 +7971,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 138126774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a41c661c7e54fa49be73a917d543598, type: 3}
   m_Name: 
@@ -12669,7 +12698,7 @@ Transform:
   m_GameObject: {fileID: 216719604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00625000009, y: .00625000009, z: .00625000009}
+  m_LocalScale: {x: .00588235306, y: .00588235306, z: .00588235306}
   m_Children:
   - {fileID: 853738879}
   m_Father: {fileID: 0}
