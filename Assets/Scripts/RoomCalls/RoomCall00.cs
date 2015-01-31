@@ -24,7 +24,7 @@ public class RoomCall00 : MonoBehaviour {
 		{
 			//Find the RoomH script
 			RoomH roomHGet = GameObject.Find("Matrix00").GetComponent<RoomH>();
-			roomHGet.startingPosition0 = Vector3.zero;
+			roomHGet.startingPositionH = Vector3.zero;
 			roomHGet.BeginRoom();
 			//Debug.Log ("This needs to be an H room in 00.");
 		}

@@ -624,12 +624,14 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//100% key
 		else if(typeOneArray[arrayNum] == 100)
 		{
 			Instantiate(tileOfRoom[11], roomTilePosition, Quaternion.identity);
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		// 33% bow
 		else if(typeOneArray[arrayNum] == 111)
 		{
 			//33% chance the block will be instantiated
@@ -650,6 +652,7 @@ public class RoomTypeOne : MonoBehaviour {
 				transform.position = roomTilePosition;
 			}
 		}
+		// breakable bottom left
 		else if(typeOneArray[arrayNum] == 141)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -657,6 +660,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//breakable top right
 		else if(typeOneArray[arrayNum] == 142)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -664,6 +668,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//20% spring
 		else if(typeOneArray[arrayNum] == 320)
 		{
 			//aprox. 20% chance the block will be instantiated
@@ -683,6 +688,7 @@ public class RoomTypeOne : MonoBehaviour {
 				transform.position = roomTilePosition;
 			}
 		}
+		//60% spring
 		else if(typeOneArray[arrayNum] == 360)
 		{
 			//aprox. 60% chance the block will be instantiated
@@ -702,6 +708,7 @@ public class RoomTypeOne : MonoBehaviour {
 				transform.position = roomTilePosition;
 			}
 		}
+		//firewisp vert
 		else if(typeOneArray[arrayNum] == 661)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -713,6 +720,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//ground spike shaddow cannon 
 		else if(typeOneArray[arrayNum] == 664)
 		{
 			GameObject spks = Instantiate(tileOfRoom[28], roomTilePosition, Quaternion.identity) as GameObject;
@@ -720,6 +728,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//top spike cannon
 		else if(typeOneArray[arrayNum] == 665)
 		{
 			GameObject spks = Instantiate(tileOfRoom[29], roomTilePosition, Quaternion.identity) as GameObject;
@@ -727,6 +736,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		// fire wisp
 		else if(typeOneArray[arrayNum] == 666)
 		{
 			//istantiates block then moves the x position ahead by one
@@ -734,6 +744,7 @@ public class RoomTypeOne : MonoBehaviour {
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
 		}
+		//
 		else if(typeOneArray[arrayNum] == 667)
 		{
 			GameObject spks = Instantiate(tileOfRoom[31], roomTilePosition, Quaternion.identity) as GameObject;
