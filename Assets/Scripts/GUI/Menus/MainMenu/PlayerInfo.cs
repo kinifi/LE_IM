@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerInfo : MonoBehaviour {
 
-	public UILabel playerName;
+	public Text playerName;
 
 	// Use this for initialization
 	void Start () {
