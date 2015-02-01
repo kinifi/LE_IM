@@ -20,13 +20,11 @@ public class RoomH : MonoBehaviour {
 	private string telaOutStringName;
 
 	//configs for room type
-	string roomValue;
+	public string roomValue;
 
 	// Use this for initialization
 	void Start () 
 	{
-		//grab the string value of the current room type
-		roomValue = GameObject.Find ("Dungeon Generator").GetComponent<UpdatedGenerator>().mapMatrix[0];
 		tileOfRoom = GameObject.Find("Matrix00").GetComponent<RoomTypeZero>().tileOfRoom;
 	}
 
@@ -50,12 +48,144 @@ public class RoomH : MonoBehaviour {
 		switch(roomPart2)
 		{
 		case "A":
+			//randomly pick which array to use
+			randomPick = Random.Range (0,3);
+			if(randomPick == 0)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else if (randomPick == 1)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
 			Debug.Log("The room type is: " + roomPart1 + ",A");
 			break;
 		case "B":
+			//randomly pick which array to use
+			randomPick = Random.Range (0,3);
+			if(randomPick == 0)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else if (randomPick == 1)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
 			Debug.Log("The room type is: " + roomPart1 + ",B");
 			break;
 		case "C":
+			//randomly pick which array to use
+			randomPick = Random.Range (0,3);
+			if(randomPick == 0)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else if (randomPick == 1)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
 			Debug.Log("The room type is: " + roomPart1 + ",C");
 			break;
 		case "D":
@@ -81,7 +211,7 @@ public class RoomH : MonoBehaviour {
 				{
 					0,0,8,1,1,0,10,0,15,1,
 					0,0,0,8,1,0,0,0,0,660,
-					0,0,0,0,8,0,0,0,0,16,
+					0,0,0,0,8,0,0,0,0,12,
 					0,0,0,0,0,0,0,15,0,21,
 					1,0,0,0,0,0,3,0,1,0,
 					1,668,0,0,0,0,1,1,1,0,
@@ -103,8 +233,293 @@ public class RoomH : MonoBehaviour {
 					142,12,12,0,0,12,12,0,0,1
 				};
 			}
-
-			/*
+			Debug.Log("The room type is: " + roomPart1 + ",D");
+			break;
+		case "E":
+			//randomly pick which array to use
+			randomPick = Random.Range (0,3);
+			if(randomPick == 0)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else if (randomPick == 1)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			Debug.Log("The room type is: " + roomPart1 + ",E");
+			break;
+		case "F":
+			//randomly pick which array to use
+			randomPick = Random.Range (0,3);
+			if(randomPick == 0)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else if (randomPick == 1)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			Debug.Log("The room type is: " + roomPart1 + ",F");
+			break;
+		case "G":
+			//randomly pick which array to use
+			randomPick = Random.Range (0,3);
+			if(randomPick == 0)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else if (randomPick == 1)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			//randomly pick which array to use
+			randomPick = Random.Range (0,3);
+			if(randomPick == 0)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else if (randomPick == 1)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			Debug.Log("The room type is: " + roomPart1 + ",G");
+			break;
+		case "H":
+			//randomly pick which array to use
+			randomPick = Random.Range (0,3);
+			if(randomPick == 0)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else if (randomPick == 1)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			Debug.Log("The room type is: " + roomPart1 + ",H");
+			break;
+		case "Z":
+			//randomly pick which array to use
+			randomPick = Random.Range (0,3);
+			if(randomPick == 0)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,33,0,0,0,0,0
+				};
+			}
+			else if (randomPick == 1)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,33,0,0,0,0,0
+				};
+			}
+			else
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,33,0,0,0,0,0
+				};
+			}
+			Debug.Log("The room type is: " + roomPart1 + ",Z");
+			break;
+		default:
+			Debug.Log("The room type is: " + roomPart1 + roomPart2);
+			Debug.Log("Something went wrong when selecting RoomPart2 for in RoomH");
+			break;
+		}
+		/*
 			roomArray = new int[] 
 			{
 				0,0,0,0,0,0,0,0,0,0,
@@ -116,19 +531,6 @@ public class RoomH : MonoBehaviour {
 				0,0,0,0,0,0,0,0,0,0,
 				0,0,0,0,0,0,0,0,0,0
 			};*/
-			Debug.Log("The room type is: " + roomPart1 + ",D");
-			break;
-		case "E":
-			Debug.Log("The room type is: " + roomPart1 + ",E");
-			break;
-		case "F":
-			Debug.Log("The room type is: " + roomPart1 + ",F");
-			break;
-		default:
-			Debug.Log("The room type is: " + roomPart1 + roomPart2);
-			Debug.Log("Something went wrong when selecting RoomPart2 for in RoomH");
-			break;
-		}
 	}
 
 	private void RoomPositionInitalize()
@@ -140,7 +542,7 @@ public class RoomH : MonoBehaviour {
 		//sets the starting z position of the room
 		roomTilePosition.z = 0;
 		transform.position = roomTilePosition;
-		//Debug.Log("Room Type One initalized");
+		//Debug.Log("Room Type H initalized");
 	}
 
 	private void LoopThroughArray ()

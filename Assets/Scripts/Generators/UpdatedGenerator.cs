@@ -509,7 +509,7 @@ public class UpdatedGenerator : MonoBehaviour {
 		//Debug.Log (mapMatrix);
 		RoomCall00 sendValue00 = GameObject.Find ("Matrix00").GetComponent<RoomCall00>();
 		sendValue00.GetMatrix00Value();
-		/*
+
 		RoomCall01 sendValue01 = GameObject.Find ("Matrix01").GetComponent<RoomCall01>();
 		sendValue01.GetMatrix01Value();
 		
@@ -553,6 +553,6 @@ public class UpdatedGenerator : MonoBehaviour {
 		sendValue32.GetMatrix32Value();
 		
 		RoomCall33 sendValue33 = GameObject.Find ("Matrix33").GetComponent<RoomCall33>();
-		sendValue33.GetMatrix33Value();*/
+		sendValue33.GetMatrix33Value();
 	}
 }

@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class RoomB : MonoBehaviour {
+public class RoomO : MonoBehaviour {
 	
 	//Configs set from Room Call
 	private GameObject[] tileOfRoom;
-	public Vector3 startingPositionB;
+	public Vector3 startingPositionO;
 	private Vector3 roomTilePosition;
 	private List<int> lineBreaks = new List<int>(new int[] {10,20,30,40,50,60,70});
 	
@@ -425,6 +425,53 @@ public class RoomB : MonoBehaviour {
 			}
 			Debug.Log("The room type is: " + roomPart1 + ",H");
 			break;
+		case "O":
+			//randomly pick which array to use
+			randomPick = Random.Range (0,3);
+			if(randomPick == 0)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else if (randomPick == 1)
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			else
+			{
+				roomArray = new int[] 
+				{
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,0
+				};
+			}
+			Debug.Log("The room type is: " + roomPart1 + ",O");
+			break;
 		case "Z":
 			//randomly pick which array to use
 			randomPick = Random.Range (0,3);
@@ -474,7 +521,7 @@ public class RoomB : MonoBehaviour {
 			break;
 		default:
 			Debug.Log("The room type is: " + roomPart1 + roomPart2);
-			Debug.Log("Something went wrong when selecting RoomPart2 for in RoomB");
+			Debug.Log("Something went wrong when selecting RoomPart2 for in RoomO");
 			break;
 		}
 		/*
@@ -494,13 +541,13 @@ public class RoomB : MonoBehaviour {
 	private void RoomPositionInitalize()
 	{
 		//sets the starting x position of the room
-		roomTilePosition.x = startingPositionB.x;
+		roomTilePosition.x = startingPositionO.x;
 		//sets the starting y position of the room
-		roomTilePosition.y = startingPositionB.y;
+		roomTilePosition.y = startingPositionO.y;
 		//sets the starting z position of the room
 		roomTilePosition.z = 0;
 		transform.position = roomTilePosition;
-		//Debug.Log("Room Type B initalized");
+		//Debug.Log("Room Type O initalized");
 	}
 	
 	private void LoopThroughArray ()
@@ -531,7 +578,7 @@ public class RoomB : MonoBehaviour {
 		if(lineBreaks.Contains(x))
 		{
 			//resets the x position to the starting x position of room
-			roomTilePosition.x = startingPositionB.x;
+			roomTilePosition.x = startingPositionO.x;
 			transform.position = roomTilePosition;
 			RoomTileInstantiate(x);
 		}
