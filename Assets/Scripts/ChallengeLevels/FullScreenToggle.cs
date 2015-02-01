@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class FullScreenToggle : MonoBehaviour {
 
-	public UIToggle fullScreenToggle;
+	public Toggle fullScreenToggle;
 
 	// Use this for initialization
 	void Start () {

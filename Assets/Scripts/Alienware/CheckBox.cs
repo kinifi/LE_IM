@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class CheckBox : MonoBehaviour {
 
 
 	public GameObject confirmationPanel;
-	public UIToggle alienwareToggle;
+	public Toggle alienwareToggle;
 	public GameObject AlienWareObject;
 
 	// Use this for initialization
@@ -45,14 +46,14 @@ public class CheckBox : MonoBehaviour {
 
 	public void HidePopUp()
 	{
-		alienwareToggle.value = false;
+		alienwareToggle.isOn = false;
 		confirmationPanel.SetActive(false);
 		Debug.Log("Hide PopUp");
 	}
 
 	public void ConfirmPopUp()
 	{
-		if(alienwareToggle.value == true)
+		if(alienwareToggle.isOn == true)
 		{
 			confirmationPanel.SetActive(true);
 		}

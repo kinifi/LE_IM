@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ResolutionToggle : MonoBehaviour {
 	
-	public UILabel resolutionLabel;
+	public Text resolutionLabel;
 	private Resolution[] resolutions;
 	private int ResValue = 0;
 	private bool isDirty = false;
