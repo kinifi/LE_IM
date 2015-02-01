@@ -10,6 +10,7 @@ using Steamworks;
 
 public class GameManager : MonoBehaviour {
 
+	//testcomment
     private List<GameObject> gameObjs = new List<GameObject>();
 	private string path;
 	public string mapName;
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour {
 
 		//Set the author name to the Steam Persona Name. Example: authorName = Kinifi
         author_Name = SteamBasic.getPersonaName();
-
+		Debug.Log("Starting Game Manager");
 	}
 
 	public void setCurrentSelectedTile (int _tileNumber) {
