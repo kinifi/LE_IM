@@ -13,6 +13,9 @@ public class MemoryEnableScript : MonoBehaviour {
 	private string oneSevenStatus;
 	private string oneEightStatus;
 	private string oneNineStatus;
+	private string oneTenStatus;
+	private string oneElevenStatus;
+	private string oneTwelveStatus;
 
 	//MemoryPageBool configs
 	public bool Crash;
@@ -24,6 +27,9 @@ public class MemoryEnableScript : MonoBehaviour {
 	public bool MusicClass;
 	public bool TheWalkHome;
 	public bool TheBully;
+	public bool TheForest;
+	public bool IntoTheDark;
+	public bool Fireflies;
 
 	// Use this for initialization
 	void Awake () 
@@ -113,6 +119,36 @@ public class MemoryEnableScript : MonoBehaviour {
 			GameObject.Find ("TheBullyMemoryImage").GetComponent<SpriteRenderer>().enabled = true;
 			GameObject.Find ("TheBullyLabel").GetComponent<UILabel>().enabled = false;
 			TheBully = true;
+		}
+		//GetPlayerPrefs for Tenth Story
+		oneTenStatus = PlayerPrefs.GetString("The Forest");
+		//Turn on polaroid image and Set Story Ten bool to true if complete
+		if(oneTenStatus == "completed")
+		{
+			Debug.Log("Memory 10");
+			GameObject.Find ("TheForestMemoryImage").GetComponent<SpriteRenderer>().enabled = true;
+			GameObject.Find ("TheForestLabel").GetComponent<UILabel>().enabled = false;
+			TheForest = true;
+		}
+		//GetPlayerPrefs for Eleventh Story
+		oneElevenStatus = PlayerPrefs.GetString("Into The Dark");
+		//Turn on polaroid image and Set Story Eleven bool to true if complete
+		if(oneElevenStatus == "completed")
+		{
+			Debug.Log("Memory 11");
+			GameObject.Find ("IntoTheDarkMemoryImage").GetComponent<SpriteRenderer>().enabled = true;
+			GameObject.Find ("IntoTheDarkLabel").GetComponent<UILabel>().enabled = false;
+			IntoTheDark = true;
+		}
+		//GetPlayerPrefs for Twelveth Story
+		oneTwelveStatus = PlayerPrefs.GetString("Fireflies");
+		//Turn on polaroid image and Set Story Twelve bool to true if complete
+		if(oneTwelveStatus == "completed")
+		{
+			Debug.Log("Memory 12");
+			GameObject.Find ("FirefliesMemoryImage").GetComponent<SpriteRenderer>().enabled = true;
+			GameObject.Find ("FirefliesLabel").GetComponent<UILabel>().enabled = false;
+			Fireflies = true;
 		}
 	}
 }

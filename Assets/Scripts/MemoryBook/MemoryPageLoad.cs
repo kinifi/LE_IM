@@ -94,7 +94,7 @@ public class MemoryPageLoad : MonoBehaviour {
 			}
 			break;
 		case "TheWalkHome":
-			//if the memory has been completed, calls The Way Home Story Page
+			//if the memory has been completed, calls The Walk Home Story Page
 			if(_memEnable.TheWalkHome == true)
 			{
 				DisplayPage("TheWalkHomeStoryPage");
@@ -102,11 +102,35 @@ public class MemoryPageLoad : MonoBehaviour {
 			}
 			break;
 		case "TheBully":
-			//if the memory has been completed, calls The Way Home Story Page
+			//if the memory has been completed, calls The Bully Story Page
 			if(_memEnable.TheBully == true)
 			{
 				DisplayPage("TheBullyStoryPage");
 				Debug.Log("The Bully Story Should Display");
+			}
+			break;
+		case "TheForest":
+				//if the memory has been completed, calls The Forest Story Page
+				if(_memEnable.TheForest == true)
+			{
+				DisplayPage("TheForestStoryPage");
+				Debug.Log("The Forest Story Should Display");
+			}
+			break;
+		case "IntoTheDark":
+			//if the memory has been completed, calls Into The Dark Story Page
+			if(_memEnable.IntoTheDark == true)
+			{
+				DisplayPage("IntoTheDarkStoryPage");
+				Debug.Log("Into The Dark Story Should Display");
+			}
+			break;
+		case "Fireflies":
+			//if the memory has been completed, calls Fireflies Story Page
+			if(_memEnable.Fireflies == true)
+			{
+				DisplayPage("FirefliesStoryPage");
+				Debug.Log("Fireflies Story Should Display");
 			}
 			break;
 		default:

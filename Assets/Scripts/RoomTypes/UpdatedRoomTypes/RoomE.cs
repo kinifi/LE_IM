@@ -606,6 +606,39 @@ public class RoomE : MonoBehaviour {
 				transform.position = roomTilePosition;
 			}
 			break;
+		case 5:
+			//25% of a key, bow, golden bow, empty
+			int reward25 = Random.Range (0,2);
+			//istantiates block then moves the x position ahead by one
+			if(reward25 == 1)
+			{
+				//Bow
+				Instantiate(tileOfRoom[21], roomTilePosition, Quaternion.identity);
+				roomTilePosition.x += 1.0f;
+				transform.position = roomTilePosition;
+			}
+			else if(reward25 == 2)
+			{
+				//Key
+				Instantiate(tileOfRoom[11], roomTilePosition, Quaternion.identity);
+				roomTilePosition.x += 1.0f;
+				transform.position = roomTilePosition;
+			}
+			else if(reward25 == 3)
+			{
+				//Golden bow
+				Instantiate(tileOfRoom[23], roomTilePosition, Quaternion.identity);
+				roomTilePosition.x += 1.0f;
+				transform.position = roomTilePosition;
+			}
+			else
+			{
+				//Empty Tile
+				Instantiate(tileOfRoom[12], roomTilePosition, Quaternion.identity);
+				roomTilePosition.x += 1.0f;
+				transform.position = roomTilePosition;
+			}
+			break;
 		case 7:
 			//33% Chance of Ground Spike
 			int rand33 = Random.Range(1,4);

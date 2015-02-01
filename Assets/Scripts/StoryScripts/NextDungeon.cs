@@ -17,6 +17,9 @@ public class NextDungeon : MonoBehaviour {
 	private float speed = 5.0f;
 	private bool moveRobbe = false;
 
+	//Get story title for boss
+	public string currentStoryTitle;
+
 
 	void Start()
 	{
@@ -55,23 +58,26 @@ public class NextDungeon : MonoBehaviour {
 			Debug.Log (nextBoss);
 			switch (nextBoss)
 			{
-			case "1":
+			case "Robbe, the shy kid":
+			case "Jack":
+			case "All alone":
 				Debug.Log ("ScaredBoss Set");
 				Application.LoadLevel("ScaredBoss");
 				break;
-			case "2":
+			case "Archery":
+			case "The girl cousin":
 				Debug.Log ("DepthsBoss Set");
 				Application.LoadLevel("DepthsBoss");
 				break;
-			case "3":
+			case "Music Class":
 				Debug.Log ("GoblinBoss Set");
 				Application.LoadLevel("GoblinBoss");
 				break;
-			case "4":
+			case "The Walk Home":
 				Debug.Log ("WolfBoss Set");
 				Application.LoadLevel("WolfBoss");
 				break;
-			case "5":
+			case "The Bully":
 				Debug.Log ("Bully Set");
 				Application.LoadLevel("BullyBoss");
 				break;

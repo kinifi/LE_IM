@@ -6,10 +6,10 @@ public class ShortStories : MonoBehaviour {
 	//NOTE!!!!!!!! Be sure to change the if statement for the title in StoryStory.cs <-----------!!!
 	//Configs - each story needs a string and a string[];
 	public ArrayList shortStoriesArray = new ArrayList();
-	public int storyCount = 8;
+	public int storyCount = 11;
 
 	//BE SURE TO SET IN INSPECTOR!!!!! <-----------!!!
-	public string[] storyTitlesArray = new string[8] {"0", "1", "2", "3", "4", "5", "6", "7"};
+	public string[] storyTitlesArray = new string[11] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
 
 
 	public string storyTitle1;
@@ -43,6 +43,18 @@ public class ShortStories : MonoBehaviour {
 	public string storyTitle8;
 	private string story8;
 	private string[] story8Array;
+
+	public string storyTitle9;
+	private string story9;
+	private string[] story9Array;
+
+	public string storyTitle10;
+	private string story10;
+	private string[] story10Array;
+
+	public string storyTitle11;
+	private string story11;
+	private string[] story11Array;
 
 
 	// Use this for initialization
@@ -119,6 +131,30 @@ public class ShortStories : MonoBehaviour {
 		//Convert to string array
 		story8Array = story8.Split ('/');
 		//Debug.Log("This is shortstoryarray8 element 0" + story8Array[0]);
+
+		//Set Story Title
+		storyTitle9 = "The Forest";
+		//Story as paragraph
+		story9 = @"One week later, Robbe's school was hosting an overnight outdoor camping event for 3rd and 4th graders.  Robbe was especially excited because Archery was one of the events./Robbe's group had their tent set up and went to the woodpile at the edge of the forest clearing for fire wood. Dusk was settling and the forest was dark as they reached the woodpile./They heard the sound of twigs snapping in the forest. 'What was that?!' Jack gasped, startled. 'Probably just a squirrel,' Robbe replied, a little more confident than he felt./The little hairs pricked on the back of Robbe's neck. 'Come on, lets go' he said to Jack. Both boys hurried back to the camp site with the firewood in their arms./The chaperone started a fire. Robbe couldnt help but look back towards the dark forest. He couldnt draw his eyes away. The forest seemed just as enchanted as it did scary.";
+		//Convert to string array
+		story9Array = story9.Split('/');
+		//Debug.Log ("This is shortstoryarray9 element 0" + story9Array[0]);
+
+		//Set Story Title
+		storyTitle10 = "Into The Dark";
+		//Story as paragraph
+		story10 = @"'Let's kick the ball around, Robbe' Jack suggested. 'It's dark,' Robbe replied. 'There's enough moonlight. Come on!' The moon was bright. 'Alright,' Robbe conceded./The boys headed away from the fire and began passing the ball.  'I've got to work on my power kick' Jack said and swung his leg hard to connect with the ball./The ball shot up in the air, but jack fell flat on his back. 'Are you okay?!' Robbe rushed over. 'Ha ha! Ya, I'm fine' Jack replied still lying on the ground./'Where is the ball?' Both boys looked around but didn't see it anywhere.  'I'll grab the flashlight, wait here' Jack said as he turned back to the camp site./The hairs on the back of Robbe's neck pricked again as Jack left. Turning towards the forest, Robbe felt his feet moving. He didn't remember telling them too.";
+		//Convert to string array
+		story10Array = story10.Split('/');
+		//Debug.Log ("This is shortstoryarray10 element 0" + story10Array[0]);
+
+		//Set Story Title
+		storyTitle11 = "Fireflies";
+		//Story as paragraph
+		story11 = @"Robbe suddenly found himself in the dark forest, alone. The air smelled damp. He felt the chilly night on his skin, and he thought he saw something flash./Out of the corner of his eye, Robbe saw a flash of light. He spun around to see what it was but the forest was dark. The light had vanished. Robbe blinked, and flash!/Forgetting the dark, Robbe followed the light deeper into the forest. Soon he was standing under a willow tree and there were dozens of little flashes. Fireflies!/As Robbe stood watching, one of the fireflies landed on his hand. Startled, Robbe jumped a little. Then, he  slowly brought his hand up to inspect the bug./'You're not shy, are you?' Robbe said to the little bug. As if in reply, the firefly lit up even brighter before flying away. Robbe smiled then turned to head back.";
+		//Convert to string array
+		story11Array = story11.Split('/');
+		//Debug.Log ("This is shortstoryarray11 element 0" + story11Array[0]);
 
 		/*//Set Story Title
 		storyTitle# = "";
@@ -202,7 +238,30 @@ public class ShortStories : MonoBehaviour {
 			shortStoriesArray.Add(line8);
 			//Debug.Log ("This is the eighth shortstoriesarray: " + shortStoriesArray);
 		}
-
+		for (int i = 0; i < story9Array.Length; i++)
+		{
+			string line9 = story9Array[i].ToString();
+			//Debug.Log ("This is the value of line9: " + line9);
+			
+			shortStoriesArray.Add(line9);
+			//Debug.Log ("This is the nineth shortstoriesarray: " + shortStoriesArray);
+		}
+		for (int i = 0; i < story10Array.Length; i++)
+		{
+			string line10 = story10Array[i].ToString();
+			//Debug.Log ("This is the value of line10: " + line10);
+			
+			shortStoriesArray.Add(line10);
+			//Debug.Log ("This is the tenth shortstoriesarray: " + shortStoriesArray);
+		}
+		for (int i = 0; i < story11Array.Length; i++)
+		{
+			string line11 = story11Array[i].ToString();
+			//Debug.Log ("This is the value of line11: " + line11);
+			
+			shortStoriesArray.Add(line11);
+			//Debug.Log ("This is the eleventh shortstoriesarray: " + shortStoriesArray);
+		}
 		/*for (int i = 0; i < story#Array.Length; i++)
 		{
 			string line# = story#Array[i].ToString();
@@ -224,6 +283,9 @@ public class ShortStories : MonoBehaviour {
 		storyTitlesArray[5] = storyTitle6;
 		storyTitlesArray[6] = storyTitle7;
 		storyTitlesArray[7] = storyTitle8;
+		storyTitlesArray[8] = storyTitle9;
+		storyTitlesArray[9] = storyTitle10;
+		storyTitlesArray[10] = storyTitle11;
 
 		//storyTitleArray[#] = storyTitle#;
 	}
