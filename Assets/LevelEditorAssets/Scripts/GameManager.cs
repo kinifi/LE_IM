@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 	//testcomment
     private List<GameObject> gameObjs = new List<GameObject>();
 	private string path;
+	public string mapFolderPath;
 	public string mapName;
     public string author_Name, author_Note, background_Color;
     public GameObject[] Tiles;
@@ -35,14 +36,11 @@ public class GameManager : MonoBehaviour {
 	public GUISkin skin;
 	public Text inputMapName;
 	public Text UploadPanelText;
-	public GameObject GoToMainMenuButton;
+	public GameObject GoToMainMenuButton, LoadingPanel;
 
 	public int currentSelectedTile;
 
 	void Start () {
-
-        //TODO: Give users the ability to give a path to a picture
-		imagePath = Application.dataPath + "/UserLevels/" + "SantaHat.png";
 
 		OnCreateItemResultCallResult = CallResult<CreateItemResult_t>.Create(OnCreateItemResult);
 		OnSubmitItemUpdateResultCallResult = CallResult<SubmitItemUpdateResult_t>.Create(OnSubmitItemUpdateResult);
@@ -66,6 +64,7 @@ public class GameManager : MonoBehaviour {
 
 		background_Color = _color;
 	}
+	
 
     void Update ()
     {
@@ -97,81 +96,7 @@ public class GameManager : MonoBehaviour {
             }
         }
     }
-
-    void OnGUI()
-    {
-		GUI.skin = skin;
-
-        if (!attemptingToUploadToSteamWorkshop)
-        {
-            //GUI_LevelEditor();
-        }
-        else
-        {
-            GUI_SteamWorkShop();
-        }
-
-		/*
-        //////Box for background 
-        GUILayout.BeginArea(new Rect(0, 0, 275, Screen.height));
-        GUILayout.Box("", GUILayout.Height(Screen.height));
-        GUILayout.EndArea();
-		*/
-    }
-
-    private void GUI_SteamWorkShop()
-    {
-        GUILayout.BeginArea(new Rect(0, 0, 250, Screen.height));
-
-        GUILayout.Label("Export to Steam Workshop");
-
-
-        if(GUILayout.Button("Cancel Workshop Upload"))
-        {
-            attemptingToUploadToSteamWorkshop = false;
-            Debug.Log("Cancelled Workshop");
-        }
-
-        GUILayout.Label("Created By: " + author_Name);
-
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Map Name:");
-        mapName = GUILayout.TextField(mapName, 10);
-        GUILayout.EndHorizontal();
-
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Make Level Private?");
-        privateLevel = GUILayout.Toggle(privateLevel, "");
-        GUILayout.EndHorizontal();
-
-        GUILayout.Space(10);
-
-        GUILayout.Label("Image Preview Path");
-        GUILayout.Label("Put in the Exact file location for a preview image");
-        GUILayout.Label("Example: C:/Users/Chris/Desktop/previewImage.jpg");
-        GUILayout.Label("Only Accepted formats: JPG, PNG or GIF.");
-        GUILayout.Label("Must be under 1MB in size");
-        //image path text field
-        imagePath = GUILayout.TextField(imagePath, 200);
-        
-
-        GUILayout.Space(10);
-
-        GUILayout.Label("Author Notes:");
-        author_Note = GUILayout.TextArea(author_Note, 75, GUILayout.Height(50));
-
-        #region Steam Workshop Upload Button
-        if (GUILayout.Button("Upload to Steam WorkShop", GUILayout.Height(50)))
-        {
-            //Debug.Log("Successfully uploaded");
-			UploadToSteamWorkShopPlease();
-        }
-
-        #endregion
-
-        GUILayout.EndArea();
-
-    }
+	
 
 	public void UploadToSteamWorkShopPlease ()
 	{
@@ -183,6 +108,10 @@ public class GameManager : MonoBehaviour {
 		m_UGCUpdateHandle = SteamUGC.StartItemUpdate((AppId_t)265670, m_PublishedFileId);
 		
 		bool retMapName = SteamUGC.SetItemTitle(m_UGCUpdateHandle, mapName);
+		if(author_Note == null || author_Note == "")
+		{
+			author_Note = "Updating";
+		}
 		bool retDescription = SteamUGC.SetItemDescription(m_UGCUpdateHandle, author_Note);
 		
 		if(privateLevel)
@@ -197,100 +126,14 @@ public class GameManager : MonoBehaviour {
 		}
 		
 		bool retTags = SteamUGC.SetItemTags(m_UGCUpdateHandle, new string[] {"Challenge Level", "Hard"});
-		bool retContent = SteamUGC.SetItemContent(m_UGCUpdateHandle, path);
+		bool retContent = SteamUGC.SetItemContent(m_UGCUpdateHandle, mapFolderPath);
 		bool retPreview = SteamUGC.SetItemPreview(m_UGCUpdateHandle, imagePath);
-		SteamAPICall_t handleUpdate = SteamUGC.SubmitItemUpdate(m_UGCUpdateHandle, "Test Changenote");
+		SteamAPICall_t handleUpdate = SteamUGC.SubmitItemUpdate(m_UGCUpdateHandle, "Change Note");
 		OnSubmitItemUpdateResultCallResult.Set(handleUpdate);
-		UploadPanelText.text = "Completed Uploading to Steam!";
-		GoToMainMenuButton.SetActive(true);
+
+
 	}
 
-    /// <summary>
-    /// The GUI used for creating, loading, and saving Levels
-    /// </summary>
-    private void GUI_LevelEditor()
-    {
-        GUILayout.BeginArea(new Rect(0, 0, 250, Screen.height));
-
-        GUILayout.Label("Level Creation / Loading");
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Map to Load:");
-        mapName = GUILayout.TextField(mapName, 10);
-        GUILayout.EndHorizontal();
-
-        if (GUILayout.Button("LoadLevel Level"))
-        {
-            LoadXML(mapName);
-        }
-
-        if (GUILayout.Button("Save Level"))
-        {
-            SaveLevel();
-        }
-
-        if (GUILayout.Button("Create Blank Level"))
-        {
-            createBlankLevel();
-        }
-
-        if (GUILayout.Button("Clear Level"))
-        {
-            ClearLevel();
-        }
-
-
-        GUILayout.Space(10);
-
-        GUILayout.Label("Tools");
-
-        GUILayout.BeginHorizontal();
-
-        if (GUILayout.Button("Draw"))
-        {
-            canDraw = true;
-        }
-
-        if (GUILayout.Button("Erase"))
-        {
-            canDraw = false;
-        }
-
-        GUILayout.EndHorizontal();
-
-        GUILayout.Label("Use Arrow Keys to Move Camera");
-        GUILayout.BeginHorizontal();
-
-        if (GUILayout.Button("Zoom In"))
-        {
-            cam.orthographicSize--;
-        }
-
-        if (GUILayout.Button("Zoom Out"))
-        {
-            cam.orthographicSize++;
-        }
-        GUILayout.EndHorizontal();
-
-        GUILayout.Space(20);
-
-        if (GUILayout.Button("Play Mode", GUILayout.Height(50)))
-        {
-            Debug.Log("Play Mode Activated");
-        }
-
-        GUILayout.Space(20);
-
-        GUILayout.Label("When you are ready. Click Below to Upload to Steam Workshop");
-
-        if (GUILayout.Button("Upload to Steam WorkShop", GUILayout.Height(50)))
-        {
-            Debug.Log("Start Steam WorkShop Upload");
-            attemptingToUploadToSteamWorkshop = true;
-        }
-
-        GUILayout.EndArea();
-
-    }
 
 	#region OnButton Actions for uGUI 
 
@@ -440,7 +283,7 @@ public class GameManager : MonoBehaviour {
         //clear the existing level on the screen
         //ClearLevel();
 
-		path = Application.dataPath + "/UserLevels/" + mapName + ".xml";
+		path = Application.dataPath + "/UserLevels/" + "/" +  mapName + "/" + mapName + ".xml";
 		
 		XmlReader reader = XmlReader.Create(path);
 		XmlDocument xmlDoc = new XmlDocument();
@@ -513,18 +356,47 @@ public class GameManager : MonoBehaviour {
 		}
 
 
+
+
         mapName = Regex.Replace(mapName, @"\s", "");
         author_Name = Regex.Replace(author_Name, @"\s", "");
         background_Color = Regex.Replace(background_Color, @"\s", "");
         saveXML();
     }
 
+	private void screenshotTaker () {
+
+		GameObject _canvas = GameObject.Find("Canvas");
+		_canvas.SetActive(false);
+
+		Application.CaptureScreenshot(Application.dataPath + "/UserLevels/" + "/" +  mapName + "/" + mapName + ".png");
+		imagePath = Application.dataPath + "/UserLevels/" + "/" +  mapName + "/" + mapName + ".png";
+
+		_canvas.SetActive(true);
+		Debug.Log("Screenshot captured: " + Application.dataPath + "/UserLevels/" + "/" +  mapName + "/" + mapName + ".png");
+
+		//change the text so the users can go back to the main menu
+		UploadPanelText.text = "Completed Uploading to Steam!";
+		LoadingPanel.SetActive(true);
+		GoToMainMenuButton.SetActive(true);
+
+	}
+
+
     /// <summary>
     /// DO NOT CALL. save the XML by finding all the gameobjects in the level with the "Block" Tag
     /// </summary>
 	private void saveXML()
 	{
-   		path = Application.dataPath + "/UserLevels/"+ mapName +".xml";
+		//set the paths so we can use them later
+		path = Application.dataPath + "/UserLevels/" + "/" +  mapName + "/" + mapName + ".xml";
+		mapFolderPath = Application.dataPath + "/UserLevels/" + "/" +  mapName + "/";
+		//create the folder for the level
+		System.IO.Directory.CreateDirectory(Application.dataPath + "/UserLevels/" + "/" +  mapName);
+		//take a screenshot of everything
+		screenshotTaker();
+
+
 		XmlDocument xmlDoc = new XmlDocument();
 	    XmlElement elmRoot = xmlDoc.CreateElement("Level");
     	xmlDoc.AppendChild(elmRoot);
@@ -578,6 +450,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void OnCreateItemResult(CreateItemResult_t pCallback, bool bIOFailure) {
+
+
 		Debug.Log("[" + CreateItemResult_t.k_iCallback + " - CreateItemResult_t] - " + pCallback.m_eResult + " -- " + pCallback.m_nPublishedFileId + " -- " + pCallback.m_bUserNeedsToAcceptWorkshopLegalAgreement);
 		m_PublishedFileId = pCallback.m_nPublishedFileId;
 	}

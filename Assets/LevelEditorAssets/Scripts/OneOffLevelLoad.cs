@@ -37,7 +37,8 @@ public class OneOffLevelLoad : MonoBehaviour {
         //clear the existing level on the screen
         //ClearLevel();
 
-        mapPath = Application.dataPath + "/UserLevels/" + mapName + ".xml";
+		mapPath = Application.dataPath + "/UserLevels/" + "/" +  mapName + "/" + mapName + ".xml";
+
 
         XmlReader reader = XmlReader.Create(mapPath);
         XmlDocument xmlDoc = new XmlDocument();
