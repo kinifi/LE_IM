@@ -1,15 +1,24 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class volumeControl : MonoBehaviour {
 
 	public UISlider volValue;
+	public Slider _slider;
 
 	// Use this for initialization
 	void Start () {
 		if(PlayerPrefs.HasKey("volume"))
 		{
-			volValue.value = PlayerPrefs.GetFloat("volume");
+			if(_slider != null)
+			{
+				_slider.value = PlayerPrefs.GetFloat("volume");
+			}
+			else
+			{
+				volValue.value = PlayerPrefs.GetFloat("volume");
+			}
 		}
 	}
 	
@@ -20,7 +29,15 @@ public class volumeControl : MonoBehaviour {
 
 	public void changeVolume()
 	{
-		AudioListener.volume = volValue.value;
-		PlayerPrefs.SetFloat("volume", volValue.value);
+		if(_slider != null)
+		{
+			AudioListener.volume = _slider.value;
+			PlayerPrefs.SetFloat("volume", _slider.value);
+		}
+		else
+		{
+			AudioListener.volume = volValue.value;
+			PlayerPrefs.SetFloat("volume", volValue.value);
+		}
 	}
 }
