@@ -19,6 +19,13 @@ class SteamManager : MonoBehaviour {
 		Debug.LogWarning(pchDebugText);
 	}
 
+	public SteamWorkshopUpload m_WorkshopUpload;
+	public static SteamWorkshopUpload WorkshopUpload {
+		get {
+			return m_instance.m_WorkshopUpload;
+		}
+	}
+
 	private void Awake() {
 		// Only one instance of SteamManager at a time!
 		if (m_instance != null) {
@@ -60,6 +67,8 @@ class SteamManager : MonoBehaviour {
 
 		// If you're running into Init issues try running DbgView prior to launching to get the internal output from Steam.
 		// http://technet.microsoft.com/en-us/sysinternals/bb896647.aspx
+		m_WorkshopUpload = gameObject.AddComponent<SteamWorkshopUpload>();
+		
 		m_bInitialized = SteamAPI.Init();
 		if (!m_bInitialized) {
 			Debug.LogError("[Steamworks.NET] SteamAPI_Init() failed. Refer to Valve's documentation or the comment above this line for more information.", this);
@@ -94,6 +103,10 @@ class SteamManager : MonoBehaviour {
 			m_SteamAPIWarningMessageHook = new SteamAPIWarningMessageHook_t(SteamAPIDebugTextHook);
 			SteamClient.SetWarningMessageHook(m_SteamAPIWarningMessageHook);
 		}
+
+		//TODO: fix this after riley gets back to us
+		m_WorkshopUpload.Init();
+
 	}
 
 	private void OnApplicationQuit() {

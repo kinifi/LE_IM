@@ -35,8 +35,11 @@ public class GameManager : MonoBehaviour {
 
 	public GUISkin skin;
 	public Text inputMapName;
+	public Text inputDescription;
 	public Text UploadPanelText;
 	public GameObject GoToMainMenuButton, LoadingPanel;
+	public bool hasUploaded = false;
+	public string _progress;
 
 	public int currentSelectedTile;
 
@@ -58,6 +61,16 @@ public class GameManager : MonoBehaviour {
 	public void setMapName () {
 
 		mapName = inputMapName.text;
+		if(inputDescription.text != "" || inputDescription.text != null)
+		{
+			author_Note = inputDescription.text;
+		}
+		else
+		{
+			//TODO: PAX EAST level comments taken out!
+			author_Note = "Pax East Level";
+			author_Note = inputDescription.text + "| Made by: " + author_Name;
+		}
 	}
 
 	public void setBackGroundColor (string _color) {
@@ -66,11 +79,24 @@ public class GameManager : MonoBehaviour {
 	}
 	
 
+	public void goToMainLevelEditorScene()
+	{
+		Application.LoadLevel("LevelCreatorScene");
+	}
+
     void Update ()
     {
 
-		EItemUpdateStatus ret = SteamUGC.GetItemUpdateProgress(m_UGCUpdateHandle, out BytesProcessed, out BytesTotal);
-		
+		if(hasUploaded)
+		{
+			_progress = SteamManager.WorkshopUpload.State.ToString();
+			if(_progress == "Complete")
+			{
+				UploadPanelText.text = "Upload Complete! Bringing you back to the Main Menu";
+				Invoke("goToMainLevelEditorScene", 3.0f);
+			}
+		}
+
 		//If the Left Mouse button is down, change the sprite to the sprite selected
         if (Input.GetMouseButtonDown(1))
         {
@@ -100,36 +126,17 @@ public class GameManager : MonoBehaviour {
 
 	public void UploadToSteamWorkShopPlease ()
 	{
-		
-		
-		SteamAPICall_t handle = SteamUGC.CreateItem((AppId_t)265670, EWorkshopFileType.k_EWorkshopFileTypeCommunity);
-		OnCreateItemResultCallResult.Set(handle);
-		
-		m_UGCUpdateHandle = SteamUGC.StartItemUpdate((AppId_t)265670, m_PublishedFileId);
-		
-		bool retMapName = SteamUGC.SetItemTitle(m_UGCUpdateHandle, mapName);
-		if(author_Note == null || author_Note == "")
-		{
-			author_Note = "Updating";
-		}
-		bool retDescription = SteamUGC.SetItemDescription(m_UGCUpdateHandle, author_Note);
-		
-		if(privateLevel)
-		{
-			bool retVisibility = SteamUGC.SetItemVisibility(m_UGCUpdateHandle, ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPrivate);
-			Debug.Log("" + retVisibility);
-		}
-		else
-		{
-			bool retVisibility = SteamUGC.SetItemVisibility(m_UGCUpdateHandle, ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPublic);
-			Debug.Log("" + retVisibility);
-		}
-		
-		bool retTags = SteamUGC.SetItemTags(m_UGCUpdateHandle, new string[] {"Challenge Level", "Hard"});
-		bool retContent = SteamUGC.SetItemContent(m_UGCUpdateHandle, mapFolderPath);
-		bool retPreview = SteamUGC.SetItemPreview(m_UGCUpdateHandle, imagePath);
-		SteamAPICall_t handleUpdate = SteamUGC.SubmitItemUpdate(m_UGCUpdateHandle, "Change Note");
-		OnSubmitItemUpdateResultCallResult.Set(handleUpdate);
+
+		Debug.Log("Starting Workshop upload");
+
+		//Upload to Steam workshop. 
+		//TODO: Add a description field
+		SteamManager.WorkshopUpload.CreateWorkshopItem(mapFolderPath,
+		                                               imagePath,
+		                                               mapName,
+		                                               author_Note,
+		                                               Steamworks.ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPublic);
+		hasUploaded = true;
 
 
 	}
@@ -376,7 +383,7 @@ public class GameManager : MonoBehaviour {
 		Debug.Log("Screenshot captured: " + Application.dataPath + "/UserLevels/" + "/" +  mapName + "/" + mapName + ".png");
 
 		//change the text so the users can go back to the main menu
-		UploadPanelText.text = "Completed Uploading to Steam!";
+		UploadPanelText.text = "Uploading to Steam!";
 		LoadingPanel.SetActive(true);
 		GoToMainMenuButton.SetActive(true);
 
