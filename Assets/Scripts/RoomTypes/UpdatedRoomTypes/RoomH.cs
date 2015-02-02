@@ -30,7 +30,7 @@ public class RoomH : MonoBehaviour {
 
 	public void BeginRoom ()
 	{
-		Debug.Log ("The room has started.");
+		//Debug.Log ("The room has started.");
 		AssignRoomArray();
 		RoomPositionInitalize();
 		LoopThroughArray();
@@ -92,7 +92,7 @@ public class RoomH : MonoBehaviour {
 					1,1,12,12,12,0,0,1,1,1
 				};
 			}
-			Debug.Log("The room type is: " + roomPart1 + ",A");
+			//Debug.Log("The room type is: " + roomPart1 + ",A");
 			break;
 		case "B":
 			//randomly pick which array to use
@@ -139,7 +139,7 @@ public class RoomH : MonoBehaviour {
 					1,11,1,2,0,0,1,1,141,11
 				};
 			}
-			Debug.Log("The room type is: " + roomPart1 + ",B");
+			//Debug.Log("The room type is: " + roomPart1 + ",B");
 			break;
 		case "C":
 			//randomly pick which array to use
@@ -186,7 +186,7 @@ public class RoomH : MonoBehaviour {
 					0,11,11,12,12,12,12,12,12,12
 				};
 			}
-			Debug.Log("The room type is: " + roomPart1 + ",C");
+			//Debug.Log("The room type is: " + roomPart1 + ",C");
 			break;
 		case "D":
 			//randomly pick which array to use
@@ -269,13 +269,13 @@ public class RoomH : MonoBehaviour {
 					0,0,1,0,7,7,0,0,665,1,
 					0,0,0,15,0,21,16,0,0,1,
 					0,0,0,667,1,1,16,0,0,2,
-					11,0,0,0,13,0,0,0,0,0,
+					11,0,0,0,0,0,0,0,0,0,
 					0,21,0,0,0,0,0,0,0,0,
 					1,0,0,0,21,0,0,0,21,0,
 					142,12,12,0,0,12,12,0,0,1
 				};
 			}
-			Debug.Log("The room type is: " + roomPart1 + ",D");
+			//Debug.Log("The room type is: " + roomPart1 + ",D");
 			break;
 		case "E":
 			//randomly pick which array to use
@@ -322,7 +322,7 @@ public class RoomH : MonoBehaviour {
 					1,0,21,0,21,0,0,660,0,0
 				};
 			}
-			Debug.Log("The room type is: " + roomPart1 + ",E");
+			//Debug.Log("The room type is: " + roomPart1 + ",E");
 			break;
 		case "F":
 			//randomly pick which array to use
@@ -369,7 +369,7 @@ public class RoomH : MonoBehaviour {
 					1,0,0,0,0,0,0,0,0,0
 				};
 			}
-			Debug.Log("The room type is: " + roomPart1 + ",F");
+			//Debug.Log("The room type is: " + roomPart1 + ",F");
 			break;
 		case "Z":
 			//randomly pick which array to use
@@ -416,10 +416,10 @@ public class RoomH : MonoBehaviour {
 					1,12,12,12,1,12,12,12,12,1
 				};
 			}
-			Debug.Log("The room type is: " + roomPart1 + ",Z");
+			//Debug.Log("The room type is: " + roomPart1 + ",Z");
 			break;
 		default:
-			Debug.Log("The room type is: " + roomPart1 + roomPart2);
+			//Debug.Log("The room type is: " + roomPart1 + roomPart2);
 			Debug.Log("Something went wrong when selecting RoomPart2 for in RoomH");
 			break;
 		}
@@ -895,7 +895,7 @@ public class RoomH : MonoBehaviour {
 
 	private void OnComplete ()
 	{
-		Debug.Log ("This Room " + roomValue + " is complete.");
+		//Debug.Log ("This Room " + roomValue + " is complete.");
 	}
 
 }

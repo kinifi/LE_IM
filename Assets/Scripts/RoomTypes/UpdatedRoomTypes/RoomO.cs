@@ -31,7 +31,7 @@ public class RoomO : MonoBehaviour {
 	
 	public void BeginRoom ()
 	{
-		Debug.Log ("The room has started.");
+		//Debug.Log ("The room has started.");
 		AssignRoomArray();
 		RoomPositionInitalize();
 		LoopThroughArray();
@@ -159,10 +159,10 @@ public class RoomO : MonoBehaviour {
 				};
 				break;
 			}
-			Debug.Log("The room type is: " + randomPick + ",O");
+			//Debug.Log("The room type is: " + randomPick + ",O");
 			break;
 		default:
-			Debug.Log("The room type is: " + roomPart1 + roomPart2);
+			//Debug.Log("The room type is: " + roomPart1 + roomPart2);
 			Debug.Log("Something went wrong when selecting RoomPart2 for in RoomO");
 			break;
 		}
@@ -638,7 +638,7 @@ public class RoomO : MonoBehaviour {
 	
 	private void OnComplete ()
 	{
-		Debug.Log ("This Room " + roomValue + " is complete.");
+		//Debug.Log ("This Room " + roomValue + " is complete.");
 	}
 	
 }

@@ -61,10 +61,10 @@ public class UpdatedGenerator : MonoBehaviour {
 		//Debug.Log ("The first part of the room at " + mapMatrixInt + " is: " + roomPart1);
 
 		//find room part 1
-		Invoke ("FindRoomPart2", 0.25f);
+		Invoke ("FindRoomPart2", 0.05f);
 
 		//Combine the room part strings
-		Invoke("CombineRoomParts", 0.25f);
+		Invoke("CombineRoomParts", 0.05f);
 
 		//Combine room parts calls the SetMapMatrixValue method
 
@@ -472,7 +472,7 @@ public class UpdatedGenerator : MonoBehaviour {
 		}
 		else
 		{
-			Invoke ("SaturateOhs", 0.25f);
+			Invoke ("SaturateOhs", 0.05f);
 		}
 	}
 
@@ -491,17 +491,17 @@ public class UpdatedGenerator : MonoBehaviour {
 			}
 		}
 		//invoke OnComplete
-		Invoke ("OnComplete", 0.5f);
+		Invoke ("OnComplete", 0.05f);
 	}
 	
 	private void OnComplete()
 	{
 		Debug.Log ("Dungeon should be generated.");
-		for(int i = 0; i < 16; i++)
+		/*for(int i = 0; i < 16; i++)
 		{
 			Debug.Log (mapMatrix[i]);
-		}
-		Invoke ("FillInTheMap", 0.15f);
+		}*/
+		Invoke ("FillInTheMap", 0.05f);
 	}
 
 	private void FillInTheMap()
