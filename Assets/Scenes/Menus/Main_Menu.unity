@@ -10156,6 +10156,7 @@ GameObject:
   - 222: {fileID: 1014724299}
   - 114: {fileID: 1014724298}
   - 114: {fileID: 1014724297}
+  - 114: {fileID: 1014724300}
   m_Layer: 5
   m_Name: 01_Campaign
   m_TagString: Untagged
@@ -10220,8 +10221,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1938354154}
-        m_MethodName: goToCampaignLevels
+      - m_Target: {fileID: 1014724300}
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10231,7 +10232,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1014724298
@@ -10261,6 +10262,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1014724295}
+--- !u!114 &1014724300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1014724295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 080adec2944125e4492baaa430bd0d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: LoadingScreen
 --- !u!1001 &1017993377
 Prefab:
   m_ObjectHideFlags: 0
@@ -20383,7 +20396,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: ae7977fc308fe0744ae4e28721c41c47, type: 3}
-    m_FontSize: 25
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
