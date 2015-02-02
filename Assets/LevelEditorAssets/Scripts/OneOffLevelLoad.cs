@@ -88,6 +88,15 @@ public class OneOffLevelLoad : MonoBehaviour {
 	                    _newBlock.name = allGameObjects.Item(0).InnerText;
 	                    _newBlock.transform.parent = _newLevel.transform;
 					}
+					else if(allGameObjects.Item(0).InnerText.ToString() == "BreakableBlock")
+					{
+						GameObject _newBlock;
+						_newBlock = Instantiate(Tiles[t], new Vector2(float.Parse(allGameObjects.Item(1).InnerText), float.Parse(allGameObjects.Item(2).InnerText)), Quaternion.identity) as GameObject;
+						_newBlock.tag = "BreakableBlock";
+						_newBlock.layer = 9;
+						_newBlock.name = allGameObjects.Item(0).InnerText;
+						_newBlock.transform.parent = _newLevel.transform;
+					}
 					else
 					{
 						GameObject _newBlock;
