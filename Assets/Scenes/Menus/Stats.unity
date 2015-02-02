@@ -2417,7 +2417,7 @@ Transform:
   m_PrefabInternal: {fileID: 1573568800}
   m_GameObject: {fileID: 813294294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -282.249939, y: 326, z: 0}
+  m_LocalPosition: {x: -249.832275, y: 308.000031, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1239048882}
@@ -2434,7 +2434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4987dba539248934680e5c3da9e3c20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: {fileID: 813294297}
+  playerName: {fileID: 0}
 --- !u!114 &813294297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3067,7 +3067,7 @@ Transform:
   m_PrefabInternal: {fileID: 1573568800}
   m_GameObject: {fileID: 968571069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -534.249939, y: 326, z: 0}
+  m_LocalPosition: {x: -501.832275, y: 308.000031, z: 0}
   m_LocalScale: {x: .999984026, y: .999984026, z: .999984026}
   m_Children: []
   m_Father: {fileID: 1239048882}
@@ -3388,6 +3388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bbae714cb53bc24aa160d95d44d0c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_WorkshopUpload: {fileID: 0}
 --- !u!4 &1059028439
 Transform:
   m_ObjectHideFlags: 0
@@ -3960,7 +3961,7 @@ Transform:
   m_GameObject: {fileID: 1178559452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00393700786, y: .00393700786, z: .00393700786}
+  m_LocalScale: {x: .00413223123, y: .00413223123, z: .00413223123}
   m_Children:
   - {fileID: 1167647333}
   m_Father: {fileID: 0}
@@ -4299,7 +4300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1239048882
 Transform:
   m_ObjectHideFlags: 0
@@ -5295,19 +5296,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 4b14fa9c0e94eeb47bd7ef09ed56506b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -534.249939
+      value: -501.832275
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 4b14fa9c0e94eeb47bd7ef09ed56506b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 326
+      value: 308.000031
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4b14fa9c0e94eeb47bd7ef09ed56506b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -282.249939
+      value: -249.832275
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4b14fa9c0e94eeb47bd7ef09ed56506b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 326
+      value: 308.000031
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4b14fa9c0e94eeb47bd7ef09ed56506b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b14fa9c0e94eeb47bd7ef09ed56506b, type: 2}
@@ -5531,7 +5536,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3001
+  startingRenderQueue: 3000
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
