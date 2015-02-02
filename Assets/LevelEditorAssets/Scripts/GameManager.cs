@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
 	public Text inputMapName;
 	public Text inputDescription;
 	public Text UploadPanelText;
-	public GameObject GoToMainMenuButton, LoadingPanel;
+	public GameObject LoadingPanel;
 	public bool hasUploaded = false;
 	public string _progress;
 
@@ -92,13 +92,15 @@ public class GameManager : MonoBehaviour {
 			_progress = SteamManager.WorkshopUpload.State.ToString();
 			if(_progress == "Complete")
 			{
-				UploadPanelText.text = "Upload Complete! Bringing you back to the Main Menu";
+				UploadPanelText.text = "Upload Complete! Bringing you back to the Main Menu..";
 				Invoke("goToMainLevelEditorScene", 3.0f);
 			}
 		}
 
+
+
 		//If the Left Mouse button is down, change the sprite to the sprite selected
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(0))
         {
             var worldTouch = cam.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit;
@@ -109,7 +111,8 @@ public class GameManager : MonoBehaviour {
                 {
                     //TODO: This will get an Error if the Hit.GameObject doesn't have a Collider2D
                     hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Tiles[currentSelectedTile].gameObject.GetComponent<SpriteRenderer>().sprite;
-                    hit.transform.name = Tiles[currentSelectedTile].gameObject.GetComponent<SpriteRenderer>().sprite.name;
+                    //hit.transform.name = Tiles[currentSelectedTile].gameObject.GetComponent<SpriteRenderer>().sprite.name;
+					hit.transform.name = Tiles[currentSelectedTile].name;
                     hit.transform.tag = "Untagged";
                     //Debug.Log(hit.transform.name);
                 }
@@ -385,7 +388,7 @@ public class GameManager : MonoBehaviour {
 		//change the text so the users can go back to the main menu
 		UploadPanelText.text = "Uploading to Steam!";
 		LoadingPanel.SetActive(true);
-		GoToMainMenuButton.SetActive(true);
+
 
 	}
 

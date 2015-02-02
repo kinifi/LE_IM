@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using Steamworks;
@@ -16,8 +17,10 @@ public class Level_Intro : MonoBehaviour {
     private List<CreatedLevel> m_CreatedLevels;
 
     //GUI vars
-    private bool doneLoading = false;
+    public bool doneLoading = false;
 	private Vector2 scrollPosition;
+
+	public Button _levelButton;
 
 	// Use this for initialization
 	void Start () {
@@ -74,13 +77,15 @@ public class Level_Intro : MonoBehaviour {
 	/// </summary>
 	public void QuerySteamUGC()
 	{
+		Debug.Log("Started SteamUGC Query");
 
         //Check how many items are being downloaded right now
         if(m_RequestUGGDetailsResult.Count > 0)
         {
             //debug log the items being downloaded
-            Debug.Log(m_RequestUGGDetailsResult.Count);
+            Debug.Log("Number of Items Downloaded right now: " + m_RequestUGGDetailsResult.Count);
         }
+
         //If an item is being downloaded. Clear it so we don't have to deal with it. 
         m_RequestUGGDetailsResult.Clear();
 
@@ -103,7 +108,8 @@ public class Level_Intro : MonoBehaviour {
             CreatedLevel _creation = new CreatedLevel();
             bool installed = SteamUGC.GetItemInstallInfo(fileIds[i], out _creation.unusedSizeOnDisk, out _creation.path, 300, out _creation.unusedLegacyItem);
             //Debug.Log("Creation Path: " + _creation.path + " | Creation Unused Size On Disk: " + _creation.unusedSizeOnDisk + "| Creation Unused Legacy Item: " + _creation.unusedLegacyItem);
-            
+
+
             if(!installed)
             {
                 //TODO do something if the user is subscribed to an item but does not have it downloaded
@@ -112,37 +118,13 @@ public class Level_Intro : MonoBehaviour {
 
             int index = i;
 
-            Debug.Log("Get Subscriptions");
+            //Debug.Log("Get Subscriptions");
 
             var subscriptionDetails = CallResult<SteamUGCRequestUGCDetailsResult_t>.Create(OnSteamUGCRequestUGCDetailsResult);
             subscriptionDetails.Set(SteamUGC.RequestUGCDetails(fileIds[i], 0));
             m_RequestUGGDetailsResult.Add(subscriptionDetails);
             _creation.publishFileID = fileIds[i];
 
-            #region old workshop code that didn't work
-            /*
-            subscriptionDetails.Set(SteamUGC.RequestUGCDetails(fileIds[i], 0), (SteamUGCRequestUGCDetailsResult_t pCallback, bool bIOFailure) => {
-                _creation.publishFileID = pCallback.m_details.m_nPublishedFileId;
-                if(!string.IsNullOrEmpty(pCallback.m_details.m_rgchTitle))
-                {
-                    //set the title
-                    _creation.title = pCallback.m_details.m_rgchTitle;
-                }
-
-                //set the description
-                _creation.Description = pCallback.m_details.m_rgchDescription;
-                Debug.Log("Added " + _creation.title + " to m_CreatedLevels List");
-
-                //Display the GUI not that we are done loading from the server
-                doneLoading = true;
-
-
-
-               
-                Debug.Log("End ");
-            });
-            */
-            #endregion
 
             //m_RequestUGGDetailsResult.Remove(subscriptionDetails);
 
@@ -159,23 +141,39 @@ public class Level_Intro : MonoBehaviour {
 
     void OnSteamUGCRequestUGCDetailsResult(SteamUGCRequestUGCDetailsResult_t pCallback, bool bIOFailure)
     {
-
+		//Debug.Log("SteamUGCRequest: m_CreatedLevels: " +  m_CreatedLevels.Count);
         for (int i = 0; i < m_CreatedLevels.Count; i++)
 		{
 			
-				if (m_CreatedLevels[i].publishFileID != pCallback.m_details.m_nPublishedFileId && m_CreatedLevels[i].Tags == "Challenge Level,Hard") 
-                { 
-                    continue;
-                }
+			if (m_CreatedLevels[i].publishFileID != pCallback.m_details.m_nPublishedFileId) 
+	        { 
+	            continue;
+	        }
 
-                //do this shit here
-                m_CreatedLevels[i].title = pCallback.m_details.m_rgchTitle;
-                m_CreatedLevels[i].Description = pCallback.m_details.m_rgchDescription;
-				m_CreatedLevels[i].Tags = pCallback.m_details.m_rgchTags;
-				Debug.Log(m_CreatedLevels[i].Tags);
-                doneLoading = true;
-                Debug.Log("Added Data");
-                break;
+        	//do this shit here
+	        m_CreatedLevels[i].title = pCallback.m_details.m_rgchTitle;
+	        m_CreatedLevels[i].Description = pCallback.m_details.m_rgchDescription;
+			m_CreatedLevels[i].Tags = pCallback.m_details.m_rgchTags;
+			//Debug.Log(m_CreatedLevels[i].Tags);
+			
+			doneLoading = true;
+
+			/*
+			if((i + 1) == m_CreatedLevels.Count)
+			{
+
+				Debug.Log("Done Adding Levels");
+
+			}
+			else
+			{
+				Debug.Log("i Value: " + (i + 1) + " | m_CreatedLevels Count: " + m_CreatedLevels.Count);
+				//Debug.Log("Not Done Adding Levels");
+			}
+			*/
+
+			//Debug.Log("Added new Level: " + m_CreatedLevels[i].title);
+        	break;
         }
 
         //Debug.Log("[" + SteamUGCRequestUGCDetailsResult_t.k_iCallback + " - SteamUGCRequestUGCDetailsResult_t] - " + pCallback.m_details + " -- " + pCallback.m_bCachedData);
@@ -187,28 +185,37 @@ public class Level_Intro : MonoBehaviour {
 
 		GUI.skin = skin;
 
-        GUILayout.BeginArea(new Rect(0, 0, 250, Screen.height));
+        GUILayout.BeginArea(new Rect(0, 0, Screen.width/5, Screen.height));
 
+	        if (doneLoading)
+	        {
 
-        if (doneLoading)
-        {
-
-            GUILayout.Label("Workshop Levels");
-			scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.Height(Screen.height));
-            //creat the gui buttons for the levels
-            for (int i = 0; i < m_CreatedLevels.Count; i++)
-            {
-				if (GUILayout.Button(m_CreatedLevels[i].title))
-                {
-                    Debug.Log("Title: " + m_CreatedLevels[i].title + " | " + m_CreatedLevels[i].Description + " | " + m_CreatedLevels[i].path + "/" + m_CreatedLevels[i].title + ".xml");
-                    PlayerPrefs.SetString("Title", m_CreatedLevels[i].title);
-                    PlayerPrefs.SetString("Description", m_CreatedLevels[i].Description);
-                    PlayerPrefs.SetString("Path", m_CreatedLevels[i].path + "/" + m_CreatedLevels[i].title + ".xml");
-                    //Application.LoadLevel("OneOffLevel");
-                }
-            }
-			GUILayout.EndScrollView();
-        }
+				GUILayout.Label("Workshop Levels");
+				
+				if(GUILayout.Button("Back to Menu"))
+				{
+					Application.LoadLevel("LevelCreatorScene");
+				}
+				scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.Height(Screen.height));
+				
+				if(m_CreatedLevels.Count >= 1)
+				{
+					//Create Buttons for each level in m_CreatedLevels
+					for (int i = 0; i < m_CreatedLevels.Count; i++)
+					{
+						
+						if (GUILayout.Button(m_CreatedLevels[i].title, GUILayout.Height(50)))
+						{
+							//Debug.Log("Title: " + m_CreatedLevels[i].title + " | " + m_CreatedLevels[i].Description + " | " + m_CreatedLevels[i].path + "/" + m_CreatedLevels[i].title + ".xml");
+							PlayerPrefs.SetString("Title", m_CreatedLevels[i].title);
+							PlayerPrefs.SetString("Description", m_CreatedLevels[i].Description);
+							PlayerPrefs.SetString("Path", m_CreatedLevels[i].path + "/" + m_CreatedLevels[i].title + ".xml");
+							Application.LoadLevel("OneOffLevel");
+						}
+					}
+				}
+				GUILayout.EndScrollView();
+	        }
 
 
         GUILayout.EndArea();

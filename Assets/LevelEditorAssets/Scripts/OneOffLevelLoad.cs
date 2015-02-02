@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -11,7 +12,7 @@ public class OneOffLevelLoad : MonoBehaviour {
     private string mapName, mapPath, mapDescription;
     private Camera _cam;
     public GameObject[] Tiles;
-
+	public Text authorNote, authorName;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,7 @@ public class OneOffLevelLoad : MonoBehaviour {
         mapName = PlayerPrefs.GetString("Title");
         mapDescription = PlayerPrefs.GetString("Description");
         mapPath = PlayerPrefs.GetString("Path");
-
+		Debug.Log("Map Path: " + mapPath);
 
         //load the level
         LoadXML();
@@ -37,7 +38,7 @@ public class OneOffLevelLoad : MonoBehaviour {
         //clear the existing level on the screen
         //ClearLevel();
 
-		mapPath = Application.dataPath + "/UserLevels/" + "/" +  mapName + "/" + mapName + ".xml";
+		//mapPath = Application.dataPath + "/UserLevels/" +  mapName + "/" + mapName + ".xml";
 
 
         XmlReader reader = XmlReader.Create(mapPath);
@@ -53,11 +54,14 @@ public class OneOffLevelLoad : MonoBehaviour {
         parseBackgroundColor(Settings.Item(0).ChildNodes.Item(0).InnerText.ToLower());
         //Get the Author name
         Debug.Log(Settings.Item(0).ChildNodes.Item(1).InnerText);
+		authorName.text = "Completed " + Settings.Item(0).ChildNodes.Item(1).InnerText + "'s Level!";
         //get the author Note
         Debug.Log(Settings.Item(0).ChildNodes.Item(2).InnerText);
+		authorNote.text = Settings.Item(0).ChildNodes.Item(2).InnerText;
 
         GameObject _newLevel = new GameObject();
         _newLevel.name = "_Level";
+		//Debug.Log("Created _Level Object");
 
         //How many XML Tags are inside of the number of Tiles(Data.Count)
         for (int i = 0; i < Data.Count; i++)
@@ -73,14 +77,19 @@ public class OneOffLevelLoad : MonoBehaviour {
 
             for (int t = 0; t < Tiles.Length; t++)
             {
-                if (allGameObjects.Item(0).InnerText == Tiles[t].name)
+                if (allGameObjects.Item(0).InnerText.ToString() == Tiles[t].name)
                 {
                     GameObject _newBlock;
                     _newBlock = Instantiate(Tiles[t], new Vector2(float.Parse(allGameObjects.Item(1).InnerText), float.Parse(allGameObjects.Item(2).InnerText)), Quaternion.identity) as GameObject;
                     _newBlock.tag = "ChallengeGround";
                     _newBlock.name = allGameObjects.Item(0).InnerText;
                     _newBlock.transform.parent = _newLevel.transform;
+					//Debug.Log("Created New Block");
                 }
+				else
+				{
+					//Debug.Log("Not A Match: " + allGameObjects.Item(0).InnerText);
+				}
             }
 
             //GameObject _test = new GameObject(allGameObjects.Item(0).InnerText);
@@ -129,5 +138,13 @@ public class OneOffLevelLoad : MonoBehaviour {
 
     }
 
+	/*
+	private void OnGUI () {
+
+		GUILayout.Label("Level Name: " + mapName);
+		GUILayout.Label("Level Description: " + mapDescription);
+
+	}
+	*/
 
 }
