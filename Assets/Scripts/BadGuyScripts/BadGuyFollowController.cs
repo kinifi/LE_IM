@@ -49,6 +49,7 @@ public class BadGuyFollowController : MonoBehaviour {
 	void Awake()
 	{
 		_anim = GetComponent<Animator>();
+		GetComponentInChildren<ParticleSystem>().renderer.sortingLayerName  = "Danger Bad Guys";
 	}
 
 	void Start ()
@@ -64,6 +65,7 @@ public class BadGuyFollowController : MonoBehaviour {
 
 		//Begin patrol
 		InvokeRepeating("Patrol", 0.0f, Random.Range (8,13));
+
 	}
 
 	void Update ()

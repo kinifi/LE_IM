@@ -49,6 +49,7 @@ public class BadGuyVertController : MonoBehaviour {
 	void Awake()
 	{
 		_anim = GetComponent<Animator>();
+		GetComponentInChildren<ParticleSystem>().renderer.sortingLayerName  = "Danger Bad Guys";
 	}
 	
 	void Start ()

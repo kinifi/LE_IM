@@ -574,7 +574,7 @@ public class RoomTypeFour : MonoBehaviour {
 			GameObject BG = Instantiate(tileOfRoom[22], roomTilePosition, Quaternion.identity) as GameObject;
 			BG.gameObject.tag = "BadGuy";
 			Vector3 fluffybg = BG.transform.position;
-			fluffybg.z = -5.0f;
+			fluffybg.z = 1.0f;
 			BG.transform.position = fluffybg;
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
@@ -695,7 +695,7 @@ public class RoomTypeFour : MonoBehaviour {
 			GameObject BGV = Instantiate(tileOfRoom[33], roomTilePosition, Quaternion.identity) as GameObject;
 			BGV.gameObject.tag = "BadGuyVert";
 			Vector3 fluffybgv = BGV.transform.position;
-			fluffybgv.z = -5.0f;
+			fluffybgv.z = 0.0f;
 			BGV.transform.position = fluffybgv;
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
@@ -1278,7 +1278,7 @@ public class RoomTypeFour : MonoBehaviour {
 			GameObject BG = Instantiate(tileOfRoom[22], tilePosition, Quaternion.identity) as GameObject;
 			BG.gameObject.tag = "BadGuy";
 			Vector3 fluffybg = BG.transform.position;
-			fluffybg.z = -5.0f;
+			fluffybg.z = 1.0f;
 			BG.transform.position = fluffybg;
 			tilePosition.x += 1.0f;
 			transform.position = tilePosition;
@@ -1399,7 +1399,7 @@ public class RoomTypeFour : MonoBehaviour {
 			GameObject BGV = Instantiate(tileOfRoom[33], tilePosition, Quaternion.identity) as GameObject;
 			BGV.gameObject.tag = "BadGuyVert";
 			Vector3 fluffybgv = BGV.transform.position;
-			fluffybgv.z = -5.0f;
+			fluffybgv.z = 0.0f;
 			BGV.transform.position = fluffybgv;
 			tilePosition.x += 1.0f;
 			transform.position = tilePosition;

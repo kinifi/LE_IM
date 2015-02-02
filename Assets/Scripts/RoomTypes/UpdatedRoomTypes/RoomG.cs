@@ -252,7 +252,7 @@ public class RoomG : MonoBehaviour {
 					1,0,0,0,1,0,0,0,0,0,
 					1,0,12,0,0,0,0,0,0,0,
 					20,11,1,16,0,0,0,0,0,0,
-					0,0,0,13,0,0,0,0,0,0,
+					0,0,11,0,0,0,0,0,0,0,
 					1,142,1,1,0,21,0,1,0,0
 				};
 			}
@@ -796,7 +796,7 @@ public class RoomG : MonoBehaviour {
 			GameObject BG = Instantiate(tileOfRoom[22], roomTilePosition, Quaternion.identity) as GameObject;
 			BG.gameObject.tag = "BadGuy";
 			Vector3 fluffybg = BG.transform.position;
-			fluffybg.z = -5.0f;
+			fluffybg.z = 1.0f;
 			BG.transform.position = fluffybg;
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
@@ -806,7 +806,7 @@ public class RoomG : MonoBehaviour {
 			GameObject BGV = Instantiate(tileOfRoom[33], roomTilePosition, Quaternion.identity) as GameObject;
 			BGV.gameObject.tag = "BadGuyVert";
 			Vector3 fluffybgv = BGV.transform.position;
-			fluffybgv.z = -5.0f;
+			fluffybgv.z = 0.0f;
 			BGV.transform.position = fluffybgv;
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;

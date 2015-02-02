@@ -148,14 +148,14 @@ public class RoomO : MonoBehaviour {
 				Debug.Log ("Something went wrong in the O,O random pick");
 				roomArray = new int[] 
 				{
-					0,1,1,1,1,1,1,1,1,0,
-					0,665,1,665,1,665,1,665,1,0,
-					0,0,1,0,1,0,1,0,13,0,
-					0,0,13,0,1,0,13,0,0,0,
-					0,0,0,0,13,0,0,0,0,0,
 					0,0,0,0,0,0,0,0,0,0,
-					7,0,11,0,11,0,0,0,1,0,
-					11,11,7,11,7,11,1,7,11,11
+					0,0,0,0,0,0,0,0,0,0,
+					0,0,0,0,0,0,0,0,0,1,
+					0,0,0,0,5,0,0,0,0,0,
+					0,0,0,0,5,0,0,0,0,0,
+					1,0,0,0,1,0,0,0,0,0,
+					0,0,0,0,1,0,0,0,0,0,
+					0,7,7,7,1,7,7,7,7,0
 				};
 				break;
 			}
@@ -577,7 +577,7 @@ public class RoomO : MonoBehaviour {
 			GameObject BG = Instantiate(tileOfRoom[22], roomTilePosition, Quaternion.identity) as GameObject;
 			BG.gameObject.tag = "BadGuy";
 			Vector3 fluffybg = BG.transform.position;
-			fluffybg.z = -5.0f;
+			fluffybg.z = 1.0f;
 			BG.transform.position = fluffybg;
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
@@ -587,7 +587,7 @@ public class RoomO : MonoBehaviour {
 			GameObject BGV = Instantiate(tileOfRoom[33], roomTilePosition, Quaternion.identity) as GameObject;
 			BGV.gameObject.tag = "BadGuyVert";
 			Vector3 fluffybgv = BGV.transform.position;
-			fluffybgv.z = -5.0f;
+			fluffybgv.z = 0.0f;
 			BGV.transform.position = fluffybgv;
 			roomTilePosition.x += 1.0f;
 			transform.position = roomTilePosition;
