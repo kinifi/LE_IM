@@ -17,7 +17,7 @@ public class MegaMenu : MonoBehaviour {
 
 	private void Update() {
 
-		if(Input.GetKeyDown(KeyCode.Escape))
+		if(Input.GetButtonDown("Back"))
 		{
 			if(!isOpen)
 			{
@@ -48,10 +48,22 @@ public class MegaMenu : MonoBehaviour {
 	}
 	*/
 
+	public void QuitGame()
+	{
+		Application.Quit();
+	}
 
+	public void quitToMainMenu()
+	{
+		Application.LoadLevel("MainMenu");
+	}
 
+	public void resetLevel()
+	{
+		Application.LoadLevel(Application.loadedLevelName);
+	}
 
-	private void closeMenu() {
+	public void closeMenu() {
 
 
 
@@ -61,7 +73,7 @@ public class MegaMenu : MonoBehaviour {
 		VideoPanel.SetActive(false);
 	}
 
-	private void setupMenu() {
+	public void setupMenu() {
 		ControlPanel.SetActive(true);
 		toggleGameplay();
 	}
