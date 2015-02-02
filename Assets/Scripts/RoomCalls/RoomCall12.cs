@@ -9,7 +9,7 @@ public class RoomCall12 : MonoBehaviour {
 	public void GetMatrix12Value()
 	{
 		UpdatedGenerator matrixValue12 = GameObject.Find ("Dungeon Generator").GetComponent<UpdatedGenerator>();
-		roomTypeValue12 = (matrixValue12.mapMatrix[6]);
+		roomTypeValue12 = (matrixValue12.mapMatrix[5]);
 		AssignRoomType(roomTypeValue12);
 		
 	}

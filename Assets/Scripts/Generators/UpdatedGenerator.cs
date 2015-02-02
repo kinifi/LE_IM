@@ -519,17 +519,17 @@ public class UpdatedGenerator : MonoBehaviour {
 		RoomCall03 sendValue03 = GameObject.Find ("Matrix03").GetComponent<RoomCall03>();
 		sendValue03.GetMatrix03Value();
 		
-		RoomCall10 sendValue10 = GameObject.Find ("Matrix10").GetComponent<RoomCall10>();
-		sendValue10.GetMatrix10Value();
-		
-		RoomCall11 sendValue11 = GameObject.Find ("Matrix11").GetComponent<RoomCall11>();
-		sendValue11.GetMatrix11Value();
+		RoomCall13 sendValue13 = GameObject.Find ("Matrix13").GetComponent<RoomCall13>();
+		sendValue13.GetMatrix13Value();
 		
 		RoomCall12 sendValue12 = GameObject.Find ("Matrix12").GetComponent<RoomCall12>();
 		sendValue12.GetMatrix12Value();
 		
-		RoomCall13 sendValue13 = GameObject.Find ("Matrix13").GetComponent<RoomCall13>();
-		sendValue13.GetMatrix13Value();
+		RoomCall11 sendValue11 = GameObject.Find ("Matrix11").GetComponent<RoomCall11>();
+		sendValue11.GetMatrix11Value();
+		
+		RoomCall10 sendValue10 = GameObject.Find ("Matrix10").GetComponent<RoomCall10>();
+		sendValue10.GetMatrix10Value();
 		
 		RoomCall20 sendValue20 = GameObject.Find ("Matrix20").GetComponent<RoomCall20>();
 		sendValue20.GetMatrix20Value();
@@ -543,16 +543,16 @@ public class UpdatedGenerator : MonoBehaviour {
 		RoomCall23 sendValue23 = GameObject.Find ("Matrix23").GetComponent<RoomCall23>();
 		sendValue23.GetMatrix23Value();
 		
-		RoomCall30 sendValue30 = GameObject.Find ("Matrix30").GetComponent<RoomCall30>();
-		sendValue30.GetMatrix30Value();
-		
-		RoomCall31 sendValue31 = GameObject.Find ("Matrix31").GetComponent<RoomCall31>();
-		sendValue31.GetMatrix31Value();
+		RoomCall33 sendValue33 = GameObject.Find ("Matrix33").GetComponent<RoomCall33>();
+		sendValue33.GetMatrix33Value();
 		
 		RoomCall32 sendValue32 = GameObject.Find ("Matrix32").GetComponent<RoomCall32>();
 		sendValue32.GetMatrix32Value();
 		
-		RoomCall33 sendValue33 = GameObject.Find ("Matrix33").GetComponent<RoomCall33>();
-		sendValue33.GetMatrix33Value();
+		RoomCall31 sendValue31 = GameObject.Find ("Matrix31").GetComponent<RoomCall31>();
+		sendValue31.GetMatrix31Value();
+		
+		RoomCall30 sendValue30 = GameObject.Find ("Matrix30").GetComponent<RoomCall30>();
+		sendValue30.GetMatrix30Value();
 	}
 }
