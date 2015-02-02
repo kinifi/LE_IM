@@ -68,7 +68,7 @@ public class SteamBasic : MonoBehaviour {
 	/// Opens the steam overlay to community.
 	/// </summary>
 	public static void openSteamOverlayToCommunity() {
-
+		
 		SteamFriends.ActivateGameOverlay("Community");
 	}
 

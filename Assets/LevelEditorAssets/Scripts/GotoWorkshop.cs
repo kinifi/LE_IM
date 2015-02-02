@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GotoWorkshop : MonoBehaviour {
 
-	public string WorkShopItemURL = "http://steamcommunity.com/workshop/browse/?appid=265670&browsesort=trend&section=readytouseitems";
+	public string WorkShopItemURL = "steamcommunity.com/workshop/browse/?appid=265670&browsesort=trend&section=readytouseitems";
 
 	// Use this for initialization
 	void Start () {
