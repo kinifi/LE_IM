@@ -79,11 +79,23 @@ public class OneOffLevelLoad : MonoBehaviour {
             {
                 if (allGameObjects.Item(0).InnerText.ToString() == Tiles[t].name)
                 {
-                    GameObject _newBlock;
-                    _newBlock = Instantiate(Tiles[t], new Vector2(float.Parse(allGameObjects.Item(1).InnerText), float.Parse(allGameObjects.Item(2).InnerText)), Quaternion.identity) as GameObject;
-                    _newBlock.tag = "ChallengeGround";
-                    _newBlock.name = allGameObjects.Item(0).InnerText;
-                    _newBlock.transform.parent = _newLevel.transform;
+					if(allGameObjects.Item(0).InnerText.ToString() == "BowGolden" || allGameObjects.Item(0).InnerText.ToString() == "Bow")
+					{
+	                    GameObject _newBlock;
+	                    _newBlock = Instantiate(Tiles[t], new Vector2(float.Parse(allGameObjects.Item(1).InnerText), float.Parse(allGameObjects.Item(2).InnerText)), Quaternion.identity) as GameObject;
+	                    _newBlock.tag = "Bow";
+						_newBlock.layer = 18;
+	                    _newBlock.name = allGameObjects.Item(0).InnerText;
+	                    _newBlock.transform.parent = _newLevel.transform;
+					}
+					else
+					{
+						GameObject _newBlock;
+						_newBlock = Instantiate(Tiles[t], new Vector2(float.Parse(allGameObjects.Item(1).InnerText), float.Parse(allGameObjects.Item(2).InnerText)), Quaternion.identity) as GameObject;
+						_newBlock.tag = "ChallengeGround";
+						_newBlock.name = allGameObjects.Item(0).InnerText;
+						_newBlock.transform.parent = _newLevel.transform;
+					}
 					//Debug.Log("Created New Block");
                 }
 				else
