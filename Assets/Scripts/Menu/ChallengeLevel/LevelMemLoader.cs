@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class LevelMemLoader : MonoBehaviour {
 
 	//The level 1 is always unlocked
 	private int levelUnlocked = 1;
-	public UIButton[] Levels;
+	public GameObject[] Levels;
 
 	// Use this for initialization
 	void Start () {
 
 		loadLevelUnlockedValue();
+
 	}
 
 	/// <summary>
@@ -49,7 +51,7 @@ public class LevelMemLoader : MonoBehaviour {
 			{
                 if (Levels[i] != null)
                 {
-                    Levels[i].isEnabled = false;
+                    Levels[i].SetActive(false);
                 }
 			}
 			else
@@ -57,7 +59,7 @@ public class LevelMemLoader : MonoBehaviour {
                 if (Levels[i] != null)
                 {
                     
-                    Levels[i].isEnabled = true;
+                    Levels[i].SetActive(true);
                 }
 			}
 
