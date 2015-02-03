@@ -2050,6 +2050,7 @@ GameObject:
   - 222: {fileID: 464870700}
   - 114: {fileID: 464870699}
   - 114: {fileID: 464870698}
+  - 114: {fileID: 464870701}
   m_Layer: 5
   m_Name: 4_QuitToMain
   m_TagString: Untagged
@@ -2116,8 +2117,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1823128311}
-        m_MethodName: quitToMainMenu
+      - m_Target: {fileID: 464870701}
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2159,6 +2160,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1213958819}
   m_GameObject: {fileID: 464870696}
+--- !u!114 &464870701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 464870696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 080adec2944125e4492baaa430bd0d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: Main_Menu
 --- !u!1 &469169801
 GameObject:
   m_ObjectHideFlags: 0
@@ -5945,6 +5958,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11418754, guid: cd5a180c40aadb444b7548a042e4b00f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 22418686, guid: cd5a180c40aadb444b7548a042e4b00f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6020,6 +6037,18 @@ Prefab:
     - target: {fileID: 118686, guid: cd5a180c40aadb444b7548a042e4b00f, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418754, guid: cd5a180c40aadb444b7548a042e4b00f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 464870701}
+    - target: {fileID: 11418754, guid: cd5a180c40aadb444b7548a042e4b00f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418754, guid: cd5a180c40aadb444b7548a042e4b00f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd5a180c40aadb444b7548a042e4b00f, type: 2}

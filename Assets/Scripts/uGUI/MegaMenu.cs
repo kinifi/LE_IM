@@ -15,10 +15,11 @@ public class MegaMenu : MonoBehaviour {
 	
 	}
 
-	private void Update() {
+	void Update() {
 
 		if(Input.GetButtonDown("Back"))
 		{
+
 			if(!isOpen)
 			{
 				isOpen = true;
