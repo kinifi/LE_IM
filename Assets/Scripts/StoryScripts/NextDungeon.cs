@@ -89,29 +89,29 @@ public class NextDungeon : MonoBehaviour {
 		}
 		else if(_completed < 4)
 		{
-			string nextTheme = _nextDungeon;
+			int nextTheme = Random.Range(1,7);
 			switch (nextTheme)
 			{
-			case "1":
+			case 1:
 				Debug.Log ("Map Level Set");
 				Application.LoadLevel("Map_Level_Gen");
 				break;
-			case "2":
+			case 2:
 				Debug.Log ("Dusk Level Set");
 				Application.LoadLevel("Dusk_Level");
 				break;
-			case "3":
+			case 3:
 				Application.LoadLevel("Purple_Level");
 				break;
-			case "4":
+			case 4:
 				Debug.Log ("Nightmare Level Set");
 				Application.LoadLevel("Nightmare_Level");
 				break;
-			case "5":
+			case 5:
 				Debug.Log ("Olive Level Set");
 				Application.LoadLevel("Olive_Level");
 				break;
-			case "6":
+			case 6:
 				Debug.Log ("Rouche Level Set");
 				Application.LoadLevel("Rouche_Level");
 				break;

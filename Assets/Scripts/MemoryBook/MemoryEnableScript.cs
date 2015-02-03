@@ -147,7 +147,7 @@ public class MemoryEnableScript : MonoBehaviour {
 		{
 			Debug.Log("Memory 12");
 			GameObject.Find ("FirefliesMemoryImage").GetComponent<SpriteRenderer>().enabled = true;
-			GameObject.Find ("FirefliesLabel").GetComponent<UILabel>().enabled = false;
+			GameObject.Find ("FirefiesLabel").GetComponent<UILabel>().enabled = false;
 			Fireflies = true;
 		}
 	}
