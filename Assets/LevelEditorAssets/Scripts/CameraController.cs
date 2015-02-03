@@ -16,7 +16,8 @@ public class CameraController : MonoBehaviour {
         Hor = Input.GetAxis("Horiz");
         Vert = Input.GetAxis("Vert");
 
-        this.transform.position += new Vector3(Hor, Vert, 0);
+        this.transform.position = new Vector3(Hor, Vert, 0);
+
 
 	}
 }
