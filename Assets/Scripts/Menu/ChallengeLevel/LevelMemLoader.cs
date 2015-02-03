@@ -51,7 +51,8 @@ public class LevelMemLoader : MonoBehaviour {
 			{
                 if (Levels[i] != null)
                 {
-                    Levels[i].SetActive(false);
+                    //Levels[i].SetActive(false);
+					Levels[i].GetComponent<Button>().interactable = false;
                 }
 			}
 			else
@@ -59,7 +60,8 @@ public class LevelMemLoader : MonoBehaviour {
                 if (Levels[i] != null)
                 {
                     
-                    Levels[i].SetActive(true);
+                    //Levels[i].SetActive(true);
+					Levels[i].GetComponent<Button>().interactable = true;
                 }
 			}
 
