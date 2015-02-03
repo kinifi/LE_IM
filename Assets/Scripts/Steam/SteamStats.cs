@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class SteamStats : MonoBehaviour {
 
-	public UILabel NumGames, NumDeathsByFalling, NumDeathsBySpikes, NumJumps, NumTrampJumps, HalloweenCandies, NumBossDeaths;
+	public Text NumGames, NumDeathsByFalling, NumDeathsBySpikes, NumJumps, NumTrampJumps, NumBossDeaths;
 
 	// Use this for initialization
 	void Start () {
