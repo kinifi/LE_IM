@@ -109,11 +109,11 @@ public class GameManager : MonoBehaviour {
             {
                 if (canDraw)
                 {
-                    //TODO: This will get an Error if the Hit.GameObject doesn't have a Collider2D
                     hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Tiles[currentSelectedTile].gameObject.GetComponent<SpriteRenderer>().sprite;
                     //hit.transform.name = Tiles[currentSelectedTile].gameObject.GetComponent<SpriteRenderer>().sprite.name;
 					hit.transform.name = Tiles[currentSelectedTile].name;
                     hit.transform.tag = "Untagged";
+					hit.transform.gameObject.layer = 9;
                     //Debug.Log(hit.transform.name);
                 }
                 else
@@ -121,6 +121,7 @@ public class GameManager : MonoBehaviour {
                     hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = EditorTile.gameObject.GetComponent<SpriteRenderer>().sprite;
                     hit.transform.name = EditorTile.gameObject.GetComponent<SpriteRenderer>().sprite.name;
                     hit.transform.tag = "Untagged";
+					hit.transform.gameObject.layer = 0;
                 }
             }
         }
