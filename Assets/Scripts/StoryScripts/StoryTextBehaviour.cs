@@ -5,10 +5,13 @@ using System.Collections;
 public class StoryTextBehaviour : MonoBehaviour {
 
 	//Configs
-	public float scale = 10.0f;
-	public float speed = 1.0f;
+	public float speed = 0.15f;
 
-	private TextMesh storyText;
+	//story GameObject configs
+	private Text storyText;
+	private int nextChar = 0;
+
+	//story chapter configs
 	private string storyString = "This is the text in the story. It is pretty cool!";
 	private char[] storyChar;
 	private int storyCharLength;
@@ -17,22 +20,35 @@ public class StoryTextBehaviour : MonoBehaviour {
 	void Start () 
 	{
 		Debug.Log ("We've started");
-		storyText = GetComponent<TextMesh>();
+		storyText = GetComponent<Text>();
+
 		storyChar = storyString.ToCharArray();
 		storyCharLength = storyChar.Length;
 
 		Debug.Log("The length of storyChar is: " + storyChar.Length);
-		PrintStory();
+		InvokeRepeating("PrintStory", 1.0f, speed);
 	}
 	
 	// Update is called once per frame
 	void PrintStory () 
 	{
-		for( int i = 0; i < storyCharLength; i++)
+		if(nextChar < storyCharLength)
 		{
-			storyText.text += storyChar[i];
-			Debug.Log ("This is i: " + storyChar[i]);
+			storyText.text += storyChar[nextChar];
+			//Debug.Log ("This is i: " + storyChar[nextChar]);
+
+			nextChar += 1;
+		}
+		else
+		{
+			OnComplete();
 		}
 
+	}
+
+	void OnComplete()
+	{
+		CancelInvoke();
+		Debug.Log ("We're finished!!!");
 	}
 }
