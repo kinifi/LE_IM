@@ -6,7 +6,7 @@ public class companionBehavior : MonoBehaviour {
 	private GameObject m_Player;
 	public float m_followSpeed = 5.0f;
 	public float m_maxDistanceFromPlayer = 8.0f;
-	public float _currentDistanceFromPlayer;
+	private float _currentDistanceFromPlayer;
 
 	// Use this for initialization
 	void Start () {
@@ -33,18 +33,16 @@ public class companionBehavior : MonoBehaviour {
 	
 		//get the distance from the player
 		_currentDistanceFromPlayer = Vector2.Distance(this.transform.position, m_Player.transform.position);
-
+		float step = m_followSpeed * Time.deltaTime;
+		
 		//Check if the current distance from the player is greater than the max distance from the player
 		if (_currentDistanceFromPlayer >= m_maxDistanceFromPlayer)
 		{
-			this.transform.position += this.transform.forward * m_followSpeed * Time.deltaTime;
-		}
-		else
-		{
-
+			//this.transform.position += m_Player.transform.position.x * m_followSpeed * Time.deltaTime;
+			transform.position = Vector2.MoveTowards(this.transform.position, m_Player.transform.position, step);
 		}
 
-		//play up and down animation
+
 
 	}
 }

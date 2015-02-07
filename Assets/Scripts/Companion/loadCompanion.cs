@@ -42,5 +42,9 @@ public class loadCompanion : MonoBehaviour {
 
 			}
 		}
+		else
+		{
+			Debug.Log("No Companion Set");
+		}
 	}
 }
