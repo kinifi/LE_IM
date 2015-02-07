@@ -19,7 +19,7 @@ public class StoryTextBehaviour : MonoBehaviour {
 	private int nextChar = 0;
 
 	//story chapter configs
-	private string storyString = "The ball shot up in the air, but Jack fell flat on his back. 'Are you okay?!' Robbe rushed over. 'Ha ha! Ya, I'm fine' Jack replied still lying on the ground.";
+	public string storyString;
 	private char[] storyChar;
 	private int storyCharLength;
 
@@ -29,15 +29,17 @@ public class StoryTextBehaviour : MonoBehaviour {
 		Debug.Log ("We've started");
 
 		storyText = GetComponent<Text>();
+	}
 
+	public void PrepForPrinting ()
+	{
 		storyChar = storyString.ToCharArray();
 		storyCharLength = storyChar.Length;
-
+		
 		InvokeRepeating("PrintStory", 0.5f, speed);
 	}
 	
-	// Update is called once per frame
-	void PrintStory () 
+	private void PrintStory () 
 	{
 
 
@@ -45,7 +47,7 @@ public class StoryTextBehaviour : MonoBehaviour {
 		{
 			storyText.text += storyChar[nextChar];
 
-			index += 0.125f;
+			index += 0.10f;
 			float x = amplitudeX*Mathf.Cos (omegaX*index);
 			float y = Mathf.Abs (amplitudeY*Mathf.Sin (omegaY*index));
 

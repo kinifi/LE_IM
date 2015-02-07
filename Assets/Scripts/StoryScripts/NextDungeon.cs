@@ -7,16 +7,6 @@ public class NextDungeon : MonoBehaviour {
 	private int _completed;
 	private string _nextDungeon;
 
-	//Robbe animation configs
-	private GameObject _robbeIdle;
-	private GameObject _robbeRunRight;
-	private GameObject _exitPoint;
-
-	public Transform finalPosition;
-	private Vector3 nextPosition;
-	private float speed = 5.0f;
-	private bool moveRobbe = false;
-
 	//Get story title for boss
 	public string currentStoryTitle;
 
@@ -27,26 +17,16 @@ public class NextDungeon : MonoBehaviour {
 		_nextDungeon = PlayerPrefs.GetString("door");
 		//Debug.Log ("Number of dungeons completed this series: " + _completed);
 		//Debug.Log("The next dungeon is: " + _nextDungeon);
-
-		//Upkeep
-		moveRobbe = false;
-		Invoke ("SetRobbe", 0.5f);
 	}
 
 	void Update ()
 	{
-		if(moveRobbe == true)
+		if(Input.anyKeyDown)
 		{
-			nextPosition = GameObject.Find ("Robbe_RunRight").transform.position;
-			nextPosition.x = (nextPosition.x + speed * Time.deltaTime);
-			GameObject.Find ("Robbe_RunRight").transform.position = nextPosition;
-		}
-
-		if(nextPosition.x >= finalPosition.position.x)
-		{
-			_robbeRunRight.GetComponent<SpriteRenderer>().enabled = false;
+			GoNextDungeon();
 		}
 	}
+
 	
 	//uses nextDungeonName to set the next dungeon
 	private void GoNextDungeon()
@@ -121,19 +101,5 @@ public class NextDungeon : MonoBehaviour {
 				break;
 			}
 		}
-	}
-
-	private void SetRobbe ()
-	{
-		_robbeIdle = GameObject.Find ("Robbe_Idle");
-		_robbeRunRight = GameObject.Find ("Robbe_RunRight");
-		Invoke("MoveRobbe", 2.0f);
-	}
-
-	private void MoveRobbe ()
-	{
-		_robbeIdle.SetActive(false);
-		_robbeRunRight.GetComponent<SpriteRenderer>().enabled = true;
-		moveRobbe = true;
 	}
 }
