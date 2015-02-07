@@ -3,8 +3,6 @@ using System.Collections;
 
 public class DeathBySpikes : MonoBehaviour {
 
-	public GameObject deathMessage;
-	public GameObject kill;
 	private bool hasCollided = false;
 
 
@@ -20,43 +18,21 @@ public class DeathBySpikes : MonoBehaviour {
 	{
 		if(Player.gameObject.tag == "Player")
 		{
-			if(kill == null)
+			if(!hasCollided)
 			{
-				if(!hasCollided)
-				{
-					hasCollided = true;
-					
-					IncrementStats();
-					Invoke("InvokeReset", 0.2f);
-
-					Debug.Log ("You were killed by spikes!!");
-
-					
-					//Failsafe enable movement
-					GameObject.Find("Player").GetComponent<RobbeController>().DelayAllowMovement();
-					
-					//Instantiate the death splash and overlay Robbe.  Destroy it and call the movement function.
-					GameObject resetRobbe = GameObject.Find ("Player");
-					kill = Instantiate(deathMessage, resetRobbe.transform.position, Quaternion.identity) as GameObject;
-					kill.transform.OverlayPosition(resetRobbe.transform);
-					kill.transform.localScale = new Vector3(50.0f,50.0f,1.0f);
-					
-					Destroy(kill, 1.0f);
-				}
+				//Set hasCollided to true to prevent multiple kills
+				hasCollided = true;
+				//Increment the player states
+				IncrementStats();
+				//Invoke the reset for hasCollided
+				Invoke("InvokeReset", 0.2f);
+				//Let me know you were killed by spikes
+				Debug.Log ("You were killed by spikes!!");
+				//Call Death Script on Player
+				GameObject.Find("Player").GetComponent<RobbeController>().DelayAllowMovement();
 			}
 		}
 	}
-
-	/*private void AllowRobbesMovement() 
-	{
-		//Find Robbe and allow his movement again.  Turn kinematic to false.
-		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-		_robbe.enabled = true;
-
-		//Find the LookDown camera and allow its movement.
-		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-		_lookdown.enabled = true;
-	}*/
 
 	/// <summary>
 	/// Increments the stats 
@@ -66,10 +42,8 @@ public class DeathBySpikes : MonoBehaviour {
 		SteamManager.StatsAndAchievements.incrementNumOfDeathsBySpikes();
 		Debug.Log("Incremented the spike stat");
 	}
-	
-	/// <summary>
-	/// Resets the hasCollided Value so we can invoke and set a stat again
-	/// </summary>
+
+	// Resets the hasCollided Value so we can invoke and set a stat again
 	private void InvokeReset()
 	{
 		hasCollided = false;

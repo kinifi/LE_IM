@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class RobbeController : MonoBehaviour {
@@ -234,6 +235,8 @@ public class RobbeController : MonoBehaviour {
 
 	public void DelayAllowMovement()
 	{
+		//Turn On Death Canvas
+		GameObject.Find ("Death_Canvas").GetComponent<Image>().enabled = true;
 		//Restrict Player Input
 		allowInput = false;
 		//Find Robbe's gameobject and set his transform to the Spawn Location.
@@ -241,28 +244,15 @@ public class RobbeController : MonoBehaviour {
 		GameObject respawn = GameObject.Find("Spawn_Location");
 		resetRobbe.transform.position = respawn.transform.position;
 
-		//Find Robbe's controller and prevent his movement.
-		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-		_robbe.enabled = false;
-		
-		//Find the LookDown camera and prevent its movement.
-		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-		_lookdown.enabled = false;
-		Invoke ("AllowRobbesMovement", 0.25f);
+		Invoke ("AllowRobbesMovement", 0.50f);
 	}
 
 	private void AllowRobbesMovement() 
 	{
 		//Allow Player Input
 		allowInput = true;
-
-		//Find Robbe and allow his movement again.  Turn kinematic to false.
-		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-		_robbe.enabled = true;
-		
-		//Find the LookDown camera and allow its movement.
-		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-		_lookdown.enabled = true;
+		//Turn Off Death Canvas
+		GameObject.Find ("Death_Canvas").GetComponent<Image>().enabled = false;
 	}
 }
 	

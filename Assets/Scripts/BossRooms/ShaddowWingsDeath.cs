@@ -11,7 +11,6 @@ public class ShaddowWingsDeath : MonoBehaviour {
 	
 	//Death Configs
 	public GameObject kill;
-	public GameObject deathSplash;
 	public GameObject bowGolden;
 	
 	void Awake ()
@@ -28,18 +27,10 @@ public class ShaddowWingsDeath : MonoBehaviour {
 			
 			if(kill == null)
 			{
-				//Debug.Log ("You were killed by a bad guy!!");
-				
-				//Failsafe enable movement
+				//Let me know you were killed by Shaddow Wings
+				Debug.Log ("You were killed by Shaddow Wings!!");
+				//Call Death Script on Player
 				GameObject.Find("Player").GetComponent<RobbeController>().DelayAllowMovement();
-				
-				//Instantiate the death splash and overlay Robbe.  Destroy it and call the movement function.
-				GameObject resetRobbe = GameObject.Find ("Player");
-				kill = Instantiate(deathSplash, resetRobbe.transform.position, Quaternion.identity) as GameObject;
-				kill.transform.OverlayPosition(resetRobbe.transform);
-				kill.transform.localScale = new Vector3(50.0f,50.0f,1.0f);
-				
-				Destroy(kill, 1.0f);
 			}
 		}
 		

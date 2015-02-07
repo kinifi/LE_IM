@@ -11,7 +11,6 @@ public class Ball_Boss : MonoBehaviour {
 
 	//Death Configs
 	public GameObject kill;
-	public GameObject deathSplash;
 	public GameObject bowGolden;
 	public GameObject telaIn;
 	private RobbeController _playerController;

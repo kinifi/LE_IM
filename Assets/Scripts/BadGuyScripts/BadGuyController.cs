@@ -10,7 +10,6 @@ public class BadGuyController : MonoBehaviour {
 	private bool faceUp = true;
 
 	public GameObject kill;
-	public GameObject deathSplash;
 	public GameObject bowGolden;
 
 	//Components to get
@@ -91,18 +90,11 @@ public class BadGuyController : MonoBehaviour {
 			
 			if(kill == null)
 			{
-				//Debug.Log ("You were killed by a bad guy!!");
+				//Let me know you were killed by a fire wisp
+				//Debug.Log ("You were killed by a fire wisp!!" + this.gameObject.name);
 				
-				//Failsafe enable movement
+				//Call Death Script on Player
 				GameObject.Find("Player").GetComponent<RobbeController>().DelayAllowMovement();
-				
-				//Instantiate the death splash and overlay Robbe.  Destroy it and call the movement function.
-				GameObject resetRobbe = GameObject.Find ("Player");
-				kill = Instantiate(deathSplash, resetRobbe.transform.position, Quaternion.identity) as GameObject;
-				kill.transform.OverlayPosition(resetRobbe.transform);
-				kill.transform.localScale = new Vector3(50.0f,50.0f,1.0f);
-				
-				Destroy(kill, 1.0f);
 			}
 		}
 
@@ -133,20 +125,6 @@ public class BadGuyController : MonoBehaviour {
 			}
 		}
 	}
-	/*
-	private void AllowRobbesMovement() 
-	{
-		//Allow movement of the bad guy again
-		this.gameObject.rigidbody2D.isKinematic = false;
-		
-		//Find Robbe and allow his movement again.  Turn kinematic to false.
-		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-		_robbe.enabled = true;
-
-		//Find the LookDown camera and allow its movement.
-		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-		_lookdown.enabled = true;
-	}*/
 
 	private void Flip()
 	{

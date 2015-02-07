@@ -4,8 +4,6 @@ using System.Collections;
 public class SpotSpreadSpreading : MonoBehaviour {
 
 	public float spotSpeed;
-	public GameObject deathMessage;
-	public GameObject kill;
 	private bool hasCollided = false;
 
 
@@ -103,7 +101,7 @@ public class SpotSpreadSpreading : MonoBehaviour {
 	{
 		if(other.gameObject.tag == "Player")
 		{
-			DeathbySpikes();
+			DeathByShots();
 		}
 		else if(other.gameObject.tag != "Player")
 		{
@@ -120,52 +118,23 @@ public class SpotSpreadSpreading : MonoBehaviour {
 		}
 		else if(other.gameObject.tag == "Player")
 		{
-			Destroy(this.gameObject, 1.0f);
+			DeathByShots();
 		}
 	}
 	
-	private void DeathbySpikes()
+	private void DeathByShots()
 	{
-		//Stop all movement of Spike Cannon.
-		this.rigidbody2D.isKinematic = true; 
-		
-		if(kill == null)
+		if(!hasCollided)
 		{
-			
-			if(!hasCollided)
-			{
-				hasCollided = true;
-				
-				Invoke("InvokeReset", 0.2f);
-				
-				//Debug.Log ("You were killed by a cannon spike!!");
-					
-				//Failsafe enable movement
-				GameObject.Find("Player").GetComponent<RobbeController>().DelayAllowMovement();
-				
-				//Instantiate the death splash and overlay Robbe.  Destroy it and call the movement function.
-				GameObject resetRobbe = GameObject.Find ("Player");
-				kill = Instantiate(deathMessage, resetRobbe.transform.position, Quaternion.identity) as GameObject;
-				kill.transform.OverlayPosition(resetRobbe.transform);
-				kill.transform.localScale = new Vector3(50.0f,50.0f,1.0f);
-				
-				Destroy(kill, 1.0f);
-			}
+			//Set hasCollided to true to prevent multiple kills
+			hasCollided = true;
+			//Invoke the reset for hasCollided
+			Invoke("InvokeReset", 0.25f);
+			//Let me know you were killed by spikes
+			Debug.Log ("You were killed by a Spot Shot!!");
+			//Call Death Script on Player
+			GameObject.Find("Player").GetComponent<RobbeController>().DelayAllowMovement();
 		}
-	}
-	
-	private void AllowRobbesMovement() 
-	{
-		//Find Robbe and allow his movement again.  Turn kinematic to false.
-		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-		_robbe.enabled = true;
-		
-		//Find the LookDown camera and allow its movement.
-		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-		_lookdown.enabled = true;
-		
-		//Destory the spike :)
-		Destroy(this.gameObject);
 	}
 
 	private void InvokeReset()
