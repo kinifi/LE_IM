@@ -1,105 +1,184 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class NextDungeon : MonoBehaviour {
 
-	//Configs from Player Prefs
-	private int _completed;
-	private string _nextDungeon;
-
-	//Get story title for boss
-	public string currentStoryTitle;
+	//Set from playerPrefs
+	private int storyChapter = 0;
+	private List<int> bossChapters = new List<int> {5,15,25,30,35,40,60};
 
 
 	void Start()
 	{
-		_completed = PlayerPrefs.GetInt("completed");
-		_nextDungeon = PlayerPrefs.GetString("door");
-		//Debug.Log ("Number of dungeons completed this series: " + _completed);
-		//Debug.Log("The next dungeon is: " + _nextDungeon);
+		storyChapter = PlayerPrefs.GetInt("storyChapter");
+		CheckIfNextLevelIsABoss();
 	}
 
 	void Update ()
 	{
 		if(Input.anyKeyDown)
 		{
-			GoNextDungeon();
+			CheckIfNextLevelIsABoss();
 		}
 	}
 
-	
-	//uses nextDungeonName to set the next dungeon
-	private void GoNextDungeon()
+	private void CheckIfNextLevelIsABoss ()
 	{
-		Debug.Log ("I made it!!!");
-		if(_completed >= 4)
+		//Checks if the next level should be a boss
+		if(bossChapters.Contains(storyChapter))
 		{
-			string nextBoss = _nextDungeon;
-			Debug.Log (nextBoss);
-			switch (nextBoss)
+			Debug.Log ("This level should be a boss");
+			switch(storyChapter)
 			{
-			case "Robbe, the shy kid":
-			case "Jack":
-			case "All alone":
-				Debug.Log ("ScaredBoss Set");
+			case 5:
+				Debug.Log ("Preparing to launch Nightmare Boss");
 				Application.LoadLevel("ScaredBoss");
 				break;
-			case "Archery":
-			case "The girl cousin":
-				Debug.Log ("DepthsBoss Set");
+			case 15:
+				Debug.Log ("Preparing to launch Shoot Out Boss");
+				break;
+			case 25:
+				Debug.Log ("Preparing to launch Depths Boss");
 				Application.LoadLevel("DepthsBoss");
 				break;
-			case "Music Class":
-				Debug.Log ("GoblinBoss Set");
+			case 30:
+				Debug.Log ("Preparing to launch Goblin Boss");
 				Application.LoadLevel("GoblinBoss");
 				break;
-			case "The Walk Home":
-				Debug.Log ("WolfBoss Set");
+			case 35:
+				Debug.Log ("Preparing to launch Wolf Boss");
 				Application.LoadLevel("WolfBoss");
 				break;
-			case "The Bully":
-				Debug.Log ("Bully Set");
+			case 40:
+				Debug.Log ("Preparing to launch Robot Boss");
 				Application.LoadLevel("BullyBoss");
 				break;
+			case 60:
+				Debug.Log ("Preparing to launch Darkness Boss");
+				break;
 			default:
-				Debug.Log ("ScaredBoss Set due to default");
-				Application.LoadLevel("ScaredBoss");
+				Debug.Log ("Something went wrong when setting a boss level.");
+				Debug.Log ("Please let the devs know! :D");
+				Application.LoadLevel("WolfBoss");
 				break;
 			}
 		}
-		else if(_completed < 4)
+		else
 		{
-			int nextTheme = Random.Range(1,7);
-			switch (nextTheme)
-			{
-			case 1:
-				Debug.Log ("Map Level Set");
-				Application.LoadLevel("Map_Level_Gen");
-				break;
-			case 2:
-				Debug.Log ("Dusk Level Set");
-				Application.LoadLevel("Dusk_Level");
-				break;
-			case 3:
-				Application.LoadLevel("Purple_Level");
-				break;
-			case 4:
-				Debug.Log ("Nightmare Level Set");
-				Application.LoadLevel("Nightmare_Level");
-				break;
-			case 5:
-				Debug.Log ("Olive Level Set");
-				Application.LoadLevel("Olive_Level");
-				break;
-			case 6:
-				Debug.Log ("Rouche Level Set");
-				Application.LoadLevel("Rouche_Level");
-				break;
-			default:
-				Debug.Log ("Something has gone wrong judging on the next dungeon");
-				Application.LoadLevel("Tutorial_Dungeon");
-				break;
-			}
+			Debug.Log ("The next level is not a boss level");
+			StartNextLevel();
 		}
 	}
+
+	//Finds the game object title and sets temporary variable to story title text
+	private void StartNextLevel ()
+	{
+		//Sets current story title text to temp variable
+		if(storyChapter<5)
+		{
+			Debug.Log ("Preparing to launch Tutorial Dungeon");
+			Application.LoadLevel("Tutorial_Dungeon");
+			
+		}
+		//Shy Kid finished - Go to Nightmare Boss
+		else if(storyChapter > 4 && storyChapter < 10)
+		{
+			Debug.Log ("Preparing to launch Nightmare Dungeon");
+			Application.LoadLevel("Nightmare_Level");
+			
+		}
+		//Jack Finished
+		else if(storyChapter > 9 && storyChapter < 15)
+		{
+			//----------------SWITCH TO ARCHERY THEME!!!! --------------------------//
+			Debug.Log ("Preparing to launch Nightmare Dungeon");
+			Application.LoadLevel("Nightmare_Level");
+			
+		}
+		//Archery Finished - Go to Shoot Out Boss
+		else if(storyChapter > 14 && storyChapter < 20)
+		{
+			//----------------SWITCH TO ARCHERY THEME!!!! --------------------------//
+			Debug.Log ("Preparing to launch Nightmare Dungeon");
+			Application.LoadLevel("Nightmare_Level");
+			
+		}
+		//Girl Cousin Finished
+		else if(storyChapter > 19 && storyChapter < 25)
+		{
+			Debug.Log ("Preparing to launch Depths Dungeon");
+			Application.LoadLevel("Purple_Level");
+			
+		}
+		//All Alone Finished - Go to Depths Boss
+		else if(storyChapter > 24 && storyChapter < 30)
+		{
+			Debug.Log ("Preparing to launch Depths Dungeon");
+			Application.LoadLevel("Purple_Level");
+			
+		}
+		//Music Class Finished - Go to Goblin Boss
+		else if(storyChapter > 29 && storyChapter < 35)
+		{
+			Debug.Log ("Preparing to launch Tutorial Dungeon");
+			Application.LoadLevel("Tutorial_Dungeon");
+			
+		}
+		//The Walk Home Finished - Go to Wolf Boss
+		else if(storyChapter > 34 && storyChapter < 40)
+		{
+			Debug.Log ("Preparing to launch Olive Dungeon");
+			Application.LoadLevel("Olive_Level");
+			
+		}
+		//The Bully Finished - Go to Robot Boss
+		else if(storyChapter > 39 && storyChapter < 45)
+		{
+			Debug.Log ("Preparing to launch Robot Dungeon");
+			Application.LoadLevel("Rouche_Level");
+			
+		}
+		//The Forest Finished
+		else if(storyChapter > 44 && storyChapter < 50)
+		{
+			Debug.Log ("Preparing to launch Dusk Dungeon");
+			Application.LoadLevel("Dusk_Level");
+			
+		}
+		//Into the Dark Finished
+		else if(storyChapter > 49 && storyChapter < 55)
+		{
+			Debug.Log ("Preparing to launch Dusk Dungeon");
+			Application.LoadLevel("Dusk_Level");
+			
+		}
+		//Fireflies Finished
+		else if(storyChapter > 54 && storyChapter < 60)
+		{
+			Debug.Log ("Preparing to launch Forest Dungeon");
+			Application.LoadLevel("Map_Level_Gen");
+			
+		}
+		//Fighting the Dark Finished - Go to Darkness Boss
+		else if(storyChapter > 59 && storyChapter < 65)
+		{
+			Debug.Log ("Preparing to launch Forest Dungeon");
+			Application.LoadLevel("Map_Level_Gen");
+			
+		}
+		//Back to Camp Finished
+		else if(storyChapter == 65)
+		{
+			Debug.Log ("Launching the final level");
+		}
+		//Brave At Last Finished - Go to Last Level
+		else
+		{
+			Debug.Log ("Something has gone wrong with the StartNextLevel method in the NextDungeon Script.");
+			Debug.Log ("Please let the developers know :D ");
+			Application.LoadLevel("Tutorial_Dungeon");
+		}
+	}
+	
 }

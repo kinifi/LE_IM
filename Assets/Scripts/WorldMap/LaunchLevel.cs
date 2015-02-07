@@ -3,16 +3,6 @@ using System.Collections;
 
 public class LaunchLevel : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 	//---------------------------------------- DUNGEONS -----------------------------------------------------------//
 	public void StartBasicTheme ()
 	{
@@ -58,6 +48,7 @@ public class LaunchLevel : MonoBehaviour {
 
 	public void StartFinalLevel ()
 	{
+		Debug.Log ("Preparing to launch the Final Level");
 	}
 
 	//--------------------------------------- BOSSES ------------------------------------------------//
@@ -69,6 +60,7 @@ public class LaunchLevel : MonoBehaviour {
 
 	public void StartShootOutBoss ()
 	{
+		Debug.Log ("Preparing to launch Shoot Out Boss");
 	}
 
 	public void StartDepthsBoss ()
@@ -97,6 +89,7 @@ public class LaunchLevel : MonoBehaviour {
 
 	public void StartDarknessBoss ()
 	{
+		Debug.Log ("Preparing to launch Darkness Boss");
 	}
 	
 }
