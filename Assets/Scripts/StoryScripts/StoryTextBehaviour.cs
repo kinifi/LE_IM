@@ -47,7 +47,7 @@ public class StoryTextBehaviour : MonoBehaviour {
 		{
 			storyText.text += storyChar[nextChar];
 
-			index += 0.10f;
+			index += 0.09f;
 			float x = amplitudeX*Mathf.Cos (omegaX*index);
 			float y = Mathf.Abs (amplitudeY*Mathf.Sin (omegaY*index));
 
