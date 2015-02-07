@@ -15,7 +15,7 @@ public class GoblinBody : MonoBehaviour {
 	private Color headBaseColor;
 	private Color currentColor;
 	private Color childrenCurrentColor;
-	private int hits = 0;
+	public int hits = 0;
 
 	//Death Configs
 	public GameObject kill;

@@ -40,6 +40,9 @@ public class GoblinArmMove : MonoBehaviour {
 	public GameObject kill;
 	public GameObject deathSplash;
 
+	//Hits config
+	GoblinBody _hits;
+
 	void Start ()
 	{
 		//Get Motor Components
@@ -65,6 +68,9 @@ public class GoblinArmMove : MonoBehaviour {
 		//Invoke TiltBack
 		Invoke ("TiltArmBack", 1.5f);
 		InvokeRepeating("PlayAudio", 1.0f, 10.0f);
+
+		//hits config
+		_hits = GameObject.Find ("GoblinBody").GetComponent<GoblinBody>();
 	}
 
 	void Update ()
@@ -173,6 +179,14 @@ public class GoblinArmMove : MonoBehaviour {
 				
 				Destroy(kill, 1.0f);
 			}
+		}
+		if(other.gameObject.tag == "Arrow")
+		{
+			//Destroy arrow
+			Destroy(other.gameObject);
+
+			//Increment hits
+			_hits.hits +=1;
 		}
 	}
 

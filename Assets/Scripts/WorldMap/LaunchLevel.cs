@@ -74,7 +74,7 @@ public class LaunchLevel : MonoBehaviour {
 	public void StartDepthsBoss ()
 	{
 		Debug.Log ("Preparing to launch Depths Boss");
-		Application.LoadLevel("Depths");
+		Application.LoadLevel("DepthsBoss");
 	}
 
 	public void StartGoblinBoss ()

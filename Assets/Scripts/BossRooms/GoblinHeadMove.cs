@@ -11,8 +11,14 @@ public class GoblinHeadMove : MonoBehaviour {
 	public GameObject kill;
 	public GameObject deathSplash;
 
+	//Hits config
+	GoblinBody _hits;
+
 	void Start ()
 	{
+		//GetHits
+		_hits = GameObject.Find("GoblinBody").GetComponent<GoblinBody>();
+
 		//Get Component
 		headHinge = GameObject.Find ("GoblinBossHead").GetComponent<HingeJoint2D>();
 		headMotor = headHinge.motor;
@@ -66,6 +72,14 @@ public class GoblinHeadMove : MonoBehaviour {
 				
 				Destroy(kill, 1.0f);
 			}
+		}
+		if(other.gameObject.tag == "Arrow")
+		{
+			//Destroy arrow
+			Destroy(other.gameObject);
+
+			//Increment hits
+			_hits.hits +=1;
 		}
 	}
 	
