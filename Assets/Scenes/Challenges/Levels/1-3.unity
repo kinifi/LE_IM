@@ -422,6 +422,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3c2436a7443caf34fa8c81d7638fe0eb, type: 3}
   playervelocity: {x: 0, y: 0, z: 0}
   canJump: 0
+  _deathPanel: {fileID: 0}
 --- !u!114 &4231152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,7 +493,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .901140273, y: 3.20057869, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1457326034}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!1 &9446861
@@ -8276,6 +8278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   companions:
   - {fileID: 118370, guid: 89a8695c318177e4da74923ae23de5c6, type: 2}
+  - {fileID: 181742, guid: aca927acd60f60440b092380148641bf, type: 2}
 --- !u!4 &686137224
 Transform:
   m_ObjectHideFlags: 0
@@ -9947,7 +9950,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a705327244e87d4395ec9104444d2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeObj: {fileID: 0}
   isSpike: 1
   isFalling: 0
   playerName: Player
@@ -11507,7 +11509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a705327244e87d4395ec9104444d2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeObj: {fileID: 0}
   isSpike: 1
   isFalling: 0
   playerName: Player
@@ -12013,7 +12014,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a705327244e87d4395ec9104444d2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeObj: {fileID: 0}
   isSpike: 1
   isFalling: 0
   playerName: Player
@@ -13701,7 +13701,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a705327244e87d4395ec9104444d2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeObj: {fileID: 0}
   isSpike: 1
   isFalling: 0
   playerName: Player
@@ -13921,7 +13920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a705327244e87d4395ec9104444d2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeObj: {fileID: 0}
   isSpike: 1
   isFalling: 0
   playerName: Player
@@ -15244,7 +15242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a705327244e87d4395ec9104444d2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeObj: {fileID: 0}
   isSpike: 1
   isFalling: 0
   playerName: Player
@@ -19163,6 +19160,57 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 747f9c29e5832e547bf02989d7517ed7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1457326032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 106776, guid: 233eedcd317ff754bbb44ba9eb45dea4, type: 2}
+  m_PrefabInternal: {fileID: 1691805997}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1457326034}
+  - 212: {fileID: 1457326033}
+  m_Layer: 0
+  m_Name: SantaHat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!212 &1457326033
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21206776, guid: 233eedcd317ff754bbb44ba9eb45dea4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1691805997}
+  m_GameObject: {fileID: 1457326032}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 3096589785
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 1baeea2f8bb935e49ae24ed7d45a08dc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &1457326034
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 406776, guid: 233eedcd317ff754bbb44ba9eb45dea4, type: 2}
+  m_PrefabInternal: {fileID: 1691805997}
+  m_GameObject: {fileID: 1457326032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.0161729995, y: .481579989, z: 0}
+  m_LocalScale: {x: -.25, y: .25, z: .25}
+  m_Children: []
+  m_Father: {fileID: 4231155}
+  m_RootOrder: 0
 --- !u!1 &1461960043
 GameObject:
   m_ObjectHideFlags: 0
@@ -22452,7 +22500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a705327244e87d4395ec9104444d2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeObj: {fileID: 0}
   isSpike: 1
   isFalling: 0
   playerName: Player
@@ -22696,7 +22743,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a705327244e87d4395ec9104444d2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeObj: {fileID: 0}
   isSpike: 1
   isFalling: 0
   playerName: Player
@@ -22809,7 +22855,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a705327244e87d4395ec9104444d2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeObj: {fileID: 0}
   isSpike: 1
   isFalling: 0
   playerName: Player
@@ -24474,8 +24519,10 @@ GameObject:
   - 212: {fileID: 1890131313}
   - 61: {fileID: 1890131312}
   - 114: {fileID: 1890131315}
+  - 114: {fileID: 1890131317}
+  - 50: {fileID: 1890131316}
   - 114: {fileID: 1890131311}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24493,7 +24540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a38d752e87760643a652af42cbcee5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeObj: {fileID: 0}
   playerName: Player
 --- !u!61 &1890131312
 BoxCollider2D:
@@ -24504,7 +24550,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1890131310}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1, y: 1.10000002}
   m_Center: {x: 0, y: .0799999982}
 --- !u!212 &1890131313
@@ -24554,6 +24600,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b17e0cba4286f44888c64c0aef27865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1890131316
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5027942, guid: 0aa1eab02c8b36444909ef9e27eb21da,
+    type: 2}
+  m_PrefabInternal: {fileID: 1774197807}
+  m_GameObject: {fileID: 1890131310}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!114 &1890131317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11427942, guid: 0aa1eab02c8b36444909ef9e27eb21da,
+    type: 2}
+  m_PrefabInternal: {fileID: 1774197807}
+  m_GameObject: {fileID: 1890131310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a38d752e87760643a652af42cbcee5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: Player
 --- !u!1 &1896617381
 GameObject:
   m_ObjectHideFlags: 0

@@ -100,6 +100,7 @@ public class MegaMenu : MonoBehaviour {
 		DisableRegenerate ();
 		DisableRespawn();
 		GameTimePause();
+		GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("Gameplay_Button"));
 	}
 
 	/// <summary>
@@ -110,7 +111,6 @@ public class MegaMenu : MonoBehaviour {
 		GameplayPanel.SetActive(true);
 		SoundPanel.SetActive(false);
 		VideoPanel.SetActive(false);
-		//setFirstSelected.setFirstSelectedItem(GameObject.Find("Gameplay_Button"));
 	}
 
 	/// <summary>
@@ -124,6 +124,7 @@ public class MegaMenu : MonoBehaviour {
 		SoundPanel.SetActive(false);
 		VideoPanel.SetActive(false);
 		LearnPanel.SetActive(true);
+		GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("Close"));
 	}
 
 	/// <summary>

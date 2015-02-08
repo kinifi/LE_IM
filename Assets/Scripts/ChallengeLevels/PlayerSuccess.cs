@@ -25,13 +25,14 @@ public class PlayerSuccess : MonoBehaviour {
 			//FadeObj.SetActive(true);
 			//coll.GetComponent<RobbeController>().canMove = false;
 			//coll.GetComponent<Rigidbody2D>().isKinematic = true;
-			Invoke("loadSuccessLevel", 1.0f);
+			//Invoke("loadSuccessLevel", 0.2f);
 			if(hasSendLevelIncreaseData == false)
 			{
 				hasSendLevelIncreaseData = true;
 				IncrementPlayerProgress();
 			}
 			Debug.Log("Player Success");
+			loadSuccessLevel();
 		}
 	}
 

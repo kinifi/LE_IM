@@ -20,13 +20,17 @@ public class PlayerFail : MonoBehaviour {
 	
 	public void startDeath() {
 		//FadeObj.SetActive(true);
+		disablePlayer();
 		if(hasIncrementedStat == false)
 		{
 			hasIncrementedStat = true;
 			incrementStats();
-			Invoke("loadFailLevel", 0.2f);
+			//Invoke("loadFailLevel", 0.2f);
+			loadFailLevel();
 		}
-		Invoke("disablePlayer", 0.1f);
+		//Invoke("disablePlayer", 0.1f);
+
+
 		Debug.Log("Player Fell");
 	}
 
