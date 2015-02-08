@@ -36,6 +36,9 @@ public class RobbeController : MonoBehaviour {
 	//public vars for other scripts
 	public Vector3 playervelocity;
 	public bool canJump;
+
+	//Death Config
+	public GameObject _deathPanel;
 	
 	void Awake()
 	{
@@ -236,7 +239,7 @@ public class RobbeController : MonoBehaviour {
 	public void DelayAllowMovement()
 	{
 		//Turn On Death Canvas
-		GameObject.Find ("Death_Canvas").GetComponent<Image>().enabled = true;
+		_deathPanel.SetActive(true);
 		//Restrict Player Input
 		allowInput = false;
 		GetComponent<Quiver>().canFire = false;
@@ -244,7 +247,7 @@ public class RobbeController : MonoBehaviour {
 		GameObject resetRobbe = GameObject.Find ("Player");
 		GameObject respawn = GameObject.Find("Spawn_Location");
 		resetRobbe.transform.position = respawn.transform.position;
-		Invoke ("AllowRobbesMovement", 0.50f);
+		Invoke ("AllowRobbesMovement", 0.75f);
 	}
 
 	private void AllowRobbesMovement() 
@@ -253,7 +256,7 @@ public class RobbeController : MonoBehaviour {
 		allowInput = true;
 		GetComponent<Quiver>().canFire = true;
 		//Turn Off Death Canvas
-		GameObject.Find ("Death_Canvas").GetComponent<Image>().enabled = false;
+		_deathPanel.SetActive(false);
 	}
 }
 	
