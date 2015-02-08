@@ -7,6 +7,10 @@ public class ShootOutTimer : MonoBehaviour {
 
 	//Text configs
 	Text timerText;
+	float countDown = 120.0f;
+
+	//End Config
+	private bool timeUp = false;
 
 	// Use this for initialization
 	void Start () 
@@ -15,7 +19,33 @@ public class ShootOutTimer : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+	{
+		if(timeUp == false)
+		{
+			StopWatch();
+		}
+		
+	}
+
+	private void StopWatch ()
+	{
+		if(countDown > 0)
+		{
+			countDown = (countDown - Time.fixedDeltaTime);
+			float roundDown = Mathf.Round(countDown);
+			timerText.text = "Time:  " + roundDown.ToString();
+		}
+		else
+		{
+			timeUp = true;
+			timerText.text = "Time is up!!";
+			Invoke ("ResetLevel", 0.5f);
+		}
+	}
+
+	private void ResetLevel ()
+	{
+		Application.LoadLevel("ShootOutBoss");
 	}
 }
