@@ -9,13 +9,14 @@ public class MegaMenu : MonoBehaviour {
 	public GameObject GameplayPanel, SoundPanel, VideoPanel, LearnPanel;
 	//The Regenerate Button reference in case this is a challenge level
 	public GameObject RegenerateButton;
+	//The Reset Button 
+	public GameObject RespawnButton;
 	//control panel are the top three buttons in the menu
 	public GameObject ControlPanel;
 	//Use this to toggle if this pause menu is in the challenge levels or not
 	public bool isChallengeLevels = false;
 	//is the pause Menu open?
 	private bool isOpen = false;
-
 
 	// Use this for initialization
 	private void Start () {
@@ -25,7 +26,7 @@ public class MegaMenu : MonoBehaviour {
 	void Update() {
 
 		//check for input
-		if(Input.GetButtonDown("Back"))
+		if(Input.GetButtonDown("Back") && isOpen == false)
 		{
 
 			if(!isOpen)
@@ -38,6 +39,11 @@ public class MegaMenu : MonoBehaviour {
 				isOpen = false;
 				closeMenu();
 			}
+		}
+		else if(Input.GetButtonDown("LearnButton") && isOpen == false)
+		{
+			toggleLearnPanel();
+			isOpen = true;
 		}
 
 	}
@@ -71,10 +77,14 @@ public class MegaMenu : MonoBehaviour {
 	/// </summary>
 	public void closeMenu() {
 
+		isOpen = false;
 		ControlPanel.SetActive(false);
 		GameplayPanel.SetActive(false);
 		SoundPanel.SetActive(false);
 		VideoPanel.SetActive(false);
+		LearnPanel.SetActive(false);
+		GameTimePlay();
+		enablePlayerFiring();
 	}
 
 	/// <summary>
@@ -85,8 +95,11 @@ public class MegaMenu : MonoBehaviour {
 		isOpen = true;
 		ControlPanel.SetActive(true);
 		toggleGameplay();
+		disablePlayerFiring();
 		//Disables the Regnerate button if on Challenge Levels
 		DisableRegenerate ();
+		DisableRespawn();
+		GameTimePause();
 	}
 
 	/// <summary>
@@ -100,6 +113,9 @@ public class MegaMenu : MonoBehaviour {
 		setFirstSelected.setFirstSelectedItem(GameObject.Find("Gameplay_Button"));
 	}
 
+	/// <summary>
+	/// Toggles the learn panel.
+	/// </summary>
 	public void toggleLearnPanel()
 	{
 		isOpen = true;
@@ -130,7 +146,27 @@ public class MegaMenu : MonoBehaviour {
 		SoundPanel.SetActive(false);
 		VideoPanel.SetActive(true);
 	}
-	
+
+	/// <summary>
+	/// Disables the player firing.
+	/// </summary>
+	private void disablePlayerFiring ()
+	{
+		if(isChallengeLevels == false)
+		{
+			GameObject.Find ("Player").GetComponent<Quiver>().canFire = false;
+		}
+
+	}
+
+	private void enablePlayerFiring()
+	{
+		if(isChallengeLevels == false)
+		{
+			GameObject.Find ("Player").GetComponent<Quiver>().canFire = true;
+		}
+	}
+
 	/// <summary>
 	/// Disables the Regnerate button if on Challenge Levels
 	/// </summary>
@@ -146,6 +182,62 @@ public class MegaMenu : MonoBehaviour {
 			RegenerateButton.SetActive(true);
 			Debug.Log ("No need to deactivate regenerate");
 		}
+	}
+
+	private void DisableRespawn ()
+	{
+		if(isChallengeLevels == true)
+		{
+			if(Application.loadedLevelName == "Main_Menu")
+			{
+				RespawnButton.SetActive(false);
+			}
+			Debug.Log ("Reset has been deactivated");
+		}
+		else
+		{
+			RespawnButton.SetActive(true);
+			Debug.Log ("No need to deactivate reset");
+		}
+	}
+
+
+	/// <summary>
+	/// Respawns the robbe.
+	/// </summary>
+	public void RespawnRobbe ()
+	{
+		//Finds the spawn location and moves robbe there
+		GameObject respawnPosition = GameObject.Find ("Spawn_Location");
+		GameObject.Find("Player").transform.position = respawnPosition.transform.position;
+		//Resumes the game
+		closeMenu();
+	}
+
+	/// <summary>
+	/// Regenerate this Scene/Level
+	/// </summary>
+	public void Regenerate ()
+	{
+		string currentLevel = Application.loadedLevelName;
+		//Starts the game time scale
+		GameTimePlay ();
+		//Regenerates a new level of the same type
+		Application.LoadLevel(currentLevel);
+	}
+
+	//Pauses the game time scale
+	private void GameTimePause ()
+	{
+		Debug.Log ("Pausing Game Time");
+		Time.timeScale = 0.0f;
+	}
+	
+	//Starts the game time scale
+	private void GameTimePlay ()
+	{
+		Debug.Log ("Resume game time");
+		Time.timeScale = 1.0f;
 	}
 
 }
