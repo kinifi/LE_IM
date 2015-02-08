@@ -54,14 +54,14 @@ public class loadCompanion : MonoBehaviour {
 							_companion2 = Instantiate(companions[i].gameObject, this.transform.position, Quaternion.identity) as GameObject;
 							_companion2.name = "Companion2";
 							_companion2.GetComponent<companionBehavior>().m_followSpeed = Random.Range(2,8);
-							_companion2.GetComponent<companionBehavior>().m_maxDistanceFromPlayer = Random.Range(1,3);
+							_companion2.GetComponent<companionBehavior>().m_maxDistanceFromPlayer = Random.Range(1,4);
 							Debug.Log("Created Companion 2");
 
 							GameObject _companion3;
 							_companion3 = Instantiate(companions[i].gameObject, this.transform.position, Quaternion.identity) as GameObject;
 							_companion3.name = "Companion3";
 							_companion3.GetComponent<companionBehavior>().m_followSpeed = Random.Range(2,8);
-							_companion3.GetComponent<companionBehavior>().m_maxDistanceFromPlayer = Random.Range(1,3);
+							_companion3.GetComponent<companionBehavior>().m_maxDistanceFromPlayer = Random.Range(1,5);
 							Debug.Log("Created Companion 3");
 
 						}
