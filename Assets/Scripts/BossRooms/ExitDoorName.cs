@@ -78,6 +78,8 @@ public class ExitDoorName : MonoBehaviour {
 				Debug.Log ("Something has gone wrong when setting the Current Boss " + levelName + " to completed.");
 				break;
 			}
+			Debug.Log ("The OnCollision Ran!");
 		}
+
 	}
 }

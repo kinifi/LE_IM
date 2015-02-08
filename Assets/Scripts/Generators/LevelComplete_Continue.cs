@@ -4,11 +4,6 @@ using System.Collections;
 
 public class LevelComplete_Continue : MonoBehaviour {
 
-	//Fade configs
-	private Image _fadeCanvas;
-	private bool fade = false;
-	private float timer = 0;
-
 	//Grab inventory configs
 	private int _bows; 
 	private int _keys;
@@ -16,21 +11,6 @@ public class LevelComplete_Continue : MonoBehaviour {
 
 	//basic config
 	private bool hasCollided = false;
-
-	void Update ()
-	{
-		//fades the black canvas in
-		if(fade == true)
-		{
-			timer += Time.deltaTime;
-			//set current color to a temp variable
-			Color colorForCanvas = _fadeCanvas.color;
-			//Lerp the alpha
-			colorForCanvas.a = Mathf.Lerp(0,128,timer);
-			//set canvas color to the temp value
-			_fadeCanvas.color = colorForCanvas;
-		}
-	}
 
 	void OnTriggerEnter2D (Collider2D Player) 
 	{
@@ -40,7 +20,7 @@ public class LevelComplete_Continue : MonoBehaviour {
 			if(hasCollided == false)
 			{
 				hasCollided = true;
-				FadeToBlack();
+				CheckBossRooms();
 				//Get current inventory and call the set method
 				_bows = GameObject.Find("Player").GetComponent<Inventory>().Arrows;
 				_keys = GameObject.Find("Player").GetComponent<Inventory>().Keys;
@@ -52,12 +32,43 @@ public class LevelComplete_Continue : MonoBehaviour {
 		}
 	}
 
-	private void FadeToBlack ()
+	private void CheckBossRooms()
 	{
-		//set the canvas to enabled and fade the canvas in
-		_fadeCanvas = GameObject.Find ("FadeToBlack_Canvas").GetComponent<Image>();
-		_fadeCanvas.enabled = true;
-		fade = true;
+		string levelName = Application.loadedLevelName;
+		switch(levelName)
+		{
+		case "ScaredBoss":
+			//Set player prefs to completed
+			PlayerPrefs.SetString(levelName, "completed");
+			break;
+		case "ShootOutBoss":
+			//Set player prefs to completed
+			PlayerPrefs.SetString(levelName, "completed");
+			break;
+		case "DepthsBoss":
+			//Set player prefs to completed
+			PlayerPrefs.SetString(levelName, "completed");
+			break;
+		case "GoblinBoss":
+			//Set player prefs to completed
+			PlayerPrefs.SetString(levelName, "completed");
+			break;
+		case "WolfBoss":
+			//Set player prefs to completed
+			PlayerPrefs.SetString(levelName, "completed");
+			break;
+		case "BullyBoss":
+			//Set player prefs to completed
+			PlayerPrefs.SetString(levelName, "completed");
+			break;
+		case "DarknessBoss":
+			//Set player prefs to completed
+			PlayerPrefs.SetString(levelName, "completed");
+			break;
+		default:
+			Debug.Log ("This is not a boss level");
+			break;
+		}
 	}
 
 	private void LoadStoryScreen()
