@@ -55,6 +55,7 @@ public class LaunchLevel : MonoBehaviour {
 	public void StartFinalLevel ()
 	{
 		Debug.Log ("Preparing to launch the Final Level");
+		Application.LoadLevel("IntroScene");
 	}
 
 	//--------------------------------------- BOSSES ------------------------------------------------//
