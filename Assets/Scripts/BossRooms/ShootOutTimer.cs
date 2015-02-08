@@ -7,7 +7,7 @@ public class ShootOutTimer : MonoBehaviour {
 
 	//Text configs
 	Text timerText;
-	float countDown = 160.0f;
+	float countDown = 140.0f;
 
 	//End Config
 	private bool timeUp = false;
