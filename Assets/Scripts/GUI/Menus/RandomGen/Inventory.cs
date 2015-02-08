@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour {
 
 	void Update() {
 
-		if(Input.GetButtonDown("Inventory"))
+		/*if(Input.GetButtonDown("Inventory"))
 		{
 			toggleInventory();
 		}
@@ -45,7 +45,7 @@ public class Inventory : MonoBehaviour {
 				timer = 2.0f;
 				toggleInventory();
 			}
-		}
+		}*/
 	}
 
 	public void GetInventory()
@@ -64,7 +64,7 @@ public class Inventory : MonoBehaviour {
 		Completed = _completed;
 	}
 	
-	void OnGUI() {
+	/*void OnGUI() {
 
 		GUI.skin = skin;
 
@@ -77,7 +77,7 @@ public class Inventory : MonoBehaviour {
 			GUILayout.EndHorizontal();
 		}
 		GUILayout.EndArea();
-	}
+	}*/
 
 	private void toggleInventory()
 	{
