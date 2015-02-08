@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class CheckBox : MonoBehaviour {
@@ -11,6 +12,8 @@ public class CheckBox : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("2_Accept"));
 
 	}
 	

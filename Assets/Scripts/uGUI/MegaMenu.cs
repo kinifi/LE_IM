@@ -6,13 +6,11 @@ using System.Collections;
 public class MegaMenu : MonoBehaviour {
 
 	//Panels to Toggle
-	public GameObject GameplayPanel, SoundPanel, VideoPanel, LearnPanel;
+	public GameObject GameplayPanel, LearnPanel;
 	//The Regenerate Button reference in case this is a challenge level
 	public GameObject RegenerateButton;
 	//The Reset Button 
 	public GameObject RespawnButton;
-	//control panel are the top three buttons in the menu
-	public GameObject ControlPanel;
 	//Use this to toggle if this pause menu is in the challenge levels or not
 	public bool isChallengeLevels = false;
 	//is the pause Menu open?
@@ -78,10 +76,7 @@ public class MegaMenu : MonoBehaviour {
 	public void closeMenu() {
 
 		isOpen = false;
-		ControlPanel.SetActive(false);
 		GameplayPanel.SetActive(false);
-		SoundPanel.SetActive(false);
-		VideoPanel.SetActive(false);
 		LearnPanel.SetActive(false);
 		GameTimePlay();
 		enablePlayerFiring();
@@ -93,14 +88,13 @@ public class MegaMenu : MonoBehaviour {
 	/// </summary>
 	public void setupMenu() {
 		isOpen = true;
-		ControlPanel.SetActive(true);
 		toggleGameplay();
 		disablePlayerFiring();
 		//Disables the Regnerate button if on Challenge Levels
 		DisableRegenerate ();
 		DisableRespawn();
 		GameTimePause();
-		GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("Gameplay_Button"));
+		//GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("Gameplay_Button"));
 	}
 
 	/// <summary>
@@ -109,8 +103,6 @@ public class MegaMenu : MonoBehaviour {
 	public void toggleGameplay () {
 
 		GameplayPanel.SetActive(true);
-		SoundPanel.SetActive(false);
-		VideoPanel.SetActive(false);
 	}
 
 	/// <summary>
@@ -119,12 +111,10 @@ public class MegaMenu : MonoBehaviour {
 	public void toggleLearnPanel()
 	{
 		isOpen = true;
-		ControlPanel.SetActive(false);
 		GameplayPanel.SetActive(false);
-		SoundPanel.SetActive(false);
-		VideoPanel.SetActive(false);
+
 		LearnPanel.SetActive(true);
-		GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("Close"));
+		//GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("Close"));
 	}
 
 	/// <summary>
@@ -133,8 +123,6 @@ public class MegaMenu : MonoBehaviour {
 	public void toggleSoundPanel () {
 
 		GameplayPanel.SetActive(false);
-		SoundPanel.SetActive(true);
-		VideoPanel.SetActive(false);
 
 	}
 
@@ -144,8 +132,7 @@ public class MegaMenu : MonoBehaviour {
 	public void toggleVideoPanel () {
 
 		GameplayPanel.SetActive(false);
-		SoundPanel.SetActive(false);
-		VideoPanel.SetActive(true);
+		//GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("1_Resolutions"));
 	}
 
 	/// <summary>
