@@ -67,6 +67,7 @@ public class LaunchLevel : MonoBehaviour {
 	public void StartShootOutBoss ()
 	{
 		Debug.Log ("Preparing to launch Shoot Out Boss");
+		Application.LoadLevel("ShootOutBoss");
 	}
 
 	public void StartDepthsBoss ()

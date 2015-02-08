@@ -36,6 +36,7 @@ public class NextDungeon : MonoBehaviour {
 				break;
 			case 15:
 				Debug.Log ("Preparing to launch Shoot Out Boss");
+				Application.LoadLevel("ShootOutBoss");
 				break;
 			case 25:
 				Debug.Log ("Preparing to launch Depths Boss");
