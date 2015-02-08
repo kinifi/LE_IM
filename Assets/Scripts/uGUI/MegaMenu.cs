@@ -61,7 +61,7 @@ public class MegaMenu : MonoBehaviour {
 	/// </summary>
 	public void quitToMainMenu()
 	{
-		Application.LoadLevel("MainMenu");
+		Application.LoadLevel("Main_Menu");
 	}
 
 	/// <summary>
@@ -110,7 +110,7 @@ public class MegaMenu : MonoBehaviour {
 		GameplayPanel.SetActive(true);
 		SoundPanel.SetActive(false);
 		VideoPanel.SetActive(false);
-		setFirstSelected.setFirstSelectedItem(GameObject.Find("Gameplay_Button"));
+		//setFirstSelected.setFirstSelectedItem(GameObject.Find("Gameplay_Button"));
 	}
 
 	/// <summary>

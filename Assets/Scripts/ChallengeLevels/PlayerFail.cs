@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerFail : MonoBehaviour {
 
-	public GameObject FadeObj;
+	//public GameObject FadeObj;
 	public bool isSpike = false;
 	public bool isFalling = false;
 	public string playerName = "Player";
@@ -19,7 +19,7 @@ public class PlayerFail : MonoBehaviour {
 	}
 	
 	public void startDeath() {
-		FadeObj.SetActive(true);
+		//FadeObj.SetActive(true);
 		if(hasIncrementedStat == false)
 		{
 			hasIncrementedStat = true;
