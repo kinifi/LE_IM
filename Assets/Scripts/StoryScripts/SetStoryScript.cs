@@ -35,6 +35,7 @@ public class SetStoryScript : MonoBehaviour {
 		CheckIfMemoryComplete ();
 		SetStoryChapter();
 		SetStoryMarker();
+		Invoke("ContinueAfterSixtySeconds", 60.0f);
 	}
 	
 	// Update is called once per frame
@@ -209,5 +210,10 @@ Robbe headed into the forest, determined and brave at last.";
 		Debug.Log("Memory Complete!!");
 		//saves completed memory to playerPrefs
 		PlayerPrefs.SetString(_textTitle.text, "completed");
+	}
+
+	private void ContinueAfterSixtySeconds ()
+	{
+		GetComponent<NextDungeon>().CheckIfNextLevelIsABoss();
 	}
 }

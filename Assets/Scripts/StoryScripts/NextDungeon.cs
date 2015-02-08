@@ -12,7 +12,6 @@ public class NextDungeon : MonoBehaviour {
 	void Start()
 	{
 		storyChapter = PlayerPrefs.GetInt("storyChapter");
-		CheckIfNextLevelIsABoss();
 	}
 
 	void Update ()
@@ -23,7 +22,7 @@ public class NextDungeon : MonoBehaviour {
 		}
 	}
 
-	private void CheckIfNextLevelIsABoss ()
+	public void CheckIfNextLevelIsABoss ()
 	{
 		//Checks if the next level should be a boss
 		if(bossChapters.Contains(storyChapter))

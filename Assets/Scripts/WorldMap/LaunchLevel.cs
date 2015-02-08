@@ -4,6 +4,12 @@ using System.Collections;
 public class LaunchLevel : MonoBehaviour {
 
 	//---------------------------------------- DUNGEONS -----------------------------------------------------------//
+	public void StartIntroScene ()
+	{
+		Debug.Log ("Preparing to launch Intro Scene");
+		Application.LoadLevel("IntroScene");
+	}
+
 	public void StartBasicTheme ()
 	{
 		Debug.Log ("Preparing to launch Tutorial Dungeon");

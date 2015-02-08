@@ -11,33 +11,36 @@ public class NoFaithController : MonoBehaviour {
 
 	void Update () 
 	{
+		if(moving == false)
+		{
+			UpdateCameraPosition();
+		}
+	}
 
+	private void UpdateCameraPosition()
+	{
 		if(canMove)
 		{
-
+			
 			if(Input.GetButton("LookDown"))
 			{
-				if(moving == false)
-				{
-					//Debug.Log("get key true");
-					iTween.MoveAdd(this.gameObject, new Vector3(0f, -lookDistance, 0f), 0.2f);
-					moving = true;
-				}
+				moving = true;
+				//Debug.Log("get key true");
+				iTween.MoveAdd(this.gameObject, new Vector3(0f, -lookDistance, 0f), 0.2f);
+
 			}
-			if(Input.GetButton("LookDown") == false)
+			if(Input.GetButtonUp("LookDown"))
 			{
-				if(moving == true)
-				{
-					//Debug.Log("get key false");
-					iTween.MoveTo(this.gameObject, iTween.Hash("position", new Vector3(target.transform.position.x, target.transform.position.y, -10), "time", 0.2, "oncompletetarget", this.gameObject, "oncomplete", "smoothFollowFalse"));
-					moving = false;
-				}
+				smoothFollowFalse();
 			}
 		}
 	}
 
 	private void smoothFollowFalse() 
 	{
+		moving = false;
+		//Debug.Log("get key false");
+		iTween.MoveTo(this.gameObject, iTween.Hash("position", new Vector3(target.transform.position.x, target.transform.position.y, -10), "time", 0.2, "oncompletetarget", this.gameObject, "oncomplete", "smoothFollowFalse"));
 		moving = false;
 	}
 }

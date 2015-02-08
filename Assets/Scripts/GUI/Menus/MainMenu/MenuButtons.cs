@@ -28,7 +28,7 @@ public class MenuButtons : MonoBehaviour {
 
 	public void goToCampaignLevels() {
 
-		Application.LoadLevel("IntroScene");
+		Application.LoadLevel("WorldMap");
 		Debug.Log("Loading Campaign");
 	}
 
