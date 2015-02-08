@@ -7,7 +7,7 @@ public class GoblinBody : MonoBehaviour {
 	public AudioClip[] goblinClips;
 
 	//Config for Gouhl Hits
-	public int gouhls = 7;
+	GoblinWispCount _defeatedWisps;
 
 	//Configs for hits
 	private Color baseColor;
@@ -29,6 +29,7 @@ public class GoblinBody : MonoBehaviour {
 
 	void Start () 
 	{
+		//Set up render configs
 		_renderer = GetComponent<SpriteRenderer>();
 		_armRender = GameObject.Find ("GoblinBossArm").GetComponent<SpriteRenderer>();
 		_headRender = GameObject.Find ("GoblinBossHead").GetComponent<SpriteRenderer>();
@@ -36,6 +37,9 @@ public class GoblinBody : MonoBehaviour {
 		baseColor = new Color(_renderer.color.r, _renderer.color.g, _renderer.color.b, _renderer.color.a);
 		armBaseColor = new Color(_armRender.color.r, _armRender.color.g, _armRender.color.b, _armRender.color.a);
 		headBaseColor = new Color(_headRender.color.r, _headRender.color.g, _headRender.color.b, _headRender.color.a);
+
+		//get WispCount script
+		_defeatedWisps = GameObject.Find ("WispCount").GetComponent<GoblinWispCount>();
 
 	}
 
@@ -67,20 +71,23 @@ public class GoblinBody : MonoBehaviour {
 			hits +=1;
 			
 			//Check if 3 hits have been reached then initiate death sequence
-			if(hits >= 3 && gouhls == 0)
+			if(hits >= 3)
 			{
-				//Change color to blood read and play death soundclip
-				_playerController.BossDeathAudios();
-				_renderer.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
-				_armRender.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
-				_headRender.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
-				//Increment Steam Stat
-				SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
-				Debug.Log("YOU KILLED THE BOSS!!!!");
-				//Invoke drop and destroy
-				Vector3 pos = transform.position;
-				Instantiate(bowGolden, pos, Quaternion.identity);
-				Invoke("DestroyObject", 0.5f);
+				if(_defeatedWisps.defeatedWisps == true)
+				{
+					//Change color to blood read and play death soundclip
+					_playerController.BossDeathAudios();
+					_renderer.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
+					_armRender.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
+					_headRender.color = new Color (0.25f, 0.0f, 0.0f, 1.0f);
+					//Increment Steam Stat
+					SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
+					Debug.Log("YOU KILLED THE BOSS!!!!");
+					//Invoke drop and destroy
+					Vector3 pos = transform.position;
+					Instantiate(bowGolden, pos, Quaternion.identity);
+					Invoke("DestroyObject", 0.5f);
+				}
 			}
 		}
 	}

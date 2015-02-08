@@ -69,7 +69,7 @@ public class GoblinArmMove : MonoBehaviour {
 		InvokeRepeating("PlayAudio", 1.0f, 10.0f);
 
 		//hits config
-		_hits = GameObject.Find ("GoblinBody").GetComponent<GoblinBody>();
+		_hits = GameObject.Find ("GoblinBossBody").GetComponent<GoblinBody>();
 	}
 
 	void Update ()

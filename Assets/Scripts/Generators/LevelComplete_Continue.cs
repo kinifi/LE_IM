@@ -9,6 +9,8 @@ public class LevelComplete_Continue : MonoBehaviour {
 	private int _keys;
 	private int _completed;
 
+	//Grab stats script
+
 	//basic config
 	private bool hasCollided = false;
 
@@ -40,30 +42,51 @@ public class LevelComplete_Continue : MonoBehaviour {
 		case "ScaredBoss":
 			//Set player prefs to completed
 			PlayerPrefs.SetString(levelName, "completed");
+			//Increment Stats
+			//Debug.Log("Boss stats incremented");
+			SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
 			break;
 		case "ShootOutBoss":
 			//Set player prefs to completed
 			PlayerPrefs.SetString(levelName, "completed");
+			//Increment Stats
+			//Debug.Log("Boss stats incremented");
+			SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
 			break;
 		case "DepthsBoss":
 			//Set player prefs to completed
 			PlayerPrefs.SetString(levelName, "completed");
+			//Increment Stats
+			//Debug.Log("Boss stats incremented");
+			SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
 			break;
 		case "GoblinBoss":
 			//Set player prefs to completed
 			PlayerPrefs.SetString(levelName, "completed");
+			//Increment Stats
+			//Debug.Log("Boss stats incremented");
+			SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
 			break;
 		case "WolfBoss":
 			//Set player prefs to completed
 			PlayerPrefs.SetString(levelName, "completed");
+			//Increment Stats
+			//Debug.Log("Boss stats incremented");
+			SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
 			break;
 		case "BullyBoss":
 			//Set player prefs to completed
 			PlayerPrefs.SetString(levelName, "completed");
+			//Increment Stats
+			//Debug.Log("Boss stats incremented");
+			SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
 			break;
 		case "DarknessBoss":
 			//Set player prefs to completed
 			PlayerPrefs.SetString(levelName, "completed");
+			//Increment Stats
+			//Debug.Log("Boss stats incremented");
+			SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
 			break;
 		default:
 			Debug.Log ("This is not a boss level");

@@ -45,8 +45,6 @@ public class BadGuyDiag : MonoBehaviour {
 	//Animation Configs
 	private Animator _anim;
 
-	//Components to get
-	private int _goblinsDeadNum;
 
 	void Awake()
 	{
@@ -246,11 +244,11 @@ public class BadGuyDiag : MonoBehaviour {
 			Vector3 pos = transform.position;
 			//Destroy Arrow
 			Destroy(other.gameObject);
+			//Decrement the wisp count if this is the goblin boss
 			if(GameObject.Find ("GoblinBossBody") != null)
 			{
-				_goblinsDeadNum = GameObject.Find ("GoblinBossBody").GetComponent<GoblinBody>().gouhls;
-				_goblinsDeadNum -= 1;
-				GameObject.Find ("GoblinBossBody").GetComponent<GoblinBody>().gouhls = _goblinsDeadNum;
+				GameObject.Find ("WispCount").GetComponent<GoblinWispCount>().wispCount -=1;
+				Debug.Log ("A wisp has been defeated!!!");
 			}
 			//chance of drop
 			int drop = Random.Range(1,6);

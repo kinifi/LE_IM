@@ -214,6 +214,6 @@ Robbe headed into the forest, determined and brave at last.";
 
 	private void ContinueAfterSixtySeconds ()
 	{
-		GetComponent<NextDungeon>().CheckIfNextLevelIsABoss();
+		Application.LoadLevel("LoadingScreen");
 	}
 }

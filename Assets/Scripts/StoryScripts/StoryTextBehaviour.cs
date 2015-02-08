@@ -31,6 +31,14 @@ public class StoryTextBehaviour : MonoBehaviour {
 		storyText = GetComponent<Text>();
 	}
 
+	void Update ()
+	{
+		if(Input.anyKeyDown)
+		{
+			Application.LoadLevel("LoadingScreen");
+		}
+	}
+
 	public void PrepForPrinting ()
 	{
 		storyChar = storyString.ToCharArray();

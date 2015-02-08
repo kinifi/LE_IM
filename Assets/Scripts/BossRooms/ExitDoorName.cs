@@ -3,46 +3,31 @@ using System.Collections;
 
 public class ExitDoorName : MonoBehaviour {
 
-
+	//Bool to see if the player has collided
+	private bool hasCollided = false;
 
 	// Use this for initialization
 	void Start () 
 	{
-
-		string _names = this.gameObject.name;
-		//Debug.Log("MY NAME IS: "+_names);
-		switch (_names)
-		{
-		case "NExit":
-			this.gameObject.name = "4";
-			Debug.Log("MY NAME IS: "+this.gameObject.name);
-			break;
-		case "DepthsExit":
-			this.gameObject.name = "3";
-			Debug.Log("MY NAME IS: "+this.gameObject.name);
-			break;
-		case "GoblinExit":
-			this.gameObject.name = "1";
-			Debug.Log("MY NAME IS: "+this.gameObject.name);
-			break;
-		case "WolfExit":
-			this.gameObject.name = "2";
-			Debug.Log ("My name is: "+this.gameObject.name);
-			break;
-		case "BullyExit":
-			this.gameObject.name = "5";
-			Debug.Log ("My name is: "+this.gameObject.name);
-			break;
-		default:
-			Debug.Log ("Something went wrong with the exit door!");
-			break;
-		}
+		//confirm the bool is set to false
+		hasCollided = false;
+	
 	}
 
 	public void OnCollisionEnter2D (Collision2D other)
 	{
+		Debug.Log ("The exitdoorname script was called");
 		if(other.gameObject.tag == "Player")
 		{
+			if(hasCollided == false)
+			{
+				//set the bool to true to prevent more than one call
+				hasCollided = true;
+				//Increment Stats
+				Debug.Log("The steam manager is next!!");
+				SteamManager.StatsAndAchievements.incrementNumBossesDefeated();
+			}
+			//set the playerPrefs to completed for the current boss
 			string levelName = Application.loadedLevelName;
 			switch(levelName)
 			{

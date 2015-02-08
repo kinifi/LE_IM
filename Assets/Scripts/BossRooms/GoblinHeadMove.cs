@@ -16,7 +16,7 @@ public class GoblinHeadMove : MonoBehaviour {
 	void Start ()
 	{
 		//GetHits
-		_hits = GameObject.Find("GoblinBody").GetComponent<GoblinBody>();
+		_hits = GameObject.Find("GoblinBossBody").GetComponent<GoblinBody>();
 
 		//Get Component
 		headHinge = GameObject.Find ("GoblinBossHead").GetComponent<HingeJoint2D>();
