@@ -23,6 +23,9 @@ public class StoryTextBehaviour : MonoBehaviour {
 	private char[] storyChar;
 	private int storyCharLength;
 
+	//Delayed Input Configs
+	private float inputDelayTimer = 1.0f;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -33,10 +36,15 @@ public class StoryTextBehaviour : MonoBehaviour {
 
 	void Update ()
 	{
-		if(Input.anyKeyDown)
+		inputDelayTimer -= Time.deltaTime;
+		if(inputDelayTimer <= 0.0f)
 		{
-			Application.LoadLevel("LoadingScreen");
+			if(Input.anyKeyDown)
+			{
+				Application.LoadLevel("LoadingScreen");
+			}
 		}
+
 	}
 
 	public void PrepForPrinting ()
