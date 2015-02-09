@@ -185,7 +185,7 @@ public class Level_Intro : MonoBehaviour {
 
 		GUI.skin = skin;
 
-        GUILayout.BeginArea(new Rect(0, 0, Screen.width/5, Screen.height));
+        GUILayout.BeginArea(new Rect(0, 0, Screen.width/5, Screen.height-10));
 
 	        if (doneLoading)
 	        {
@@ -196,7 +196,7 @@ public class Level_Intro : MonoBehaviour {
 				{
 					Application.LoadLevel("LevelCreatorScene");
 				}
-				scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.Height(Screen.height));
+				scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.Height(Screen.height-100));
 				
 				if(m_CreatedLevels.Count >= 1)
 				{
