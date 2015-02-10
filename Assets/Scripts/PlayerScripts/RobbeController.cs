@@ -53,6 +53,7 @@ public class RobbeController : MonoBehaviour {
 
 		//events :) may not need this line
 		_controller.onTriggerEnterEvent += onTriggerEnterEvent;
+
 	}
 
 	void FixedUpdate()
@@ -247,12 +248,11 @@ public class RobbeController : MonoBehaviour {
 			_deathPanel.SetActive(true);
 			//Restrict Player Input
 			allowInput = false;
-			GetComponent<Quiver>().canFire = false;
 			//Find Robbe's gameobject and set his transform to the Spawn Location.
 			GameObject resetRobbe = GameObject.Find ("Player");
 			GameObject respawn = GameObject.Find("Spawn_Location");
 			resetRobbe.transform.position = respawn.transform.position;
-			Invoke ("AllowRobbesMovement", 0.75f);
+			Invoke ("AllowRobbesMovement", 1.0f);
 		}
 	}
 

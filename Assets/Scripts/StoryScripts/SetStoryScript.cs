@@ -203,7 +203,7 @@ Robbe headed into the forest, determined and brave at last.";
 	private void SetStoryMarker ()
 	{
 		//Increment the story marker
-		int nextMarker = (storyMarker < 4) ? (storyMarker + 1) : 0;
+		int nextMarker = (storyMarker < 5) ? (storyMarker + 1) : 0;
 		//Update the PlayerPrefs with the new storyMarker
 		PlayerPrefs.SetInt("storyMarker", nextMarker);
 		Debug.Log ("This is the new storyMarker: " + nextMarker);
