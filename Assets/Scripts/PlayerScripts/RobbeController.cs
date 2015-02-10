@@ -39,6 +39,7 @@ public class RobbeController : MonoBehaviour {
 
 	//Death Config
 	public GameObject _deathPanel;
+	private bool isDead = false;
 	
 	void Awake()
 	{
@@ -238,22 +239,29 @@ public class RobbeController : MonoBehaviour {
 
 	public void DelayAllowMovement()
 	{
-		//Turn On Death Canvas
-		_deathPanel.SetActive(true);
-		//Restrict Player Input
-		allowInput = false;
-		GetComponent<Quiver>().canFire = false;
-		//Find Robbe's gameobject and set his transform to the Spawn Location.
-		GameObject resetRobbe = GameObject.Find ("Player");
-		GameObject respawn = GameObject.Find("Spawn_Location");
-		resetRobbe.transform.position = respawn.transform.position;
-		Invoke ("AllowRobbesMovement", 0.75f);
+		if(isDead == false)
+		{
+			//Set isDead to true
+			isDead = true;
+			//Turn On Death Canvas
+			_deathPanel.SetActive(true);
+			//Restrict Player Input
+			allowInput = false;
+			GetComponent<Quiver>().canFire = false;
+			//Find Robbe's gameobject and set his transform to the Spawn Location.
+			GameObject resetRobbe = GameObject.Find ("Player");
+			GameObject respawn = GameObject.Find("Spawn_Location");
+			resetRobbe.transform.position = respawn.transform.position;
+			Invoke ("AllowRobbesMovement", 0.75f);
+		}
 	}
 
 	private void AllowRobbesMovement() 
 	{
 		//Allow Player Input
 		allowInput = true;
+		//Set isDead to false
+		isDead = false;
 		GetComponent<Quiver>().canFire = true;
 		//Turn Off Death Canvas
 		_deathPanel.SetActive(false);

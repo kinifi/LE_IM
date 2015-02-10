@@ -9,6 +9,8 @@ public class BadGuyController : MonoBehaviour {
 	private bool faceRight = false;
 	private bool faceUp = true;
 
+	private bool isShot = false;
+
 	public GameObject kill;
 	public GameObject bowGolden;
 

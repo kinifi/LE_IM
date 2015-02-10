@@ -12,9 +12,9 @@ GameObject:
   - 58: {fileID: 5800002}
   - 114: {fileID: 11400000}
   - 50: {fileID: 5000002}
-  - 58: {fileID: 5800000}
   - 82: {fileID: 8200000}
   - 95: {fileID: 9500000}
+  - 60: {fileID: 6022410}
   m_Layer: 17
   m_Name: BadGuyAnimated
   m_TagString: BadGuyFollow
@@ -106,7 +106,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 56.2904778, y: -12.22157, z: 0}
+  m_LocalPosition: {x: 53.7561417, y: -15.1138706, z: 0}
   m_LocalScale: {x: .299104899, y: .299104989, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -191,17 +191,6 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!58 &5800000
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Radius: 2
-  m_Center: {x: 0, y: 0}
 --- !u!58 &5800002
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -213,6 +202,26 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: 1.45000005
   m_Center: {x: 0, y: 0}
+--- !u!60 &6022410
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Poly:
+    m_Paths:
+    - - {x: -1.50327981, y: 1.0568614}
+      - {x: -2.54706907, y: -2.20819592}
+      - {x: .00622381084, y: -4.41346502}
+      - {x: 2.35231996, y: -2.36711359}
+      - {x: 1.23499286, y: 1.03342652}
+      - {x: -.0648781285, y: 1.65031695}
+    - - {x: -.910000026, y: .409999996}
+      - {x: -.0145137226, y: -.138384104}
+      - {x: -.0192581024, y: -.12924926}
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 1
@@ -312,7 +321,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 524800
   kill: {fileID: 0}
-  deathSplash: {fileID: 100000, guid: 9be3cbd3cf08ce14eaa6c0f86e3bf20d, type: 2}
   bowGolden: {fileID: 100000, guid: 0a0b4f5c5988bdf478c742d8f40b2f1c, type: 2}
   wispSounds:
   - {fileID: 8300000, guid: bea6a14b88991c341af6491217595609, type: 3}

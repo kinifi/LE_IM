@@ -14,6 +14,9 @@ public class LevelComplete_Continue : MonoBehaviour {
 	//basic config
 	private bool hasCollided = false;
 
+	//StoryMode Configs
+	private string _storyMode;
+
 	void OnTriggerEnter2D (Collider2D Player) 
 	{
 		Debug.Log ("The exit door has been colided by!!! "+Player);
@@ -27,9 +30,7 @@ public class LevelComplete_Continue : MonoBehaviour {
 				_bows = GameObject.Find("Player").GetComponent<Inventory>().Arrows;
 				_keys = GameObject.Find("Player").GetComponent<Inventory>().Keys;
 				SetInventoryToPlayerPref (_bows, _keys, _completed);
-
-				//Start Story Scene
-				LoadStoryScreen();
+				CheckStoryMode();
 			}
 		}
 	}
@@ -91,6 +92,21 @@ public class LevelComplete_Continue : MonoBehaviour {
 		default:
 			Debug.Log ("This is not a boss level");
 			break;
+		}
+	}
+
+	private void CheckStoryMode ()
+	{
+		if(PlayerPrefs.GetString("storyMode") == "off")
+		{
+			Application.LoadLevel("LoadingScreen");
+			Debug.Log ("StoryMode is set to off. Taking you to the LoadingScreen");
+		}
+		else
+		{
+			Debug.Log("The storymode was set to: " + PlayerPrefs.GetString("storyMode"));
+			//Start Story Scene
+			LoadStoryScreen();
 		}
 	}
 

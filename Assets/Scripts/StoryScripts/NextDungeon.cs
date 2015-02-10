@@ -200,6 +200,11 @@ public class NextDungeon : MonoBehaviour {
 			Debug.Log ("Launching the final level");
 			StartCoroutine(BeginLevelLoad("IntroScene"));
 		}
+		else if (storyChapter > 65)
+		{
+			Debug.Log("You've completed the story! :D ");
+			StartCoroutine(BeginLevelLoad ("WorldMap"));
+		}
 		//Brave At Last Finished - Go to Last Level
 		else
 		{

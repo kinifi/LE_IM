@@ -22,6 +22,7 @@ public class SetStoryScript : MonoBehaviour {
 	// Use this for initialization
 	void Awake () 
 	{
+
 		_textTitle = GameObject.Find ("StoryTitleText").GetComponent<Text>();
 		_storySceneText = GameObject.Find ("StorySceneText").GetComponent<StoryTextBehaviour>();
 		_prepForPrinting = GameObject.Find("StorySceneText").GetComponent<StoryTextBehaviour>();
@@ -161,6 +162,12 @@ public class SetStoryScript : MonoBehaviour {
 
 Robbe headed into the forest, determined and brave at last.";
 			FinalMemory();
+		}
+		else if(storyChapter > 65)
+		{
+			_textTitle.text = "You've completed Robbe's Story";
+			_storySceneText.storyString = @"You can turn off the story in World Map or press 'Continue' to restart the story.";
+			PlayerPrefs.SetInt("storyChapter", 0);
 		}
 		else
 		{

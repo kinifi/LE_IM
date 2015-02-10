@@ -14,12 +14,14 @@ public class BadGuyVertController : MonoBehaviour {
 	//Configs for speed
 	public float speed = 5000.0f;
 	private Vector2 sightedSpeed;
-	
+	private bool isShot = false;
+
 	//Configs for sight rays
 	private Vector2 sightRayStart;
 	private Vector2 sightRayEnd;
 	private Vector2 sightRayUpdateStart;
 	private Vector2 sightRayUpdateEnd;
+
 	//Config for sight layermask
 	public LayerMask sightlayerMask; //make sure we aren't in this layer 
 	
@@ -191,20 +193,24 @@ public class BadGuyVertController : MonoBehaviour {
 	
 	private void UpdateSightedSpeed ()
 	{
-		if(facingRight)
+		if(isShot == false)
 		{
-			sightedSpeed = -Vector2.up * 1000.0f;
-			audio.pitch = 1.5f;
-			//Return Pitch to normal
-			Invoke ("ReturnPitch", 1.5f);
+			if(facingRight)
+			{
+				sightedSpeed = -Vector2.up * 1000.0f;
+				audio.pitch = 1.5f;
+				//Return Pitch to normal
+				Invoke ("ReturnPitch", 1.5f);
+			}
+			else
+			{
+				sightedSpeed = Vector2.up * 1000.0f;
+				audio.pitch = 1.5f;
+				//Return Pitch to normal
+				Invoke ("ReturnPitch", 1.5f);			
+			}
 		}
-		else
-		{
-			sightedSpeed = Vector2.up * 1000.0f;
-			audio.pitch = 1.5f;
-			//Return Pitch to normal
-			Invoke ("ReturnPitch", 1.5f);			
-		}
+
 	}
 	
 	private void OnTriggerEnter2D (Collider2D other)
@@ -228,6 +234,9 @@ public class BadGuyVertController : MonoBehaviour {
 		
 		else if(other.gameObject.tag == "Arrow")
 		{
+
+			//Set isShot to true
+			isShot = true;
 			//Stop movement
 			ZeroOutFources();
 			//Stop anim body
