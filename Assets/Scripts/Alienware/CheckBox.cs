@@ -11,7 +11,7 @@ public class CheckBox : MonoBehaviour {
 	public GameObject AlienWareObject;
 
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
 
 		GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("2_Accept"));
 

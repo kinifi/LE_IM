@@ -23,6 +23,7 @@ public class MegaMenu : MonoBehaviour {
 	// Use this for initialization
 	private void Start () {
 	
+
 	}
 
 	void Update() {
@@ -83,11 +84,12 @@ public class MegaMenu : MonoBehaviour {
 	public void closeMenu() {
 
 		isOpen = false;
+		Debug.Log("Closing Menu");
 		GameplayPanel.SetActive(false);
 		LearnPanel.SetActive(false);
 		GameTimePlay();
 		enablePlayerFiring();
-		//setFirstSelected.setFirstSelectedItem(campButton);
+		//setFirstSelected.setFirstSelectedItem(GameObject.Find());
 		//SetSelectedGameObject(campButton);
 	}
 
@@ -97,49 +99,27 @@ public class MegaMenu : MonoBehaviour {
 	/// </summary>
 	public void setupMenu() {
 		isOpen = true;
+
+		Debug.Log("Opening Menu");
 		toggleGameplay();
 		disablePlayerFiring();
 		//Disables the Regnerate button if on Challenge Levels
 		DisableRegenerate ();
 		DisableRespawn();
 
-		//Debug.Log (GameObject.Find("1_Resume") + " here it is");
-		//Debug.Log (GameObject.Find("1_Resume").GetComponent<Button>() + " this is the button");
-
-		SetSelectedGameObject(GameObject.Find("1_Resume"));
+		//SetSelectedGameObject(GameObject.Find("1_Resume"));
 
 		GameTimePause();
 	}
 
+	/// <summary>
+	/// Sets the selected game object to selected in the Event System
+	/// </summary>
+	/// <param name="selected">Selected.</param>
 	public void SetSelectedGameObject(GameObject selected)
 	{
-		 //GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(resumeButton, );
-
-		Debug.Log(">>>>>>>>>>>>>>> is .alreadySelecting? " + GameObject.Find("EventSystem").GetComponent<EventSystem>().alreadySelecting);
-		//EventSystem.current.SetSelectedGameObject(selected, new BaseEventData(GameObject.Find("EventSystem").GetComponent<EventSystem>()));
 		GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(selected);
-		Debug.Log("EVENTSYSTEM: setting " + selected.name + " as the .SetSelectedGameObject");
-		//Debug.Log("EVENTSYSTEM: current selected gameobject: " + GameObject.Find("EventSystem").GetComponent<EventSystem>().currentSelectedGameObject.ToString());
-		//Debug.Log("EVENTSYSTEM: first selected Gameobject: " + GameObject.Find("EventSystem").GetComponent<EventSystem>().firstSelectedGameObject.name);
-		//Debug.Log("EVENTSYSTEM: last selected Gameobject: " + GameObject.Find("EventSystem").GetComponent<EventSystem>().lastSelectedGameObject.name);
-		Debug.Log(">>>>>>>>>>>>>>> is .alreadySelecting? " + GameObject.Find("EventSystem").GetComponent<EventSystem>().alreadySelecting);
 	}
-
-	/*
-	static GameObject FindFirstEnabledSelectable (GameObject gameObject)
-	{
-		GameObject go = null;
-		var selectables = gameObject.GetComponentsInChildren<Selectable> (true);
-		foreach (var selectable in selectables) {
-			if (selectable.IsActive () && selectable.IsInteractable ()) {
-				go = selectable.gameObject;
-				Debug.Log("" + go.name);
-				break;
-			}
-		}
-		return go;
-	}
-	*/
 
 	/// <summary>
 	/// Toggles the gameplay and disables all the others
@@ -175,7 +155,7 @@ public class MegaMenu : MonoBehaviour {
 	public void toggleVideoPanel () {
 
 		GameplayPanel.SetActive(false);
-		//GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("1_Resolutions"));
+		GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(GameObject.Find("1_Resolutions"));
 	}
 
 	/// <summary>
