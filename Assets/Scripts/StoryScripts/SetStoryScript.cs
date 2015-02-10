@@ -52,6 +52,11 @@ public class SetStoryScript : MonoBehaviour {
 		storyMarker = PlayerPrefs.GetInt("storyMarker");
 		Debug.Log ("This is the storyMarker: " + storyMarker);
 		//Debug.Log ("GetStory is complete");
+		//Fail safe for storyMarker
+		if(storyMarker == 5)
+		{
+			storyMarker = 0;
+		}
 	}
 
 	//Finds the game object title and sets temporary variable to story title text
@@ -187,6 +192,7 @@ Robbe headed into the forest, determined and brave at last.";
 			Debug.Log("Memory Complete!!");
 			//saves completed memory to playerPrefs
 			PlayerPrefs.SetString(_textTitle.text, "completed");
+			Debug.Log ("Is the " + _textTitle + " complete? " + PlayerPrefs.GetString(_textTitle.text));
 		}
 	}
 	
@@ -194,19 +200,40 @@ Robbe headed into the forest, determined and brave at last.";
 	private void SetStoryChapter()
 	{
 		//Increments the story chapter 
-		int nextChapter = (storyChapter < 66) ? (storyChapter + 1) : 0;
-		//Update the PlayerPrefs with the new storyChapter
-		PlayerPrefs.SetInt("storyChapter", nextChapter);
-		Debug.Log ("This is the new storyChapter: " + nextChapter);
+		if(storyChapter < 66)
+		{
+			int nextChapter = storyChapter + 1;
+			//Update the PlayerPrefs with the new storyChapter
+			PlayerPrefs.SetInt("storyChapter", nextChapter);
+			Debug.Log ("This is the new storyChapter: " + nextChapter);
+		}
+		else
+		{
+			int nextChapter = 0;
+			//Update the PlayerPrefs with the new storyChapter
+			PlayerPrefs.SetInt("storyChapter", nextChapter);
+			Debug.Log ("This is the new storyChapter: " + nextChapter);
+		}
 	}
 
 	private void SetStoryMarker ()
 	{
 		//Increment the story marker
-		int nextMarker = (storyMarker < 5) ? (storyMarker + 1) : 0;
-		//Update the PlayerPrefs with the new storyMarker
-		PlayerPrefs.SetInt("storyMarker", nextMarker);
-		Debug.Log ("This is the new storyMarker: " + nextMarker);
+		if(storyMarker < 5)
+		{
+			int nextMarker = storyMarker + 1;
+			//Update the PlayerPrefs with the new storyMarker
+			PlayerPrefs.SetInt("storyMarker", nextMarker);
+			Debug.Log ("This is the new storyMarker: " + nextMarker);
+		}
+		else
+		{
+			int nextMarker = 0;
+			//Update the PlayerPrefs with the new storyMarker
+			PlayerPrefs.SetInt("storyMarker", nextMarker);
+			Debug.Log ("This is the new storyMarker: " + nextMarker);
+		}
+
 	}
 
 	private void FinalMemory ()

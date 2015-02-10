@@ -556,7 +556,7 @@ public class RoomB : MonoBehaviour {
 			break;
 		case 5:
 			//25% of a key, bow, golden bow, empty
-			int reward25 = Random.Range (0,2);
+			int reward25 = Random.Range (1,5);
 			//istantiates block then moves the x position ahead by one
 			if(reward25 == 1)
 			{

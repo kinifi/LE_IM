@@ -212,6 +212,10 @@ public class BadGuyFollowController : MonoBehaviour {
 				Invoke ("ReturnPitch", 1.5f);
 			}
 		}
+		else
+		{
+			ZeroOutFources();
+		}
 
 	}
 
@@ -268,20 +272,6 @@ public class BadGuyFollowController : MonoBehaviour {
 		
 
 	}
-
-	/*private void AllowRobbesMovement() 
-	{
-		//Allow movement of the bad guy again
-		this.gameObject.rigidbody2D.isKinematic = false;
-		
-		//Find Robbe and allow his movement again.  Turn kinematic to false.
-		RobbeController _robbe = GameObject.Find("Player").GetComponent<RobbeController>();
-		_robbe.enabled = true;
-		
-		//Find the LookDown camera and allow its movement.
-		NoFaithController _lookdown = GameObject.Find("Camera").GetComponent<NoFaithController>();
-		_lookdown.enabled = true;
-	}*/
 
 	private void DestroyObject ()
 	{

@@ -38,42 +38,49 @@ public class NextDungeon : MonoBehaviour {
 			case 5:
 				//Debug.Log ("Preparing to launch Nightmare Boss");
 				//Application.LoadLevel("ScaredBoss");
+				PlayerPrefs.SetInt("storyMarker", 0);
 				StartCoroutine(BeginLevelLoad("ScaredBoss"));
 				break;
 			case 15:
 				//Debug.Log ("Preparing to launch Shoot Out Boss");
 				//Application.LoadLevel("ShootOutBoss");
-				BeginLevelLoad("ShootOutBoss");
+				PlayerPrefs.SetInt("storyMarker", 0);
+				StartCoroutine(BeginLevelLoad("ShootOutBoss"));
 				break;
 			case 25:
 				//Debug.Log ("Preparing to launch Depths Boss");
 				//Application.LoadLevel("DepthsBoss");
-				BeginLevelLoad("DepthsBoss");
+				PlayerPrefs.SetInt("storyMarker", 0);
+				StartCoroutine(BeginLevelLoad("DepthsBoss"));
 				break;
 			case 30:
 				//Debug.Log ("Preparing to launch Goblin Boss");
 				//Application.LoadLevel("GoblinBoss");
-				BeginLevelLoad("GoblinBoss");
+				PlayerPrefs.SetInt("storyMarker", 0);
+				StartCoroutine(BeginLevelLoad("GoblinBoss"));
 				break;
 			case 35:
 				//Debug.Log ("Preparing to launch Wolf Boss");
 				//Application.LoadLevel("WolfBoss");
-				BeginLevelLoad("WolfBoss");
+				PlayerPrefs.SetInt("storyMarker", 0);
+				StartCoroutine(BeginLevelLoad("WolfBoss"));
 				break;
 			case 40:
 				//Debug.Log ("Preparing to launch Robot Boss");
 				//Application.LoadLevel("BullyBoss");
-				BeginLevelLoad("BullyBoss");
+				PlayerPrefs.SetInt("storyMarker", 0);
+				StartCoroutine(BeginLevelLoad("BullyBoss"));
 				break;
 			case 60:
 				//Debug.Log ("Preparing to launch Darkness Boss");
-				BeginLevelLoad("ScaredBoss");
+				PlayerPrefs.SetInt("storyMarker", 0);
+				StartCoroutine(BeginLevelLoad("ScaredBoss"));
 				break;
 			default:
 				Debug.Log ("Something went wrong when setting a boss level.");
 				Debug.Log ("Please let the devs know! :D");
 				//Application.LoadLevel("WolfBoss");
-				BeginLevelLoad("WolfBoss");
+				StartCoroutine(BeginLevelLoad("WolfBoss"));
 				break;
 			}
 		}
