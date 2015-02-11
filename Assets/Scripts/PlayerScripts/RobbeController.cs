@@ -244,6 +244,8 @@ public class RobbeController : MonoBehaviour {
 		{
 			//Set isDead to true
 			isDead = true;
+			//Set camera follow smooth time to 0
+			GameObject.Find("Camera").GetComponent<CameraFollowNew>().smoothTime = 0.0f;
 			//Turn On Death Canvas
 			_deathPanel.SetActive(true);
 			//Restrict Player Input
@@ -260,6 +262,8 @@ public class RobbeController : MonoBehaviour {
 	{
 		//Allow Player Input
 		allowInput = true;
+		//Set camera follow smooth time to 0.3
+		GameObject.Find("Camera").GetComponent<CameraFollowNew>().smoothTime = 0.3f;
 		//Set isDead to false
 		isDead = false;
 		GetComponent<Quiver>().canFire = true;

@@ -239,8 +239,10 @@ public class BadGuyVertController : MonoBehaviour {
 		else if(other.gameObject.tag == "Arrow")
 		{
 
-			//Set isShot to true
+			//Set isShot to true and disable the trigger collider
 			isShot = true;
+			GetComponent<PolygonCollider2D>().enabled = false;
+			GetComponent<CircleCollider2D>().enabled = false;
 			//Stop movement
 			ZeroOutFources();
 			//Stop anim body
