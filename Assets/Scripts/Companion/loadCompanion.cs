@@ -33,7 +33,7 @@ public class loadCompanion : MonoBehaviour {
 					{
 						Debug.Log("Found Companion");
 
-						if(companions[i].name == "BluePixelCompanion" || companions[i].name == "DeveloperCompanion" || companions[i].name == "BlackIceCompanion")
+						if(companions[i].name == "BluePixelCompanion" || companions[i].name == "DeveloperCompanion" || companions[i].name == "BlackIceCompanion" || companions[i].name == "Kira")
 						{
 							GameObject _companion;
 							_companion = Instantiate(companions[i].gameObject, this.transform.position, Quaternion.identity) as GameObject;
