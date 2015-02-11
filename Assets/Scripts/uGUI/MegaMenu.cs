@@ -16,9 +16,10 @@ public class MegaMenu : MonoBehaviour {
 	//is the pause Menu open?
 	private bool isOpen = false;
 
-	//public GameObject campButton, resumeButton;
-
 	private EventSystem eventSystem = null;
+
+	//get the animator so we can open the 
+	public Animator _anim;
 
 	// Use this for initialization
 	private void Start () {
@@ -83,14 +84,19 @@ public class MegaMenu : MonoBehaviour {
 	/// </summary>
 	public void closeMenu() {
 
+		_anim.SetTrigger("Close");
 		isOpen = false;
 		Debug.Log("Closing Menu");
-		GameplayPanel.SetActive(false);
+		Invoke("deactivatePauseMenu", 0.5f);
 		LearnPanel.SetActive(false);
 		GameTimePlay();
 		enablePlayerFiring();
-		//setFirstSelected.setFirstSelectedItem(GameObject.Find());
-		//SetSelectedGameObject(campButton);
+		//SetSelectedGameObject(GameObject.Find("01_Resume"));
+	}
+
+	private void deactivatePauseMenu()
+	{
+		GameplayPanel.SetActive(false);
 	}
 
 	/// <summary>
@@ -98,8 +104,9 @@ public class MegaMenu : MonoBehaviour {
 	/// Call this if wanting the Pause Menu to Display from anywhere
 	/// </summary>
 	public void setupMenu() {
-		isOpen = true;
 
+		_anim.SetTrigger("Open");
+		isOpen = true;
 		Debug.Log("Opening Menu");
 		toggleGameplay();
 		disablePlayerFiring();
