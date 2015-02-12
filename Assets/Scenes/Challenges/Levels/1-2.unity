@@ -237,6 +237,19 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e15ec3e15b572448afc46cfb0b49eba,
+        type: 3}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootVertical
+      value: 
+      objectReference: {fileID: 100000, guid: d4a3cbe6261ffec46b7156370a386d85, type: 2}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootHorizontal
+      value: 
+      objectReference: {fileID: 100000, guid: aad75260245cac24883ec9a868880ae7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
   m_RootGameObject: {fileID: 1125008672}
@@ -4862,7 +4875,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 313610469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 6, z: 0}
+  m_LocalPosition: {x: 8.5, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1105341204}
@@ -5155,7 +5168,6 @@ MonoBehaviour:
   isSpike: 1
   isFalling: 0
   playerName: Player
-  bowGolden: {fileID: 0}
   _Sounds: []
 --- !u!60 &330609119
 PolygonCollider2D:
@@ -7058,6 +7070,7 @@ MonoBehaviour:
   playervelocity: {x: 0, y: 0, z: 0}
   canJump: 0
   _deathPanel: {fileID: 0}
+  _goldenBow: {fileID: 100000, guid: 0a0b4f5c5988bdf478c742d8f40b2f1c, type: 2}
 --- !u!114 &532292911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12650,7 +12663,6 @@ MonoBehaviour:
   isSpike: 1
   isFalling: 0
   playerName: Player
-  bowGolden: {fileID: 0}
   _Sounds: []
 --- !u!60 &1009278884
 PolygonCollider2D:
@@ -12753,7 +12765,7 @@ MonoBehaviour:
     type: 2}
   ObjectToShootHorizontal: {fileID: 100000, guid: aad75260245cac24883ec9a868880ae7,
     type: 2}
-  shootingTime: 2.29999995
+  shootingTime: 1.5
 --- !u!114 &1011884889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12769,7 +12781,6 @@ MonoBehaviour:
   isSpike: 1
   isFalling: 0
   playerName: Player
-  bowGolden: {fileID: 0}
   _Sounds: []
 --- !u!60 &1011884890
 PolygonCollider2D:
@@ -13699,7 +13710,6 @@ MonoBehaviour:
   isSpike: 1
   isFalling: 0
   playerName: Player
-  bowGolden: {fileID: 0}
   _Sounds: []
 --- !u!60 &1125008675
 PolygonCollider2D:
@@ -14690,6 +14700,19 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e15ec3e15b572448afc46cfb0b49eba,
+        type: 3}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootVertical
+      value: 
+      objectReference: {fileID: 100000, guid: d4a3cbe6261ffec46b7156370a386d85, type: 2}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootHorizontal
+      value: 
+      objectReference: {fileID: 100000, guid: aad75260245cac24883ec9a868880ae7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
   m_RootGameObject: {fileID: 330609116}
@@ -16533,7 +16556,6 @@ MonoBehaviour:
   isSpike: 1
   isFalling: 0
   playerName: Player
-  bowGolden: {fileID: 0}
   _Sounds: []
 --- !u!60 &1408767535
 PolygonCollider2D:
@@ -16850,7 +16872,6 @@ MonoBehaviour:
   isSpike: 0
   isFalling: 1
   playerName: Player
-  bowGolden: {fileID: 0}
   _Sounds: []
 --- !u!1 &1425737487
 GameObject:
@@ -17385,7 +17406,7 @@ MonoBehaviour:
     type: 2}
   ObjectToShootHorizontal: {fileID: 100000, guid: aad75260245cac24883ec9a868880ae7,
     type: 2}
-  shootingTime: 2.29999995
+  shootingTime: 1.5
 --- !u!114 &1476567201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17401,7 +17422,6 @@ MonoBehaviour:
   isSpike: 1
   isFalling: 0
   playerName: Player
-  bowGolden: {fileID: 0}
   _Sounds: []
 --- !u!60 &1476567202
 PolygonCollider2D:
@@ -18703,6 +18723,19 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e15ec3e15b572448afc46cfb0b49eba,
+        type: 3}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootVertical
+      value: 
+      objectReference: {fileID: 100000, guid: d4a3cbe6261ffec46b7156370a386d85, type: 2}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootHorizontal
+      value: 
+      objectReference: {fileID: 100000, guid: aad75260245cac24883ec9a868880ae7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
   m_RootGameObject: {fileID: 1009278881}
@@ -19024,6 +19057,19 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e15ec3e15b572448afc46cfb0b49eba,
+        type: 3}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootVertical
+      value: 
+      objectReference: {fileID: 100000, guid: d4a3cbe6261ffec46b7156370a386d85, type: 2}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootHorizontal
+      value: 
+      objectReference: {fileID: 100000, guid: aad75260245cac24883ec9a868880ae7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
   m_RootGameObject: {fileID: 1476567199}
@@ -21734,7 +21780,6 @@ MonoBehaviour:
   isSpike: 1
   isFalling: 0
   playerName: Player
-  bowGolden: {fileID: 100000, guid: e09424c1f2e160e4b807da0e669d4afc, type: 2}
   _Sounds:
   - {fileID: 8300000, guid: bea6a14b88991c341af6491217595609, type: 3}
 --- !u!82 &1877022890
@@ -23045,7 +23090,7 @@ MonoBehaviour:
     type: 2}
   ObjectToShootHorizontal: {fileID: 100000, guid: aad75260245cac24883ec9a868880ae7,
     type: 2}
-  shootingTime: 2.29999995
+  shootingTime: 1.5
 --- !u!114 &1957895763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23061,7 +23106,6 @@ MonoBehaviour:
   isSpike: 1
   isFalling: 0
   playerName: Player
-  bowGolden: {fileID: 0}
   _Sounds: []
 --- !u!60 &1957895764
 PolygonCollider2D:
@@ -23301,6 +23345,19 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e15ec3e15b572448afc46cfb0b49eba,
+        type: 3}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootVertical
+      value: 
+      objectReference: {fileID: 100000, guid: d4a3cbe6261ffec46b7156370a386d85, type: 2}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootHorizontal
+      value: 
+      objectReference: {fileID: 100000, guid: aad75260245cac24883ec9a868880ae7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
   m_RootGameObject: {fileID: 1011884887}
@@ -23444,6 +23501,19 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e15ec3e15b572448afc46cfb0b49eba,
+        type: 3}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootVertical
+      value: 
+      objectReference: {fileID: 100000, guid: d4a3cbe6261ffec46b7156370a386d85, type: 2}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootHorizontal
+      value: 
+      objectReference: {fileID: 100000, guid: aad75260245cac24883ec9a868880ae7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
   m_RootGameObject: {fileID: 1957895761}
@@ -25099,6 +25169,19 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e15ec3e15b572448afc46cfb0b49eba,
+        type: 3}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootVertical
+      value: 
+      objectReference: {fileID: 100000, guid: d4a3cbe6261ffec46b7156370a386d85, type: 2}
+    - target: {fileID: 11400000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
+      propertyPath: ObjectToShootHorizontal
+      value: 
+      objectReference: {fileID: 100000, guid: aad75260245cac24883ec9a868880ae7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b77c6dfb129c26b4fabc5efe9a7eb755, type: 2}
   m_RootGameObject: {fileID: 1408767532}
