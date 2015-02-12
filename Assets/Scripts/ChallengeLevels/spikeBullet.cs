@@ -42,6 +42,10 @@ public class spikeBullet : MonoBehaviour {
 
 			Debug.Log("Player Fell");
 		}
+		else if(coll.gameObject.tag != "Player" && coll.gameObject.tag != "spike")
+		{
+			Destroy(this.gameObject);
+		}
 		else
 		{
 

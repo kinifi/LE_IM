@@ -40,6 +40,7 @@ public class RobbeController : MonoBehaviour {
 	//Death Config
 	public GameObject _deathPanel;
 	private bool isDead = false;
+	public GameObject _goldenBow;
 	
 	void Awake()
 	{
