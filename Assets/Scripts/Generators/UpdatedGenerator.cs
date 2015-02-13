@@ -497,10 +497,10 @@ public class UpdatedGenerator : MonoBehaviour {
 	private void OnComplete()
 	{
 		Debug.Log ("Dungeon should be generated.");
-		/*for(int i = 0; i < 16; i++)
+		for(int i = 0; i < 16; i++)
 		{
 			Debug.Log (mapMatrix[i]);
-		}*/
+		}
 		Invoke ("FillInTheMap", 0.05f);
 	}
 
