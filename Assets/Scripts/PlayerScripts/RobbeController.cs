@@ -283,11 +283,17 @@ public class RobbeController : MonoBehaviour {
 		allowInput = true;
 		//Set camera follow smooth time to 0.3
 		GameObject.Find("Camera").GetComponent<CameraFollowNew>().smoothTime = 0.3f;
-		//Set isDead to false
-		isDead = false;
+		//Set Can fire to true
 		GetComponent<Quiver>().canFire = true;
 		//Turn Off Death Canvas
 		_deathPanel.SetActive(false);
+		Invoke ("CanDieAgain", 0.5f);
+	}
+
+	private void CanDieAgain ()
+	{
+		//Set isDead to false
+		isDead = false;
 	}
 }
 	
