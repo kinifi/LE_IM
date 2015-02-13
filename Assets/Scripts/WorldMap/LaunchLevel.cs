@@ -99,5 +99,12 @@ public class LaunchLevel : MonoBehaviour {
 	{
 		Debug.Log ("Preparing to launch Darkness Boss");
 	}
+
+	//----------------------------- HOLIDAY LEVELS -----------------------------------------------//
+	public void StartVday2015 ()
+	{
+		Debug.Log ("Preparing to launch Vday2015");
+		Application.LoadLevel("Vday2015");
+	}
 	
 }

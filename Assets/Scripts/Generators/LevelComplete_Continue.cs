@@ -9,13 +9,14 @@ public class LevelComplete_Continue : MonoBehaviour {
 	private int _keys;
 	private int _completed;
 
-	//Grab stats script
-
 	//basic config
 	private bool hasCollided = false;
 
 	//StoryMode Configs
 	private string _storyMode;
+
+	//Holiday Configs
+	private bool isHoliday;
 
 	void OnTriggerEnter2D (Collider2D Player) 
 	{
@@ -25,6 +26,9 @@ public class LevelComplete_Continue : MonoBehaviour {
 			if(hasCollided == false)
 			{
 				hasCollided = true;
+				//Now Check to see if this is a holiday level! :D
+				CheckHoliday();
+				//Check to see if this is a boss level!
 				CheckBossRooms();
 				//Get current inventory and call the set method
 				_bows = GameObject.Find("Player").GetComponent<Inventory>().Arrows;
@@ -95,9 +99,31 @@ public class LevelComplete_Continue : MonoBehaviour {
 		}
 	}
 
+	private void CheckHoliday ()
+	{
+		string levelName = Application.loadedLevelName;
+		switch(levelName)
+		{
+		case "Vday2015":
+			//set the temp bool to true
+			isHoliday = true;
+			//Set player prefs to completed
+			PlayerPrefs.SetString("holidayCompleted", "true");
+			PlayerPrefs.SetString(levelName, "completed");
+			Debug.Log ("You've completed the Vday 2015 Level!!");
+
+			Application.LoadLevel("WorldMap");
+			break;
+		default:
+			Debug.Log ("Something went wrong with the Check Holiday script :(");
+			break;
+		}
+
+	}
+
 	private void CheckStoryMode ()
 	{
-		if(PlayerPrefs.GetString("storyMode") == "off")
+		if(PlayerPrefs.GetString("storyMode") == "off" || isHoliday == true)
 		{
 			Application.LoadLevel("LoadingScreen");
 			Debug.Log ("StoryMode is set to off. Taking you to the LoadingScreen");

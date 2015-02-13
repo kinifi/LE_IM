@@ -11480,7 +11480,6 @@ GameObject:
   - 4: {fileID: 232523939}
   - 212: {fileID: 232523938}
   - 61: {fileID: 232523940}
-  - 114: {fileID: 232523941}
   m_Layer: 16
   m_Name: Entrance
   m_TagString: Untagged
@@ -11535,18 +11534,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .699999988, y: .980000019}
   m_Center: {x: 0, y: .0500000007}
---- !u!114 &232523941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: 83122c4663ac14848a89e18b6ea0b800,
-    type: 2}
-  m_PrefabInternal: {fileID: 1562396786}
-  m_GameObject: {fileID: 232523937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fcd72b4c4dd144419894492eb8ff9f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &232607563
 GameObject:
   m_ObjectHideFlags: 0
@@ -84228,6 +84215,7 @@ MonoBehaviour:
   canJump: 0
   _deathPanel: {fileID: 1640151686}
   _goldenBow: {fileID: 100000, guid: 0a0b4f5c5988bdf478c742d8f40b2f1c, type: 2}
+  WorkshopDeath: {fileID: 0}
 --- !u!114 &1519813345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85863,7 +85851,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 83122c4663ac14848a89e18b6ea0b800, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 83122c4663ac14848a89e18b6ea0b800, type: 2}
       propertyPath: m_SortingOrder

@@ -10,6 +10,10 @@ public class NextDungeon : MonoBehaviour {
 
 	private string levelToLoad;
 
+	//holiday configs
+	private string _holidayCompleted;
+
+
 
 	void Start()
 	{
@@ -87,7 +91,21 @@ public class NextDungeon : MonoBehaviour {
 		else
 		{
 			Debug.Log ("The next level is not a boss level");
+			//Check if the previous level was a holiday
+			CheckForHoliday();
+			//Otherwise load next level
 			StartNextLevel();
+		}
+	}
+
+	private void CheckForHoliday ()
+	{
+		_holidayCompleted = PlayerPrefs.GetString("holidayCompleted");
+		if(_holidayCompleted == "true")
+		{
+			PlayerPrefs.SetString("holidayCompleted", "false");
+			Debug.Log ("Heading back to the World Map");
+			StartCoroutine(BeginLevelLoad("WorldMap"));
 		}
 	}
 
