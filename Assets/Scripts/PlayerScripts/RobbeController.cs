@@ -41,6 +41,9 @@ public class RobbeController : MonoBehaviour {
 	public GameObject _deathPanel;
 	private bool isDead = false;
 	public GameObject _goldenBow;
+
+	//Workshop Death Config
+	public GameObject WorkshopDeath;
 	
 	void Awake()
 	{
@@ -249,9 +252,9 @@ public class RobbeController : MonoBehaviour {
 			isDead = true;
 			//Set camera follow smooth time to 0
 			GameObject.Find("Camera").GetComponent<CameraFollowNew>().smoothTime = 0.0f;
-			//Turn On Death Canvas
+			//Turn On Workshop Death Canvas
 			Debug.Log ("Popping up the Workshop FAIL PANEL");
-			GameObject.Find ("DeathPanel").SetActive(true);
+			WorkshopDeath.SetActive(true);
 			//Restrict Player Input
 			allowInput = false;
 		}

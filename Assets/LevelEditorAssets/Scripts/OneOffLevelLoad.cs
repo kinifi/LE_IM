@@ -77,6 +77,7 @@ public class OneOffLevelLoad : MonoBehaviour {
 
             for (int t = 0; t < Tiles.Length; t++)
             {
+				//Debug.Log(allGameObjects.Item(0).InnerText.ToString() + " | " + Tiles[t].name);
                 if (allGameObjects.Item(0).InnerText.ToString() == Tiles[t].name)
                 {
 					if(allGameObjects.Item(0).InnerText.ToString() == "BowGolden" || allGameObjects.Item(0).InnerText.ToString() == "Bow")
@@ -101,7 +102,7 @@ public class OneOffLevelLoad : MonoBehaviour {
 					{
 						GameObject _newBlock;
 						_newBlock = Instantiate(Tiles[t], new Vector2(float.Parse(allGameObjects.Item(1).InnerText), float.Parse(allGameObjects.Item(2).InnerText)), Quaternion.identity) as GameObject;
-						_newBlock.tag = "ChallengeGround";
+						//_newBlock.tag = "ChallengeGround";
 						_newBlock.name = allGameObjects.Item(0).InnerText;
 						_newBlock.transform.parent = _newLevel.transform;
 					}
