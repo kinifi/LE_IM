@@ -241,6 +241,21 @@ public class RobbeController : MonoBehaviour {
 
 	public void DelayAllowMovement()
 	{
+		//Workshop death process
+		if(Application.loadedLevelName == "OneOffLevel")
+		{
+
+			//Set isDead to true
+			isDead = true;
+			//Set camera follow smooth time to 0
+			GameObject.Find("Camera").GetComponent<CameraFollowNew>().smoothTime = 0.0f;
+			//Turn On Death Canvas
+			Debug.Log ("Popping up the Workshop FAIL PANEL");
+			GameObject.Find ("DeathPanel").SetActive(true);
+			//Restrict Player Input
+			allowInput = false;
+		}
+		//Campaign death process
 		if(isDead == false)
 		{
 			//Set isDead to true
