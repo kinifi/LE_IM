@@ -369,10 +369,11 @@ public class GameManager : MonoBehaviour {
 
 
 
-        mapName = Regex.Replace(mapName, @"\s", "");
-        author_Name = Regex.Replace(author_Name, @"\s", "");
-        background_Color = Regex.Replace(background_Color, @"\s", "");
-        saveXML();
+        //mapName = Regex.Replace(mapName, @"\s", "");
+        //author_Name = Regex.Replace(author_Name, @"\s", "");
+        //background_Color = Regex.Replace(background_Color, @"\s", "");
+        
+		saveXML();
     }
 
 	private void screenshotTaker () {
