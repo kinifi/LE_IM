@@ -35,7 +35,7 @@ public class RobbeController : MonoBehaviour {
 
 	//public vars for other scripts
 	public Vector3 playervelocity;
-	public bool canJump;
+	public bool canJump = true;
 
 	//Death Config
 	public GameObject _deathPanel;
@@ -86,7 +86,8 @@ public class RobbeController : MonoBehaviour {
 		if( _controller.isGrounded )
 		{
 			velocity.y = 0;
-			//grab our current input and set v1
+			//ResetJump
+			RestJump();
 		}
 		
 		//HORIZONTAL INPUT//
@@ -125,8 +126,9 @@ public class RobbeController : MonoBehaviour {
 			//jump
 			if( Input.GetButtonDown( "Jumped" ))
 			{
-				if(_controller.isGrounded || canJump == true)
+				if(canJump == true)
 				{
+					canJump = false;
 					audio.PlayOneShot(clips[4], 0.55F);
 					velocity.y = Mathf.Sqrt( 2f * targetJumpHeight * -gravity );
 					doubleJump = true;
@@ -150,6 +152,14 @@ public class RobbeController : MonoBehaviour {
 		//move based on velocity
 		_controller.move( velocity * Time.deltaTime );
 
+	}
+
+	private void RestJump ()
+	{
+		//allow jump after the player has grounded
+		canJump = true;
+		//Safety call to assure doubleJump is false
+		doubleJump = false;
 	}
 
 	//Object movement via Physics
