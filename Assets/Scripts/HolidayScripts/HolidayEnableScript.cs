@@ -11,15 +11,20 @@ public class HolidayEnableScript : MonoBehaviour {
 	// Use this for initialization
 	void Awake () 
 	{
-		//Get holidayOne Status from player prefs
+		//Get holidayOne Status from player prefs and report it to the console
 		holidayOne = PlayerPrefs.GetString("Vday2015");
+		Debug.Log ("The status of Vday2015 is: " + holidayOne);
 		//Get holidayOne base color
 		stampColorOne = GameObject.Find ("Stamp_Vday2015").GetComponent<Image>().color;
 		//Turn on stamp image if complete
 		if(holidayOne == "completed")
 		{
 			stampColorOne.a = 255;
-			GameObject.Find("Stamp_Vday2015").GetComponent<Image>().color = stampColorOne;
+			GameObject.Find("Stamp_Vday2015").GetComponent<Image>().enabled = true;
+		}
+		else if(holidayOne != "completed")
+		{
+			Destroy(GameObject.Find("Stamp_Vday2015"));
 		}
 	}
 }
